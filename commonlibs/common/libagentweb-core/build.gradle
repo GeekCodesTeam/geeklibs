@@ -11,7 +11,7 @@ dependencies {
     implementation 'com.github.Justson:Downloader:v4.1.9'
     implementation project(':commonlibs:common:libutils')
     implementation (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
-    implementation project(path: ':libsCenterNew:alipaysdk')
+//    implementation project(path: ':libsCenterNew:alipaysdk')
 
 }
 
