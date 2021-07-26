@@ -173,3 +173,4 @@ include ':commonlibs',
 //        ':zfsjx-dengta20-fenzhi1:libyewu1',
 // ':zfsjx-dengta20-fenzhi1:libyewu-variants'
 // start app5
+include ':app'
