@@ -18,6 +18,7 @@ dependencies {
     api project(':commonlibs:common:libswipebacklayout')
     // 挑选依赖
     api project(':commonlibs:common:libagentweb-core')
+    api project(path: ':libsCenterNew:alipaysdk')
     api project(':commonlibs:common:libwebview')
     api librarys.glide47
     api project(':commonlibs:common:libglide47')
