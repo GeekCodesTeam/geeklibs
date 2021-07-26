@@ -43,7 +43,7 @@ include ':libsCenterNew',
 // commonlibs
 include ':commonlibs',
         // ':commonlibs:baselibrary',
-        ':commonlibs:common:libagentweb-core',
+//        ':commonlibs:common:libagentweb',
 //        ':commonlibs:common:libagentweb-filechooser',
         ':commonlibs:common:libmvp',
         ':commonlibs:common:libbase',

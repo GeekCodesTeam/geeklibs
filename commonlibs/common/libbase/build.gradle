@@ -1,9 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-//apply plugin: 'android-maven'
-//jitpack
-group='com.github.geeklx'
-apply from: './../../../commonlibs1.gradle'
+apply from: './../../../commonlibsmaven.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -17,9 +13,7 @@ dependencies {
     //
     api project(':commonlibs:common:libswipebacklayout')
     // 挑选依赖
-    api project(':commonlibs:common:libagentweb-core')
-    implementation (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
-//    api project(path: ':libsCenterNew:alipaysdk')
+//    api project(':commonlibs:common:libagentweb-core')
     api project(':commonlibs:common:libwebview')
     api librarys.glide47
     api project(':commonlibs:common:libglide47')

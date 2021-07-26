@@ -48,10 +48,10 @@ allprojects {
         maven { url 'http://developer.huawei.com/repo/' }
         google()
 
-        flatDir {
-            dirs project(':libsCenter').file('./')
-            dirs project(':biz-libs').file('./')
-        }
+//        flatDir {
+//            dirs project(':libsCenter').file('./')
+//            dirs project(':biz-libs').file('./')
+//        }
     }
 }
 

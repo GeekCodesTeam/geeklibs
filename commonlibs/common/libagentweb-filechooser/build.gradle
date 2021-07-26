@@ -9,5 +9,5 @@ def config = rootProject.ext //配置
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':commonlibs:common:libagentweb-core')
+    implementation project(':commonlibs:common:libagentweb')
 }
