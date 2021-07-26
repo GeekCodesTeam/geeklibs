@@ -6,6 +6,7 @@ group='com.github.geeklx'
 apply from: './../../../commonlibs1.gradle'
 def config = rootProject.ext //配置
 def librarys = rootProject.ext.dependencies //
+repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.github.Justson:Downloader:v4.1.9'
