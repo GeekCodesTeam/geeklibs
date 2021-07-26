@@ -5,8 +5,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     // 必须依赖
     api project(':commonlibs:common:libutils')
-    // 鸿蒙bufen
-    implementation files('./libs/abilityshell_ide_java.jar')
     // 网络请求
     api project(':commonlibs:common:libmvp')
     api project(':commonlibs:common:libretrofit')

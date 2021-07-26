@@ -4,6 +4,7 @@
 package com.example.libbase;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -35,14 +36,13 @@ import javax.net.ssl.X509TrustManager;
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.jessyan.autosize.unit.Subunits;
-import ohos.abilityshell.HarmonyApplication;
 
 
 /**
  * <p class="note">File Note</p>
  * created by geek at 2017/6/6
  */
-public  class HarmonyApplication2 extends HarmonyApplication {
+public class HarmonyApplication2 extends Application {
 
     public static final String DIR_PROJECT = "/geekandroid/app/";
     public static final String DIR_CACHE = DIR_PROJECT + "cache/"; // 网页缓存路径
