@@ -1,2 +1,6 @@
+apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'android-maven'
+//jitpack
+group='com.github.geeklx'
 configurations.maybeCreate("default")
 artifacts.add("default",file('alipaysdk-15.8.01.210112203525.aar'))
