@@ -10,10 +10,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.geek.libutils.app.MyLogUtil;
 import com.mob.pushsdk.MobPush;
 import com.mob.pushsdk.MobPushCustomMessage;
 import com.mob.pushsdk.MobPushNotifyMessage;
@@ -21,7 +17,7 @@ import com.mob.pushsdk.MobPushReceiver;
 
 import java.util.List;
 
-public class MOBIDservices extends Service  {
+public class MOBIDservices extends Service {
 
     private Handler handler;
 
@@ -83,7 +79,7 @@ public class MOBIDservices extends Service  {
 
         handler = new Handler(Looper.getMainLooper(), new Handler.Callback() {
             @Override
-            public boolean handleMessage(@NonNull Message msg) {
+            public boolean handleMessage(Message msg) {
                 if (msg.what == 1) {
                     System.out.println("MobPush Callback Data1:" + msg.obj);
 //                    presenter_mobid2.get_mob_id2(1, 1, "1", "DT");

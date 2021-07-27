@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.geek.libutils.app.FragmentHelper;
 import com.just.agentweb.R;
 import com.just.agentweb.agentwebview.adapter.TabFragmentPagerAdapter;
 import com.just.agentweb.agentwebview.adapter.Tablayoutdapter;
@@ -26,7 +25,6 @@ import com.just.agentweb.agentwebview.bean.HCategoryBean1;
 import com.just.agentweb.agentwebview.bean.OneBean1;
 import com.just.agentweb.agentwebview.fragment.F2NewItem1;
 import com.just.agentweb.agentwebview.fragment.F2NewItem2;
-import com.geek.libutils.app.LocalBroadcastManagers;
 import com.just.agentweb.agentwebview.widgets.ViewPagerSlide;
 import com.just.agentweb.agentwebview.widgets.XRecyclerView;
 

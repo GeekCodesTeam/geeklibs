@@ -4,5 +4,9 @@ apply from: './../../../commonlibsmaven.gradle'
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
+    implementation librarys.design
+    implementation librarys.appcompatV7
+    implementation librarys.supportannotations
+    implementation librarys.recyclerviewv7
+    implementation librarys.swiperefreshlayout
 }

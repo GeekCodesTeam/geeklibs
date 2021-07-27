@@ -25,8 +25,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.geek.libutils.app.BaseApp;
-
 /**
  * @author cenxiaozhong
  * @update 4.0.0 ,WebDefaultSettingsManager rename to AbsAgentWebSettings
@@ -67,7 +65,7 @@ public abstract class AbsAgentWebSettings implements IAgentWebSettings, WebListe
         mWebSettings.setSupportZoom(true);
         mWebSettings.setBuiltInZoomControls(false);
         mWebSettings.setSavePassword(false);
-        if (AgentWebUtils.checkNetwork(BaseApp.get())) {
+        if (AgentWebUtils.checkNetwork(AgentwebApp.get())) {
             //根据cache-control获取数据。
             mWebSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
         } else {

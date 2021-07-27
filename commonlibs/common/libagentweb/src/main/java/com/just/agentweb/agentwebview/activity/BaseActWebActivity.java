@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.geek.libutils.app.BaseAppManager;
+//import com.geek.libutils.app.BaseAppManager;
 import com.just.agentweb.R;
 import com.just.agentweb.base.BaseAgentWebActivity;
 
@@ -23,7 +23,7 @@ public abstract class BaseActWebActivity extends BaseAgentWebActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BaseAppManager.getInstance().add(this);
+//        BaseAppManager.getInstance().add(this);
         setContentView(getLayoutId());
         activity = this;
         setup(savedInstanceState);
@@ -88,7 +88,7 @@ public abstract class BaseActWebActivity extends BaseAgentWebActivity {
 
     @Override
     protected void onDestroy() {
-        BaseAppManager.getInstance().remove(this);
+//        BaseAppManager.getInstance().remove(this);
         super.onDestroy();
     }
 }

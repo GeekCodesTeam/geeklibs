@@ -1,9 +1,13 @@
 package com.haier.cellarette.libretrofit.common;
 
 import android.app.Application;
-import android.os.Environment;
 
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.DeviceUtils;
+import com.blankj.utilcode.util.EncryptUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
+import com.geek.libutils.app.MyLogUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -143,13 +147,29 @@ public class RetrofitNetNew {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request originalRequest = chain.request();
+                int numcode = (int) ((Math.random() * 9 + 1) * 100000);
+                String accessSecret = SPUtils.getInstance().getString("accessSecret", "aaaa");
+                String timer = System.currentTimeMillis() + "";
+                String accessKey = "V1" + timer + numcode + accessSecret;
+                String MD5 = EncryptUtils.encryptMD5ToString(accessKey) + "";
+//                String MD5 = EncryptUtils.encryptMD5ToString("123456") + "";
+//                MyLogUtil.e("ssssssssss", MD5);
+                MyLogUtil.e("ssssssssss", MD5.toUpperCase() + "");
                 Request.Builder requestBuilder = originalRequest.newBuilder()
                         // Provide your custom header here
 //                        .header("token", (String) SpUtils.get("token", ""))
 //                        .header("hxAppVersion", BanbenUtils.getInstance().getVersion())
 //                        .header("liveClientType", BanbenUtils.getInstance().getLiveClientType())
-//                        .header("imei", BanbenUtils.getInstance().getImei())
-//                        .header("Authorization", BanbenUtils.getInstance().getToken())
+                        .header("imei", BanbenUtils.getInstance().getImei())
+                        .header("platform", SPUtils.getInstance().getString("平台类型", "android_phone"))
+                        .header("token", SPUtils.getInstance().getString("用户token", ""))
+                        .header("model", DeviceUtils.getManufacturer())
+                        .header("version", AppUtils.getAppVersionName())
+                        .header("version_code", AppUtils.getAppVersionCode() + "")
+                        .header("X-CA-KEY", accessSecret)
+                        .header("X-CA-SIGNATURE", MD5.toUpperCase() + "")
+                        .header("X-CA-TIMESTAMP", System.currentTimeMillis() + "")
+                        .header("X-CA-NONCE", (int) ((Math.random() * 9 + 1) * 100000) + "")
                         .method(originalRequest.method(), originalRequest.body());
                 Request request = requestBuilder.build();
                 return chain.proceed(request);

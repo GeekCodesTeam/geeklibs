@@ -4,17 +4,21 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 
-import com.geek.libutils.app.MyLogUtil;
 import com.just.agentweb.R;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
+import com.scwang.smart.refresh.layout.listener.ScrollBoundaryDecider;
+//import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+//import com.scwang.smartrefresh.layout.api.RefreshLayout;
+//import com.scwang.smartrefresh.layout.api.ScrollBoundaryDecider;
+//import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 public class SmartRefreshWebActDemo extends BaseActWebActivity {
     private SmartRefreshLayout smarkLayout;
@@ -46,7 +50,7 @@ public class SmartRefreshWebActDemo extends BaseActWebActivity {
             }
         });
         //使上拉加载具有弹性效果
-        smarkLayout.setEnableAutoLoadmore(false);
+        smarkLayout.setEnableAutoLoadMore(false);
         //禁止越界拖动（1.0.4以上版本）
         smarkLayout.setEnableOverScrollDrag(false);
         //关闭越界回弹功能
@@ -55,12 +59,12 @@ public class SmartRefreshWebActDemo extends BaseActWebActivity {
             @Override
             public boolean canRefresh(View content) {
                 //webview滚动到顶部才可以下拉刷新
-                MyLogUtil.e("ssssss", "" + mAgentWeb.getWebCreator().getWebView().getScrollY());
+                Log.e("ssssss", "" + mAgentWeb.getWebCreator().getWebView().getScrollY());
                 return mAgentWeb.getWebCreator().getWebView().getScrollY() > 0;
             }
 
             @Override
-            public boolean canLoadmore(View content) {
+            public boolean canLoadMore(View content) {
                 return false;
             }
         });
@@ -91,7 +95,7 @@ public class SmartRefreshWebActDemo extends BaseActWebActivity {
             }
 //            }
         }
-        MyLogUtil.e("targetaaaaaaa=" + target);
+        Log.e("targetaaaaaaa=", target);
         if (TextUtils.isEmpty(target)) {
             target = "http://www.jd.com/";
         }

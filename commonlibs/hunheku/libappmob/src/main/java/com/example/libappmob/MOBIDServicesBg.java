@@ -11,8 +11,6 @@ import android.os.IBinder;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import com.geek.libutils.app.BaseApp;
-
 public class MOBIDServicesBg extends Service {
 
     public static final String EXTRA_NOTIFICATION_ID = "extra_notification_id_for_mobid";
@@ -37,16 +35,16 @@ public class MOBIDServicesBg extends Service {
     public static final String Huyan_CHANNEL_NAME = "MOBID_NOTIFY_NAME";
 
     public static Notification she_notifichanged() {
-        NotificationManager notificationManager = (NotificationManager) BaseApp.get().getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager notificationManager = (NotificationManager) MobApp.get().getSystemService(NOTIFICATION_SERVICE);
         Notification notification = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel mChannel = new NotificationChannel(Huyan_CHANNEL_ID, Huyan_CHANNEL_NAME, NotificationManager.IMPORTANCE_LOW);
             notificationManager.createNotificationChannel(mChannel);
-            notification = new NotificationCompat.Builder(BaseApp.get(), Huyan_CHANNEL_ID)
+            notification = new NotificationCompat.Builder(MobApp.get(), Huyan_CHANNEL_ID)
                     .setChannelId(Huyan_CHANNEL_ID)
                     .build();
         } else {
-            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(BaseApp.get(), Huyan_CHANNEL_ID)
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(MobApp.get(), Huyan_CHANNEL_ID)
                     .setOngoing(true)
                     .setChannelId(Huyan_CHANNEL_ID);//无效
             notification = notificationBuilder.build();

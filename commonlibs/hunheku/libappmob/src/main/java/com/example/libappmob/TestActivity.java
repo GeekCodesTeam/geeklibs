@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.geek.libutils.SlbLoginUtil;
 import com.mob.MobSDK;
 import com.mob.OperationCallback;
 import com.mob.pushsdk.MobPush;
@@ -72,20 +71,20 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(intent1);
                 finish();
             } else if (TextUtils.equals(aaaa, "webview")) {
-                SlbLoginUtil.get().loginTowhere(TestActivity.this, new Runnable() {
-                    @Override
-                    public void run() {
-                        // 跳转到学习报告详情页
-//                                try {
-////                                        HiosHelper.resolveAd(WelComeActivity.this, WelComeActivity.this, URLDecoder.decode(bbbb, "UTF-8") + MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN));
-//                                    HiosHelper.resolveAd(TestActivity.this, TestActivity.this, URLDecoder.decode(bbbb, "UTF-8") + MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN));
-//                                } catch (UnsupportedEncodingException e) {
-//                                    e.printStackTrace();
-//                                }
-//                                finish();
-                    }
-                });
-                finish();
+//                SlbLoginUtil.get().loginTowhere(TestActivity.this, new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        // 跳转到学习报告详情页
+////                                try {
+//////                                        HiosHelper.resolveAd(WelComeActivity.this, WelComeActivity.this, URLDecoder.decode(bbbb, "UTF-8") + MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN));
+////                                    HiosHelper.resolveAd(TestActivity.this, TestActivity.this, URLDecoder.decode(bbbb, "UTF-8") + MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN));
+////                                } catch (UnsupportedEncodingException e) {
+////                                    e.printStackTrace();
+////                                }
+////                                finish();
+//                    }
+//                });
+//                finish();
             } else if (TextUtils.equals(aaaa, "order")) {
                 // 跳转到我的—我的订单
                 Intent intent1 = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ActYewuList1");

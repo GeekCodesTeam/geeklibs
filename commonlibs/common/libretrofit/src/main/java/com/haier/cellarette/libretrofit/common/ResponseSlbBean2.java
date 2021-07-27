@@ -1,11 +1,20 @@
 package com.haier.cellarette.libretrofit.common;
 
 public class ResponseSlbBean2<T> {
+    private boolean success;
     private String code;
     private String message;
     private T data;
 
     public ResponseSlbBean2() {
+    }
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
     public String getCode() {
@@ -34,6 +43,7 @@ public class ResponseSlbBean2<T> {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("success: ").append(this.success).append("\n");
         sb.append("code: ").append(this.code).append("\n");
         sb.append("msg: ").append(this.message).append("\n");
         sb.append("data: ").append(this.data).append("\n");

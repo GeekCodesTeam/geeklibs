@@ -19,8 +19,8 @@ ext {
 //    # is Model Independent Mode
     isMIMode = false
 //    applicationId = "com.fosung.lighthouse"
-    appversionCode = 3006
-    appversionName = "3.0.0.6"
+    appversionCode = 3007
+    appversionName = "3.0.0.7"
 
     versionNamePrefixT = "_T_V"
     versionNamePrefixY = "_Y_V"

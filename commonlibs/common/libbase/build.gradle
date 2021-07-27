@@ -8,7 +8,8 @@ dependencies {
     // 网络请求
     api project(':commonlibs:common:libmvp')
     api project(':commonlibs:common:libretrofit')
-    //
+    // https://github.com/ikew0ng/SwipeBackLayout
+    // api 'me.imid.swipebacklayout.lib:library:1.1.0'
     api project(':commonlibs:common:libswipebacklayout')
     // 挑选依赖
 //    api project(':commonlibs:common:libagentweb-core')

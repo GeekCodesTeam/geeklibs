@@ -44,5 +44,9 @@ android {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
+    implementation librarys.design
+    implementation librarys.appcompatV7
+    implementation librarys.supportannotations
+    implementation librarys.recyclerviewv7
+    implementation librarys.swiperefreshlayout
 }

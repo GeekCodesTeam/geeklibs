@@ -42,6 +42,7 @@ import me.jessyan.autosize.unit.Subunits;
  * <p class="note">File Note</p>
  * created by geek at 2017/6/6
  */
+//public  class HarmonyApplication2 extends HarmonyApplication {
 public class HarmonyApplication2 extends Application {
 
     public static final String DIR_PROJECT = "/geekandroid/app/";

@@ -2,6 +2,7 @@ package com.haier.cellarette.libretrofit.common;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.DeviceUtils;
+import com.geek.libutils.data.MmkvUtils;
 
 public class BanbenUtils {
 
@@ -25,6 +26,7 @@ public class BanbenUtils {
     public String version = "";
     public String imei = "";
     public String token = "";
+    public String platform = "android_phone";
     public String liveClientType = "android";
 
     public String getVersion() {
@@ -43,9 +45,9 @@ public class BanbenUtils {
         this.imei = imei;
     }
 
-//    public String getToken() {
-//        return MmkvUtils.getInstance().get_common(CommonUtils.MMKV_TOKEN);
-//    }
+    public String getToken() {
+        return MmkvUtils.getInstance().get_common("用户token");
+    }
 
     public void setToken(String token) {
         this.token = token;

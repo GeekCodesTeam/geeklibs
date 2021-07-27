@@ -3,6 +3,7 @@ apply from: "buildconfig.gradle"
 buildscript {
     ext.kotlin_version = '1.5.21'
     repositories {
+        google()
         mavenLocal()
         mavenCentral()
         maven { url "https://www.jitpack.io" }
@@ -14,8 +15,6 @@ buildscript {
         maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
         maven { url "https://raw.githubusercontent.com/Pgyer/analytics/master" }
         maven { url 'http://developer.huawei.com/repo/' }
-        google()
-
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.2'
@@ -35,6 +34,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         mavenLocal()
         mavenCentral()
         maven { url "https://www.jitpack.io" }
@@ -46,7 +46,6 @@ allprojects {
         maven { url "http://maven.rongcloud.cn/repository/maven-releases/" }
         maven { url "https://raw.githubusercontent.com/Pgyer/analytics/master" }
         maven { url 'http://developer.huawei.com/repo/' }
-        google()
 
 //        flatDir {
 //            dirs project(':libsCenter').file('./')
