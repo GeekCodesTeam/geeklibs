@@ -175,3 +175,5 @@ include ':zfsjx-dengta20-fenzhi1',
 //        ':zfsjx-dengta20-fenzhi1:mylibyewu1',
         ':zfsjx-dengta20-fenzhi1:libyewu-variants'
 // start app5
+
+include ':app'

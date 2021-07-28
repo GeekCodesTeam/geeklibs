@@ -4,6 +4,7 @@ apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation librarys.eventbus
     implementation librarys.blankj
 //    api (name: 'alipaysdk-15.8.01.210112203525', ext: 'aar')
     implementation project(path: ':libsCenterNew:alipaysdk')
