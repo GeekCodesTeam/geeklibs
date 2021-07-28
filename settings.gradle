@@ -25,16 +25,16 @@ include ':libsCenterNew',
 //        ':yewulibs3:slbfloatwindow',
 //        ':yewulibs3:slbbaselibrary'
 // start app
-include ':yewulibs1',
-        ':yewulibs1:yewulibs1-bizyewu1',
-        ':yewulibs1:yewulibs1-bizyewu2',
-        ':yewulibs1:yewulibs1-app',
-        ':yewulibs1:yewulibs1-appcomm',
-        ':yewulibs1:yewulibs1-appindex',
-        ':yewulibs1:yewulibs1-appsplash',
-        ':yewulibs1:yewulibs1-applogin',
-        ':yewulibs1:yewulibs1-appsearch',
-        ':yewulibs1:yewulibs1-libvariants'
+//include ':yewulibs1',
+//        ':yewulibs1:yewulibs1-bizyewu1',
+//        ':yewulibs1:yewulibs1-bizyewu2',
+//        ':yewulibs1:yewulibs1-app',
+//        ':yewulibs1:yewulibs1-appcomm',
+//        ':yewulibs1:yewulibs1-appindex',
+//        ':yewulibs1:yewulibs1-appsplash',
+//        ':yewulibs1:yewulibs1-applogin',
+//        ':yewulibs1:yewulibs1-appsearch',
+//        ':yewulibs1:yewulibs1-libvariants'
 // end app
 
 //include ':commonbiz',
@@ -109,13 +109,13 @@ include ':commonlibs',
 // commonlibs
 
 // fsjxcommonlibs
-include ':zfsjx-commonlibs',
-        ':zfsjx-commonlibs:libGui',
-        ':zfsjx-commonlibs:MediaCompressLib',
-        ':zfsjx-commonlibs:libIjkPlayer',
-        ':zfsjx-commonlibs:libFosungFrame',
-        ':zfsjx-commonlibs:libappservices',
-        ':zfsjx-commonlibs:recyclertreeview-lib'
+//include ':zfsjx-commonlibs',
+//        ':zfsjx-commonlibs:libGui',
+//        ':zfsjx-commonlibs:MediaCompressLib',
+//        ':zfsjx-commonlibs:libIjkPlayer',
+//        ':zfsjx-commonlibs:libFosungFrame',
+//        ':zfsjx-commonlibs:libappservices',
+//        ':zfsjx-commonlibs:recyclertreeview-lib'
 // fsjxcommonlibs
 
 // start app1
@@ -153,27 +153,27 @@ include ':zfsjx-commonlibs',
 // end app4
 
 // start app5
-include ':zfsjx-dengta20-fenzhi1',
-        ':zfsjx-dengta20-fenzhi1:app',
-        ':zfsjx-dengta20-fenzhi1:libyewu-appsplash',
-        ':zfsjx-dengta20-fenzhi1:libyewu-appsearch',
-        ':zfsjx-dengta20-fenzhi1:libyewu-appindex',
-        ':zfsjx-dengta20-fenzhi1:libyewu-applogin',
-        ':zfsjx-dengta20-fenzhi1:libFrame',
-        ':zfsjx-dengta20-fenzhi1:libyewu-ezhibu',
-        ':zfsjx-dengta20-fenzhi1:libyewu-jiaoyuziyuan',
-        ':zfsjx-dengta20-fenzhi1:libyewu-messages',
-        ':zfsjx-dengta20-fenzhi1:libyewu-tongxunlu',
-        ':zfsjx-dengta20-fenzhi1:libyewu-vpndenglu',
-        ':zfsjx-dengta20-fenzhi1:libyewu-yonghudenglu',
-        ':zfsjx-dengta20-fenzhi1:libyewu-my',
-        ':zfsjx-dengta20-fenzhi1:libyewu-biz1',
-        ':zfsjx-dengta20-fenzhi1:libyewu-biz2',
-        ':zfsjx-dengta20-fenzhi1:libyewu-eduapi',
-//        ':zfsjx-dengta20-fenzhi1:myapplication',
-//        ':zfsjx-dengta20-fenzhi1:neplugin',
-//        ':zfsjx-dengta20-fenzhi1:mylibyewu1',
-        ':zfsjx-dengta20-fenzhi1:libyewu-variants'
+//include ':zfsjx-dengta20-fenzhi1',
+//        ':zfsjx-dengta20-fenzhi1:app',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-appsplash',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-appsearch',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-appindex',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-applogin',
+//        ':zfsjx-dengta20-fenzhi1:libFrame',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-ezhibu',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-jiaoyuziyuan',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-messages',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-tongxunlu',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-vpndenglu',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-yonghudenglu',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-my',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-biz1',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-biz2',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-eduapi',
+////        ':zfsjx-dengta20-fenzhi1:myapplication',
+////        ':zfsjx-dengta20-fenzhi1:neplugin',
+////        ':zfsjx-dengta20-fenzhi1:mylibyewu1',
+//        ':zfsjx-dengta20-fenzhi1:libyewu-variants'
 // start app5
 
 include ':app'
