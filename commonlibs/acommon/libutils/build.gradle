@@ -9,7 +9,7 @@ apply from: './../../../commonlibs1.gradle'
 //                from components.release
 //                groupId = 'com.geek.libutils'
 //                artifactId = 'libutils'
-//                version = '1.2.4'
+//                version = '1.2.5'
 //            }
 //        }
 //    }
