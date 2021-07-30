@@ -1,23 +1,23 @@
 apply plugin: 'com.android.library'
 //apply from: './../../../commonlibsmaven.gradle'
-apply from: './../../../commonlibs1.gradle'
-//apply plugin: 'maven-publish'
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.geek.libglide47'
-//                artifactId = 'libglide47'
-//                version = '1.2.5'
-//            }
-//        }
-//    }
-//}
+apply from: './../commonlibs1.gradle'
+apply plugin: 'maven-publish'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.geekapp.libbase'
+                artifactId = 'libglide47'
+                version = '1.2.5'
+            }
+        }
+    }
+}
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:acommon:libutils')
+    implementation project(':libutils')
     // glide47
     implementation librarys.glide47
     implementation librarys.glide47AnnProcessor

@@ -23,18 +23,17 @@ include ':libsCenterNew',
 // end aar
 
 // commonlibs
-include ':commonlibs',
-        ':commonlibs:acommon:libagentweb',
-        ':commonlibs:acommon:libmvp',
-        ':commonlibs:acommon:libbase',
-        ':commonlibs:acommon:libutils',
-        ':commonlibs:acommon:libretrofit',
-        ':commonlibs:acommon:libglide47',
-        ':commonlibs:acommon:libwebview',
-        ':commonlibs:acommon:libswipebacklayout',
-        ':commonlibs:acommon:librararyforfileprovdider',
-        ':commonlibs:acommon:refresh-footer',
-        ':commonlibs:acommon:refresh-header',
-        ':commonlibs:acommon:refresh-layout',
-        ':commonlibs:acommon:zxinglibs3'
+include ':libagentweb'
+include ':libmvp'
+include ':libbase'
+include ':libutils'
+include ':libretrofit'
+include ':libglide47'
+include ':libwebview'
+include ':libswipebacklayout'
+include ':librararyforfileprovdider'
+include ':refresh-footer'
+include ':refresh-header'
+include ':refresh-layout'
+include ':zxinglibs3'
 // commonlibs

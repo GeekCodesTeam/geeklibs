@@ -1,19 +1,19 @@
 apply plugin: 'com.android.library'
 //apply from: './../../../commonlibsmaven.gradle'
-apply from: './../../../commonlibs1.gradle'
-//apply plugin: 'maven-publish'
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.scwang.smartrefresh.footer'
-//                artifactId = 'refresh-footer'
-//                version = '1.2.5'
-//            }
-//        }
-//    }
-//}
+apply from: './../commonlibs1.gradle'
+apply plugin: 'maven-publish'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.geekapp.libbase'
+                artifactId = 'refresh-footer'
+                version = '1.2.5'
+            }
+        }
+    }
+}
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -22,7 +22,7 @@ dependencies {
     implementation librarys.supportannotations
     implementation librarys.recyclerviewv7
     implementation librarys.swiperefreshlayout
-    compileOnly project(':commonlibs:acommon:refresh-layout')
+    compileOnly project(':refresh-layout')
 }
 
 //publish {

@@ -366,7 +366,7 @@
 ### 96.yewulibs1-appcomm
 
 <br/>    //TODO common libs
-<br/>    implementation project(':commonlibs:acommon:baselibrary')
+<br/>    implementation project(':baselibrary')
 <br/>    // 支持分版本网络请求
 <br/>    bxnt_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
 <br/>    bxny_nationImplementation project(':yewulibs1:yewulibs1-libvariants')
@@ -385,7 +385,7 @@
 <br/>    api project(':commonlibs:bhunheku:libapppay')
 <br/>    // Glide 4.0以上
 <br/>    api librarys.glide47
-<br/>    api project(':commonlibs:acommon:libglide47')
+<br/>    api project(':libglide47')
 <br/>    //TODO other libs
 <br/>    // https://github.com/crazyandcoder/citypicker                      城市选择器
 <br/>    // pi 'liji.library.dev:citypickerview:4.3.2'
@@ -400,7 +400,7 @@
 <br/>    api project(':commonlibs:cyewulibs:slbota')
 <br/>    // https://github.com/ikew0ng/SwipeBackLayout                       
 <br/>    // api 'me.imid.swipebacklayout.lib:library:1.1.0'                  关闭页面IOS效果
-<br/>    api project(':commonlibs:acommon:libswipebacklayout')
+<br/>    api project(':libswipebacklayout')
 <br/>    // slbwifi                                                      WIFI选择器            
 <br/>    api project(':commonlibs:cyewulibs:slbwifi') 
 <br/>    // https://github.com/scwang90/SmartRefreshLayout               下拉刷新上拉加载

@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 ////apply plugin: 'android-maven'
 ////jitpack
 //group='com.github.geeklx'
-apply from: './../../../commonlibs1.gradle'
+apply from: './../commonlibs1.gradle'
 def config = rootProject.ext //配置
 def librarys = rootProject.ext.dependencies //
 //repositories { flatDir { dirs 'libs' } }

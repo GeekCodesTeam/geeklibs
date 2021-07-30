@@ -1,19 +1,19 @@
 apply plugin: 'com.android.library'
 //apply from: './../../../commonlibsmaven.gradle'
-apply from: './../../../commonlibs1.gradle'
-//apply plugin: 'maven-publish'
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.haier.cellarette.libretrofit'
-//                artifactId = 'libretrofit'
-//                version = '1.2.5'
-//            }
-//        }
-//    }
-//}
+apply from: './../commonlibs1.gradle'
+apply plugin: 'maven-publish'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.geekapp.libbase'
+                artifactId = 'libretrofit'
+                version = '1.2.5'
+            }
+        }
+    }
+}
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -26,7 +26,7 @@ dependencies {
     api librarys.okhttploggerinter
     api librarys.gsonJson
     api librarys.fastJson
-    implementation project(':commonlibs:acommon:libutils')
+    implementation project(':libutils')
     //
 //    implementation "com.squareup.okhttp3:okhttp:4.5.0"
 //    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
