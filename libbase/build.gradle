@@ -9,7 +9,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.geekapp.libbase'
                 artifactId = 'libbase'
-                version = '1.2.5'
+                version = '1.2.6'
             }
         }
     }
