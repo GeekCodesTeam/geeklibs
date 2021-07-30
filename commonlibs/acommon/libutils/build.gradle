@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-//apply from: '../../mobsdk.gradle'
-apply from: './../../../commonlibsmaven.gradle'
+//apply from: './../../../commonlibsmaven.gradle'
+apply from: './../../../commonlibs1.gradle'
 def config = rootProject.ext //配置
 def librarys = rootProject.ext.dependencies //
 dependencies {

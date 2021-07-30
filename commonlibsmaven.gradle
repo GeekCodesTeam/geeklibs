@@ -6,7 +6,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.example.libbase'
                 artifactId = 'geeklibs'
-                version = '1.1.9'
+                version = '1.2.1'
             }
         }
     }
