@@ -1,19 +1,19 @@
 apply plugin: 'com.android.library'
 //apply from: './../../../commonlibsmaven.gradle'
 apply from: './../../../commonlibs1.gradle'
-apply plugin: 'maven-publish'
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.geek.libbase'
-                artifactId = 'librararyforfileprovdider'
-                version = '1.2.3'
-            }
-        }
-    }
-}
+//apply plugin: 'maven-publish'
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.zhy.base.fileprovider'
+//                artifactId = 'librararyforfileprovdider'
+//                version = '1.2.3'
+//            }
+//        }
+//    }
+//}
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
