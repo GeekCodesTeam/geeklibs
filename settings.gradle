@@ -8,6 +8,7 @@
 //    }
 //}
 rootProject.name = "geeklibs"
+include ':app'
 // start aar
 include ':libsCenter', ':biz-libs'
 // end aar
@@ -23,9 +24,7 @@ include ':libsCenterNew',
 
 // commonlibs
 include ':commonlibs',
-        ':commonlibs:acommon:baselibrary',
         ':commonlibs:acommon:libagentweb',
-//        ':commonlibs:acommon:libagentweb-filechooser',
         ':commonlibs:acommon:libmvp',
         ':commonlibs:acommon:libbase',
         ':commonlibs:acommon:libutils',
