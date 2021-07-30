@@ -49,5 +49,3 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
 }
-// mob
-//apply from: './../../commonlibs/hunheku/libappmob/MobSDK.gradle'

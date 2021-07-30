@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-//apply from: '../../mobsdk.gradle'
 apply from: './../../../commonlibs1.gradle'
 def librarys = rootProject.ext.dependencies //
 dependencies {
