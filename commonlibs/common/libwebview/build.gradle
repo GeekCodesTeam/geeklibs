@@ -1,8 +1,0 @@
-apply plugin: 'com.android.library'
-apply from: './../../../commonlibsmaven.gradle'
-def librarys = rootProject.ext.dependencies //
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':commonlibs:common:libutils')
-}
-
