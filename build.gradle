@@ -3,7 +3,6 @@ apply from: "buildconfig.gradle"
 buildscript {
     ext.kotlin_version = '1.5.21'
     repositories {
-        google()
         mavenLocal()
         mavenCentral()
         maven {
@@ -34,6 +33,7 @@ buildscript {
             url 'http://developer.huawei.com/repo/'
             allowInsecureProtocol = true
         }
+        google()
 
     }
     dependencies {
@@ -54,7 +54,6 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         mavenLocal()
         mavenCentral()
         maven {
@@ -85,6 +84,7 @@ allprojects {
             url 'http://developer.huawei.com/repo/'
             allowInsecureProtocol = true
         }
+        google()
 
 //        flatDir {
 //            dirs project(':libsCenter').file('./')
