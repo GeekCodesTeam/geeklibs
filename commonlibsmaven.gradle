@@ -1,7 +1,35 @@
-apply plugin: 'com.github.dcendents.android-maven'
-//apply plugin: 'android-maven'
-//jitpack
-group='com.github.geeklx'
+//apply plugin: 'com.github.dcendents.android-maven'
+////apply plugin: 'android-maven'
+////jitpack
+//group='com.github.geeklx'
+apply plugin: 'maven-publish'
+// Because the components are created only during the afterEvaluate phase, you must
+// configure your publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.example.libbase'
+                artifactId = 'final'
+                version = '1.1.8'
+            }
+//            // Creates a Maven publication called “debug”.
+//            debug(MavenPublication) {
+//                // Applies the component for the debug build variant.
+//                from components.debug
+//
+//                groupId = 'com.example.libbase'
+//                artifactId = 'final-debug'
+//                version = '1.1.8'
+//            }
+        }
+    }
+}
 def config = rootProject.ext //配置
 def librarys = config.dependencies //
 android {
