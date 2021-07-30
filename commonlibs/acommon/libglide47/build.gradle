@@ -9,7 +9,7 @@ apply from: './../../../commonlibs1.gradle'
 //                from components.release
 //                groupId = 'com.geek.libglide47'
 //                artifactId = 'libglide47'
-//                version = '1.2.3'
+//                version = '1.2.4'
 //            }
 //        }
 //    }
