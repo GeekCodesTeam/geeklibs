@@ -1,5 +1,52 @@
 # hunheappkuangjia
 
+### 集成方式
+How to
+To get a Git project into your build:
+
+Step 1. Add the JitPack repository to your build file
+
+gradle
+maven
+sbt
+leiningen
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.geeklx:geeklibs:Tag'
+	}
+Share this release:
+
+### 你也可以这样
+    // 总依赖																	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.2.8'	
+    或者
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.2.8'	
+    
+    // 部分依赖																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.2.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.2.8'	
+    
+![image](https://user-images.githubusercontent.com/7312232/127794495-5ee0ec57-c82a-4d4a-9887-4a9c366de3b0.png)
+
+
 混合移动应用框架APP-Android2
 ### 附：请切换mavencentral分支开发
 ###
