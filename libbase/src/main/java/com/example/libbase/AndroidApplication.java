@@ -9,12 +9,15 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.multidex.MultiDex;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.Utils;
+import com.geek.liblanguage.MultiLanguages;
+import com.geek.liblanguage.OnLanguageListener;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.LocalManageUtil;
 import com.geek.libutils.app.MyLogUtil;
@@ -25,6 +28,7 @@ import com.tencent.bugly.Bugly;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.Locale;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
@@ -54,7 +58,7 @@ public class AndroidApplication extends Application {
     protected void attachBaseContext(Context base) {
         //保存系统选择语言
         LocalManageUtil.saveSystemCurrentLanguage(base);
-        super.attachBaseContext(base);
+        super.attachBaseContext(MultiLanguages.attach(base));
         MultiDex.install(this);
     }
 
@@ -133,6 +137,21 @@ public class AndroidApplication extends Application {
         Utils.init(this);// com.blankj:utilcode:1.17.3
         // 为了横屏需求的toast
         com.hjq.toast.ToastUtils.init(this);
+        // 初始化多语种框架
+        MultiLanguages.init(this);
+        // 设置语种变化监听器
+        MultiLanguages.setOnLanguageListener(new OnLanguageListener() {
+
+            @Override
+            public void onAppLocaleChange(Locale oldLocale, Locale newLocale) {
+                Log.d("MultiLanguages", "监听到应用切换了语种，旧语种：" + oldLocale + "，新语种：" + newLocale);
+            }
+
+            @Override
+            public void onSystemLocaleChange(Locale oldLocale, Locale newLocale) {
+                Log.d("MultiLanguages", "监听到系统切换了语种，旧语种：" + oldLocale + "，新语种：" + newLocale + "，是否跟随系统：" + MultiLanguages.isSystemLanguage());
+            }
+        });
         // 语言切换
         LocalManageUtil.setApplicationLanguage(this);
         handleSSLHandshake();

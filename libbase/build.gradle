@@ -16,7 +16,7 @@ dependencies {
     api project(':refresh-header')
     api project(':refresh-layout')
     api project(':zxinglibs3')
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    api project(':liblanguage')
 //    api project(':libagentweb-core')
 
 

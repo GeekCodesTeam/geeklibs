@@ -39,6 +39,7 @@ import com.example.swipebacklayout.SwipeBackLayout;
 import com.example.swipebacklayout.SwipeBackUtil;
 import com.example.swipebacklayout.activity.SwipeBackActivityBase;
 import com.example.swipebacklayout.activity.SwipeBackActivityHelper;
+import com.geek.liblanguage.MultiLanguages;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.BaseViewHelper;
@@ -67,6 +68,11 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         return super.getResources();
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        // 绑定语种
+        super.attachBaseContext(MultiLanguages.attach(newBase));
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

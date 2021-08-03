@@ -36,4 +36,6 @@ include ':refresh-footer'
 include ':refresh-header'
 include ':refresh-layout'
 include ':zxinglibs3'
+include ':liblanguage'
+
 // commonlibs
