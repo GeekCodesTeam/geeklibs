@@ -1,4 +1,4 @@
-# hunheappkuangjia
+# APP开发框架库
 
 ### 集成方式
 How to
@@ -45,7 +45,7 @@ Share this release:
     implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.3.0'	
     implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.3.0'	
 
-    
+
 ![image](https://user-images.githubusercontent.com/7312232/127794495-5ee0ec57-c82a-4d4a-9887-4a9c366de3b0.png)
 
 
@@ -500,10 +500,10 @@ Share this release:
 1.融云问题：
 D:\code\lib7\bumenyanfa\fsjxappkuangjia-android\yewulibs1\yewulibs1-app\build\
 intermediates\merged_native_libs\bxn_nationRelease\out\lib\armeabi-v7a\libRongIMLib.so
- because of non-zero exit value from objcopy.
+because of non-zero exit value from objcopy.
 D:\code\android-studio-ide-201.6953283-windows\sdk\ndk\22.1.7171670\toolchains\
-llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: section [index 11] has 
-a sh_offset (0x19c80) + sh_size (0xb61b8) that is greater than the file size 
+llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: section [index 11] has
+a sh_offset (0x19c80) + sh_size (0xb61b8) that is greater than the file size
 (0x86214)
 
 
