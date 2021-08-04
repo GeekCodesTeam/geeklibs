@@ -80,7 +80,7 @@ public class StubActivity extends Activity {
     public void startActivity(Intent intent) {
         String className = intent.getComponent().getClassName();
         //此时是需要跳到宿主APP中
-        if(!"com.example.libbase.plugins.StubActivity".equals(className)) {
+        if(!"com.geek.libbase.plugins.StubActivity".equals(className)) {
             ActivityStackManager.getInstance().clearActivityList();
         }
         super.startActivity(intent);
