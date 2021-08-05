@@ -294,8 +294,8 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         //登录和未登录成功状态
         if (SlbLoginUtil.get().login_activity_result(requestCode, resultCode, data)) {
             if (isIs_finish_login()) {
-                finish();
                 setIs_finish_login(false);
+                finish();
             } else {
             }
             return;
@@ -312,6 +312,20 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
 
     public void setIs_finish_login(boolean is_finish_login) {
         this.is_finish_login = is_finish_login;
+    }
+
+    // 销毁当前页面操作bufen
+    public void set_url_hios_finish(String url_hios_finish){
+        if (url_hios_finish.contains("condition=login")) {
+            if (SlbLoginUtil.get().isUserLogin()) {
+                finish();
+            } else {
+                // 防止des之前就finish没效果
+                setIs_finish_login(true);
+            }
+        } else {
+            finish();
+        }
     }
 
     protected void onUserLogined(String userId) {
