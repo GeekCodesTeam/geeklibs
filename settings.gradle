@@ -23,7 +23,6 @@ include ':libsCenterNew',
 // end aar
 
 // commonlibs
-include ':libagentweb'
 include ':libmvp'
 include ':libbase'
 include ':libutils'

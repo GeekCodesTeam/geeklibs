@@ -46,7 +46,7 @@ public class BanbenUtils {
     }
 
     public String getToken() {
-        return MmkvUtils.getInstance().get_common("用户token");
+        return MmkvUtils.getInstance().get_common("token");
     }
 
     public void setToken(String token) {
