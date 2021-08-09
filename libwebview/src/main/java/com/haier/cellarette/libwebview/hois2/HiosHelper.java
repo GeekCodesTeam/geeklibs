@@ -113,11 +113,12 @@ public class HiosHelper {
                             act.startActivity(it);
                         }
                     });
-                }
-                if (url.contains(UriHelper.CONDITION_OR_LOGIN)) {
+                } else if (url.contains(UriHelper.CONDITION_OR_LOGIN)) {
                     if (!SlbLoginUtil.get().isUserLogin()) {
                         SlbLoginUtil.get().login(act);
                     }
+                } else {
+                    act.startActivity(it);
                 }
             } catch (ActivityNotFoundException e) {
                 Log.e("Activity", "No Activity found to handle intent " + it);
