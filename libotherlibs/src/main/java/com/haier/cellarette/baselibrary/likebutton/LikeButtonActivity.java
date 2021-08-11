@@ -1,16 +1,14 @@
 package com.haier.cellarette.baselibrary.likebutton;
 
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.likebutton.widgets.OnAnimationEndListener;
 import com.haier.cellarette.baselibrary.likebutton.widgets.OnLikeListener;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.iconics.IconicsDrawable;
 
 /**
  * android iconics
@@ -54,14 +52,14 @@ public class LikeButtonActivity extends AppCompatActivity implements OnLikeListe
     public void usingCustomIcons() {
 
         //shown when the button is in its default state or when unLiked.
-        smileButton.setUnlikeDrawable(new BitmapDrawable(getResources(),
-                new IconicsDrawable(this, CommunityMaterial.Icon.cmd_emoticon).colorRes(android.R.color.darker_gray).sizeDp(25)
-                        .toBitmap()));
-
-        //shown when the button is liked!
-        smileButton.setLikeDrawable(new BitmapDrawable(getResources(),
-                new IconicsDrawable(this, CommunityMaterial.Icon.cmd_emoticon).colorRes(android.R.color.holo_purple).sizeDp(25)
-                        .toBitmap()));
+//        smileButton.setUnlikeDrawable(new BitmapDrawable(getResources(),
+//                new IconicsDrawable(this, CommunityMaterial.Icon.cmd_emoticon).colorRes(android.R.color.darker_gray).sizeDp(25)
+//                        .toBitmap()));
+//
+//        //shown when the button is liked!
+//        smileButton.setLikeDrawable(new BitmapDrawable(getResources(),
+//                new IconicsDrawable(this, CommunityMaterial.Icon.cmd_emoticon).colorRes(android.R.color.holo_purple).sizeDp(25)
+//                        .toBitmap()));
     }
 
     @Override

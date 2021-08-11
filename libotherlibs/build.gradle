@@ -16,8 +16,8 @@ dependencies {
     // https://github.com/airbnb/lottie-android
     api 'com.airbnb.android:lottie:3.4.2'
     // https://github.com/jd-alexander/LikeButton
-    api 'com.mikepenz:iconics-core:2.9.1@aar'
-    api 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
+//    api 'com.mikepenz:iconics-core:2.9.1@aar'
+//    api 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
     // https://github.com/drakeet/MultiType
     api 'me.drakeet.multitype:multitype:3.4.4'
     // https://github.com/jaredrummler/MaterialSpinner
