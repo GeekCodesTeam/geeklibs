@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_right" />
         </com.meetsl.scardview.SCardView>
 
         <com.meetsl.scardview.SCardView
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_right" />
         </com.meetsl.scardview.SCardView>
 
         <com.meetsl.scardview.SCardView
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_right" />
         </com.meetsl.scardview.SCardView>
     </LinearLayout>
 
@@ -129,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_right" />
         </com.meetsl.scardview.SCardView>
 
         <com.meetsl.scardview.SCardView
@@ -156,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_right" />
         </com.meetsl.scardview.SCardView>
 
         <com.meetsl.scardview.SCardView
@@ -185,7 +185,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back" />
+                android:src="@drawable/ic_right" />
         </com.meetsl.scardview.SCardView>
     </LinearLayout>
 </LinearLayout>
