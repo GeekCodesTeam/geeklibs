@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.android.library'
 apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
@@ -12,6 +13,8 @@ dependencies {
 //    api 'com.github.getActivity:ToastUtils:9.2'
     // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
+    // https://github.com/airbnb/lottie-android
+    api 'com.airbnb.android:lottie:3.4.2'
     // https://github.com/jd-alexander/LikeButton
     api 'com.mikepenz:iconics-core:2.9.1@aar'
     api 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
