@@ -4,6 +4,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':libutils')
     api librarys.retrofit
     api librarys.retrofitconverters
     api librarys.retrofitgconvertergson
@@ -11,10 +12,8 @@ dependencies {
     api librarys.okhttpVersion
     api librarys.okioVersion
     api librarys.okhttploggerinter
-    api librarys.gsonJson
-    api librarys.fastJson
-    implementation project(':libutils')
     //
+//    implementation 'com.blankj:utilcodex:1.30.6'
 //    implementation "com.squareup.okhttp3:okhttp:4.5.0"
 //    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
 //    implementation "com.squareup.okio:okio:2.6.0"

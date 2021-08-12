@@ -17,7 +17,5 @@ dependencies {
     api project(':refresh-layout')
     api project(':zxinglibs3')
     api project(':liblanguage')
-//    api project(':libagentweb-core')
-
 
 }

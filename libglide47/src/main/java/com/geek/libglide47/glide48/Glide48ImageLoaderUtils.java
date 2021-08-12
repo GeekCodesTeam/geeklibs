@@ -9,13 +9,7 @@ import android.os.Looper;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.blankj.utilcode.util.Utils;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.Target;
-import com.geek.libglide47.R;
+import com.geek.libglide47.GlideBaseApp;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -62,7 +56,7 @@ public class Glide48ImageLoaderUtils {
                     return;
                 }
                 //1. create path
-                String dirPath = Utils.getApp().getExternalFilesDir(null).getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
+                String dirPath = GlideBaseApp.get().getExternalFilesDir(null).getAbsolutePath() + "/" + Environment.DIRECTORY_PICTURES;
                 File dirFile = new File(dirPath);
                 if (!dirFile.exists()) dirFile.mkdirs();
                 try {

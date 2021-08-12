@@ -1,6 +1,7 @@
 package com.geek.libglide47.glide48;
 
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 //
 //
 
@@ -11,7 +12,6 @@ import com.bumptech.glide.request.Request;
 import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
-import com.geek.libutils.app.MyLogUtil;
 
 public class CommonTarget<T> implements Target<T> {
     private final int width;
@@ -29,17 +29,17 @@ public class CommonTarget<T> implements Target<T> {
 
     @Override
     public void onLoadStarted(@Nullable Drawable placeholder) {
-        MyLogUtil.e("--glide48-CommonTarget-","开始下载...");
+        Log.e("--glide48-CommonTarget-","开始下载...");
     }
 
     @Override
     public void onLoadFailed(@Nullable Drawable errorDrawable) {
-        MyLogUtil.e("--glide48-CommonTarget-","保存失败");
+        Log.e("--glide48-CommonTarget-","保存失败");
     }
 
     @Override
     public void onResourceReady(@NonNull T resource, @Nullable Transition<? super T> transition) {
-        MyLogUtil.e("--glide48-CommonTarget-","成功保存");
+        Log.e("--glide48-CommonTarget-","成功保存");
 
     }
 

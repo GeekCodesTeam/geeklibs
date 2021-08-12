@@ -5,9 +5,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation librarys.blankj
-    implementation librarys.fastJson
-    implementation librarys.gsonJson
+    implementation project(':libutils')
     implementation librarys.glide47
 //    // https://github.com/getActivity/ToastUtils 横屏Toast
 //    api 'com.github.getActivity:ToastUtils:9.2'

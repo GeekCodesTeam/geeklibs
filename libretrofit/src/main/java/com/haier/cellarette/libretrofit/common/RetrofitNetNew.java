@@ -1,13 +1,13 @@
 package com.haier.cellarette.libretrofit.common;
 
 import android.app.Application;
+import android.util.Log;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.DeviceUtils;
 import com.blankj.utilcode.util.EncryptUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
-import com.geek.libutils.app.MyLogUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,9 +46,9 @@ public class RetrofitNetNew {
                 .addInterceptor(addHeaderInterceptor()) // token过滤
                 .addInterceptor(new LoggingInterceptor()) //日志,所有的请求响应度看到 LoggingInterceptor
                 .cache(cache)  //添加缓存
-                .connectTimeout(10l, TimeUnit.SECONDS)
-                .readTimeout(10l, TimeUnit.SECONDS)
-                .writeTimeout(10l, TimeUnit.SECONDS)
+                .connectTimeout(10L, TimeUnit.SECONDS)
+                .readTimeout(10L, TimeUnit.SECONDS)
+                .writeTimeout(10L, TimeUnit.SECONDS)
                 .build();
 
 //        client.dispatcher().runningCalls().get(0).request().tag()
@@ -148,28 +148,24 @@ public class RetrofitNetNew {
             public Response intercept(Chain chain) throws IOException {
                 Request originalRequest = chain.request();
                 int numcode = (int) ((Math.random() * 9 + 1) * 100000);
-                String accessSecret = SPUtils.getInstance().getString("accessSecret", "aaaa");
+                String accessSecret = SPUtils.getInstance().getString("accessSecret", "accessSecret");
+                String accessKey2 = SPUtils.getInstance().getString("accessKey", "accessKey");
+                String version2 = SPUtils.getInstance().getString("version", "V1");
                 String timer = System.currentTimeMillis() + "";
-                String accessKey = "V1" + timer + numcode + accessSecret;
-                String MD5 = EncryptUtils.encryptMD5ToString(accessKey) + "";
-//                String MD5 = EncryptUtils.encryptMD5ToString("123456") + "";
-//                MyLogUtil.e("ssssssssss", MD5);
-                MyLogUtil.e("ssssssssss", MD5.toUpperCase() + "");
+                String accessKey = timer + numcode + accessSecret;
+                String MD5 = version2 + EncryptUtils.encryptMD5ToString(accessKey) + "";
                 Request.Builder requestBuilder = originalRequest.newBuilder()
                         // Provide your custom header here
-//                        .header("token", (String) SpUtils.get("token", ""))
-//                        .header("hxAppVersion", BanbenUtils.getInstance().getVersion())
-//                        .header("liveClientType", BanbenUtils.getInstance().getLiveClientType())
                         .header("imei", BanbenUtils.getInstance().getImei())
-                        .header("platform", SPUtils.getInstance().getString("ptlx", "android_phone"))
-                        .header("token", SPUtils.getInstance().getString("token", ""))
+                        .header("platform", BanbenUtils.getInstance().getPlatform())
+                        .header("token", BanbenUtils.getInstance().getToken())
                         .header("model", DeviceUtils.getManufacturer())
-                        .header("version", AppUtils.getAppVersionName())
+                        .header("version", BanbenUtils.getInstance().getVersion())
                         .header("version_code", AppUtils.getAppVersionCode() + "")
-                        .header("X-CA-KEY", accessSecret)
+                        .header("X-CA-KEY", accessKey2)
                         .header("X-CA-SIGNATURE", MD5.toUpperCase() + "")
-                        .header("X-CA-TIMESTAMP", System.currentTimeMillis() + "")
-                        .header("X-CA-NONCE", (int) ((Math.random() * 9 + 1) * 100000) + "")
+                        .header("X-CA-TIMESTAMP", timer)
+                        .header("X-CA-NONCE", numcode + "")
                         .method(originalRequest.method(), originalRequest.body());
                 Request request = requestBuilder.build();
                 return chain.proceed(request);
