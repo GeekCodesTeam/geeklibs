@@ -4,5 +4,5 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    compile(name: 'libnet', ext: 'aar')
+    implementation project(':libutils')
 }

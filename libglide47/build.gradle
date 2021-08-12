@@ -4,7 +4,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation librarys.blankj
+    implementation project(':libutils')
     // glide47
     implementation librarys.glide47
     implementation librarys.glide47AnnProcessor

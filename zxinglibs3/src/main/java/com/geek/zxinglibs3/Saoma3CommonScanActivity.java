@@ -132,6 +132,7 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
     /**
      *
      */
+    @Override
     public void scanResult(Result rawResult, Bundle bundle) {
         //扫描成功后，扫描器不会再连续扫描，如需连续扫描，调用reScan()方法。
         //scanManager.reScan();
