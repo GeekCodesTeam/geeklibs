@@ -1,5 +1,25 @@
 apply plugin: 'com.android.application'
 android {
+
+    packagingOptions {
+        pickFirst 'lib/armeabi/libRSSupport.so'
+        pickFirst 'lib/armeabi/librsjni_androidx.so'
+        pickFirst 'lib/armeabi/librsjni.so'
+        pickFirst 'lib/armeabi-v7a/libRSSupport.so'
+        pickFirst 'lib/armeabi-v7a/librsjni_androidx.so'
+        pickFirst 'lib/armeabi-v7a/librsjni.so'
+        pickFirst 'lib/arm64-v8a/librsjni.so'
+        pickFirst 'lib/arm64-v8a/libRSSupport.so'
+        pickFirst 'lib/arm64-v8a/librsjni_androidx.so'
+        pickFirst 'lib/x86_64/libRSSupport.so'
+        pickFirst 'lib/x86_64/librsjni_androidx.so'
+        pickFirst 'lib/x86_64/librsjni.so'
+        pickFirst 'lib/x86/librsjni_androidx.so'
+        pickFirst 'lib/x86/libRSSupport.so'
+        pickFirst 'lib/x86/librsjni.so'
+
+    }
+
     compileSdkVersion 30
 
     defaultConfig {
