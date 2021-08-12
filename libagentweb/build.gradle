@@ -1,20 +1,24 @@
+//apply plugin: 'com.android.library'
+//////apply plugin: 'com.github.dcendents.android-maven'
+////////apply plugin: 'android-maven'
+////////jitpack
+//////group='com.github.geeklx'
+////apply from: './../commonlibs1.gradle'
+//apply from: "${rootDir.path}/gradle/base.gradle"
+//
 apply plugin: 'com.android.library'
-////apply plugin: 'com.github.dcendents.android-maven'
-//////apply plugin: 'android-maven'
-//////jitpack
-////group='com.github.geeklx'
-//apply from: './../commonlibs1.gradle'
 apply from: "${rootDir.path}/gradle/base.gradle"
+apply from: "${rootDir.path}/gradle/publish.gradle"
 def config = rootProject.ext //配置
 def librarys = rootProject.ext.dependencies //
-//repositories { flatDir { dirs 'libs' } }
+repositories { flatDir { dirs 'libs' } }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':libutils')
     implementation librarys.glide47
     implementation 'com.github.Justson:Downloader:v4.1.9'
-//    implementation (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
-    implementation project(path: ':libsCenterNew:alipaysdk')
+    api (name: 'alipaysdk-15.8.03.210428205839', ext: 'aar')
+//    implementation project(path: ':libsCenterNew:alipaysdk')
 // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     //    https://github.com/scwang90/SmartRefreshLayout
