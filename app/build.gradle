@@ -55,6 +55,6 @@ dependencies {
     //
 //    implementation 'com.github.GeekCodesTeam:geeklibs:1.4.6'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
-//    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
 
 }
