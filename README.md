@@ -29,13 +29,13 @@ Share this release:
     // 总依赖																	
     implementation 'com.github.GeekCodesTeam:geeklibs:1.4.6'	
     或者
-    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.4.6'	
-    
-    // 部分依赖				
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.4.6'
+			
     implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
     
     implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
     
+    // 部分依赖	
     implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.4.6'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.4.6'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.4.6'																	
@@ -46,8 +46,7 @@ Share this release:
     implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.4.6'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.4.6'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.4.6'	
-    
+    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.4.6'
     implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.4.6'	
 
 
