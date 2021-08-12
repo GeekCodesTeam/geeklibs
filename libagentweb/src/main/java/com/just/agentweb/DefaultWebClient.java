@@ -40,12 +40,7 @@ import android.webkit.WebViewClient;
 
 import androidx.annotation.RequiresApi;
 
-import com.alipay.sdk.app.H5PayCallback;
-import com.alipay.sdk.app.PayTask;
-import com.alipay.sdk.util.H5PayResultModel;
-
 import java.lang.ref.WeakReference;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 import java.util.HashSet;
@@ -186,7 +181,7 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         String url = request.getUrl().toString();
         if (url.startsWith(HTTP_SCHEME) || url.startsWith(HTTPS_SCHEME)) {
-            return (webClientHelper && HAS_ALIPAY_LIB && isAlipay(view, url));
+            return (webClientHelper);
         }
         if (request.getUrl().toString().contains("hios://NaviBack")) {
             mWeakReference.get().finish();
@@ -279,7 +274,7 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         if (url.startsWith(HTTP_SCHEME) || url.startsWith(HTTPS_SCHEME)) {
-            return (webClientHelper && HAS_ALIPAY_LIB && isAlipay(view, url));
+            return (webClientHelper);
         }
         if (!webClientHelper) {
             return false;
@@ -396,48 +391,6 @@ public class DefaultWebClient extends MiddlewareWebClientBase {
         }
         return false;
     }
-
-    private boolean isAlipay(final WebView view, String url) {
-        try {
-            Activity mActivity = null;
-            if ((mActivity = mWeakReference.get()) == null) {
-                return false;
-            }
-            /**
-             * 推荐采用的新的二合一接口(payInterceptorWithUrl),只需调用一次
-             */
-            if (mPayTask == null) {
-                Class clazz = Class.forName("com.alipay.sdk.app.PayTask");
-                Constructor<?> mConstructor = clazz.getConstructor(Activity.class);
-                mPayTask = mConstructor.newInstance(mActivity);
-            }
-            final PayTask task = (PayTask) mPayTask;
-            boolean isIntercepted = task.payInterceptorWithUrl(url, true, new H5PayCallback() {
-                @Override
-                public void onPayResult(final H5PayResultModel result) {
-                    final String url = result.getReturnUrl();
-                    if (!TextUtils.isEmpty(url)) {
-                        AgentWebUtils.runInUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                view.loadUrl(url);
-                            }
-                        });
-                    }
-                }
-            });
-            if (isIntercepted) {
-                LogUtils.i(TAG, "alipay-isIntercepted:" + isIntercepted + "  url:" + url);
-            }
-            return isIntercepted;
-        } catch (Throwable ignore) {
-            if (AgentWebConfig.DEBUG) {
-                ignore.printStackTrace();
-            }
-        }
-        return false;
-    }
-
 
     private boolean handleCommonLink(String url) {
         if (url.startsWith(WebView.SCHEME_TEL)
