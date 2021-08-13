@@ -22,11 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.MyLogUtil;
@@ -61,6 +63,10 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        WebStatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.transparent));
+//        WebStatusBarUtil.setDarkMode(this);
+        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.transparent));
+        BarUtils.setStatusBarLightMode(this, false);
         setContentView(R.layout.web_webview_layout);
         setUp();
         mUrl = getIntent().getStringExtra("url");
@@ -277,8 +283,9 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         Document doc = Jsoup.parse(htmltext);
         Elements elements = doc.getElementsByTag("img");
         for (Element element : elements) {
-            if (element.className() != null && element.className().length() > 0)
+            if (element.className() != null && element.className().length() > 0) {
                 element.attr("width", "100%").attr("height", "auto");
+            }
         }
         return doc.toString();
     }

@@ -53,8 +53,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //
+    implementation 'com.blankj:utilcodex:1.30.6'
 //    implementation 'com.github.GeekCodesTeam:geeklibs:1.4.8'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
-    implementation project(':libglide47')
+    implementation project(':libwebview')
+
 }
