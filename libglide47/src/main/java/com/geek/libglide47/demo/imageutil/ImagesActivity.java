@@ -108,7 +108,9 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
 
     @Override
     public boolean onPreDraw() {
-        if (isAnimating) return true;
+        if (isAnimating) {
+            return true;
+        }
         rootView.getViewTreeObserver().removeOnPreDrawListener(this);
         if (curPosition >= 9) {
             curPosition = 8;
@@ -144,7 +146,9 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
     }
 
     public void finishWithAnim() {
-        if (isAnimating) return;
+        if (isAnimating) {
+            return;
+        }
         if (curPosition >= 9) {
             curPosition = 8;
         }
@@ -185,7 +189,8 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                photoView.setX((Float) valueAnimator.getAnimatedValue());
+                float curValue = (float) valueAnimator.getAnimatedValue();
+                photoView.setX(curValue);
             }
         });
         anim.setDuration(ANIM_DURATION);
@@ -197,7 +202,8 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                photoView.setY((Float) valueAnimator.getAnimatedValue());
+                float curValue = (float) valueAnimator.getAnimatedValue();
+                photoView.setY(curValue);
             }
         });
         anim.setDuration(ANIM_DURATION);
@@ -209,7 +215,8 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                photoView.setScaleX((Float) valueAnimator.getAnimatedValue());
+                float curValue = (float) valueAnimator.getAnimatedValue();
+                photoView.setScaleX(curValue);
             }
         });
         anim.setDuration(ANIM_DURATION);
@@ -221,7 +228,9 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                photoView.setScaleY((Float) valueAnimator.getAnimatedValue());
+//                photoView.setScaleY((Float) valueAnimator.getAnimatedValue());
+                float curValue = (float) valueAnimator.getAnimatedValue();
+                photoView.setScaleY(curValue);
             }
         });
         anim.setDuration(ANIM_DURATION);
@@ -233,7 +242,8 @@ public class ImagesActivity extends Activity implements ViewTreeObserver.OnPreDr
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                rootView.setBackgroundColor(ColorUtil.evaluate((Float) valueAnimator.getAnimatedValue(), Color.TRANSPARENT, Color.BLACK));
+                float curValue = (float) valueAnimator.getAnimatedValue();
+                rootView.setBackgroundColor(ColorUtil.evaluate(curValue, Color.TRANSPARENT, Color.BLACK));
             }
         });
         anim.setDuration(ANIM_DURATION);
