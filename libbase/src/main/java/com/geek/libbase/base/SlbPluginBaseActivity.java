@@ -57,6 +57,10 @@ public abstract class SlbPluginBaseActivity extends PluginBaseActivity implement
     private SwipeBackActivityHelper mHelper;
     protected boolean enableSwipeBack;
 
+    public String getIdentifier() {
+        return getClass().getName() + System.currentTimeMillis();
+    }
+
     @Override
     public Resources getResources() {
         //需要升级到 v1.1.2 及以上版本才能使用 AutoSizeCompat

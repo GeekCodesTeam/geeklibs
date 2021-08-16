@@ -13,8 +13,10 @@
         android:allowBackup="true"
         android:label="@string/app_namelibbase"
         android:supportsRtl="true">
-        <activity android:name=".plugins.StubActivity"></activity>
-        <activity android:name=".plugins2.ProxyActivity2"></activity>
+        <!--        pluginbufen-->
+        <activity android:name=".plugins.proxy.ProxyActivity" />
+        <service android:name=".plugins.proxy.ProxyService" />
+        <receiver android:name=".plugins.proxy.ProxyBroadcastReceiver" />
 
         <activity
             android:name=".baserecycleview.yewu1.ActViewPageYewuList1"
