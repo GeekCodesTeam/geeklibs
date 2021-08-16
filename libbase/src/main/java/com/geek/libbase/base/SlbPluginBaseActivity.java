@@ -3,6 +3,7 @@
  */
 package com.geek.libbase.base;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -20,13 +21,11 @@ import android.widget.EditText;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.LayoutInflaterCompat;
 import androidx.core.view.LayoutInflaterFactory;
 
-import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -34,30 +33,27 @@ import com.blankj.utilcode.util.Utils;
 import com.geek.libbase.R;
 import com.geek.libbase.netstate.NetState;
 import com.geek.libbase.netstate.NetconListener;
+import com.geek.libbase.plugins.plugins.PluginBaseActivity;
 import com.geek.libbase.widgets.IBaseAction;
+import com.geek.liblanguage.MultiLanguages;
+import com.geek.libutils.SlbLoginUtil;
+import com.geek.libutils.app.BaseAppManager;
+import com.geek.libutils.app.BaseViewHelper;
 import com.geek.swipebacklayout.SwipeBack;
 import com.geek.swipebacklayout.SwipeBackLayout;
 import com.geek.swipebacklayout.SwipeBackUtil;
 import com.geek.swipebacklayout.activity.SwipeBackActivityBase;
 import com.geek.swipebacklayout.activity.SwipeBackActivityHelper;
-import com.geek.liblanguage.MultiLanguages;
-import com.geek.libutils.SlbLoginUtil;
-import com.geek.libutils.app.BaseAppManager;
-import com.geek.libutils.app.BaseViewHelper;
 
 import me.jessyan.autosize.AutoSizeCompat;
 
-public abstract class SlbBaseActivity extends AppCompatActivity implements SwipeBackActivityBase,
+public abstract class SlbPluginBaseActivity extends PluginBaseActivity implements SwipeBackActivityBase,
         IBaseAction, NetconListener {
 
     public static final String REQUEST_CODE = "request_code";
-
-    private long mCurrentMs = System.currentTimeMillis();
-    //    private Handler handler;
     protected NetState netState;
     protected Typeface tfLight;
     protected Typeface tfLight2;
-    //    private JPluginPlatformInterface jPluginPlatformInterface;
     private SwipeBackActivityHelper mHelper;
     protected boolean enableSwipeBack;
 
@@ -70,36 +66,14 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     }
 
     @Override
-    protected void attachBaseContext(Context newBase) {
+    public void attachBaseContext(Context newBase) {
         // 绑定语种
-        super.attachBaseContext(MultiLanguages.attach(newBase));
+        MultiLanguages.attach(newBase);
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     public void onCreate(Bundle savedInstanceState) {
-//        ScreenUtils.setNonFullScreen(this);
-//        BarUtils.setStatusBarLightMode(this, false);
-//        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.black_000));
-
-//        if (BarUtils.isStatusBarLightMode(this)) {
-//            BarUtils.setStatusBarLightMode(this, false);
-//        } else {
-//            BarUtils.setStatusBarLightMode(this, true);
-//        }
-        // 截屏
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        // 另一种写法
-//        StatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.web_white), 0);
-//        StatusBarUtil.setLightMode(this);
-        // 另一种写法
-//        WebStatusBarUtil.setColor(this, ContextCompat.getColor(this, R.color.web_white), 0);
-//        WebStatusBarUtil.setLightMode(this);
-        //
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
-        // old
-        super.onCreate(savedInstanceState);
         // 加载注解bufen
         SwipeBack swipeBack = getClass().getAnnotation(SwipeBack.class);
         if (swipeBack != null) {
@@ -125,14 +99,9 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         //网络监听
         netState = new NetState();
         netState.setNetStateListener(this, this);
-        // 听书监听
-//        set_lb_floatbutton_init();
         // 字体
         tfLight = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Light.ttf");
         tfLight2 = Typeface.createFromAsset(getAssets(), "fonts/DINCond-Regular.ttf");
-        //
-//        jPluginPlatformInterface = new JPluginPlatformInterface(this);
-
     }
 
     private void interceptCreateView() {
@@ -156,8 +125,6 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-//        if (hasFocus) { HookUtil.hookClick(this);}
 
     }
 
@@ -188,22 +155,6 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         return super.dispatchTouchEvent(ev);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-//        JPushInterface.onResume(this);
-//        MobEvent.onResume(this);
-//        MobclickAgent.onResume(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-//        JPushInterface.onPause(this);
-//        MobclickAgent.onPause(this);
-//        MobEvent.onPause(this);
-        AppUtils.registerAppStatusChangedListener(baseAppStatusChangedListener);
-    }
 
     protected Utils.OnAppStatusChangedListener baseAppStatusChangedListener = new Utils.OnAppStatusChangedListener() {
 
@@ -225,24 +176,12 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         }
     };
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-//        jPluginPlatformInterface.onStart(this);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-//        jPluginPlatformInterface.onStop(this);
-    }
 
     protected abstract int getLayoutId();
 
     protected void setup(@Nullable Bundle savedInstanceState) {
 
     }
-
 
     @Override
     public void net_con_none() {
@@ -318,7 +257,7 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     }
 
     // 销毁当前页面操作bufen
-    public void set_url_hios_finish(String url_hios_finish){
+    public void set_url_hios_finish(String url_hios_finish) {
         if (url_hios_finish.contains("condition=login")) {
             if (SlbLoginUtil.get().isUserLogin()) {
                 finish();
@@ -337,29 +276,38 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     protected void onActResult(int requestCode, int resultCode, Intent data) {
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
-    public void finish() {
-//        MyLogUtil.e("ssssssss", !TextUtils.equals(ActivityUtils.getTopActivity().getClass().getName(), "com.example.slbappindex.index.ShouyeActivity") + "");
-//        MyLogUtil.e("ssssssss", !TextUtils.equals(ActivityUtils.getTopActivity().getClass().getName(), "com.example.slbappsplash.welcome.WelComeActivity") + "");
-//        if (ActivityUtils.getActivityList().size() == 1
-//                && !TextUtils.equals(ActivityUtils.getTopActivity().getClass().getName(), "com.example.slbappindex.index.ShouyeActivity")
-//                && !TextUtils.equals(ActivityUtils.getTopActivity().getClass().getName(), "com.example.slbappsplash.welcome.WelComeActivity")) {
-//            MyLogUtil.e("ssssssss", "推送来的~");
-//            Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity");
-//            startActivity(intent);
-////            finish();
-//        }
-//        ShowLoadingUtil.onDestory();
-        super.finish();
-//        ActivityUtils.getActivityList();
-//        BaseAppManager.getInstance().remove(this);
-//        overridePendingTransition(R.anim.open_main, R.anim.close_next);
-        // 听书悬浮框bufen
-//        LocalBroadcastManagers.getInstance(BaseApp.get()).unregisterReceiver(floatButtonReceiverListenBooks);
+    public void onResume() {
+
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onPause() {
+        AppUtils.registerAppStatusChangedListener(baseAppStatusChangedListener);
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onStart() {
+
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onStop() {
+
     }
 
     @Override
-    protected void onDestroy() {
+    public void finish() {
+
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onDestroy() {
         BaseAppManager.getInstance().remove(this);
         if (netState != null) {
             netState.unregisterReceiver();
@@ -367,7 +315,7 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         hideSoftKeyboard();
 //        ShowLoadingUtil.onDestory();
         AppUtils.unregisterAppStatusChangedListener(baseAppStatusChangedListener);
-        super.onDestroy();
+
 
     }
 
@@ -403,25 +351,10 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
 
     @Override
     public void onHomePressed() {
-//        finish();
-//        while (!BaseAppManager.getInstance().getAll().isEmpty()) {
-//            BaseAppManager.getInstance().top().finish();
-//        }
-
-//        Stack<Activity> all = BaseAppManager.getInstance().getAll();
-//        for (Iterator<Activity> iterator = all.iterator(); iterator.hasNext();) {
-//            iterator.next().finish();
-//        }
-
         BaseAppManager.getInstance().clear();
         Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity");
         startActivity(intent);
         finish();
-
-//        Application app = BaseApp.get();
-//        if (app instanceof AndroidApplication) {
-//            ((AndroidApplication) app).onHomePressed();
-//        }
     }
 
     /**
@@ -438,10 +371,6 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     @Override
     public Activity who() {
         return this;
-    }
-
-    public String getIdentifier() {
-        return getClass().getName() + mCurrentMs;
     }
 
     public void back(View v) {

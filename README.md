@@ -1,6 +1,6 @@
 # APP开发框架库
 
-### 集成方式
+### 集成方式   https://github.com/GeekCodesTeam/geeklibs
 How to
 To get a Git project into your build:
 

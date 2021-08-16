@@ -40,3 +40,4 @@ include ':zxinglibs3'
 include ':liblanguage'
 
 // commonlibs
+include ':libplugin'
