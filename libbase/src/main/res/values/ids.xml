@@ -14,10 +14,6 @@
     <item name="home" type="id" />
     <item name="back" type="id" />
 
-
-    <item type="id" name="statusbarutil_fake_status_bar_view" />
-    <item type="id" name="statusbarutil_translucent_view" />
-
     <item name="baserecycleview_iv_back1" type="id" />
     <item name="baserecycleview_iv_x1" type="id" />
     <item name="baserecycleview_tv_center_content1" type="id" />

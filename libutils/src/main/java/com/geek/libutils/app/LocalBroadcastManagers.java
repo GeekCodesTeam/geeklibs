@@ -10,6 +10,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -45,6 +47,7 @@ public final class LocalBroadcastManagers {
     private LocalBroadcastManagers(Context context) {
         this.mAppContext = context;
         this.mHandler = new Handler(context.getMainLooper()) {
+            @Override
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case 1:
@@ -114,7 +117,6 @@ public final class LocalBroadcastManagers {
         }
     }
 
-    @SuppressLint("LongLogTag")
     public boolean sendBroadcast(Intent intent) {
         HashMap var2 = this.mReceivers;
         synchronized (this.mReceivers) {
@@ -125,13 +127,13 @@ public final class LocalBroadcastManagers {
             Set categories = intent.getCategories();
             boolean debug = (intent.getFlags() & 8) != 0;
             if (debug) {
-                Log.v("AgentWebLocalBroadcastManagers", "Resolving type " + type + " scheme " + scheme + " of intent " + intent);
+                Log.v("LocalBroadcastManagers", "Resolving type " + type + " scheme " + scheme + " of intent " + intent);
             }
 
             ArrayList entries = this.mActions.get(intent.getAction());
             if (entries != null) {
                 if (debug) {
-                    Log.v("AgentWebLocalBroadcastManagers", "Action list: " + entries);
+                    Log.v("LocalBroadcastManagers", "Action list: " + entries);
                 }
 
                 ArrayList receivers = null;
@@ -140,18 +142,18 @@ public final class LocalBroadcastManagers {
                 for (i = 0; i < entries.size(); ++i) {
                     LocalBroadcastManagers.ReceiverRecord receiver = (LocalBroadcastManagers.ReceiverRecord) entries.get(i);
                     if (debug) {
-                        Log.v("AgentWebAgentWebLocalBroadcastManagers", "Matching against filter " + receiver.filter);
+                        Log.v("LocalBroadcastManagers", "Matching against filter " + receiver.filter);
                     }
 
                     if (receiver.broadcasting) {
                         if (debug) {
-                            Log.v("AgentWebAgentWebLocalBroadcastManagers", "  Filter\'s target already added");
+                            Log.v("LocalBroadcastManagers", "  Filter\'s target already added");
                         }
                     } else {
                         int match = receiver.filter.match(action, type, scheme, data, categories, "AgentWebAgentWebLocalBroadcastManagers");
                         if (match >= 0) {
                             if (debug) {
-                                Log.v("AgentWebAgentWebLocalBroadcastManagers", "  Filter matched!  match=0x" + Integer.toHexString(match));
+                                Log.v("LocalBroadcastManagers", "  Filter matched!  match=0x" + Integer.toHexString(match));
                             }
 
                             if (receivers == null) {
@@ -179,7 +181,7 @@ public final class LocalBroadcastManagers {
                                     reason = "unknown reason";
                             }
 
-                            Log.v("AgentWebAgentWebLocalBroadcastManagers", "  Filter did not match: " + reason);
+                            Log.v("LocalBroadcastManagers", "  Filter did not match: " + reason);
                         }
                     }
                 }
@@ -254,6 +256,7 @@ public final class LocalBroadcastManagers {
             this.receiver = _receiver;
         }
 
+        @NonNull
         public String toString() {
             StringBuilder builder = new StringBuilder(128);
             builder.append("Receiver{");

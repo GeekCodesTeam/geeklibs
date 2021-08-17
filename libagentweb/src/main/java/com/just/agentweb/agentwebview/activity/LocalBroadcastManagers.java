@@ -114,7 +114,6 @@ public final class LocalBroadcastManagers {
         }
     }
 
-    @SuppressLint("LongLogTag")
     public boolean sendBroadcast(Intent intent) {
         HashMap var2 = this.mReceivers;
         synchronized (this.mReceivers) {

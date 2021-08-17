@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_namelibutils" tools:ignore="MissingTranslation">SwipeBackDemo</string>
+    <string name="app_namelibutils" tools:ignore="MissingTranslation">libutils</string>
     <string name="language_cn">中文</string>
     <string name="language_en">ENGLISH</string>
     <string name="language_auto">自动</string>

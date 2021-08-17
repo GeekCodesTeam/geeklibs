@@ -1,16 +1,14 @@
 package com.geek.libutils.app;
 
-import android.annotation.SuppressLint;
 import android.util.Log;
 
 /**
  * 日志定管理
  */
 
-@SuppressLint("LongLogTag")
 public class MyLogUtil {
 
-    public static final String TAG = "http://blog.51cto.com/liangxiao";
+    public static final String TAG = MyLogUtil.class.getSimpleName();
     public static boolean on = true;
 
     public static void on(boolean debug) {

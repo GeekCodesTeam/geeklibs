@@ -27,27 +27,25 @@ Share this release:
 
 ### 你也可以这样
     // 总依赖																	
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.4.6'	
-    或者
-    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.4.6'
-			
-    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
-    
-    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
-    
-    // 部分依赖	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.4.6'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.4.6'
-    implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.4.6'	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.4'	
+    或者  部分依赖
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.5.4'
+	+		
+    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.5.4'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.5.4'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.5.4'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.5.4'
+    implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.5.4'	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.5.4'	
 
 
 混合移动应用框架APP-Android2

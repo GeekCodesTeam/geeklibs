@@ -38,6 +38,5 @@ include ':refresh-header'
 include ':refresh-layout'
 include ':zxinglibs3'
 include ':liblanguage'
-
-// commonlibs
 include ':libplugin'
+include ':libxuanzeqi'
