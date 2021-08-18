@@ -7,12 +7,44 @@
         android:label="@string/app_namelibxuanzeqi"
         android:supportsRtl="true">
         <activity
-            android:name=".DateTimePickerActivity"
-            android:exported="false">
+            android:name=".activity.MainActivitylibxuanzeqi"
+            android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="${applicationId}.hs.act.DateTimePickerActivity" />
+                <action android:name="${applicationId}.hs.act.MainActivitylibxuanzeqi" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.SinglePickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DateTimePickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LinkagePickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddressPickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ColorPickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FilePickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CalendarPickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ImagePickerActivitylibxuanzeqi"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

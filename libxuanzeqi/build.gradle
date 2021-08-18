@@ -5,6 +5,8 @@ def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':libutils')
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.github.li-xiaojun:XPopup:2.4.9'
     api 'com.gitee.li_yu_jiang.AndroidPicker:Common:3.1.0'
     api 'com.gitee.li_yu_jiang.AndroidPicker:WheelView:3.1.0'
     api 'com.gitee.li_yu_jiang.AndroidPicker:WheelPicker:3.1.0'
