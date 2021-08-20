@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.multidex.MultiDex;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.Utils;
 import com.geek.liblanguage.MultiLanguages;
 import com.geek.liblanguage.OnLanguageListener;
@@ -164,10 +165,14 @@ public class AndroidApplication extends Application {
     }
 
     protected void configShipei() {
-        AutoSizeConfig.getInstance().getUnitsManager()
+        Log.e("configShipei", SPUtils.getInstance().getFloat("textSizef", 0f) + "");
+        AutoSize.initCompatMultiProcess(this);
+        AutoSizeConfig.getInstance()
+                .setPrivateFontScale(SPUtils.getInstance().getFloat("textSizef", 0f))
+                .setExcludeFontScale(true)
+                .getUnitsManager()
                 .setSupportDP(true)
                 .setSupportSubunits(Subunits.MM);
-        AutoSize.initCompatMultiProcess(this);
     }
 
     protected int mFinalCount;

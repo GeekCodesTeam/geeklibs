@@ -177,7 +177,7 @@ easyrecyclerview                  : 'com.jude:easyrecyclerview:4.4.2',
 //--------------------------实现圆角图片-----------------------------------------
 roundedimageview                  : 'com.makeramen:roundedimageview:2.3.0',
 //--------------------屏幕适配-------------------------
-autosize                          : 'me.jessyan:autosize:1.2.1',
+autosize                          : 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1',
 //--------------------刷新框架-------------------------
 SmartRefreshLayout                : 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3',
 //------------------友盟----------------------
