@@ -43,6 +43,7 @@ public class F2NewItem1 extends BaseActWebFragment {
         return (ViewGroup) getActivity().findViewById(R.id.ll_base_container1);
     }
 
+    @Override
     @Nullable
     protected String getUrl() {
         Bundle bundle = this.getArguments();
