@@ -55,6 +55,6 @@ dependencies {
         exclude group: 'com.google.android.exoplayer', module: 'exoplayer'
         exclude group: 'com.google.android.exoplayer', module: 'extension-rtmp'
     }
-    implementation project(':zdkplayer:libokhttputils')
-    implementation project(':zdkplayer:libyanzhenjieandpermission')
+    implementation project(':libokhttputils')
+    implementation project(':libyanzhenjieandpermission')
 }

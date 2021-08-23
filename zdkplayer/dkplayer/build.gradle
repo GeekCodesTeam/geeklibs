@@ -7,7 +7,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation librarys.glide47
     implementation librarys.gsonJson
-    implementation project(':zdkplayer:libyanzhenjieandpermission')
+    implementation project(':libyanzhenjieandpermission')
     api project(':zdkplayer:dkplayer-java')
     api project(':zdkplayer:dkplayer-ui')
     api project(':zdkplayer:dkplayer-players:ijkexo')
