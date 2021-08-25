@@ -10,20 +10,19 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-//import com.geek.libutils.app.BaseAppManager;
 import com.just.agentweb.R;
 import com.just.agentweb.base.BaseAgentWebActivity;
 
 public abstract class BaseActWebActivity extends BaseAgentWebActivity {
     public Activity activity;
     protected ImageView ivBack;
+    protected ImageView ivX;
     protected TextView tvTitleName;
     protected TextView tv_right;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        BaseAppManager.getInstance().add(this);
         setContentView(getLayoutId());
         activity = this;
         setup(savedInstanceState);
@@ -41,6 +40,7 @@ public abstract class BaseActWebActivity extends BaseAgentWebActivity {
 
     private void findview() {
         ivBack = findViewById(R.id.baserecycleview_iv_back1);
+        ivX = findViewById(R.id.baserecycleview_iv_x1);
         tvTitleName = findViewById(R.id.baserecycleview_tv_center_content1);
         tv_right = findViewById(R.id.baserecycleview_tv_right1);
     }
@@ -51,6 +51,14 @@ public abstract class BaseActWebActivity extends BaseAgentWebActivity {
                 @Override
                 public void onClick(View view) {
                     onBackPressed();
+                }
+            });
+        }
+        if (ivX != null) {
+            ivX.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    finish();
                 }
             });
         }

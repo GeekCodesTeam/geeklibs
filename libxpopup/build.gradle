@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply from: "${rootDir.path}/gradle/base.gradle"
+apply from: "${rootDir.path}/gradle/publish.gradle"
+def librarys = rootProject.ext.dependencies //依赖
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation librarys.blankj
+    implementation librarys.glide47
+    api 'com.github.li-xiaojun:StateLayout:1.2.3'
+    api 'com.github.li-xiaojun:EasyAdapter:1.2.4'
+    //  https://github.com/li-xiaojun/XPopup
+    api 'com.github.li-xiaojun:XPopup:2.4.9'
+}
+

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0mm"
         android:layout_weight="1"
-        android:background="#357CD4">
+        android:background="#E60000">
 
         <ImageView
             android:id="@id/baserecycleview_iv_back1"

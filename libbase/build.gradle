@@ -15,7 +15,7 @@ dependencies {
     api project(':refresh-footer')
     api project(':refresh-header')
     api project(':refresh-layout')
-    api project(':zxinglibs3')
+    api project(':libzxing')
     api project(':liblanguage')
 
 }
