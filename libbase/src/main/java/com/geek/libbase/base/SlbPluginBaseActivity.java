@@ -33,6 +33,7 @@ import com.blankj.utilcode.util.Utils;
 import com.geek.libbase.R;
 import com.geek.libbase.netstate.NetState;
 import com.geek.libbase.netstate.NetconListener;
+import com.geek.libbase.plugin.PluginActivity;
 import com.geek.libbase.plugins.plugins.PluginBaseActivity;
 import com.geek.libbase.widgets.IBaseAction;
 import com.geek.liblanguage.MultiLanguages;
@@ -47,7 +48,7 @@ import com.geek.swipebacklayout.activity.SwipeBackActivityHelper;
 
 import me.jessyan.autosize.AutoSizeCompat;
 
-public abstract class SlbPluginBaseActivity extends PluginBaseActivity implements SwipeBackActivityBase,
+public abstract class SlbPluginBaseActivity extends PluginActivity implements SwipeBackActivityBase,
         IBaseAction, NetconListener {
 
     public static final String REQUEST_CODE = "request_code";
