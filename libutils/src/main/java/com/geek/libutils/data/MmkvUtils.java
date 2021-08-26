@@ -73,6 +73,11 @@ public class MmkvUtils {
         return mmkv.decodeString(key, "");
     }
 
+    public String get_common(String key, String defaultValue) {
+        MMKV mmkv = MMKV.defaultMMKV();
+        return mmkv.decodeString(key, defaultValue);
+    }
+
     public void remove_common(String key) {
         MMKV mmkv = MMKV.defaultMMKV();
         mmkv.removeValueForKey(key);
@@ -247,6 +252,10 @@ public class MmkvUtils {
         return get_xiancheng_string(1, myid, key);
     }
 
+    public String get_xiancheng_string(String key, String defaultValue) {
+        return get_xiancheng_string(1, myid, key, defaultValue);
+    }
+
     public int get_xiancheng_int(String key) {
         return get_xiancheng_int(1, myid, key);
     }
@@ -283,6 +292,16 @@ public class MmkvUtils {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
         return mmkv.decodeString(key, "");
+    }
+
+    public String get_xiancheng_string(int xiancheng, String myid, String key, String defaultValue) {
+        MMKV mmkv = null;
+        if (xiancheng == 1) {
+            mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
+        } else {
+            mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
+        }
+        return mmkv.decodeString(key, defaultValue);
     }
 
     public int get_xiancheng_int(int xiancheng, String myid, String key) {
