@@ -2,6 +2,23 @@ apply plugin: 'com.android.library'
 apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
+android {
+    defaultConfig {
+        def stValue = "ceshi"
+        manifestPlaceholders = [
+                // DEMO2_CONFIG_VALUE: ".demo2.factorys.MkDemo2Factory1",
+                DEMO2_CONFIG_VALUE: "com.geek.libbase.fragmentsgeek.demo2.factorys.MkDemo2Factory2",
+                DEMO3_CONFIG_VALUE: "com.geek.libbase.fragmentsgeek.demo3.factorys.MkDemo3Factory",
+                DEMO4_CONFIG_VALUE: "com.geek.libbase.fragmentsgeek.demo4.factorys.MkDemo4Factory",
+                STATISTICS_VALUE  : stValue
+        ]
+    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':libutils')

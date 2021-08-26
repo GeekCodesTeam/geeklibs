@@ -10,7 +10,7 @@ import com.geek.libbase.R;
 import com.geek.libbase.viewpager2.bean.DataBean;
 import com.geek.libbase.viewpager2.viewholder.ImageHolder;
 import com.geek.libbase.viewpager2.viewholder.TitleHolder;
-//import com.example.slbappcomm.viewpager2.viewholder.VideoHolder;
+//import com.geek.libbase.viewpager2.viewholder.VideoHolder;
 import com.youth.banner.adapter.BannerAdapter;
 import com.youth.banner.util.BannerUtils;
 

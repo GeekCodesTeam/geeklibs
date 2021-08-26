@@ -32,5 +32,35 @@
             <enum name="center_vertical" value="16" />
         </attr>
     </declare-styleable>
+    <declare-styleable name="IndexPagerIndicator">
+        <attr name="indicator_width" format="dimension|reference" />
+        <attr name="indicator_height" format="dimension|reference" />
+        <attr name="indicator_interval" format="dimension|reference" />
+        <attr name="indicator_item_color" format="color|reference" />
+        <attr name="indicator_select_color" format="color|reference" />
+        <attr name="indicator_select_height" format="dimension|reference" />
+        <attr name="indicator_style_drawer" format="string|reference" />
+    </declare-styleable>
 
+    <declare-styleable name="BannerView">
+        <attr name="indicator_position" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+        </attr>
+        <attr name="indicator_visible" format="boolean" />
+        <attr name="scroll_time" format="integer|reference" />
+        <attr name="auto_start" format="boolean|reference" />
+
+        <attr name="indicator_normal_color" format="color|reference" />
+        <attr name="indicator_current_color" format="color|reference" />
+
+        <attr name="indicator_current_style" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="large" value="1" />
+        </attr>
+
+        <attr name="indicator_current_size" format="dimension|reference" />
+        <attr name="indicator_circle_radius" format="dimension|reference" />
+        <attr name="indicator_padding" format="dimension|reference" />
+    </declare-styleable>
 </resources>
