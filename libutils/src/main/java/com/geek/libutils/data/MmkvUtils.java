@@ -41,7 +41,9 @@ public class MmkvUtils {
         MmkvUtils.getInstance().set_common("ceshi3", "yun3");
         MmkvUtils.getInstance().set_xiancheng("ceshi4", "yun4");
         MyLogUtil.e("--MmkvUtils-ceshi3-", MmkvUtils.getInstance().get_common("ceshi3"));
+        MyLogUtil.e("--MmkvUtils-ceshi3-", MmkvUtils.getInstance().get_common("ceshi3", "111"));
         MyLogUtil.e("--MmkvUtils-ceshi4-", MmkvUtils.getInstance().get_xiancheng_string("ceshi4"));
+        MyLogUtil.e("--MmkvUtils-ceshi4-", MmkvUtils.getInstance().get_xiancheng_string("ceshi4", "1111"));
         //
         MmkvUtils.getInstance().remove_common("ceshi");
         MmkvUtils.getInstance().remove_common("ceshi2");
@@ -65,21 +67,25 @@ public class MmkvUtils {
 
     public void set_common(String key, String value) {
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public String get_common(String key) {
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         return mmkv.decodeString(key, "");
     }
 
     public String get_common(String key, String defaultValue) {
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         return mmkv.decodeString(key, defaultValue);
     }
 
     public void remove_common(String key) {
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         mmkv.removeValueForKey(key);
     }
 
@@ -94,23 +100,27 @@ public class MmkvUtils {
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.removeValueForKey(key);
     }
 
     public <T> T set_common_json(String key, String content, Class<T> tClass) {
         T bean_fastjson = JSON.parseObject(content, tClass);
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         mmkv.encode(key, JSON.toJSONString(bean_fastjson));
         return (T) bean_fastjson;
     }
 
     public void set_common_json2(String key, Object object) {
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         mmkv.encode(key, JSON.toJSONString(object));
     }
 
     public <T> T get_common_json(String key, Class<T> tClass) {
         MMKV mmkv = MMKV.defaultMMKV();
+        assert mmkv != null;
         return JSON.parseObject(mmkv.decodeString(key, ""), tClass);
     }
 
@@ -129,6 +139,7 @@ public class MmkvUtils {
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
@@ -169,82 +180,90 @@ public class MmkvUtils {
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, boolean value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, int value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, long value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, float value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, double value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, Set<String> value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, byte[] value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
     public void set_xiancheng(int xiancheng, String myid, String key, Parcelable value) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         mmkv.encode(key, value);
     }
 
@@ -285,96 +304,105 @@ public class MmkvUtils {
     }
 
     public String get_xiancheng_string(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeString(key, "");
     }
 
     public String get_xiancheng_string(int xiancheng, String myid, String key, String defaultValue) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeString(key, defaultValue);
     }
 
     public int get_xiancheng_int(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeInt(key, -1);
     }
 
     public boolean get_xiancheng_bool(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeBool(key, false);
     }
 
     public float get_xiancheng_float(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeFloat(key, 0.0f);
     }
 
     public long get_xiancheng_long(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeLong(key, -1);
     }
 
     public byte[] get_xiancheng_byte(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
-        byte[] bytes = null;
+        MMKV mmkv;
+        byte[] bytes;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         bytes = mmkv.decodeBytes(key);
         return bytes == null ? new byte[]{} : mmkv.decodeBytes(key);
     }
 
     public Set<String> get_xiancheng_set_string(int xiancheng, String myid, String key) {
-        MMKV mmkv = null;
-        Set<String> bytes = null;
+        MMKV mmkv;
+        Set<String> bytes;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         bytes = mmkv.decodeStringSet(key);
         return bytes == null ? null : mmkv.decodeStringSet(key);
     }
 
     public <T extends Parcelable> T get_xiancheng_parcelable(int xiancheng, String myid, String key, Class<T> tClass) {
-        MMKV mmkv = null;
+        MMKV mmkv;
         if (xiancheng == 1) {
             mmkv = MMKV.mmkvWithID(myid, MMKV.SINGLE_PROCESS_MODE);
         } else {
             mmkv = MMKV.mmkvWithID(myid, MMKV.MULTI_PROCESS_MODE);
         }
+        assert mmkv != null;
         return mmkv.decodeParcelable(key, tClass);
     }
 
