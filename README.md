@@ -26,43 +26,48 @@ Share this release:
 ### 你也可以这样
 
     // 总依赖																	
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.5.9'	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.6'	
     或者  
-    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.5.9'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.6.6'
 	+		
-    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.5.9'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.5.9'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.5.9'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.6.6'
     //
-    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer:1.5.9'
+    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer:1.6.6'
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-java:1.5.9')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-java:1.6.6')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ijkexo:1.5.9')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ijkexo:1.6.6')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ui:1.5.9')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ui:1.6.6')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-videocache:1.5.9')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-videocache:1.6.6')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libokhttputils:1.5.9')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libokhttputils:1.6.6')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libyanzhenjieandpermission:1.5.9')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libyanzhenjieandpermission:1.6.6')
 
-    // 部分依赖 implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.5.9'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.5.9'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:zxinglibs3:1.5.9'
-    implementation 'com.github.GeekCodesTeam.geeklibs:liblanguage:1.5.9'
+    // 部分依赖 implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.6.6'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libzxing:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libxpopup:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libupdateapp:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libncalendar:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libpictureselector:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:liblinkagerecyclerview:1.6.6'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libexpandablerecyclerview:1.6.6'
 
-混合移动应用框架APP-Android2
+混合移动应用框架APP-Android3
 
 ### 附：请切换mavencentral分支开发
 
