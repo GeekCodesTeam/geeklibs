@@ -51,14 +51,14 @@ android {
 //        pickFirst 'lib/x86/libijksdl.so'
     }
     compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode config.appversionCode
         versionName config.appversionName
         multiDexEnabled true
-        renderscriptTargetApi 30
+        renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
 //        signingConfig signingConfigs.debug

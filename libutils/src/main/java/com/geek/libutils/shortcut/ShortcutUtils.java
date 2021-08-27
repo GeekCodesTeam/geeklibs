@@ -172,8 +172,9 @@ public class ShortcutUtils {
 
         boolean isInstallShortcut = false;
 
-        if (null == context || TextUtils.isEmpty(title))
+        if (null == context || TextUtils.isEmpty(title)) {
             return isInstallShortcut;
+        }
         String authority = getAuthority();
         final ContentResolver cr = context.getContentResolver();
         if (!TextUtils.isEmpty(authority)) {
@@ -189,8 +190,9 @@ public class ShortcutUtils {
                 if (c != null && c.getCount() > 0) {
                     isInstallShortcut = true;
                 }
-                if (null != c && !c.isClosed())
+                if (null != c && !c.isClosed()) {
                     c.close();
+                }
             } catch (Exception e) {
                 Log.e(TAG, "isShortCutExist:" + e.getMessage());
             }

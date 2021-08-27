@@ -2,12 +2,12 @@ def config = rootProject.ext //配置
 def librarys = config.dependencies //
 android {
     compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         multiDexEnabled true
-        renderscriptTargetApi 30
+        renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
