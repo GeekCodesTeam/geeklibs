@@ -19,9 +19,13 @@ class ProcessUtils {
 
     static String getCurrentProcessName(Context context) {
         String name = getCurrentProcessNameByFile();
-        if (!TextUtils.isEmpty(name)) return name;
+        if (!TextUtils.isEmpty(name)) {
+            return name;
+        }
         name = getCurrentProcessNameByAms(context);
-        if (!TextUtils.isEmpty(name)) return name;
+        if (!TextUtils.isEmpty(name)) {
+            return name;
+        }
         name = getCurrentProcessNameByReflect(context);
         return name;
     }
@@ -41,9 +45,13 @@ class ProcessUtils {
 
     private static String getCurrentProcessNameByAms(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        if (am == null) return "";
+        if (am == null) {
+            return "";
+        }
         List<ActivityManager.RunningAppProcessInfo> info = am.getRunningAppProcesses();
-        if (info == null || info.size() == 0) return "";
+        if (info == null || info.size() == 0) {
+            return "";
+        }
         int pid = android.os.Process.myPid();
         for (ActivityManager.RunningAppProcessInfo aInfo : info) {
             if (aInfo.pid == pid) {

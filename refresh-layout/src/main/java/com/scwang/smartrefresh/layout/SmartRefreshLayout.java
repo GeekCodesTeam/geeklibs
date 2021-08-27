@@ -420,7 +420,9 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (isInEditMode()) return;
+        if (isInEditMode()) {
+            return;
+        }
 
         if (mHandler == null) {
             mHandler = new Handler();
@@ -829,7 +831,9 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
         float sumX = 0, sumY = 0;
         final int count = e.getPointerCount();
         for (int i = 0; i < count; i++) {
-            if (skipIndex == i) continue;
+            if (skipIndex == i) {
+                continue;
+            }
             sumX += e.getX(i);
             sumY += e.getY(i);
         }
@@ -2938,11 +2942,13 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
 
         //<editor-fold desc="视图位移 Spinner">
 
+        @Override
         public RefreshKernel moveSpinner(int spinner, boolean isAnimator) {
             layout.moveSpinner(spinner, isAnimator);
             return this;
         }
 
+        @Override
         public RefreshKernel animSpinner(int endSpinner) {
             layout.animSpinner(endSpinner);
             return this;

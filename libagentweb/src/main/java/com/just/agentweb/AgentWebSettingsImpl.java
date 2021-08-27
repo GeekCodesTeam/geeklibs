@@ -47,7 +47,9 @@ public class AgentWebSettingsImpl extends AbsAgentWebSettings {
      * Copy from com.blankj.utilcode.util.ActivityUtils#getActivityByView
      */
     private Activity getActivityByContext(Context context) {
-        if (context instanceof Activity) return (Activity) context;
+        if (context instanceof Activity) {
+            return (Activity) context;
+        }
         while (context instanceof ContextWrapper) {
             if (context instanceof Activity) {
                 return (Activity) context;

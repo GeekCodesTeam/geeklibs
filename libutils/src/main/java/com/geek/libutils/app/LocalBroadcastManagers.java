@@ -256,6 +256,7 @@ public final class LocalBroadcastManagers {
             this.receiver = _receiver;
         }
 
+        @Override
         @NonNull
         public String toString() {
             StringBuilder builder = new StringBuilder(128);

@@ -70,7 +70,9 @@ public final class ColorUtils {
     }
 
     private static int compositeComponent(int fgC, int fgA, int bgC, int bgA, int a) {
-        if (a == 0) return 0;
+        if (a == 0) {
+            return 0;
+        }
         return ((0xFF * fgC * fgA) + (bgC * bgA * (0xFF - fgA))) / (a * 0xFF);
     }
 

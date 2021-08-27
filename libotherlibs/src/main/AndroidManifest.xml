@@ -53,9 +53,13 @@
                 android:resource="@xml/baselib_file_paths" />
         </provider>
 
-        <receiver android:name=".networkview.NetworkChangeListener" />
+        <receiver
+            android:name=".networkview.NetworkChangeListener"
+            android:exported="false" />
 
-        <receiver android:name=".networkview.NetworkConnectChangedReceiver" />
+        <receiver
+            android:name=".networkview.NetworkConnectChangedReceiver"
+            android:exported="false" />
 
         <service
             android:name="com.haier.cellarette.baselibrary.handleralluse.handler8.DownloadService"
@@ -609,6 +613,7 @@
         </activity>
         <activity
             android:name=".switchbutton.StyleActivitySwitchButtonK"
+            android:exported="false"
             android:label="@string/title_activity_style"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -617,6 +622,7 @@
         </activity>
         <activity
             android:name=".switchbutton.UseActivitySwitchButtonK"
+            android:exported="false"
             android:label="@string/title_activity_use"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -625,6 +631,7 @@
         </activity>
         <activity
             android:name=".switchbutton.StyleInCodeActivitySwitchButtonK"
+            android:exported="false"
             android:label="@string/title_activity_style_in_code"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -633,6 +640,7 @@
         </activity>
         <activity
             android:name=".switchbutton.RecyclerActivitySwitchButtonK"
+            android:exported="false"
             android:label="@string/title_activity_recycler_view"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data

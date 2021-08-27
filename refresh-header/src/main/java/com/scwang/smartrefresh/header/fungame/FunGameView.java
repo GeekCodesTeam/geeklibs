@@ -203,7 +203,7 @@ public abstract class FunGameView extends FunGameHeader {
     }
 
     public void setTextGameOver(String textGameOver) {
-        this.textGameOver = textGameOver;
+        FunGameView.textGameOver = textGameOver;
     }
 
     public String getTextLoading() {
@@ -211,7 +211,7 @@ public abstract class FunGameView extends FunGameHeader {
     }
 
     public void setTextLoading(String textLoading) {
-        this.textLoading = textLoading;
+        FunGameView.textLoading = textLoading;
     }
 
     public String getTextLoadingFinished() {
@@ -219,7 +219,7 @@ public abstract class FunGameView extends FunGameHeader {
     }
 
     public void setTextLoadingFinished(String textLoadingFinished) {
-        this.textLoadingFinished = textLoadingFinished;
+        FunGameView.textLoadingFinished = textLoadingFinished;
     }
 
     /**

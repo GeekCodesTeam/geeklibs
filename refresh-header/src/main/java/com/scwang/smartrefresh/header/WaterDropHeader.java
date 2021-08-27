@@ -223,6 +223,7 @@ public class WaterDropHeader extends ViewGroup implements RefreshHeader {
             @Override
             public void onAnimationEnd(Animator animation) {
                 mWaterDropView.animate().alpha(0).setListener(new AnimatorListenerAdapter() {
+                    @Override
                     public void onAnimationEnd(Animator animation) {
                         mWaterDropView.setVisibility(GONE);
                         mWaterDropView.setAlpha(1);

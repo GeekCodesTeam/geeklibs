@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+def librarys = rootProject.ext.dependencies //
 android {
 
     packagingOptions {
@@ -54,10 +55,65 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //
     implementation 'com.blankj:utilcodex:1.30.6'
-//    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.6'
+//    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.5'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
 //    implementation project(':libwebview')
+//    implementation project(':libotherlibs')
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.6.4'
 
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libzxing:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libxpopup:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libupdateapp:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libncalendar:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libpictureselector:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:liblinkagerecyclerview:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libexpandablerecyclerview:1.6.5'
+////    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.6.5'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer:1.6.5'
+//    implementation project(':libutils')
+//    implementation librarys.glide47
+//    // https://github.com/square/leakcanary
+//    api librarys.leakcanaryAndroid
+    // https://github.com/airbnb/lottie-android
+//    api 'com.airbnb.android:lottie:3.4.2'
+//    // https://github.com/jd-alexander/LikeButton
+////    api 'com.mikepenz:iconics-core:2.9.1@aar'
+////    api 'com.mikepenz:community-material-typeface:1.8.36.1@aar'
+//    // https://github.com/drakeet/MultiType
+//    api 'me.drakeet.multitype:multitype:3.4.4'
+//    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+//    // https://github.com/jaredrummler/MaterialSpinner
+//    api 'com.jaredrummler:material-spinner:1.2.5'
+//    // https://github.com/BolexLiu/PressScanCode
+//    api 'com.github.BolexLiu:PressScanCode:v1.0.0'
+//    // https://github.com/googlesamples/easypermissions
+//    api 'pub.devrel:easypermissions:3.0.0'
+//    // https://github.com/getActivity/XXPermissions
+//    api 'com.github.getActivity:XXPermissions:11.0'
+//    // https://github.com/yshrsmz/KeyboardVisibilityEvent
+//    api 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.3.0'
+//    // https://github.com/meetsl/SCardView-master
+//    api 'io.github.meetsl:SCardView:1.2'
+//    // https://github.com/nanchen2251/BankCardUtils
+//    api 'com.github.nanchen2251:BankCardUtils:1.0.2'
+//    // https://github.com/SherlockGougou/BigImageViewPager
+//    api 'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.5'
+//    // matisse
+//    api("com.zhihu.android:matisse:0.5.3-beta3") {
+//        exclude group: 'com.github.bumptech.glide'
+//    }
+//    api 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
 }

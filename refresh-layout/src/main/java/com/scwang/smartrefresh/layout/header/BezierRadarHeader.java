@@ -146,6 +146,7 @@ public class BezierRadarHeader extends FrameLayout implements RefreshHeader {
         }
     }
 
+    @Override
     @NonNull
     public View getView() {
         return this;

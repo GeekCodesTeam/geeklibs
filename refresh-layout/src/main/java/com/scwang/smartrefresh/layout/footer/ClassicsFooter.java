@@ -298,6 +298,7 @@ public class ClassicsFooter extends RelativeLayout implements RefreshFooter {
         return true;
     }
 
+    @Override
     @NonNull
     public View getView() {
         return this;

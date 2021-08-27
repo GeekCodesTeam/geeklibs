@@ -214,10 +214,12 @@ public class RoundImageView extends ImageView {
         return mIsCircle;
     }
 
+    @Override
     public boolean isPressed() {
         return mIsPressed;
     }
 
+    @Override
     public void setPressed(boolean isPressed) {
         if (mIsPressed != isPressed) {
             mIsPressed = isPressed;

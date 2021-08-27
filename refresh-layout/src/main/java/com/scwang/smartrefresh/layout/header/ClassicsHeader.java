@@ -350,6 +350,7 @@ public class ClassicsHeader extends RelativeLayout implements RefreshHeader {
         }
     }
 
+    @Override
     @NonNull
     public View getView() {
         return this;

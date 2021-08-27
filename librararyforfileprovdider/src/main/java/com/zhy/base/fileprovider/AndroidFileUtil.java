@@ -18,7 +18,9 @@ public class AndroidFileUtil {
 
     public static Intent openFile(String filePath) {
         File file = new File(filePath);
-        if (!file.exists()) return null;
+        if (!file.exists()) {
+            return null;
+        }
         /* 取得扩展名 */
         String end = file.getName().substring(file.getName().lastIndexOf(".") + 1).toLowerCase();
         /* 依扩展名的类型决定MimeType */

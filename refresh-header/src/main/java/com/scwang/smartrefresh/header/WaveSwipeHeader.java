@@ -266,8 +266,11 @@ public class WaveSwipeHeader extends ViewGroup implements RefreshHeader {
         };
         scaleDownAnimation.setDuration(200);
         mCircleView.setAnimationListener(new Animation.AnimationListener() {
+            @Override
             public void onAnimationStart(Animation animation) {}
+            @Override
             public void onAnimationRepeat(Animation animation) {}
+            @Override
             public void onAnimationEnd(Animation animation) {
                 mCircleView.stopProgress();
                 mCircleView.makeProgressTransparent();

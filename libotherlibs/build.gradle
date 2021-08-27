@@ -6,7 +6,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':libutils')
     implementation librarys.glide47
-    // https://github.com/square/leakcanary
+    // https://github.com/square/leakcanary 不支持android 12 隐私协议 exported false
     api librarys.leakcanaryAndroid
     // https://github.com/airbnb/lottie-android
     api 'com.airbnb.android:lottie:3.4.2'
