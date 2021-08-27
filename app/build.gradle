@@ -55,7 +55,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //
     implementation 'com.blankj:utilcodex:1.30.6'
-//    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.6'
+//    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.7'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
 //    implementation project(':libwebview')
@@ -114,3 +114,5 @@ dependencies {
 //    }
 //    api 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
 }
+
+//apply from: './MobSDK.gradle'
