@@ -14,7 +14,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/web_files_public" />
         </provider>
-        <activity android:name=".agentwebview.activity.AgentwebAct">
+
+        <activity
+            android:name=".agentwebview.activity.AgentwebAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.AgentwebAct" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -29,6 +32,7 @@
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
         <activity
             android:name="com.just.agentweb.agentwebview.activity.BasicsDisplayWebActDemo"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.BasicsDisplayWebActDemo" />
@@ -37,6 +41,7 @@
         </activity>
         <activity
             android:name="com.just.agentweb.agentwebview.activity.SmartRefreshWebActDemo"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo" />
@@ -78,6 +83,7 @@
         </activity>
         <activity
             android:name="com.just.agentweb.agentwebview.activity.JsWebActDemo"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.JsWebActDemo" />
@@ -86,6 +92,7 @@
         </activity>
         <activity
             android:name="com.just.agentweb.agentwebview.activity.TablayouActDemo"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.TablayouActDemo" />

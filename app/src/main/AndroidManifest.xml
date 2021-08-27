@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeBase2"
         tools:replace="android:label">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

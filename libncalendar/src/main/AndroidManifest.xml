@@ -5,7 +5,9 @@
         android:allowBackup="true"
         android:label="@string/app_nameslbncalendar"
         android:supportsRtl="true">
-        <activity android:name=".ncalendar.activity.RiliMainActivity">
+        <activity
+            android:name=".ncalendar.activity.RiliMainActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.RiliMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

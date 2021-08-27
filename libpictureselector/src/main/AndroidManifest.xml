@@ -45,9 +45,9 @@
         android:label="@string/app_nameslbpictureselector"
         android:supportsRtl="true">
         <!-- 全面屏-->
-<!--        <meta-data-->
-<!--            android:name="android.max_aspect"-->
-<!--            android:value="2.1" />-->
+        <!--        <meta-data-->
+        <!--            android:name="android.max_aspect"-->
+        <!--            android:value="2.1" />-->
 
         <activity
             android:name=".PictureSelectorAct"
@@ -58,6 +58,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PictureSelectorSimpleActivity"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.PictureSelectorSimpleActivity" />

@@ -20,6 +20,7 @@
 
         <activity
             android:name=".baserecycleview.yewu1.ActViewPageYewuList1"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ActViewPageYewuList1" />
@@ -28,6 +29,7 @@
         </activity>
         <activity
             android:name=".baserecycleview.yewu2.ActYewuList1"
+            android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ActYewuList1" />
@@ -36,6 +38,7 @@
         </activity>
         <activity
             android:name=".viewpager2.LunboMainActivity"
+            android:exported="false"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.LunboMainActivity" />
@@ -75,7 +78,9 @@
             android:value="${DEMO4_CONFIG_VALUE}" />
         <!--demo4 config end-->
         <activity android:name=".fragmentsgeek.demo5.MkDemo5Activity" />
-        <activity android:name=".fragmentsgeek.NkMainActivity">
+        <activity
+            android:name=".fragmentsgeek.NkMainActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.NkMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

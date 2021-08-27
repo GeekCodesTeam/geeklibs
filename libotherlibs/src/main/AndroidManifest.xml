@@ -537,21 +537,27 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ratingstarview.PingfenMainActivity">
+        <activity
+            android:name=".ratingstarview.PingfenMainActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.PingfenMainActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".marqueelibrary.ui.MarqueeViewLibraryAct">
+        <activity
+            android:name=".marqueelibrary.ui.MarqueeViewLibraryAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.MarqueeViewLibraryAct" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".scardview.SCardViewAct">
+        <activity
+            android:name=".scardview.SCardViewAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.SCardViewAct" />
 
@@ -562,21 +568,27 @@
         <activity android:name=".scardview.SCardViewAct2" />
         <activity android:name=".scardview.SCardViewAct3" />
 
-        <activity android:name=".bigImageviewpager.BigImageViewPagerAct">
+        <activity
+            android:name=".bigImageviewpager.BigImageViewPagerAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.BigImageViewPagerAct" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".expandabletextview.ExpandableTextViewAct">
+        <activity
+            android:name=".expandabletextview.ExpandableTextViewAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.ExpandableTextViewAct" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".jianpan.JianpanAct">
+        <activity
+            android:name=".jianpan.JianpanAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.JianpanAct" />
 
@@ -587,6 +599,7 @@
 
         <activity
             android:name=".switchbutton.MainActivitySwitchButtonK"
+            android:exported="false"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.MainActivitySwitchButtonK" />
@@ -626,14 +639,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".switchbutton.MainActivitySwitchButtonK" />
         </activity>
-        <activity android:name=".choutipop.ChoutiActivity">
+        <activity
+            android:name=".choutipop.ChoutiActivity"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.ChoutiActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".coordinatorlayout.CoordinatorLayoutAct">
+        <activity
+            android:name=".coordinatorlayout.CoordinatorLayoutAct"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.CoordinatorLayoutAct" />
 

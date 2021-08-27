@@ -5,7 +5,9 @@
         android:allowBackup="true"
         android:label="@string/app_namelibokhttputils"
         android:supportsRtl="true">
-        <activity android:name=".demo.MainActivityokhttputils">
+        <activity
+            android:name=".demo.MainActivityokhttputils"
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.MainActivityokhttputils" />
                 <category android:name="android.intent.category.DEFAULT" />
