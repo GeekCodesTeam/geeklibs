@@ -91,9 +91,13 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
                 .createAgentWeb()
                 .ready()
                 .go(getUrl());
+        getJsInterface();
         AgentWebConfig.debug();
     }
 
+    @Nullable
+    protected void getJsInterface() {
+    }
 
     protected @NonNull
     ErrorLayoutEntity getErrorLayoutEntity() {
