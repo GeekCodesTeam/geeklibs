@@ -1,5 +1,6 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:banner="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipeRefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -20,14 +21,16 @@
             android:text="下拉刷新重新设置数据数据，点击按钮改变使用场景" />
 
         <com.youth.banner.Banner
-            xmlns:banner="http://schemas.android.com/apk/res-auto"
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_margin="10dp"
-            banner:banner_radius="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
             banner:banner_indicator_normal_color="@android:color/white"
-            banner:banner_indicator_selected_color="@color/colorPrimary" />
+            banner:banner_indicator_selected_color="@color/colorPrimary"
+            banner:banner_radius="5dp" />
 
         <com.youth.banner.indicator.RoundLinesIndicator
             android:id="@+id/indicator"

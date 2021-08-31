@@ -3,6 +3,7 @@ package com.geek.libbase.viewpager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 
@@ -117,7 +118,7 @@ public class LunboMainActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onRefresh() {
                 //模拟网络请求需要3秒，请求完成，设置setRefreshing 为false
-                new Handler().postDelayed(new Runnable() {
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         refresh.setRefreshing(false);
