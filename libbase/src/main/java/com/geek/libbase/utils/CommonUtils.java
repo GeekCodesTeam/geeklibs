@@ -1,5 +1,9 @@
 package com.geek.libbase.utils;
 
+import android.util.Log;
+
+import java.lang.reflect.Method;
+
 public class CommonUtils {
     public static final String APP_VERSION_CODE = "当前版本号";//
     public static final String MMKV_SEX = "用户性别";//
@@ -20,5 +24,28 @@ public class CommonUtils {
     public static final String SlbBaseActivityViewPageAct1 = "刷新滚动广播-业务1";//
     public static String TIPS_WUSHUJU = "暂无数据";//
     public static String TIPS_WUWANG = "请确认网络是否可用";//
+
+
+    public static final String HARMONY_OS = "harmony";
+
+    /**
+     * check the system is harmony os
+     *
+     * @return true if it is harmony os
+     */
+    public static boolean isHarmonyOS() {
+        try {
+            Class clz = Class.forName("com.huawei.system.BuildEx");
+            Method method = clz.getMethod("getOsBrand");
+            return HARMONY_OS.equals(method.invoke(clz));
+        } catch (ClassNotFoundException e) {
+            Log.e("TAG", "occured ClassNotFoundException");
+        } catch (NoSuchMethodException e) {
+            Log.e("TAG", "occured NoSuchMethodException");
+        } catch (Exception e) {
+            Log.e("TAG", "occur other problem");
+        }
+        return false;
+    }
 
 }

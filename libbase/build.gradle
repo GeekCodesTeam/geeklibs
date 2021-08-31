@@ -34,5 +34,6 @@ dependencies {
     api project(':refresh-layout')
     api project(':libzxing')
     api project(':liblanguage')
+    api project(':libtablayout')
 
 }
