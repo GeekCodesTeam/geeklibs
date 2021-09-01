@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieComposition;
-import com.airbnb.lottie.OnCompositionLoadedListener;
+import com.airbnb.lottie.LottieCompositionFactory;
+import com.airbnb.lottie.LottieListener;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.geek.libbase.R;
 
@@ -49,28 +50,28 @@ public class NiubiEmptyViewNew {
 
     public void loading(String loading_text) {
 //        mAdapter.setEmptyView(R.layout.activity_recycleviewallsuses_demo8_viewloading, (ViewGroup) mRecyclerView.getParent());
-        noDataView_content.setText(TextUtils.isEmpty(loading_text) ? "小象正奔向故事里..." : loading_text);
-        imageView.setBackgroundResource(R.drawable.iv_loading_animationlist_slb);
+        noDataView_content.setText(TextUtils.isEmpty(loading_text) ? "加载中..." : loading_text);
+        imageView.setBackgroundResource(R.drawable.iv_loading_animationlist);
         ((AnimationDrawable) imageView.getBackground()).start();
         mAdapter.setEmptyView(loadingView);
     }
 
-    public void loading(String loading_text,String json) {
+    public void loading(String loading_text, String json) {
 //        mAdapter.setEmptyView(R.layout.activity_recycleviewallsuses_demo8_viewloading, (ViewGroup) mRecyclerView.getParent());
-        noDataView_content.setText(TextUtils.isEmpty(loading_text) ? "小象正奔向故事里..." : loading_text);
-        if (TextUtils.isEmpty(json)){
+        noDataView_content.setText(TextUtils.isEmpty(loading_text) ? "加载中..." : loading_text);
+        if (TextUtils.isEmpty(json)) {
             imageView.setVisibility(View.VISIBLE);
             animation_view.setVisibility(View.GONE);
-            imageView.setBackgroundResource(R.drawable.iv_loading_animationlist_slb);
-        }else {
+//            imageView.setBackgroundResource(R.drawable.iv_loading_animationlist_slb);
+            imageView.setBackgroundResource(R.drawable.iv_loading_animationlist);
+        } else {
             imageView.setVisibility(View.GONE);
             animation_view.setVisibility(View.VISIBLE);
             // "lottie/duck_blue_style.json"
-            LottieComposition.Factory.fromAssetFileName(context, json, new OnCompositionLoadedListener() {
-
+            LottieCompositionFactory.fromAsset(context, json).addListener(new LottieListener<LottieComposition>() {
                 @Override
-                public void onCompositionLoaded(LottieComposition composition) {
-                    animation_view.setComposition(composition);
+                public void onResult(LottieComposition result) {
+                    animation_view.setComposition(result);
                     animation_view.setProgress(0.333f);
                     animation_view.playAnimation();
                 }
@@ -83,7 +84,7 @@ public class NiubiEmptyViewNew {
     public void nodata(String nodata_text) {
         noDataView_content.setText(TextUtils.isEmpty(nodata_text) ? "暂无数据" : nodata_text);
         ((AnimationDrawable) imageView.getBackground()).stop();
-        if (animation_view!=null&&animation_view.isAnimating()){
+        if (animation_view != null && animation_view.isAnimating()) {
             animation_view.cancelAnimation();
         }
         mAdapter.setEmptyView(noDataView);
@@ -92,7 +93,7 @@ public class NiubiEmptyViewNew {
     public void errornet(String error_text) {
         errorTextView_content.setText(TextUtils.isEmpty(error_text) ? "断网了" : error_text);
         ((AnimationDrawable) imageView.getBackground()).stop();
-        if (animation_view!=null&&animation_view.isAnimating()){
+        if (animation_view != null && animation_view.isAnimating()) {
             animation_view.cancelAnimation();
         }
         mAdapter.setEmptyView(errorView);
