@@ -58,7 +58,9 @@ dependencies {
 //    implementation 'com.github.GeekCodesTeam:geeklibs:1.6.7'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.4.6'
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.4.6'
-//    implementation project(':libwebview')
+//    implementation project(':libagentweb')
+    implementation project(':libagentweb20')
+    implementation project(':libwebview')
 //    implementation project(':libotherlibs')
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.6.4'
 

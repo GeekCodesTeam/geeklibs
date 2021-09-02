@@ -14,7 +14,7 @@ public class WebViewPartActivity extends WebViewActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.web_webview_part_layout);
         setUp();
-        url = "http://liangxiao.blog.51cto.com/";
+        url = "http://www.baidu.com/?condition=login";
         loadUrl(url);
     }
 

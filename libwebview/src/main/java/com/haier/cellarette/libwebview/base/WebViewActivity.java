@@ -143,9 +143,13 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         mWebView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         parent = findViewById(R.id.container);
         parent.addView(mWebView);
-        mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        mWebView.setBackgroundColor(0); // 设置背景色
-        WebSettings settings = mWebView.getSettings();//拿到webbiew的settings
+//        mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        // 设置背景色
+        mWebView.setBackgroundColor(0);
+        // 视频播放和滚动卡顿问题解决方案开启硬加速
+        mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        //拿到webbiew的settings
+        WebSettings settings = mWebView.getSettings();
         // 存储(storage)
         // 启用HTML5 DOM storage API，默认值 false
         settings.setDomStorageEnabled(true);
@@ -173,24 +177,38 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         // 是否可用Javascript(window.open)打开窗口，默认值 false
         settings.setJavaScriptCanOpenWindowsAutomatically(true);
         // 资源访问
-        settings.setAllowContentAccess(true); // 是否可访问Content Provider的资源，默认值 true
-        settings.setAllowFileAccess(true);    // 是否可访问本地文件，默认值 true
+        // 是否可访问Content Provider的资源，默认值 true
+        settings.setAllowContentAccess(true);
+        // 是否可访问本地文件，默认值 true
+        settings.setAllowFileAccess(true);
         // 资源加载
-        settings.setLoadsImagesAutomatically(true); // 是否自动加载图片
-        settings.setBlockNetworkImage(false);       // 禁止加载网络图片
-        settings.setBlockNetworkLoads(false);       // 禁止加载所有网络资源
+        // 是否自动加载图片
+        settings.setLoadsImagesAutomatically(true);
+        // 禁止加载网络图片
+        settings.setBlockNetworkImage(false);
+        // 禁止加载所有网络资源
+        settings.setBlockNetworkLoads(false);
         // 缩放(zoom)
-        settings.setSupportZoom(true);          // 是否支持缩放
-        settings.setBuiltInZoomControls(true); // 是否使用内置缩放机制
-        settings.setDisplayZoomControls(false);  // 是否显示内置缩放控件
+        // 是否支持缩放
+        settings.setSupportZoom(true);
+        // 是否使用内置缩放机制
+        settings.setBuiltInZoomControls(true);
+        // 是否显示内置缩放控件
+        settings.setDisplayZoomControls(false);
         // 默认文本编码，默认值 "UTF-8"
         settings.setDefaultTextEncodingName("UTF-8");
-        settings.setDefaultFontSize(16);        // 默认文字尺寸，默认值16，取值范围1-72
-        settings.setDefaultFixedFontSize(16);   // 默认等宽字体尺寸，默认值16
-        settings.setMinimumFontSize(8);         // 最小文字尺寸，默认值 8
-        settings.setMinimumLogicalFontSize(8);  // 最小文字逻辑尺寸，默认值 8
-        settings.setTextZoom(100);              // 文字缩放百分比，默认值 100
-        settings.setUserAgentString(UA + "; android");//slb-android
+        // 默认文字尺寸，默认值16，取值范围1-72
+        settings.setDefaultFontSize(16);
+        // 默认等宽字体尺寸，默认值16
+        settings.setDefaultFixedFontSize(16);
+        // 最小文字尺寸，默认值 8
+        settings.setMinimumFontSize(8);
+        // 最小文字逻辑尺寸，默认值 8
+        settings.setMinimumLogicalFontSize(8);
+        // 文字缩放百分比，默认值 100
+        settings.setTextZoom(100);
+        //slb-android
+        settings.setUserAgentString(UA + "; android");
         settings.setMediaPlaybackRequiresUserGesture(false);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);

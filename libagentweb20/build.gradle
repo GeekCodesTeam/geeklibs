@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply from: "${rootDir.path}/gradle/base.gradle"
+apply from: "${rootDir.path}/gradle/publish.gradle"
+def config = rootProject.ext //配置
+def librarys = rootProject.ext.dependencies //
+//repositories { flatDir { dirs 'libs' } }
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':libutils')
+    implementation librarys.glide47
+    implementation librarys.picasso
+    implementation librarys.gsonJson
+    api 'us.feras.mdv:markdownview:1.1.0'
+    api 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    api 'com.github.lzyzsd:jsbridge:1.0.4'
+    api 'com.tencent.sonic:sdk:2.0.0'
+    api 'com.coolindicator.sdk:coolindicator:1.0.0-beta'
+    api 'com.github.Justson:flying-pigeon:v1.0.7'
+    api 'com.github.Justson:dispatch-queue:v1.0.5'
+    api 'com.github.Justson:Downloader:v4.1.9-androidx'
+    api 'com.github.Justson.AgentWeb:agentweb-core:v4.1.9-androidx'
+    api 'com.github.Justson.AgentWeb:agentweb-filechooser:v4.1.9-androidx'
+
+}
+

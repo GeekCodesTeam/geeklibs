@@ -19,7 +19,8 @@
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
-        <include layout="@layout/web_web_toolbar" />
+        <include
+            layout="@layout/web_web_toolbar" />
 
         <LinearLayout
             android:id="@+id/container"

@@ -17,7 +17,9 @@
 
         <activity
             android:name=".agentwebview.activity.AgentwebAct"
-            android:exported="false">
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.AgentwebAct" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -32,7 +34,9 @@
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
         <activity
             android:name="com.just.agentweb.agentwebview.activity.BasicsDisplayWebActDemo"
+            android:configChanges="orientation|screenSize"
             android:exported="false"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.BasicsDisplayWebActDemo" />
@@ -41,44 +45,13 @@
         </activity>
         <activity
             android:name="com.just.agentweb.agentwebview.activity.SmartRefreshWebActDemo"
+            android:configChanges="orientation|screenSize"
             android:exported="false"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
-                    android:scheme="dataability" />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
-                    android:scheme="http" />
-            </intent-filter>
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="cs.znclass.com"
-                    android:path="/${applicationId}.hs.act.slbapp.SmartRefreshWebActDemo"
-                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity

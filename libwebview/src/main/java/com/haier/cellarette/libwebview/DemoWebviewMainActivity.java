@@ -128,7 +128,7 @@ public class DemoWebviewMainActivity extends AppCompatActivity {
                 // HiosHelper.resolveAd(act, mReceiver, "");
                 // 如果是activity中的fragment 那么 HiosHelper.resolveAd(activity, fragment, "");
 //                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "http://liangxiao.blog.51cto.com/");
-                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "http://liangxiao.blog.51cto.com/?condition=login");
+                HiosHelper.resolveAd(DemoWebviewMainActivity.this, DemoWebviewMainActivity.this, "http://www.baidu.com/?condition=login");
             }
         });
 

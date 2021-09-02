@@ -23,7 +23,8 @@ include ':libsCenterNew',
 // end aar
 
 // commonlibs
-include ':libagentweb'
+//include ':libagentweb'
+include ':libagentweb20'
 include ':libmvp'
 include ':libotherlibs'
 include ':libbase'
@@ -33,9 +34,9 @@ include ':libglide47'
 include ':libwebview'
 include ':libswipebacklayout'
 include ':librararyforfileprovdider'
-include ':refresh-footer'
-include ':refresh-header'
-include ':refresh-layout'
+//include ':refresh-footer'
+//include ':refresh-header'
+//include ':refresh-layout'
 include ':libzxing'
 include ':liblanguage'
 include ':libplugin'

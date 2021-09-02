@@ -16,9 +16,9 @@ public class WebViewMainActivity extends WebViewActivity {
             return;
         }
         if (adId.equals("1")) {
-            url = "http://liangxiao.blog.51cto.com/";
+            url = "https://www.iqiyi.com/";
         } else {
-            url = "https://www.baidu.com/";
+            url = "http://www.baidu.com/?condition=login/";
         }
 //        setup();//必须删除bufen
 //        mPresenter = PresenterHelper.create(AdPresenter.class, this);

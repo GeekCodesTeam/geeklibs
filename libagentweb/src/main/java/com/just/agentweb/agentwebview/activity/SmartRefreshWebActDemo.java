@@ -97,7 +97,9 @@ public class SmartRefreshWebActDemo extends BaseActWebActivity {
         }
         Log.e("targetaaaaaaa=", target);
         if (TextUtils.isEmpty(target)) {
-            target = "http://www.jd.com/";
+            target = "https://m.jd.com/";
+//            target = "https://www.baidu.com";
+//            target = "https://v.youku.com/v_show/id_XNTgwMTY2NDkzMg==.html?spm=a2ha1.14919748_WEBGAME_JINGXUAN.drawer4.d_zj1_2&scm=20140719.manual.4471.video_XNTgwMTY2NDkzMg%3D%3D";
         }
         return target;
     }

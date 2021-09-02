@@ -23,7 +23,7 @@
         <include layout="@layout/activity_baseviewpage_common_topbar1" />
 
         <LinearLayout
-            android:id="@+id/ll_base_container"
+            android:id="@+id/ll_base_container111"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" />

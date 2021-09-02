@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.just.agentweb.geek">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_namelibagentweb20"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.just.agentweb.geek.activity.AgentwebAct"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.AgentwebAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.just.agentweb.geek.activity.WebActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.RemoteWebViewlActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:process=":web" />
+
+        <service
+            android:name="com.just.agentweb.geek.service.WebService"
+            android:exported="false"
+            android:process=":web" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.CommonActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.just.agentweb.geek.activity.EasyWebActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.ContainerActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name="com.just.agentweb.geek.activity.AutoHidenToolbarActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.NativeDownloadActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+
+        <provider
+            android:name="com.just.agentweb.geek.provider.ServiceProvider"
+            android:authorities="com.just.agentweb.geek"
+            android:exported="false" />
+
+        <provider
+            android:name="com.just.agentweb.geek.provider.WebServiceProvider"
+            android:authorities="com.just.agentweb.geek.web"
+            android:exported="false"
+            android:process=":web" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.ExternalActivity"
+            android:exported="false">
+            <intent-filter>
+                <!--                <action android:name="android.intent.action.VIEW" />-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--BROWSABLE指定该Activity能被浏览器安全调用-->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="sample.just.com"
+                    android:scheme="agentweb" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

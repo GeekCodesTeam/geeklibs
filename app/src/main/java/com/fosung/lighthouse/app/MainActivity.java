@@ -1,8 +1,13 @@
 package com.fosung.lighthouse.app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.haier.cellarette.libwebview.DemoWebviewMainActivity;
+import com.just.agentweb.geek.activity.AgentwebAct;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,6 +15,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        startActivity(new Intent(this, DateTimePickerActivity.class));
+        findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AgentwebAct.class));
+
+            }
+        });
+        findViewById(R.id.tv2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, DemoWebviewMainActivity.class));
+
+            }
+        });
     }
 }

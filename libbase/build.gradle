@@ -29,9 +29,9 @@ dependencies {
     api librarys.glide47
     api project(':libglide47')
     api project(':librararyforfileprovdider')
-    api project(':refresh-footer')
-    api project(':refresh-header')
-    api project(':refresh-layout')
+//    api project(':refresh-footer')
+//    api project(':refresh-header')
+//    api project(':refresh-layout')
     api project(':libzxing')
     api project(':liblanguage')
     api project(':libtablayout')
