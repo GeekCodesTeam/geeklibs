@@ -9,13 +9,13 @@
     android:orientation="vertical"
     tools:ignore="MissingDefaultResource">
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:id="@+id/baserecycleview_refreshLayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srlEnablePreviewInEditMode="false">
 
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        <com.scwang.smart.refresh.header.ClassicsHeader
             android:id="@+id/baserecycleview_smart_header1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        <com.scwang.smart.refresh.footer.ClassicsFooter
             android:id="@+id/baserecycleview_smart_footer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,5 +37,5 @@
             app:srlAccentColor="@color/white"
             app:srlPrimaryColor="#E6F1FF" />
 
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 </LinearLayout>

@@ -1,12 +1,10 @@
 package com.fosung.lighthouse.app;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.haier.cellarette.libwebview.DemoWebviewMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 

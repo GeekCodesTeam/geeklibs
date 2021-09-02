@@ -24,7 +24,7 @@
             app:nodata_layout="@layout/empty_nodata"
             app:unreachable_layout="@layout/empty_error" />
 
-        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/baserecycleview_refreshLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -46,6 +46,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="0mm" />
 
-        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
     </LinearLayout>
 </LinearLayout>

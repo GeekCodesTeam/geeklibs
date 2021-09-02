@@ -16,9 +16,6 @@ import com.just.agentweb.geek.widget.SmartRefreshWebLayout;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
-//import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-//import com.scwang.smartrefresh.layout.api.RefreshLayout;
-//import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 /**
  * Created by cenxiaozhong on 2017/7/1.
