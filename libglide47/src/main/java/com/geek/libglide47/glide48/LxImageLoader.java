@@ -18,7 +18,7 @@ public class LxImageLoader implements LXImageLoaderOnclick {
             //必须指定Target.SIZE_ORIGINAL，否则无法拿到原图，就无法享用天衣无缝的动画
             Glide.with(imageView)
                     .load(url)
-                    .apply(new RequestOptions().placeholder(R.drawable.ic_launcher_background).override(Target.SIZE_ORIGINAL))
+                    .apply(new RequestOptions().placeholder(R.drawable.ic_defs_loading).override(Target.SIZE_ORIGINAL))
                     .into(imageView);
         }
 
