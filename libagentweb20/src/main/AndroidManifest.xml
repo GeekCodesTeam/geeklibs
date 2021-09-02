@@ -70,12 +70,12 @@
 
         <provider
             android:name="com.just.agentweb.geek.provider.ServiceProvider"
-            android:authorities="com.just.agentweb.geek"
+            android:authorities="${applicationId}.ServiceProvider"
             android:exported="false" />
 
         <provider
             android:name="com.just.agentweb.geek.provider.WebServiceProvider"
-            android:authorities="com.just.agentweb.geek.web"
+            android:authorities="${applicationId}.WebServiceProvider"
             android:exported="false"
             android:process=":web" />
 

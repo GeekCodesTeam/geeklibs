@@ -26,6 +26,7 @@ dependencies {
     api project(':libretrofit')
     api project(':libswipebacklayout')
     api project(':libwebview')
+    api project(':libagentweb20')
     api librarys.glide47
     api project(':libglide47')
     api project(':librararyforfileprovdider')

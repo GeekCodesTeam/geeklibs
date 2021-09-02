@@ -6,6 +6,7 @@ package com.geek.libbase;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,6 +26,8 @@ import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
+import com.just.agentweb.geek.service.WebService;
+import com.queue.library.GlobalQueue;
 import com.tencent.bugly.Bugly;
 
 import java.security.SecureRandom;
@@ -133,6 +136,17 @@ public class AndroidApplication extends Application {
     protected void configHios() {
 //        HiosRegister.load();// 静态注册部分 已弃用
         HiosHelper.config(AppUtils.getAppPackageName() + ".ad.web.page", AppUtils.getAppPackageName() + ".web.page");
+        //implementation 'com.github.Justson:dispatch-queue:v1.0.5'
+        GlobalQueue.getMainQueue().postRunnableInIdleRunning(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    startService(new Intent(getApplicationContext(), WebService.class));
+                } catch (Throwable throwable) {
+
+                }
+            }
+        });
     }
 
     protected void others() {

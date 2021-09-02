@@ -3,11 +3,15 @@ package com.just.agentweb.geek.fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import com.just.agentweb.IWebLayout;
+import com.just.agentweb.geek.R;
 import com.just.agentweb.geek.widget.SmartRefreshWebLayout;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -40,6 +44,11 @@ public class SmartRefreshWebFragment extends BounceWebFragment {
         return super.getUrl();
     }
 
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_agentweb_smart, container, false);
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -65,6 +74,15 @@ public class SmartRefreshWebFragment extends BounceWebFragment {
 
 
     }
+
+//    @Override
+//    protected void getJsInterface() {
+//        if (mAgentWeb != null) {
+//            //注入对象
+//            mAgentWeb.getJsInterfaceHolder().addJavaObject("android", new ShouyeInterface(mAgentWeb, getActivity()));
+//        }
+//        super.getJsInterface();
+//    }
 
 
     @Override
