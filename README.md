@@ -55,9 +55,6 @@ Share this release:
     implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.7.2'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.7.2'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.7.2'																	
     implementation 'com.github.GeekCodesTeam.geeklibs:libzxing:1.7.2'
     implementation 'com.github.GeekCodesTeam.geeklibs:libxpopup:1.7.2'
     implementation 'com.github.GeekCodesTeam.geeklibs:libupdateapp:1.7.2'
@@ -65,6 +62,7 @@ Share this release:
     implementation 'com.github.GeekCodesTeam.geeklibs:libpictureselector:1.7.2'
     implementation 'com.github.GeekCodesTeam.geeklibs:liblinkagerecyclerview:1.7.2'
     implementation 'com.github.GeekCodesTeam.geeklibs:libexpandablerecyclerview:1.7.2'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libtablayout:1.7.2'
     implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb20:1.7.2'
 
 混合移动应用框架APP-Android3
