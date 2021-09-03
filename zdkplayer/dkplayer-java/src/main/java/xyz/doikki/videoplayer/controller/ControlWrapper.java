@@ -46,6 +46,12 @@ public class ControlWrapper implements MediaPlayerControl, IVideoController {
     }
 
     @Override
+    public void seekToOthers(long pos) {
+        mPlayerControl.seekToOthers(pos);
+    }
+
+
+    @Override
     public boolean isPlaying() {
         return mPlayerControl.isPlaying();
     }

@@ -61,7 +61,7 @@ dependencies {
 //    implementation project(':libagentweb')
 //    implementation project(':libagentweb20')
 //    implementation project(':libwebview')
-//    implementation project(':libotherlibs')
+    implementation project(':zdkplayer:dkplayer')
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.6.4'
 
 //    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.7.2'

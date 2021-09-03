@@ -14,6 +14,8 @@ public interface MediaPlayerControl {
 
     void seekTo(long pos);
 
+    void seekToOthers(long pos);
+
     boolean isPlaying();
 
     int getBufferedPercentage();

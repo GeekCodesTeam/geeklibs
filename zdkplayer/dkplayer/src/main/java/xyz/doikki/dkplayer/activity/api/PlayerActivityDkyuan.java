@@ -3,18 +3,12 @@ package xyz.doikki.dkplayer.activity.api;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-
-import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
 
 import xyz.doikki.dkplayer.R;
@@ -23,6 +17,7 @@ import xyz.doikki.dkplayer.util.IntentKeysDk;
 import xyz.doikki.dkplayer.util.ProgressManagerImplDk2;
 import xyz.doikki.dkplayer.util.UtilsDk;
 import xyz.doikki.dkplayer.widget.component.DebugInfoViewDk;
+import xyz.doikki.dkplayer.widget.component.PlayerMonitorDk;
 import xyz.doikki.videocontroller.StandardVideoController;
 import xyz.doikki.videocontroller.component.CompleteView;
 import xyz.doikki.videocontroller.component.ErrorView;
@@ -31,8 +26,6 @@ import xyz.doikki.videocontroller.component.LiveControlView;
 import xyz.doikki.videocontroller.component.PrepareView;
 import xyz.doikki.videocontroller.component.TitleView;
 import xyz.doikki.videocontroller.component.VodControlView;
-import xyz.doikki.videoplayer.controller.ControlWrapper;
-import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.player.AbstractPlayer;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.L;
@@ -42,13 +35,12 @@ import xyz.doikki.videoplayer.util.L;
  * Created by Doikki on 2017/4/7.
  */
 
-public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> {
+public class PlayerActivityDkyuan extends BaseActivityDk<VideoView<AbstractPlayer>> {
 
     private static final String THUMB = "https://cms-bucket.nosdn.127.net/eb411c2810f04ffa8aaafc42052b233820180418095416.jpeg";
-    private String url;
 
     public static void start(Context context, String url, String title, boolean isLive) {
-        Intent intent = new Intent(context, PlayerActivityDk.class);
+        Intent intent = new Intent(context, PlayerActivityDkyuan.class);
         intent.putExtra(IntentKeysDk.URL, url);
         intent.putExtra(IntentKeysDk.IS_LIVE, isLive);
         intent.putExtra(IntentKeysDk.TITLE, title);
@@ -121,48 +113,12 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
             //在控制器上显示调试信息
             controller.addControlComponent(new DebugInfoViewDk(this));
             //在LogCat显示调试信息
-//            controller.addControlComponent(new PlayerMonitorDk());
-            controller.addControlComponent(new IControlComponent() {
-                @Override
-                public void attach(@NonNull ControlWrapper controlWrapper) {
-
-                }
-
-                @Override
-                public View getView() {
-                    return null;
-                }
-
-                @Override
-                public void onVisibilityChanged(boolean isVisible, Animation anim) {
-
-                }
-
-                @Override
-                public void onPlayStateChanged(int playState) {
-
-                }
-
-                @Override
-                public void onPlayerStateChanged(int playerState) {
-
-                }
-
-                @Override
-                public void setProgress(int duration, int position) {
-                    mVideoView.seekToOthers(duration);
-                }
-
-                @Override
-                public void onLockStateChanged(boolean isLocked) {
-
-                }
-            });
+            controller.addControlComponent(new PlayerMonitorDk());
 
             //如果你不想要UI，不要设置控制器即可
             mVideoView.setVideoController(controller);
 
-            url = intent.getStringExtra(IntentKeysDk.URL);
+            String url = intent.getStringExtra(IntentKeysDk.URL);
 
             //点击文件管理器中的视频，选择DKPlayer打开，将会走以下代码
             if (TextUtils.isEmpty(url)
@@ -173,17 +129,11 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
             mVideoView.setUrl(url);
 
             //保存播放进度
-            mVideoView.setProgressManager(new ProgressManagerImplDk2());
+//            mVideoView.setProgressManager(new ProgressManagerImplDk2());
             //播放状态监听
             mVideoView.addOnStateChangeListener(mOnStateChangeListener);
             //获取进度条秒
-            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Log.e("mVideoView", mVideoView.getCurrentPosition() + "");// 内存不准确
-                    Log.e("mVideoView2", SPUtils.getInstance().getLong(String.valueOf(url.hashCode())) + "");// 硬盘准确
-                }
-            }, 1000);
+            Log.e("mVideoView", mVideoView.getCurrentPosition() + "");
 
             //临时切换播放核心，如需全局请通过VideoConfig配置，详见MyApplication
             //使用IjkPlayer解码
@@ -195,8 +145,7 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
 
             //设置静音播放
 //            mVideoView.setMute(true);
-            //设置可以看到哪里
-//            mVideoView.seekToOthers(20*1000);
+
             mVideoView.start();
         }
 
