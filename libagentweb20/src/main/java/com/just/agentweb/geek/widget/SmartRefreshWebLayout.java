@@ -10,7 +10,6 @@ import android.webkit.WebView;
 import com.just.agentweb.IWebLayout;
 import com.just.agentweb.geek.R;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
-//import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /**
  * Created by cenxiaozhong on 2017/8/14.
