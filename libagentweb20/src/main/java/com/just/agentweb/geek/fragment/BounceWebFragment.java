@@ -2,6 +2,8 @@ package com.just.agentweb.geek.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
+
+import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
 import android.view.Gravity;
 import android.view.View;
@@ -41,7 +43,7 @@ public class BounceWebFragment extends AgentWebFragment {
 	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 		mAgentWeb = AgentWeb.with(this)
 				.setAgentWebParent((ViewGroup) view, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
-				.useDefaultIndicator(-1, 2)
+				.useDefaultIndicator(getIndicatorColor(), getIndicatorHeight())
 				.setAgentWebWebSettings(getSettings())
 				.setWebViewClient(mWebViewClient)
 				.setWebChromeClient(mWebChromeClient)
@@ -58,6 +60,17 @@ public class BounceWebFragment extends AgentWebFragment {
 		initView(view);
 
 
+	}
+
+	@Override
+	protected @ColorInt
+	int getIndicatorColor() {
+		return -1;
+	}
+
+	@Override
+	protected int getIndicatorHeight() {
+		return 2;
 	}
 
 	protected IWebLayout getWebLayout() {

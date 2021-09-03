@@ -83,6 +83,11 @@ public class SmartRefreshWebFragment extends BounceWebFragment {
 
 
     @Override
+    protected int getIndicatorColor() {
+        return Color.parseColor("#ff0000");
+    }
+
+    @Override
     protected IWebLayout getWebLayout() {
         return this.mSmartRefreshWebLayout = new SmartRefreshWebLayout(this.getActivity());
     }

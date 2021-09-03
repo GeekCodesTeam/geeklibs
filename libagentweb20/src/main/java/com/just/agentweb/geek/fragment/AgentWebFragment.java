@@ -24,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.PopupMenu;
@@ -96,6 +97,7 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
     }
 
 
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -103,7 +105,7 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 
         mAgentWeb = AgentWeb.with(this)//
                 .setAgentWebParent((LinearLayout) view, -1, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))//传入AgentWeb的父控件。
-                .useDefaultIndicator(-1, 3)//设置进度条颜色与高度，-1为默认值，高度为2，单位为dp。
+                .useDefaultIndicator(getIndicatorColor(), getIndicatorHeight())//设置进度条颜色与高度，-1为默认值，高度为2，单位为dp。
                 .setAgentWebWebSettings(getSettings())//设置 IAgentWebSettings。
                 .setWebViewClient(mWebViewClient)//WebViewClient ， 与 WebView 使用一致 ，但是请勿获取WebView调用setWebViewClient(xx)方法了,会覆盖AgentWeb DefaultWebClient,同时相应的中间件也会失效。
                 .setWebChromeClient(new CommonWebChromeClient()) //WebChromeClient
@@ -510,6 +512,15 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
     public void onDestroyView() {
         mAgentWeb.getWebLifeCycle().onDestroy();
         super.onDestroyView();
+    }
+
+    protected @ColorInt
+    int getIndicatorColor() {
+        return -1;
+    }
+
+    protected int getIndicatorHeight() {
+        return 3;
     }
 
     /**
