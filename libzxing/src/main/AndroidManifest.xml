@@ -42,7 +42,7 @@
             android:exported="false"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="${applicationId}.hs.act.slbapp.Saoma3CommonScanActivity1" />
+                <action android:name="${applicationId}.hs.act.slbapp.Saoma3CommonScanActivity2" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
