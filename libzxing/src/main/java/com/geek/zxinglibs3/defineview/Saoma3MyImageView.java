@@ -31,7 +31,8 @@ public class Saoma3MyImageView extends AppCompatImageView {
         int height = getHeight();
 
         Paint paint = new Paint();
-        paint.setColor(Color.rgb(9,187,7));
+//        paint.setColor(Color.rgb(9,187,7));
+        paint.setColor(Color.rgb(255,255,255));
         paint.setAntiAlias(true);
         paint.setStrokeWidth(t(5));
 

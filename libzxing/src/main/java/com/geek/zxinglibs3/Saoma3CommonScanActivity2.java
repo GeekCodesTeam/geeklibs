@@ -15,13 +15,14 @@
  */
 package com.geek.zxinglibs3;
 
-import android.app.Activity;
+import android.Manifest;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
@@ -29,17 +30,24 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import com.blankj.utilcode.util.BarUtils;
 import com.geek.zxinglibs3.saoma3zxing.ScanListener;
 import com.geek.zxinglibs3.saoma3zxing.ScanManager;
 import com.geek.zxinglibs3.saoma3zxing.decode.DecodeThread;
 import com.geek.zxinglibs3.saoma3zxing.decode.Utils;
-import com.geek.zxinglibs3.utils.Saoma3Constant;
 import com.google.zxing.Result;
 
-public final class Saoma3CommonScanActivity extends Activity implements ScanListener, View.OnClickListener {
-    static final String TAG = Saoma3CommonScanActivity.class.getSimpleName();
+import java.util.List;
+
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public abstract class Saoma3CommonScanActivity2 extends AppCompatActivity implements EasyPermissions.PermissionCallbacks, ScanListener, View.OnClickListener {
+    static final String TAG = Saoma3CommonScanActivity2.class.getSimpleName();
     SurfaceView scanPreview = null;
     View scanContainer;
     View scanCropView;
@@ -47,67 +55,50 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
     ScanManager scanManager;
     TextView iv_light;
     TextView qrcode_g_gallery;
-    TextView qrcode_ic_back;
     final int PHOTOREQUESTCODE = 1111;
 
     Button rescan;
     ImageView scan_image;
     ImageView authorize_return;
-    private int scanMode;//扫描模型（条形，二维码，全部）
-
     TextView title;
     TextView scan_hint;
     TextView tv_scan_result;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        BarUtils.setStatusBarColor(this, ContextCompat.getColor(this, R.color.transparent));
+        BarUtils.setStatusBarLightMode(this, false);
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.saoma3_activity_scan_code);
+        setContentView(R.layout.saoma3_activity_scan_code2);
+        initView();
+        setup();
+    }
+
+    protected abstract void setup();
+
+    public void initView() {
         rescan = (Button) findViewById(R.id.service_register_rescan);
         scan_image = (ImageView) findViewById(R.id.scan_image);
         authorize_return = (ImageView) findViewById(R.id.authorize_return);
         title = (TextView) findViewById(R.id.common_title_TV_center);
         scan_hint = (TextView) findViewById(R.id.scan_hint);
         tv_scan_result = (TextView) findViewById(R.id.tv_scan_result);
-        scanMode=getIntent().getIntExtra(Saoma3Constant.REQUEST_SCAN_MODE, Saoma3Constant.REQUEST_SCAN_MODE_ALL_MODE);
-
-        initView();
-    }
-
-    void initView() {
-        switch (scanMode){
-            case DecodeThread.BARCODE_MODE:
-                title.setText(R.string.scan_barcode_title);
-                scan_hint.setText(R.string.scan_barcode_hint);
-                break;
-            case DecodeThread.QRCODE_MODE:
-                title.setText(R.string.scan_qrcode_title);
-                scan_hint.setText(R.string.scan_qrcode_hint);
-                break;
-            case DecodeThread.ALL_MODE:
-                title.setText(R.string.scan_allcode_title);
-                scan_hint.setText(R.string.scan_allcode_hint);
-                break;
-        }
         scanPreview = (SurfaceView) findViewById(R.id.capture_preview);
         scanContainer = findViewById(R.id.capture_container);
         scanCropView = findViewById(R.id.capture_crop_view);
         scanLine = (ImageView) findViewById(R.id.capture_scan_line);
         qrcode_g_gallery = (TextView) findViewById(R.id.qrcode_g_gallery);
         qrcode_g_gallery.setOnClickListener(this);
-        qrcode_ic_back = (TextView) findViewById(R.id.qrcode_ic_back);
-        qrcode_ic_back.setOnClickListener(this);
         iv_light = (TextView) findViewById(R.id.iv_light);
         iv_light.setOnClickListener(this);
         rescan.setOnClickListener(this);
         authorize_return.setOnClickListener(this);
         //构造出扫描管理器
-        scanManager = new ScanManager(this, scanPreview, scanContainer, scanCropView, scanLine, scanMode,this);
+        scanManager = new ScanManager(this, scanPreview, scanContainer, scanCropView, scanLine, DecodeThread.ALL_MODE, this);
+
     }
 
     @Override
@@ -115,7 +106,8 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         super.onResume();
         scanManager.onResume();
         rescan.setVisibility(View.INVISIBLE);
-        scan_image.setVisibility(View.GONE);
+//        scan_image.setVisibility(View.GONE);
+        scan_image.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -123,6 +115,7 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         super.onPause();
         scanManager.onPause();
     }
+
     /**
      *
      */
@@ -147,10 +140,13 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         rescan.setVisibility(View.VISIBLE);
         scan_image.setVisibility(View.VISIBLE);
         tv_scan_result.setVisibility(View.VISIBLE);
-        tv_scan_result.setText("结果："+rawResult.getText());
+        tv_scan_result.setText("结果：" + rawResult.getText());
+        setOnScanResult(rawResult, bundle);
     }
 
-    void startScan() {
+    protected abstract void setOnScanResult(Result rawResult, Bundle bundle);
+
+    public void startScan() {
         if (rescan.getVisibility() == View.VISIBLE) {
             rescan.setVisibility(View.INVISIBLE);
             scan_image.setVisibility(View.GONE);
@@ -160,11 +156,13 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
 
     @Override
     public void scanError(Exception e) {
-        Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         //相机扫描出错时
-        if(e.getMessage()!=null&&e.getMessage().startsWith("相机")){
+        if (e.getMessage() != null && e.getMessage().startsWith("相机")) {
             scanPreview.setVisibility(View.INVISIBLE);
         }
+        checkCameraPermissions();
+
     }
 
     public void showPictures(int requestCode) {
@@ -194,17 +192,70 @@ public final class Saoma3CommonScanActivity extends Activity implements ScanList
         }
     }
 
+    public static final int RC_CAMERA = 0X01;
+    public static final int RC_READ_PHOTO = 0X02;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        Log.e("onPermissionsonRequestPermissionsResult", requestCode + "");
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> list) {
+        // Some permissions have been granted
+        Log.e("onPermissionsGranted", requestCode + "");
+        if (scanManager != null) {
+            scanPreview.setVisibility(View.VISIBLE);
+            scanManager.setHasSurface(true);
+//            scanManager.initCamera(scanPreview.getHolder());
+        }
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> list) {
+        // Some permissions have been denied
+        // ...
+        Log.e("onPermissionsDenied", requestCode + "");
+    }
+
+    /**
+     * 检测拍摄权限
+     */
+    @AfterPermissionGranted(RC_CAMERA)
+    private void checkCameraPermissions() {
+        String[] perms = {Manifest.permission.CAMERA};
+        if (EasyPermissions.hasPermissions(this, perms)) {//有权限
+            startScan();
+        } else {
+            // Do not have permissions, request them now
+            EasyPermissions.requestPermissions(this, getString(R.string.permission_camera),
+                    RC_CAMERA, perms);
+        }
+    }
+
+    @AfterPermissionGranted(RC_READ_PHOTO)
+    private void checkExternalStoragePermissions() {
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        if (EasyPermissions.hasPermissions(this, perms)) {//有权限
+            showPictures(PHOTOREQUESTCODE);
+        } else {
+            EasyPermissions.requestPermissions(this, getString(R.string.permission_external_storage),
+                    RC_READ_PHOTO, perms);
+        }
+    }
+
     @Override
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.qrcode_g_gallery) {
-            showPictures(PHOTOREQUESTCODE);
+            checkExternalStoragePermissions();
         } else if (id == R.id.iv_light) {
             scanManager.switchLight();
-        } else if (id == R.id.qrcode_ic_back) {
-            finish();
         } else if (id == R.id.service_register_rescan) {//再次开启扫描
-            startScan();
+            checkCameraPermissions();
         } else if (id == R.id.authorize_return) {
             finish();
         }

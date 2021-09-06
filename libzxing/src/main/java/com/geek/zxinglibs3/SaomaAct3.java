@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.geek.zxinglibs3.utils.Saoma3Constant;
 
 
@@ -15,6 +14,7 @@ public class SaomaAct3 extends Activity implements View.OnClickListener {
     private Button scan_2code;
     private Button scan_bar_code;
     private Button scan_code;
+    private Button scan_code2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,12 @@ public class SaomaAct3 extends Activity implements View.OnClickListener {
         scan_2code = (Button) findViewById(R.id.scan_2code);
         scan_bar_code = (Button) findViewById(R.id.scan_bar_code);
         scan_code = (Button) findViewById(R.id.scan_code);
+        scan_code2 = (Button) findViewById(R.id.scan_code2);
         create_code.setOnClickListener(this);
         scan_2code.setOnClickListener(this);
         scan_bar_code.setOnClickListener(this);
         scan_code.setOnClickListener(this);
+        scan_code2.setOnClickListener(this);
         int mode = getIntent().getIntExtra(Saoma3Constant.REQUEST_SCAN_MODE, Saoma3Constant.REQUEST_SCAN_MODE_ALL_MODE);
 
 
@@ -53,6 +55,11 @@ public class SaomaAct3 extends Activity implements View.OnClickListener {
             intent = new Intent(this, Saoma3CommonScanActivity.class);
             intent.putExtra(Saoma3Constant.REQUEST_SCAN_MODE, Saoma3Constant.REQUEST_SCAN_MODE_ALL_MODE);
             startActivity(intent);
+        } else if (id == R.id.scan_code2) {//扫描条形码或者二维码2
+            intent = new Intent(this, Saoma3CommonScanActivity1.class);
+            intent.putExtra(Saoma3Constant.REQUEST_SCAN_MODE, Saoma3Constant.REQUEST_SCAN_MODE_ALL_MODE);
+            startActivity(intent);
+
         }
     }
 
