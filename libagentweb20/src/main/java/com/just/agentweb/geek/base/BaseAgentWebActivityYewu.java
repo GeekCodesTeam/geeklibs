@@ -1,13 +1,16 @@
 package com.just.agentweb.geek.base;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -354,9 +357,26 @@ public abstract class BaseAgentWebActivityYewu extends AppCompatActivity {
 
     protected @Nullable
     WebViewClient getWebViewClient() {
-        return null;
+        return mWebViewClient;
     }
 
+    protected com.just.agentweb.WebViewClient mWebViewClient = new WebViewClient() {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+            return super.shouldOverrideUrlLoading(view, request);
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            //do you  work
+            Log.i("Info", "BaseWebActivity onPageStarted");
+            if (url.equals(getUrl())) {
+                pageNavigator(View.GONE);
+            } else {
+                pageNavigator(View.VISIBLE);
+            }
+        }
+    };
 
     protected @Nullable
     WebView getWebView() {
