@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, SaomaAct3.class));
+//                startActivity(new Intent(MainActivity.this, AgentwebAct.class));
 
             }
         });

@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.PopupMenu;
@@ -63,14 +64,14 @@ import java.util.HashMap;
 
 public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 
-    private ImageView mBackImageView;
-    private View mLineView;
-    private ImageView mFinishImageView;
-    private TextView mTitleTextView;
-    private ImageView mMoreImageView;
+    protected ImageView mBackImageView;
+    protected View mLineView;
+    protected ImageView mFinishImageView;
+    protected TextView mTitleTextView;
+    protected ImageView mMoreImageView;
     protected AgentWeb mAgentWeb;
     public static final String URL_KEY = "url_key";
-    private PopupMenu mPopupMenu;
+    protected PopupMenu mPopupMenu;
     /**
      * 用于方便打印测试
      */
@@ -570,8 +571,23 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
         };
     }
 
-    protected MiddlewareWebChromeBase getMiddlewareWebChrome() {
-        return this.mMiddleWareWebChrome = new MiddlewareChromeClient() {
+    protected void setTitle(WebView view, String title) {
+
+    }
+
+//    protected MiddlewareWebChromeBase getMiddlewareWebChrome() {
+//        return this.mMiddleWareWebChrome = new MiddlewareChromeClient() {
+//        };
+//    }
+
+    protected @NonNull
+    MiddlewareWebChromeBase getMiddlewareWebChrome() {
+        return this.mMiddleWareWebChrome = new MiddlewareWebChromeBase() {
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+                setTitle(view, title);
+            }
         };
     }
 }

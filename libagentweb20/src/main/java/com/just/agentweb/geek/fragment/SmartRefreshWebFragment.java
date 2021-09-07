@@ -2,13 +2,14 @@ package com.just.agentweb.geek.fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
+
+import androidx.annotation.Nullable;
 
 import com.just.agentweb.IWebLayout;
 import com.just.agentweb.geek.R;
@@ -44,7 +45,7 @@ public class SmartRefreshWebFragment extends BounceWebFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_agentweb_smart, container, false);
+        return inflater.inflate(R.layout.fragment_agentweb, container, false);
     }
 
     @Override
@@ -72,7 +73,7 @@ public class SmartRefreshWebFragment extends BounceWebFragment {
 
     }
 
-//    @Override
+    //    @Override
 //    protected void getJsInterface() {
 //        if (mAgentWeb != null) {
 //            //注入对象
@@ -81,6 +82,16 @@ public class SmartRefreshWebFragment extends BounceWebFragment {
 //        super.getJsInterface();
 //    }
 
+    @Override
+    protected void setTitle(WebView view, String title) {
+        super.setTitle(view, title);
+        if (!TextUtils.isEmpty(title)) {
+            if (title.length() > 10) {
+                title = title.substring(0, 10).concat("...");
+            }
+        }
+        mTitleTextView.setText(title);
+    }
 
     @Override
     protected int getIndicatorColor() {

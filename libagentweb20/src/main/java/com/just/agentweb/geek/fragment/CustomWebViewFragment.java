@@ -26,6 +26,7 @@ public class CustomWebViewFragment extends AgentWebFragment {
 
 	private MarkdownView mMarkdownWebView;
 	private EditText markdownEditText;
+	private LinearLayout ll1;
 
 	public static final CustomWebViewFragment getInstance(Bundle bundle) {
 
@@ -48,11 +49,14 @@ public class CustomWebViewFragment extends AgentWebFragment {
 		//MarkdownView 是 WebView  的一个子类
 		mMarkdownWebView = new MarkdownView(getActivity());
 		markdownEditText = (EditText) view.findViewById(R.id.markdownText);
+		ll1 = view.findViewById(R.id.ll1);
 
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
 		lp.weight = 1f;
 		mAgentWeb = AgentWeb.with(this)//
-				.setAgentWebParent((ViewGroup) view, lp)//
+//				.setAgentWebParent((ViewGroup) view, lp)//
+//				.setAgentWebParent((ViewGroup) ll1,  new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))//
+				.setAgentWebParent((ViewGroup) ll1,  lp)//
 				.closeIndicator()//
 				.setWebViewClient(mWebViewClient)
 				.setWebView(mMarkdownWebView)

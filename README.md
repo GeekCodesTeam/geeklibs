@@ -26,44 +26,47 @@ Share this release:
 ### 你也可以这样
 
     // 总依赖																	
-    implementation 'com.github.GeekCodesTeam:geeklibs:1.7.2'	
+    implementation 'com.github.GeekCodesTeam:geeklibs:1.7.8'	
     或者  
-    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.7.2'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.7.8'
 	+		
-    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.7.2'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libotherlibs:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libxuanzeqi:1.7.8'
     //
-    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer:1.7.2'
+    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer:1.7.8'
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-java:1.7.2')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-java:1.7.8')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ijkexo:1.7.2')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ijkexo:1.7.8')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ui:1.7.2')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-ui:1.7.8')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-videocache:1.7.2')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:zdkplayer-videocache:1.7.8')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libokhttputils:1.7.2')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libokhttputils:1.7.8')
 
-[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libyanzhenjieandpermission:1.7.2')
+[comment]: <> (    implementation 'com.github.GeekCodesTeam.geeklibs:libyanzhenjieandpermission:1.7.8')
 
-    // 部分依赖 implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.7.2'																	
-    implementation 'com.github.GeekCodesTeam.geeklibs:libzxing:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libxpopup:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libupdateapp:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libncalendar:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libpictureselector:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:liblinkagerecyclerview:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libexpandablerecyclerview:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libtablayout:1.7.2'
-    implementation 'com.github.GeekCodesTeam.geeklibs:libagentweb20:1.7.2'
+    // 部分依赖 implementation 'com.github.GeekCodesTeam.geeklibs:libbase:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libutils:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libswipebacklayout:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libwebview:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:librararyforfileprovdider:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libmvp:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libretrofit:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libglide47:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-layout:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-header:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:refresh-footer:1.7.8'																	
+    implementation 'com.github.GeekCodesTeam.geeklibs:libzxing:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libxpopup:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libupdateapp:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libncalendar:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libpictureselector:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:liblinkagerecyclerview:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libexpandablerecyclerview:1.7.8'
+    implementation 'com.github.GeekCodesTeam.geeklibs:libtablayout:1.7.8'
 
 混合移动应用框架APP-Android3
 
@@ -706,7 +709,7 @@ Share this release:
 已知问题： 1.融云问题： D:\code\lib7\bumenyanfa\fsjxappkuangjia-android\yewulibs1\yewulibs1-app\build\
 intermediates\merged_native_libs\bxn_nationRelease\out\lib\armeabi-v7a\libRongIMLib.so because of
 non-zero exit value from objcopy. D:
-\code\android-studio-ide-201.6953283-windows\sdk\ndk\22.1.7171670\toolchains\
+\code\android-studio-ide-201.6953283-windows\sdk\ndk\23.0.7599858\toolchains\
 llvm\prebuilt\windows-x86_64\bin\llvm-strip.exe: error: section [index 11] has a sh_offset (0x19c80)
 
 + sh_size (0xb61b8) that is greater than the file size

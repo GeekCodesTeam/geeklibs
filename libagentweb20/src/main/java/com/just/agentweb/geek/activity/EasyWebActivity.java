@@ -2,16 +2,18 @@ package com.just.agentweb.geek.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.just.agentweb.geek.R;
 import com.just.agentweb.geek.base.BaseAgentWebActivity;
@@ -85,6 +87,21 @@ public class EasyWebActivity extends BaseAgentWebActivity {
             }
         }
         mTitleTextView.setText(title);
+    }
+
+    @Override
+    protected void addBGChild(FrameLayout frameLayout) {
+
+        TextView mTextView = new TextView(frameLayout.getContext());
+        mTextView.setText("技术由 GeekTeamApp 提供");
+        mTextView.setTextSize(16);
+        mTextView.setTextColor(Color.parseColor("#727779"));
+        frameLayout.setBackgroundColor(Color.parseColor("#272b2d"));
+        FrameLayout.LayoutParams mFlp = new FrameLayout.LayoutParams(-2, -2);
+        mFlp.gravity = Gravity.CENTER_HORIZONTAL;
+        final float scale = frameLayout.getContext().getResources().getDisplayMetrics().density;
+        mFlp.topMargin = (int) (15 * scale + 0.5f);
+        frameLayout.addView(mTextView, 0, mFlp);
     }
 
     @Override

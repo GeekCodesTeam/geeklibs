@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -37,6 +36,7 @@ import com.just.agentweb.WebChromeClient;
 import com.just.agentweb.WebViewClient;
 import com.just.agentweb.geek.AgentUtils;
 import com.just.agentweb.geek.R;
+import com.just.agentweb.geek.widget.WebLayout;
 
 /**
  * Created by cenxiaozhong on 2017/7/22.
@@ -44,7 +44,7 @@ import com.just.agentweb.geek.R;
  * source code  https://github.com/Justson/AgentWeb
  */
 
-public abstract class BaseAgentWebActivity extends AppCompatActivity {
+public abstract class BaseAgentWebActivityYewu extends AppCompatActivity {
 
     protected ImageView mBackImageView;
     protected View mLineView;
@@ -103,7 +103,7 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
             int id = v.getId();
             if (id == R.id.iv_back) {// true表示AgentWeb处理了该事件
                 if (!mAgentWeb.back()) {
-                    BaseAgentWebActivity.this.finish();
+                    BaseAgentWebActivityYewu.this.finish();
                 }
             } else if (id == R.id.iv_finish) {
 //                BaseAgentWebActivity.this.finish();
@@ -150,12 +150,12 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
                 return true;
             } else if (itemId == R.id.copy) {
                 if (mAgentWeb != null) {
-                    AgentUtils.toCopy(BaseAgentWebActivity.this, mAgentWeb.getWebCreator().getWebView().getUrl());
+                    AgentUtils.toCopy(BaseAgentWebActivityYewu.this, mAgentWeb.getWebCreator().getWebView().getUrl());
                 }
                 return true;
             } else if (itemId == R.id.default_browser) {
                 if (mAgentWeb != null) {
-                    AgentUtils.openBrowser(BaseAgentWebActivity.this, mAgentWeb.getWebCreator().getWebView().getUrl());
+                    AgentUtils.openBrowser(BaseAgentWebActivityYewu.this, mAgentWeb.getWebCreator().getWebView().getUrl());
                 }
                 return true;
             } else if (itemId == R.id.default_clean) {
@@ -207,10 +207,12 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
     }
 
     protected void buildAgentWeb() {
+
         initView();
         ErrorLayoutEntity mErrorLayoutEntity = getErrorLayoutEntity();
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(getAgentWebParent(), new ViewGroup.LayoutParams(-1, -1))
+//                .setAgentWebParent(getAgentWebParent(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))//传入AgentWeb的父控件。
                 .useDefaultIndicator(getIndicatorColor(), getIndicatorHeight())
                 .setWebChromeClient(getWebChromeClient())
                 .setWebViewClient(getWebViewClient())
@@ -228,6 +230,9 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
                 .createAgentWeb()
                 .ready()
                 .go(getUrl());
+        // 得到 AgentWeb 最底层的控件
+        addBGChild((FrameLayout) mAgentWeb.getWebCreator().getWebParentLayout());
+
     }
 
 
@@ -360,7 +365,7 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
 
     protected @Nullable
     IWebLayout getWebLayout() {
-        return null;
+        return new WebLayout(this);
     }
 
     protected @Nullable
