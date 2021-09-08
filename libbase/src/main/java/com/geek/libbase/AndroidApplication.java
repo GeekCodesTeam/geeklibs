@@ -149,7 +149,7 @@ public class AndroidApplication extends Application {
             }
         });
         //
-        HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page");
+        HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page3");
     }
 
     protected void others() {

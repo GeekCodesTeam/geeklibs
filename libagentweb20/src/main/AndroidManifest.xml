@@ -99,7 +99,7 @@
             android:launchMode="singleTop">
 
             <intent-filter>
-                <action android:name="${applicationId}.web.page" />
+                <action android:name="${applicationId}.web.page3" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
