@@ -4,6 +4,7 @@
     package="com.fosung.lighthouse.app">
 
     <application
+        android:name=".YewuApplicationAndroid"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher11"
         android:label="@string/app_name"

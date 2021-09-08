@@ -45,8 +45,8 @@ public class BaseWebActivity extends AppCompatActivity {
     protected ImageView mMoreImageView;
     protected PopupMenu mPopupMenu;
     protected AgentWeb mAgentWeb;
-    private LinearLayout mLinearLayout;
-    private AlertDialog mAlertDialog;
+    protected LinearLayout mLinearLayout;
+    protected AlertDialog mAlertDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

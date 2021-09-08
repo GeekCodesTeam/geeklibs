@@ -27,6 +27,8 @@ import xyz.doikki.videoplayer.player.AndroidMediaPlayerFactory;
 import xyz.doikki.videoplayer.player.PlayerFactory;
 import xyz.doikki.videoplayer.player.VideoViewConfig;
 import xyz.doikki.videoplayer.player.VideoViewManager;
+
+import com.blankj.utilcode.util.Utils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.runtime.Permission;
@@ -108,6 +110,7 @@ public class DKMainActivity extends BaseActivityDk implements BottomNavigationVi
                 .commitAllowingStateLoss();
 
         mCurrentIndex = 0;
+
     }
 
     @Override

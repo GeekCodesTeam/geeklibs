@@ -44,6 +44,16 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
 
     private boolean mIsDragging;
 
+    private boolean mIsxianzhi;// 限制观看拖动 false 不限制 true 限制
+
+    public boolean ismIsxianzhi() {
+        return mIsxianzhi;
+    }
+
+    public void setmIsxianzhi(boolean mIsxianzhi) {
+        this.mIsxianzhi = mIsxianzhi;
+    }
+
     private boolean mIsShowBottomProgress = true;
 
     public VodControlView(@NonNull Context context) {
@@ -267,7 +277,16 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
     public void onStopTrackingTouch(SeekBar seekBar) {
         long duration = mControlWrapper.getDuration();
         long newPosition = (duration * seekBar.getProgress()) / mVideoProgress.getMax();
-        mControlWrapper.seekTo((int) newPosition);
+        long old = mControlWrapper.getCurrentPosition();
+        if (ismIsxianzhi()) {
+            if (newPosition > old) {
+                mControlWrapper.seekTo((int) old);
+            } else {
+                mControlWrapper.seekTo((int) newPosition);
+            }
+        } else {
+            mControlWrapper.seekTo((int) newPosition);
+        }
         mIsDragging = false;
         mControlWrapper.startProgress();
         mControlWrapper.startFadeOut();

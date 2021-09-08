@@ -26,6 +26,7 @@ import com.geek.libutils.app.MyLogUtil;
 import com.geek.libutils.data.MmkvUtils;
 import com.haier.cellarette.libretrofit.common.RetrofitNetNew;
 import com.haier.cellarette.libwebview.hois2.HiosHelper;
+import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.just.agentweb.geek.service.WebService;
 import com.queue.library.GlobalQueue;
 import com.tencent.bugly.Bugly;
@@ -147,6 +148,8 @@ public class AndroidApplication extends Application {
                 }
             }
         });
+        //
+        HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page");
     }
 
     protected void others() {

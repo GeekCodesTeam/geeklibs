@@ -5,6 +5,8 @@ import android.view.animation.Animation;
 
 import androidx.annotation.NonNull;
 
+import com.blankj.utilcode.util.SPUtils;
+
 import xyz.doikki.dkplayer.util.UtilsDk;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
 import xyz.doikki.videoplayer.controller.IControlComponent;

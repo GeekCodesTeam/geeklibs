@@ -477,9 +477,9 @@ public class VideoView<P extends AbstractPlayer> extends FrameLayout
     @Override
     public void seekTo(long pos) {
         if (isInPlaybackState()) {
-            if (pos >= mm) {
-                return;
-            }
+//            if (pos < mm) {
+//                return;
+//            }
             mMediaPlayer.seekTo(pos);
         }
     }

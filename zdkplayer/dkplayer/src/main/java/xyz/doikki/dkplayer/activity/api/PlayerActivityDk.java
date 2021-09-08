@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
+import com.google.common.eventbus.EventBus;
 
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
@@ -56,6 +57,17 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
+    }
+
+    @Override
     protected int getLayoutResId() {
         return R.layout.activity_playerdk;
     }
@@ -91,6 +103,8 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 VodControlView vodControlView = new VodControlView(this);//点播控制条
                 //是否显示底部进度条。默认显示
 //                vodControlView.showBottomProgress(false);
+                // 限制观看拖动
+                vodControlView.setmIsxianzhi(true);
                 controller.addControlComponent(vodControlView);
             }
 
@@ -150,7 +164,9 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
 
                 @Override
                 public void setProgress(int duration, int position) {
-                    mVideoView.seekToOthers(duration);
+                    Log.e("mVideoViewsetProgress", duration + "");
+//                    mVideoView.seekToOthers(position);
+                    SPUtils.getInstance().put(String.valueOf(url.hashCode()), new Long((long) position));
                 }
 
                 @Override
@@ -171,7 +187,6 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 url = UtilsDk.getFileFromContentUri(this, intent.getData());
             }
             mVideoView.setUrl(url);
-
             //保存播放进度
             mVideoView.setProgressManager(new ProgressManagerImplDk2());
             //播放状态监听
@@ -181,7 +196,7 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 @Override
                 public void run() {
                     Log.e("mVideoView", mVideoView.getCurrentPosition() + "");// 内存不准确
-                    Log.e("mVideoView2", SPUtils.getInstance().getLong(String.valueOf(url.hashCode())) + "");// 硬盘准确
+                    Log.e("mVideoView2", SPUtils.getInstance().getLong(String.valueOf(url.hashCode()), 0) + "");// 硬盘准确
                 }
             }, 1000);
 
@@ -195,8 +210,6 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
 
             //设置静音播放
 //            mVideoView.setMute(true);
-            //设置可以看到哪里
-//            mVideoView.seekToOthers(20*1000);
             mVideoView.start();
         }
 

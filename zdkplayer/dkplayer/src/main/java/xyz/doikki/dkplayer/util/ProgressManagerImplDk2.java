@@ -26,7 +26,8 @@ public class ProgressManagerImplDk2 extends ProgressManager {
         if (TextUtils.isEmpty(url)) {
             return 0;
         }
-        pro = SPUtils.getInstance().getLong(String.valueOf(url.hashCode()));
+        pro = SPUtils.getInstance().getLong(String.valueOf(url.hashCode()),0);
+//        pro = SPUtils.getInstance().getLong(url.hashCode()+"L");
         if (pro == null) {
             return 0;
         }
