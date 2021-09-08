@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
-import com.google.common.eventbus.EventBus;
 
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
@@ -104,7 +103,7 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 //是否显示底部进度条。默认显示
 //                vodControlView.showBottomProgress(false);
                 // 限制观看拖动
-                vodControlView.setmIsxianzhi(true);
+                vodControlView.setmIsxianzhi(true, 15 * 1000);
                 controller.addControlComponent(vodControlView);
             }
 
@@ -166,6 +165,9 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 public void setProgress(int duration, int position) {
                     Log.e("mVideoViewsetProgress", duration + "");
 //                    mVideoView.seekToOthers(position);
+                    if (position < SPUtils.getInstance().getLong(String.valueOf(url.hashCode()), 0)) {
+                        return;
+                    }
                     SPUtils.getInstance().put(String.valueOf(url.hashCode()), new Long((long) position));
                 }
 

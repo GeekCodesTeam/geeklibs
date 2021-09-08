@@ -43,15 +43,17 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
     private ImageView mPlayButton;
 
     private boolean mIsDragging;
-
+    private long mIsxianzhi_timer;
     private boolean mIsxianzhi;// 限制观看拖动 false 不限制 true 限制
 
     public boolean ismIsxianzhi() {
         return mIsxianzhi;
     }
 
-    public void setmIsxianzhi(boolean mIsxianzhi) {
+    public void setmIsxianzhi(boolean mIsxianzhi,long mIsxianzhi_timer) {
         this.mIsxianzhi = mIsxianzhi;
+        this.mIsxianzhi_timer = mIsxianzhi_timer;
+
     }
 
     private boolean mIsShowBottomProgress = true;
@@ -279,7 +281,7 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
         long newPosition = (duration * seekBar.getProgress()) / mVideoProgress.getMax();
         long old = mControlWrapper.getCurrentPosition();
         if (ismIsxianzhi()) {
-            if (newPosition > old) {
+            if (newPosition > mIsxianzhi_timer) {
                 mControlWrapper.seekTo((int) old);
             } else {
                 mControlWrapper.seekTo((int) newPosition);
