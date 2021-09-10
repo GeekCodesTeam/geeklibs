@@ -52,7 +52,7 @@ public class FitAndroidActivity extends AppCompatActivity {
         mIvPhoto = findViewById(R.id.id_iv);
 
         //打开缓存中的音乐bufen  MUSICMP3
-        String file_mp3 = "demo.mp3";
+        String file_mp3 = "ring1.mp3";
         String file_assets_lujing = "mp3/";
         file_music = FitAndroidAssetsToCacheUtil.getAssetsHuanCunLujing(this, file_mp3, file_assets_lujing);// 刷新缓存区
         // 图片bufen  TAKEPHOTO

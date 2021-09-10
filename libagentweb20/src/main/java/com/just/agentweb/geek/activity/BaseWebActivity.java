@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -246,9 +247,13 @@ public class BaseWebActivity extends AppCompatActivity {
         @Override
         public void onReceivedTitle(WebView view, String title) {
             super.onReceivedTitle(view, title);
-            if (mTitleTextView != null) {
-                mTitleTextView.setText(title);
+            if (mTitleTextView != null && !TextUtils.isEmpty(title)) {
+                if (title.length() > 10) {
+                    title = title.substring(0, 10).concat("...");
+                }
             }
+            assert mTitleTextView != null;
+            mTitleTextView.setText(title);
         }
     };
 

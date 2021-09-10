@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -17,8 +18,13 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.SPUtils;
 import com.bumptech.glide.Glide;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
+import xyz.doikki.dkplayer.bean.HTyxsBean;
 import xyz.doikki.dkplayer.util.IntentKeysDk;
 import xyz.doikki.dkplayer.util.ProgressManagerImplDk2;
 import xyz.doikki.dkplayer.util.UtilsDk;
@@ -37,15 +43,11 @@ import xyz.doikki.videoplayer.player.AbstractPlayer;
 import xyz.doikki.videoplayer.player.VideoView;
 import xyz.doikki.videoplayer.util.L;
 
-/**
- * 播放器演示
- * Created by Doikki on 2017/4/7.
- */
-
 public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> {
 
     private static final String THUMB = "https://cms-bucket.nosdn.127.net/eb411c2810f04ffa8aaafc42052b233820180418095416.jpeg";
     private String url;
+    private ScheduledExecutorService mExecutorService;
 
     public static void start(Context context, String url, String title, boolean isLive) {
         Intent intent = new Intent(context, PlayerActivityDk.class);
@@ -57,14 +59,24 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
 
     @Override
     protected void onResume() {
+//        if (!EventBus.getDefault().isRegistered(this)) {
+//            EventBus.getDefault().register(this);
+//        }
         super.onResume();
     }
 
     @Override
     protected void onDestroy() {
-
+//        EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
+
+//    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+//    public void updateUI(String mMediaProjection) {
+//        if (mMediaProjection != null) {
+//            MyLogUtil.e("ssssss", mMediaProjection);
+//        }
+//    }
 
     @Override
     protected int getLayoutResId() {
@@ -75,7 +87,28 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
     protected void initView() {
         super.initView();
         mVideoView = findViewById(R.id.player);
+        //播放其他视频
+        EditText etOtherVideo = findViewById(R.id.et_other_video);
+        findViewById(R.id.btn_start_play).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mVideoView.release();
+                mVideoView.setUrl(etOtherVideo.getText().toString());
+                mVideoView.start();
+            }
+        });
+        //
+//        EventBus.getDefault().post("播放视频");
+        //测试
+        HTyxsBean hTyxs1Bean = new HTyxsBean();
+        hTyxs1Bean.setDrag(true);
+        hTyxs1Bean.setStudyStatus("未学习");
+        hTyxs1Bean.setStudyTimes(15 * 1000 + "");
+        setvideo(hTyxs1Bean);
 
+    }
+
+    private void setvideo(HTyxsBean versionInfoBean) {
         Intent intent = getIntent();
         if (intent != null) {
             StandardVideoController controller = new StandardVideoController(this);
@@ -103,7 +136,7 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 //是否显示底部进度条。默认显示
 //                vodControlView.showBottomProgress(false);
                 // 限制观看拖动
-                vodControlView.setmIsxianzhi(true, 15 * 1000);
+                vodControlView.setmIsxianzhi(versionInfoBean.isDrag(), Long.parseLong(versionInfoBean.getStudyTimes()));
                 controller.addControlComponent(vodControlView);
             }
 
@@ -168,7 +201,7 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                     if (position < SPUtils.getInstance().getLong(String.valueOf(url.hashCode()), 0)) {
                         return;
                     }
-                    SPUtils.getInstance().put(String.valueOf(url.hashCode()), new Long((long) position));
+                    SPUtils.getInstance().put(String.valueOf(url.hashCode()), (long) position);
                 }
 
                 @Override
@@ -189,6 +222,8 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 url = UtilsDk.getFileFromContentUri(this, intent.getData());
             }
             mVideoView.setUrl(url);
+            //根据接口设置跳转到哪里开始播放bufen
+            SPUtils.getInstance().put(String.valueOf(url.hashCode()), (long) (Integer.parseInt(versionInfoBean.getStudyTimes()) * 1000L));
             //保存播放进度
             mVideoView.setProgressManager(new ProgressManagerImplDk2());
             //播放状态监听
@@ -214,18 +249,13 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
 //            mVideoView.setMute(true);
             mVideoView.start();
         }
-
-        //播放其他视频
-        EditText etOtherVideo = findViewById(R.id.et_other_video);
-        findViewById(R.id.btn_start_play).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mVideoView.release();
-                mVideoView.setUrl(etOtherVideo.getText().toString());
-                mVideoView.start();
-            }
-        });
     }
+
+    private String userId;
+    private String courseCode;
+    private String source_sys;
+    private String orgType;
+    private String actionCode;
 
     private VideoView.OnStateChangeListener mOnStateChangeListener = new VideoView.SimpleOnStateChangeListener() {
         @Override
@@ -254,6 +284,8 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                     int[] videoSize = mVideoView.getVideoSize();
                     L.d("视频宽：" + videoSize[0]);
                     L.d("视频高：" + videoSize[1]);
+                    //开始上传数据bufen
+                    setTime();
                     break;
                 case VideoView.STATE_PAUSED:
                     break;
@@ -262,11 +294,42 @@ public class PlayerActivityDk extends BaseActivityDk<VideoView<AbstractPlayer>> 
                 case VideoView.STATE_BUFFERED:
                     break;
                 case VideoView.STATE_PLAYBACK_COMPLETED:
+                    // 完成播放
+//                    hTyxs3Presenter.getHTyxs3Presenter(userId, courseCode, source_sys, orgType, actionCode);
                     break;
                 case VideoView.STATE_ERROR:
                     break;
                 default:
                     break;
+            }
+        }
+    };
+
+    private static int COMPLETED = 1;
+
+    private void setTime() {
+        mExecutorService = Executors.newScheduledThreadPool(1);
+        mExecutorService.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                message.what = COMPLETED;
+                handler.sendMessage(message);
+
+            }
+        }, 0, 5000, TimeUnit.MILLISECONDS);
+    }
+
+    private Handler handler = new Handler(Looper.myLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == COMPLETED) {
+                // 上传接口数据bufen
+                long second = SPUtils.getInstance().getLong(String.valueOf(url.hashCode()), 0) / 1000;
+                int seconds = Integer.parseInt(String.valueOf(second));
+                Log.e("VideoPlayerAct", seconds + "");
+//                hTyxs2Presenter.getHTyxs2Presenter(userId, courseCode, seconds + "");
+
             }
         }
     };

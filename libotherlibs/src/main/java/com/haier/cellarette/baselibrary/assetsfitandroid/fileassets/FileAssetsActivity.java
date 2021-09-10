@@ -68,10 +68,9 @@ public class FileAssetsActivity extends AppCompatActivity {
 //        assets:   "mp3/demo2.mp3"
 //        raw:      "android.resource://" + mContext.getPackageName() + "/" +uri
 //        GetAssetsFileMP3TXTJSONAPKUtil.getInstance(this).playMusic(this, false, "mp3/demo2.mp3");
-        GetAssetsFileMP3TXTJSONAPKUtil.getInstance(this).playMusic(this, true, "android.resource://" + getPackageName() + "/" + R.raw.demo);
+        GetAssetsFileMP3TXTJSONAPKUtil.getInstance(this).playMusic(this, true, "android.resource://" + getPackageName() + "/" + R.raw.ring1);
 
     }
-
 
 
     @Override

@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -68,6 +69,13 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         AutoSizeCompat.autoConvertDensity((super.getResources()), 667, false);//如果有自定义需求就用这个方法
         return super.getResources();
     }
+
+//    @Override
+//    public WindowManager.LayoutParams generateLayoutParams(AttributeSet attrs) {
+//        AutoSizeCompat.autoConvertDensityOfGlobal((getResources());//如果没有自定义需求用这个方法
+//        AutoSizeCompat.autoConvertDensity((getResources(), 667, false);//如果有自定义需求就用这个方法
+//        return super.generateLayoutParams(attrs);
+//    }
 
     @Override
     protected void attachBaseContext(Context newBase) {
