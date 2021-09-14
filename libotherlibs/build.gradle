@@ -5,7 +5,12 @@ def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':libutils')
+    // glide47
     implementation librarys.glide47
+    implementation librarys.glide47AnnProcessor
+    annotationProcessor librarys.annotationProcessorglide47compiler
+    implementation librarys.glide47okhttp3integration
+    implementation librarys.photoView
     // https://github.com/square/leakcanary 不支持android 12 隐私协议 exported false
 //    api librarys.leakcanaryAndroid
     // https://github.com/airbnb/lottie-android
@@ -45,11 +50,11 @@ dependencies {
     // https://github.com/nanchen2251/BankCardUtils
     api 'com.github.nanchen2251:BankCardUtils:1.0.2'
     // https://github.com/SherlockGougou/BigImageViewPager
-    api 'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.5'
-    // matisse
-    api("com.zhihu.android:matisse:0.5.3-beta3") {
-        exclude group: 'com.github.bumptech.glide'
-    }
+    api 'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6'
+    // https://github.com/zhihu/Matisse
+//    api("com.zhihu.android:matisse:0.5.3-beta3") {
+//        exclude group: 'com.github.bumptech.glide'
+//    }
     // https://github.com/zzhoujay/RichText/
 //    api 'com.zzhoujay.richtext:richtext:3.0.7'
     // https://github.com/maning0303/MNProgressHUD

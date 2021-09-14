@@ -1,11 +1,11 @@
 package com.haier.cellarette.baselibrary.bigImageviewpager;
 
+import static androidx.core.content.PermissionChecker.PERMISSION_GRANTED;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,10 +27,6 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 import com.haier.cellarette.baselibrary.R;
-import com.zhihu.matisse.Matisse;
-import com.zhihu.matisse.MimeType;
-import com.zhihu.matisse.engine.impl.GlideEngine;
-import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,8 +41,6 @@ import cc.shinichi.library.view.listener.OnBigImageLongClickListener;
 import cc.shinichi.library.view.listener.OnBigImagePageChangeListener;
 import cc.shinichi.library.view.listener.OnDownloadClickListener;
 import cc.shinichi.library.view.listener.OnOriginProgressListener;
-
-import static androidx.core.content.PermissionChecker.PERMISSION_GRANTED;
 
 public class BigImageViewPagerAct extends AppCompatActivity {
 
@@ -483,19 +477,19 @@ public class BigImageViewPagerAct extends AppCompatActivity {
 
     // 去选择图片
     private void chooseImage() {
-        Matisse.from(BigImageViewPagerAct.this)
-                .choose(MimeType.ofImage())
-                .capture(true)
-                .captureStrategy(new CaptureStrategy(true, "cc.shinichi.bigimageviewpager.fileprovider", "BigImage"))
-                .countable(true)
-                .maxSelectable(30)
-                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-                .thumbnailScale(0.85f)
-                .imageEngine(new GlideEngine())
-                .theme(com.zhihu.matisse.R.style.Matisse_Zhihu)
-                .showSingleMediaType(true)
-                .originalEnable(true)
-                .forResult(1);
+//        Matisse.from(BigImageViewPagerAct.this)
+//                .choose(MimeType.ofImage())
+//                .capture(true)
+//                .captureStrategy(new CaptureStrategy(true, "cc.shinichi.bigimageviewpager.fileprovider", "BigImage"))
+//                .countable(true)
+//                .maxSelectable(30)
+//                .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+//                .thumbnailScale(0.85f)
+//                .imageEngine(new GlideEngine())
+//                .theme(com.zhihu.matisse.R.style.Matisse_Zhihu)
+//                .showSingleMediaType(true)
+//                .originalEnable(true)
+//                .forResult(1);
     }
 
     @Override
@@ -503,19 +497,19 @@ public class BigImageViewPagerAct extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK && data != null) {
-                List<Uri> uriList = Matisse.obtainResult(data);
-                List<String> urlList = new ArrayList<>();
-                for (Uri uri : uriList) {
-                    urlList.add(uri.toString());
-                }
-                ImagePreview.getInstance()
-                        .setContext(BigImageViewPagerAct.this)
-                        .setImageList(urlList)
-                        .setShowDownButton(false)
-                        .setShowCloseButton(false)
-                        .setEnableDragClose(true)
-                        .setEnableClickClose(false)
-                        .start();
+//                List<Uri> uriList = Matisse.obtainResult(data);
+//                List<String> urlList = new ArrayList<>();
+//                for (Uri uri : uriList) {
+//                    urlList.add(uri.toString());
+//                }
+//                ImagePreview.getInstance()
+//                        .setContext(BigImageViewPagerAct.this)
+//                        .setImageList(urlList)
+//                        .setShowDownButton(false)
+//                        .setShowCloseButton(false)
+//                        .setEnableDragClose(true)
+//                        .setEnableClickClose(false)
+//                        .start();
             }
         }
     }
