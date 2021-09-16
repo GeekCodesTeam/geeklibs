@@ -7,6 +7,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -30,21 +33,22 @@ import androidx.core.view.LayoutInflaterFactory;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.BarUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.geek.libbase.R;
 import com.geek.libbase.netstate.NetState;
 import com.geek.libbase.netstate.NetconListener;
 import com.geek.libbase.widgets.IBaseAction;
+import com.geek.liblanguage.MultiLanguages;
+import com.geek.libutils.SlbLoginUtil;
+import com.geek.libutils.app.BaseAppManager;
+import com.geek.libutils.app.BaseViewHelper;
 import com.geek.swipebacklayout.SwipeBack;
 import com.geek.swipebacklayout.SwipeBackLayout;
 import com.geek.swipebacklayout.SwipeBackUtil;
 import com.geek.swipebacklayout.activity.SwipeBackActivityBase;
 import com.geek.swipebacklayout.activity.SwipeBackActivityHelper;
-import com.geek.liblanguage.MultiLanguages;
-import com.geek.libutils.SlbLoginUtil;
-import com.geek.libutils.app.BaseAppManager;
-import com.geek.libutils.app.BaseViewHelper;
 
 import me.jessyan.autosize.AutoSizeCompat;
 
@@ -140,7 +144,18 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         tfLight2 = Typeface.createFromAsset(getAssets(), "fonts/DINCond-Regular.ttf");
         //
 //        jPluginPlatformInterface = new JPluginPlatformInterface(this);
-
+        if (SPUtils.getInstance().getBoolean("zhihui", false)) {
+            //置灰
+            Paint paint = new Paint();
+            ColorMatrix cm = new ColorMatrix();
+            cm.setSaturation(0);
+            paint.setColorFilter(new ColorMatrixColorFilter(cm));
+            getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE, paint);
+        }
+        if (SPUtils.getInstance().getBoolean("jieping", false)) {
+            // 2.5.3节， 截屏攻击风险 安全评估需要添加
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+        }
     }
 
     private void interceptCreateView() {
@@ -315,6 +330,25 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
         onActResult(requestCode, resultCode, data);
     }
 
+    // 登录接口验证成功后调用
+    public void onLoginSuccess(String action) {
+        setResult(SlbLoginUtil.LOGIN_RESULT_OK);
+        if (ActivityUtils.getActivityList().size() == 1) {
+            startActivity(new Intent(action));
+        }
+        finish();
+    }
+
+    // 登出接口验证成功后调用
+    public void onLoginCanceled(String action) {
+        setResult(SlbLoginUtil.LOGIN_RESULT_CANCELED);
+        if (ActivityUtils.getActivityList().size() == 1) {
+            startActivity(new Intent(action));
+        }
+        finish();
+    }
+
+
     public boolean is_finish_login;
 
     public boolean isIs_finish_login() {
@@ -326,7 +360,7 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
     }
 
     // 销毁当前页面操作bufen
-    public void set_url_hios_finish(String url_hios_finish){
+    public void set_url_hios_finish(String url_hios_finish) {
         if (url_hios_finish.contains("condition=login")) {
             if (SlbLoginUtil.get().isUserLogin()) {
                 finish();

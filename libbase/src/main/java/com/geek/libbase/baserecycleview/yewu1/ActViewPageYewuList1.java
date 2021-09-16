@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 
+import com.blankj.utilcode.util.AppUtils;
 import com.geek.libbase.R;
 import com.geek.libbase.baserecycleview.SlbBaseActivityViewPage;
 import com.geek.libbase.baserecycleview.SlbBaseActivityViewPageTabBean1;
