@@ -8,9 +8,11 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.webkit.WebView;
 import android.widget.Toast;
 
 import androidx.multidex.MultiDex;
@@ -72,6 +74,14 @@ public class AndroidApplication extends Application {
         super.onConfigurationChanged(newConfig);
         //保存系统选择语言
         LocalManageUtil.onConfigurationChanged(this);
+    }
+
+    private void configWebView() {
+        // 修復WebView的多進程加載的bug
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            String processName = getProcessName();
+            WebView.setDataDirectorySuffix(processName);
+        }
     }
 
     protected void configBugly(String banben_comm, String buglykey) {
@@ -175,6 +185,7 @@ public class AndroidApplication extends Application {
         LocalManageUtil.setApplicationLanguage(this);
         handleSSLHandshake();
         regActivityLife();
+        configWebView();
     }
 
     protected void configmmkv() {
