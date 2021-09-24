@@ -47,7 +47,9 @@ public class AgentwebAct extends AppCompatActivity {
     public static final int FLAG_GUIDE_DICTIONARY_LINKS = FLAG_GUIDE_DICTIONARY_CUSTOM_WEBVIEW_SETTINGS << 1;
     public static final int FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT = FLAG_GUIDE_DICTIONARY_LINKS << 1;
     public static final int FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE = FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT << 1;
-    public static final int FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT = FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE << 1;
+    public static final int FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE2 = FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE << 1;
+    public static final int FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE3 = FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE2 << 1;
+    public static final int FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT = FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE3 << 1;
     public static final int FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_FRAG = FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT << 1;
     public static final int FLAG_GUIDE_DICTIONARY_PULL_DOWN_REFRESH = FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_FRAG << 1;
     public static final int FLAG_GUIDE_DICTIONARY_MAP = FLAG_GUIDE_DICTIONARY_PULL_DOWN_REFRESH << 1;
@@ -73,7 +75,9 @@ public class AgentwebAct extends AppCompatActivity {
             new GuideItemEntity("电话 ， 信息 ， 邮件", FLAG_GUIDE_DICTIONARY_LINKS),
             new GuideItemEntity("自定义 WebView", FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW),
             new GuideItemEntity("下拉回弹效果", FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT),
-            new GuideItemEntity("Jsbridge 例子", FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE),
+            new GuideItemEntity("Jsbridge 例子1", FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE),
+            new GuideItemEntity("Jsbridge 例子2", FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE2),
+            new GuideItemEntity("Jsbridge 例子3", FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE3),
             new GuideItemEntity("继承 BaseAgentWebActivity", FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT),
             new GuideItemEntity("继承 BaseAgentWebFragment", FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_FRAG),
             new GuideItemEntity("SmartRefresh 下拉刷新", FLAG_GUIDE_DICTIONARY_PULL_DOWN_REFRESH),
@@ -188,6 +192,12 @@ public class AgentwebAct extends AppCompatActivity {
             case FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE:
                 startActivity(new Intent(this, CommonActivity.class)
                         .putExtra(CommonActivity.TYPE_KEY, FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE));
+                break;
+            case FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE2:
+                startActivity(new Intent(this, JsWebActivity2.class));
+                break;
+            case FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE3:
+                startActivity(new Intent(this, JsWebActivity3.class));
                 break;
             case FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT:
                 startActivity(new Intent(this, EasyWebActivity.class));
