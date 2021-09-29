@@ -124,7 +124,7 @@ public class MnMainActivity extends AppCompatActivity implements View.OnClickLis
                     //View背景的圆角
                     .setCornerRadius(20)
                     //View 边框的颜色
-                    .setStrokeColor(getMyColor(R.color.colorAccent))
+                    .setStrokeColor(getMyColor(R.color.colorAccent2))
                     //View 边框的宽度
                     .setStrokeWidth(2)
                     //Progress 颜色
@@ -285,7 +285,7 @@ public class MnMainActivity extends AppCompatActivity implements View.OnClickLis
                 //View背景的颜色
                 .setBackgroundViewColor(getMyColor(R.color.colorDialogViewBg2))
                 //字体的颜色
-                .setTextColor(getMyColor(R.color.colorAccent))
+                .setTextColor(getMyColor(R.color.colorAccent2))
                 //文字大小
                 .setTextSize(13)
                 //View边框的颜色
@@ -339,7 +339,7 @@ public class MnMainActivity extends AppCompatActivity implements View.OnClickLis
                 //View背景的颜色
                 .setBackgroundViewColor(getMyColor(R.color.colorDialogViewBg2))
                 //字体的颜色
-                .setTextColor(getMyColor(R.color.colorAccent))
+                .setTextColor(getMyColor(R.color.colorAccent2))
                 //View边框的颜色
                 .setStrokeColor(getMyColor(R.color.white))
                 //View边框的宽度
@@ -375,7 +375,7 @@ public class MnMainActivity extends AppCompatActivity implements View.OnClickLis
                 //View背景的颜色
                 .setBackgroundViewColor(getMyColor(R.color.colorDialogViewBg2))
                 //字体的颜色
-                .setTextColor(getMyColor(R.color.colorAccent))
+                .setTextColor(getMyColor(R.color.colorAccent2))
                 //View边框的颜色
                 .setStrokeColor(getMyColor(R.color.white))
                 //View边框的宽度

@@ -108,7 +108,7 @@
             android:id="@+id/tv1"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimary2"
             android:gravity="center"
             android:text="点我看看"
             android:textColor="#fff" />
@@ -118,7 +118,7 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimary2"
             android:gravity="center"
             android:text="点我看看"
             android:textColor="#fff" />
@@ -128,7 +128,7 @@
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_gravity="end"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimary2"
             android:gravity="center"
             android:text="点我看看"
             android:textColor="#fff" />

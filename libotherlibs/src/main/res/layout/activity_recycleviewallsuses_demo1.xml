@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimaryDark2"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/dp_10"
@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            app:ms_background_color="@color/colorPrimaryDark"
+            app:ms_background_color="@color/colorPrimaryDark2"
             app:ms_hide_arrow="false"
             app:ms_text_color="#ffffff" />
 
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorPrimaryDark2"
             android:gravity="center|right">
 
             <TextView

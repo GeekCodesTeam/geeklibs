@@ -7,7 +7,7 @@
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/colorAccent2"
         android:scaleType="centerCrop" />
 
     <com.haier.cellarette.baselibrary.choutipop.ScrollLayout
@@ -70,7 +70,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimary2"
         android:visibility="invisible">
 
         <ImageView

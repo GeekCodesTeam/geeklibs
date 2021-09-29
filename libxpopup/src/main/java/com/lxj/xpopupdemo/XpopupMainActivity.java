@@ -70,7 +70,7 @@ public class XpopupMainActivity extends AppCompatActivity {
         viewPager.setAdapter(new MainAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
 
-        XPopup.setPrimaryColor(getResources().getColor(R.color.colorPrimary));
+        XPopup.setPrimaryColor(getResources().getColor(R.color.colorPrimary2));
 //        XPopup.setAnimationDuration(1000);
 //        XPopup.setPrimaryColor(Color.RED);
 //        XPopup.setNavigationBarColor(Color.RED);

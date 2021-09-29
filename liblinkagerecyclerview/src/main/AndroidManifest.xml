@@ -10,8 +10,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".ElmAct"
-            android:exported="false"
-            android:theme="@style/AppThemeliblinkagerecyclerview">
+            android:exported="false">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ElmAct" />
                 <category android:name="android.intent.category.DEFAULT" />

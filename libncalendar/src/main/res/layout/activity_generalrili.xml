@@ -21,7 +21,7 @@
             android:textColor="@color/white"
             android:textSize="25sp"
             android:paddingTop="30dp"
-            android:background="@color/colorAccent"
+            android:background="#FF4081"
             android:text="我只是一个TextView" />
 
     </com.necer.calendar.Miui10Calendar>

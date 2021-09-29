@@ -14,7 +14,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorAccent"/>
+        android:background="@color/colorAccent2"/>
 
     <TextView
         android:id="@+id/tv_finish_msg"
@@ -26,7 +26,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorAccent"/>
+        android:background="@color/colorAccent2"/>
 
     <Button
         android:id="@+id/btn_start_download"

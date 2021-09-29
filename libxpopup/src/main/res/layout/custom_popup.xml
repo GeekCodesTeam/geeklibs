@@ -84,5 +84,5 @@
         android:paddingRight="35dp"
         android:paddingBottom="12dp"
         android:text="关闭"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimary2" />
 </LinearLayout>

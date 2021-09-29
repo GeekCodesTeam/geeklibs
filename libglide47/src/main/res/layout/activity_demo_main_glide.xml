@@ -106,7 +106,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:scaleType="centerCrop"
-                    app:siv_border_color="@color/colorPrimary"
+                    app:siv_border_color="#00796b"
                     app:siv_border_width="2dp"
                     app:siv_pressed_alpha="0.5"
                     app:siv_pressed_color="@color/white"

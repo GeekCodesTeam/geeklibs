@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#00796b</color>
-    <color name="colorPrimaryDark">#00796b</color>
-    <color name="colorAccent">#00796b</color>
-
     <!-- common -->
     <color name="c1">#D9000000</color>
     <color name="c4">#1A000000</color>

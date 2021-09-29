@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorPrimary2"
         android:orientation="vertical">
 
         <!--变白色：-->
@@ -81,7 +81,7 @@
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimary2"
             android:paddingTop="50dp">
 
             <TextView
@@ -98,7 +98,7 @@
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimary2"
             android:paddingTop="50dp">
 
             <TextView
