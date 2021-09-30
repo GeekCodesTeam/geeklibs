@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.SPUtils;
 
 import xyz.doikki.dkplayer.util.UtilsDk;
+import xyz.doikki.videocontroller.component.VodControlView;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
 import xyz.doikki.videoplayer.controller.IControlComponent;
 import xyz.doikki.videoplayer.util.L;
@@ -45,6 +46,7 @@ public class PlayerMonitorDk implements IControlComponent {
     public void setProgress(int duration, int position) {
         L.d("setProgress: duration: " + duration + " position: " + position + " buffered percent: " + mControlWrapper.getBufferedPercentage());
         L.d("network speed: " + mControlWrapper.getTcpSpeed());
+
 
     }
 

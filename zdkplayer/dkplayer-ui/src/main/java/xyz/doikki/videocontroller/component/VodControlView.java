@@ -22,6 +22,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.SPUtils;
+
 import xyz.doikki.videocontroller.R;
 import xyz.doikki.videoplayer.controller.ControlWrapper;
 import xyz.doikki.videoplayer.controller.IControlComponent;
@@ -43,16 +45,14 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
     private ImageView mPlayButton;
 
     private boolean mIsDragging;
-    private long mIsxianzhi_timer;
     private boolean mIsxianzhi;// 限制观看拖动 false 不限制 true 限制
 
     public boolean ismIsxianzhi() {
         return mIsxianzhi;
     }
 
-    public void setmIsxianzhi(boolean mIsxianzhi,long mIsxianzhi_timer) {
+    public void setmIsxianzhi(boolean mIsxianzhi) {
         this.mIsxianzhi = mIsxianzhi;
-        this.mIsxianzhi_timer = mIsxianzhi_timer;
 
     }
 
@@ -280,8 +280,9 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
         long duration = mControlWrapper.getDuration();
         long newPosition = (duration * seekBar.getProgress()) / mVideoProgress.getMax();
         long old = mControlWrapper.getCurrentPosition();
+        long max = Long.parseLong(SPUtils.getInstance().getString("xianzhi_times", "0"));
         if (ismIsxianzhi()) {
-            if (newPosition > mIsxianzhi_timer) {
+            if (newPosition > max) {
                 mControlWrapper.seekTo((int) old);
             } else {
                 mControlWrapper.seekTo((int) newPosition);

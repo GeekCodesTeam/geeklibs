@@ -1,4 +1,4 @@
-package com.fosung.lighthouse.app;
+package com.geek.app;
 
 import com.geek.libbase.AndroidApplication;
 import com.geek.libutils.app.AppUtils;

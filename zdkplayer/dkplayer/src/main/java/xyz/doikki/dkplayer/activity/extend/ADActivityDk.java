@@ -52,6 +52,7 @@ public class ADActivityDk extends BaseActivityDk<VideoView> {
         });
         mController.addControlComponent(adControlView);
 
+
         HttpProxyCacheServer cacheServer = ProxyVideoCacheManagerDk.getProxy(this);
         String proxyUrl = cacheServer.getProxyUrl(URL_AD);
         mVideoView.setUrl(proxyUrl);

@@ -1,4 +1,4 @@
-package com.fosung.lighthouse.app;
+package com.geek.app;
 
 import android.content.Intent;
 import android.os.Bundle;

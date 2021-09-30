@@ -7,6 +7,7 @@ import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.api.ParallelPlayActivityDk;
 import xyz.doikki.dkplayer.activity.api.PlayRawAssetsActivityDk;
 import xyz.doikki.dkplayer.activity.api.PlayerActivityDk;
+import xyz.doikki.dkplayer.activity.api.PlayerActivityDkyuan;
 import xyz.doikki.dkplayer.fragment.BaseFragmentDk;
 import xyz.doikki.dkplayer.util.DataUtilDk;
 
@@ -44,6 +45,9 @@ public class ApiFragmentDk extends BaseFragmentDk implements View.OnClickListene
     protected void initView() {
         super.initView();
         findViewById(R.id.btn_vod).setOnClickListener(this);
+        findViewById(R.id.btn_vod2).setOnClickListener(this);
+        findViewById(R.id.btn_vod3).setOnClickListener(this);
+        findViewById(R.id.btn_vod4).setOnClickListener(this);
         findViewById(R.id.btn_live).setOnClickListener(this);
         findViewById(R.id.btn_raw_assets).setOnClickListener(this);
         findViewById(R.id.btn_parallel_play).setOnClickListener(this);
@@ -53,9 +57,15 @@ public class ApiFragmentDk extends BaseFragmentDk implements View.OnClickListene
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.btn_vod) {
-            PlayerActivityDk.start(getActivity(), VOD_URL, "点播", false);
-        } else if (id == R.id.btn_live) {
-            PlayerActivityDk.start(getActivity(), LIVE_URL, "直播", true);
+            PlayerActivityDkyuan.start(getActivity(), VOD_URL, "点播1-无缓存", false);
+        } else if (id == R.id.btn_vod2) {
+            PlayerActivityDkyuan.start(getActivity(), VOD_URL, "点播2-缓存应用内", false);
+        }  else if (id == R.id.btn_vod3) {
+            PlayerActivityDkyuan.start(getActivity(), VOD_URL, "点播3-缓存硬盘", false);
+        }  else if (id == R.id.btn_vod4) {
+            PlayerActivityDk.start(getActivity(), VOD_URL, "点播4-看到哪播到哪", false);
+        }  else if (id == R.id.btn_live) {
+            PlayerActivityDkyuan.start(getActivity(), LIVE_URL, "直播", true);
         } else if (id == R.id.btn_raw_assets) {
             startActivity(new Intent(getActivity(), PlayRawAssetsActivityDk.class));
         } else if (id == R.id.btn_parallel_play) {

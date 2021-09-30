@@ -4,7 +4,10 @@
     <string name="str_list" translatable="false">列表</string>
     <string name="str_extend" translatable="false">扩展</string>
     <string name="str_pip" translatable="false">画中画</string>
-    <string name="str_api_vod" translatable="false">点播</string>
+    <string name="str_api_vod" translatable="false">点播1-无缓存</string>
+    <string name="str_api_vod2" translatable="false">点播2-缓存应用内</string>
+    <string name="str_api_vod3" translatable="false">点播3-缓存硬盘</string>
+    <string name="str_api_vod4" translatable="false">点播4-看到哪播到哪</string>
     <string name="str_api_live" translatable="false">直播</string>
     <string name="str_definition" translatable="false">清晰度切换</string>
     <string name="str_screen_shot" translatable="false">截图</string>

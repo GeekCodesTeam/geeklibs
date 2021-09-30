@@ -14,7 +14,8 @@ import com.bumptech.glide.Glide;
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
 import xyz.doikki.dkplayer.util.IntentKeysDk;
-import xyz.doikki.dkplayer.util.ProgressManagerImplDk2;
+import xyz.doikki.dkplayer.util.ProgressManagerImplDk;
+import xyz.doikki.dkplayer.util.ProgressManagerImplDk1;
 import xyz.doikki.dkplayer.util.UtilsDk;
 import xyz.doikki.dkplayer.widget.component.DebugInfoViewDk;
 import xyz.doikki.dkplayer.widget.component.PlayerMonitorDk;
@@ -129,7 +130,13 @@ public class PlayerActivityDkyuan extends BaseActivityDk<VideoView<AbstractPlaye
             mVideoView.setUrl(url);
 
             //保存播放进度
-//            mVideoView.setProgressManager(new ProgressManagerImplDk2());
+            if (TextUtils.equals(title, "点播2-缓存应用内")) {
+                mVideoView.setProgressManager(new ProgressManagerImplDk());
+            } else if (TextUtils.equals(title, "点播3-缓存硬盘")) {
+                mVideoView.setProgressManager(new ProgressManagerImplDk1());
+            } else if (TextUtils.equals(title, "点播1-无缓存")) {
+
+            }
             //播放状态监听
             mVideoView.addOnStateChangeListener(mOnStateChangeListener);
             //获取进度条秒
