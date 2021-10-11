@@ -59,4 +59,6 @@ dependencies {
 //    api 'com.github.maning0303:MNProgressHUD:V1.1.8X'
     // https://github.com/MZCretin/ExpandableTextView
     api 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
+    // https://github.com/princekin-f/EasyFloat
+    api 'com.github.princekin-f:EasyFloat:2.0.3'
 }
