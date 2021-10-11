@@ -68,8 +68,7 @@
         <activity
             android:name=".base.WebViewActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemewebview">
+            android:screenOrientation="portrait">
 
             <intent-filter>
                 <action android:name="${applicationId}.web.page" />
