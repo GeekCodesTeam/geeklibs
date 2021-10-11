@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="DKAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary2</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
-        <item name="colorAccent">@color/colorAccent2</item>
+        <item name="colorPrimary">@color/colordk</item>
+        <item name="colorPrimaryDark">@color/colordk</item>
+        <item name="colorAccent">@color/colordk</item>
     </style>
     <style name="FloatWindowAnimation">
         <item name="android:windowEnterAnimation">@anim/anim_float_window_enter</item>

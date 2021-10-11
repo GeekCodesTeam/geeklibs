@@ -40,7 +40,7 @@
             android:layout_marginRight="5dp"
             android:gravity="left"
             android:text="当前进度"
-            android:textColor="@color/colorPrimary2"
+            android:textColor="@color/coloragentweb"
             android:textSize="12sp"
             />
     </LinearLayout>

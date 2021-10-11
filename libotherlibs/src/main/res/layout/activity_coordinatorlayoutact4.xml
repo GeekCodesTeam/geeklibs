@@ -110,7 +110,7 @@
         android:fitsSystemWindows="true"
         android:visibility="visible"
         app:headerLayout="@layout/activity_coordinatorlayoutact4_head"
-        app:itemIconTint="@color/colorPrimary2"
+        app:itemIconTint="@color/colorotherlibs"
         app:itemTextColor="@color/black"
         app:menu="@menu/menu_main"
         tools:visibility="gone" />

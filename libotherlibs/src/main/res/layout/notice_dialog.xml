@@ -16,7 +16,7 @@
                 android:text="提示"
                 android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
-                android:textColor="@color/colorAccent2"
+                android:textColor="@color/colorotherlibs"
                 android:textSize="16sp" />
 
             <TextView

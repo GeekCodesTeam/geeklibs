@@ -1,16 +1,6 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppThemewebview" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary2</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
-        <item name="colorAccent">@color/colorAccent2</item>
-<!--        <item name="windowNoTitle">true</item>-->
-<!--        <item name="android:windowActionBar">false</item>-->
-    </style>
-
-    <style name="Theme.Transparent" parent="AppThemewebview">
+    <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/transparent</item>
 <!--        <item name="android:windowIsTranslucent">true</item>-->
         <!--<item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>-->

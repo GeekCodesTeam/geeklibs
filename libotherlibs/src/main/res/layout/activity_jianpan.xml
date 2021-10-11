@@ -44,14 +44,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/colorPrimary2"
+                android:textColor="@color/colorotherlibs"
                 android:textSize="30sp"
-                app:borderColor="@color/colorPrimary2"
+                app:borderColor="@color/colorotherlibs"
                 app:borderSize="2dp"
                 app:contentNumber="4"
                 app:contentShowMode="password"
                 app:corner_size="10dp"
-                app:cursorColor="@color/colorAccent2"
+                app:cursorColor="@color/colorotherlibs"
                 app:cursorWidth="6dp"
                 app:inputBoxSquare="true"
                 app:inputBoxStyle="singleBox"
@@ -68,9 +68,9 @@
                 android:textSize="25sp"
                 app:borderSize="2dp"
                 app:corner_size="10dp"
-                app:cursorColor="@color/colorPrimary2"
+                app:cursorColor="@color/colorotherlibs"
                 app:cursorHeight="20dp"
-                app:divisionLineColor="@color/colorAccent2"
+                app:divisionLineColor="@color/colorotherlibs"
                 app:divisionLineSize="2dp"
                 app:inputBoxStyle="connectBox" />
 
@@ -82,21 +82,21 @@
                 android:inputType="number"
                 android:textSelectHandleLeft="@android:color/transparent"
                 android:textSelectHandleRight="@android:color/transparent"
-                app:borderColor="@color/colorPrimary2"
+                app:borderColor="@color/colorotherlibs"
                 app:borderSize="2dp"
                 app:contentNumber="5"
                 app:contentShowMode="text"
                 app:inputBoxStyle="underline"
                 app:spaceSize="20dp"
                 app:underlineFocusColor="#00ff00"
-                app:underlineNormalColor="@color/colorPrimary2" />
+                app:underlineNormalColor="@color/colorotherlibs" />
 
             <com.haier.cellarette.baselibrary.jianpan.AEditText
                 android:id="@+id/et"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:background="@color/colorPrimary2"
+                android:background="@color/colorotherlibs"
                 android:focusableInTouchMode="true" />
         </LinearLayout>
 

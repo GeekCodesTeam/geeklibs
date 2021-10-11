@@ -14,11 +14,5 @@
 <resources>
 
     <eat-comment />
-    <!-- 应用的主要色调，ActionBar Toolbar 默认使用该颜色 -->
-    <color name="colorPrimary2">@android:color/white</color>
-    <!-- 应用的主要暗色调，StatusBar、NavigationBar默认使用该颜色 -->
-    <color name="colorPrimaryDark2">@color/colorPrimary2</color>
-    <!-- 应用的补充亮色调，默认情况下用于框架控件的颜色（通过colorControlActivated），CheckBox RadioButton Switch 等一般控件默认采用该颜色 -->
-    <color name="colorAccent2">@android:color/holo_blue_light</color>
 
 </resources>

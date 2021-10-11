@@ -29,7 +29,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             banner:banner_indicator_normal_color="@android:color/white"
-            banner:banner_indicator_selected_color="@color/colorPrimary"
+            banner:banner_indicator_selected_color="@color/colorRed"
             banner:banner_radius="5dp" />
 
         <com.youth.banner.indicator.RoundLinesIndicator

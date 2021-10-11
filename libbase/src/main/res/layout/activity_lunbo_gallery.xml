@@ -13,7 +13,7 @@
         android:layout_margin="10dp"
         banner:banner_radius="5dp"
         banner:banner_indicator_normal_color="@android:color/white"
-        banner:banner_indicator_selected_color="@color/colorPrimary" />
+        banner:banner_indicator_selected_color="@color/colorRed" />
 
     <com.youth.banner.Banner xmlns:banner="http://schemas.android.com/apk/res-auto"
         android:id="@+id/banner2"
@@ -22,5 +22,5 @@
         android:layout_margin="10dp"
         banner:banner_radius="5dp"
         banner:banner_indicator_normal_color="@android:color/white"
-        banner:banner_indicator_selected_color="@color/colorPrimary" />
+        banner:banner_indicator_selected_color="@color/colorRed" />
 </LinearLayout>
