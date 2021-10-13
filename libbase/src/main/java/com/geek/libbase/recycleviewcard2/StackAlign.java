@@ -1,4 +1,4 @@
-package com.haier.cellarette.baselibrary.recycleviewcard2;
+package com.geek.libbase.recycleviewcard2;
 
 /**
  * Created by CJJ on 2017/10/16.

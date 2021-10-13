@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:overScrollMode="never"
-        app:layoutManager="com.haier.cellarette.baselibrary.recycleviewcard2.StackLayoutManager"
+        app:layoutManager="com.geek.libbase.recycleviewcard2.StackLayoutManager"
         tools:listitem="@layout/activity_recard2_vertical_item_card" />
 
 </LinearLayout>

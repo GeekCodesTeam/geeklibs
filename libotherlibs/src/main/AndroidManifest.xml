@@ -683,24 +683,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".recycleviewcard2.StackAct"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.StackAct" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".recycleviewcard2.StackActVertical"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.StackActVertical" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".recycleviewcard3.RCardAct3"
             android:exported="false">
             <intent-filter>

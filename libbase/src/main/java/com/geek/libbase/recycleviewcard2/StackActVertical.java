@@ -1,4 +1,4 @@
-package com.haier.cellarette.baselibrary.recycleviewcard2;
+package com.geek.libbase.recycleviewcard2;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +7,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.haier.cellarette.baselibrary.R;
+
+import com.geek.libbase.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,14 +21,14 @@ public class StackActVertical extends AppCompatActivity {
     private RecyclerView verticalRecyclerview;
     private StackLayoutManager layoutManager;
     private List<Integer> imageUrls = Arrays.asList(
-            R.drawable.m_img1,
-            R.drawable.m_img2,
-            R.drawable.m_img1,
-            R.drawable.m_img2,
-            R.drawable.m_img1,
-            R.drawable.m_img2,
-            R.drawable.m_img2,
-            R.drawable.m_img2
+            R.drawable.icon_lunbo1,
+            R.drawable.icon_lunbo2,
+            R.drawable.icon_lunbo1,
+            R.drawable.icon_lunbo1,
+            R.drawable.icon_lunbo1,
+            R.drawable.icon_lunbo2,
+            R.drawable.icon_lunbo1,
+            R.drawable.icon_lunbo2
     );
 
     @Override

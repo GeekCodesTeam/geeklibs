@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="divider_height">5dp</dimen>
     <dimen name="default_stack_spacing">12dp</dimen>
-    <dimen name="item_space">15dp</dimen>
+
     <!--add by lxd-->
 
     <!-- Default screen margins, per the Android Design guidelines. -->

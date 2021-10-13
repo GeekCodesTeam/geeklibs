@@ -1,4 +1,4 @@
-package com.haier.cellarette.baselibrary.recycleviewcard2;
+package com.geek.libbase.recycleviewcard2;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.geek.libbase.R;
 import com.geek.libutils.app.BaseApp;
-import com.haier.cellarette.baselibrary.R;
 
 import java.util.List;
 

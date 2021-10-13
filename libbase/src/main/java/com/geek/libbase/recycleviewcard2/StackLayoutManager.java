@@ -1,10 +1,10 @@
-package com.haier.cellarette.baselibrary.recycleviewcard2;
+package com.geek.libbase.recycleviewcard2;
 
 import static androidx.recyclerview.widget.RecyclerView.NO_POSITION;
-import static com.haier.cellarette.baselibrary.recycleviewcard2.StackAlign.BOTTOM;
-import static com.haier.cellarette.baselibrary.recycleviewcard2.StackAlign.LEFT;
-import static com.haier.cellarette.baselibrary.recycleviewcard2.StackAlign.RIGHT;
-import static com.haier.cellarette.baselibrary.recycleviewcard2.StackAlign.TOP;
+import static com.geek.libbase.recycleviewcard2.StackAlign.BOTTOM;
+import static com.geek.libbase.recycleviewcard2.StackAlign.LEFT;
+import static com.geek.libbase.recycleviewcard2.StackAlign.RIGHT;
+import static com.geek.libbase.recycleviewcard2.StackAlign.TOP;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
