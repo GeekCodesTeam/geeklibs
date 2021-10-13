@@ -4,18 +4,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.geek.libbase.R;
+import com.geek.libbase.base.SlbBaseActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-public class StackActVertical extends AppCompatActivity {
+public class StackActVertical extends SlbBaseActivity {
 
     private TextView tv1;
     private RecyclerView verticalRecyclerview;
@@ -32,8 +32,13 @@ public class StackActVertical extends AppCompatActivity {
     );
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int getLayoutId() {
+        return R.layout.activity_recard2_vertical;
+    }
+
+    @Override
+    protected void setup(@Nullable Bundle savedInstanceState) {
+        super.setup(savedInstanceState);
         setContentView(R.layout.activity_recard2_vertical);
         tv1 = findViewById(R.id.tv1);
         verticalRecyclerview = findViewById(R.id.recyclerview_vertical);
@@ -44,6 +49,12 @@ public class StackActVertical extends AppCompatActivity {
             }
         });
         vr();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
     private void vr() {

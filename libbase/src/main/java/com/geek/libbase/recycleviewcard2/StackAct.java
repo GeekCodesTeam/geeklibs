@@ -5,17 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.geek.libbase.R;
+import com.geek.libbase.base.SlbBaseActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StackAct extends AppCompatActivity {
+public class StackAct extends SlbBaseActivity {
     private static final String TAG = "MainActivity";
     private RecyclerView recyclerview;
     private RecyclerView hrRecyclerView;
@@ -35,9 +35,15 @@ public class StackAct extends AppCompatActivity {
             R.drawable.icon_lunbo2
     );
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected int getLayoutId() {
+        return R.layout.activity_recard2;
+    }
+
+    @Override
+    protected void setup(@Nullable Bundle savedInstanceState) {
+        super.setup(savedInstanceState);
         setContentView(R.layout.activity_recard2);
         recyclerview = findViewById(R.id.recyclerview);
         hrRecyclerView = findViewById(R.id.recyclerview1);
@@ -71,6 +77,12 @@ public class StackAct extends AppCompatActivity {
         });
         resetDefault();
         resetRight();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
     public void resetDefault() {
@@ -146,4 +158,5 @@ public class StackAct extends AppCompatActivity {
         }
         super.onPause();
     }
+
 }
