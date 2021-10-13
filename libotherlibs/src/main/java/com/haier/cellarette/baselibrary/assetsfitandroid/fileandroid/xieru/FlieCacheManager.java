@@ -3,7 +3,7 @@ package com.haier.cellarette.baselibrary.assetsfitandroid.fileandroid.xieru;
 import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.haier.cellarette.baselibrary.BaselibApp;
+import com.geek.libutils.app.BaseApp;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,11 +23,11 @@ public class FlieCacheManager {
 
     public static String get_file_url() {
         String file_apk_url;
-        File file_apks = BaselibApp.get().getExternalCacheDir();
+        File file_apks = BaseApp.get().getExternalCacheDir();
         if (file_apks != null) {
             file_apk_url = file_apks.getAbsolutePath();
         } else {
-            file_apk_url = BaselibApp.get().getExternalFilesDir(null).getAbsolutePath();
+            file_apk_url = BaseApp.get().getExternalFilesDir(null).getAbsolutePath();
         }
         return file_apk_url;
     }

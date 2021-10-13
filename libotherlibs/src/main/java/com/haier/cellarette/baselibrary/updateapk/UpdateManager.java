@@ -27,7 +27,7 @@ import android.widget.ProgressBar;
 import androidx.core.app.ActivityCompat;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.haier.cellarette.baselibrary.BaselibApp;
+import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.R;
 import com.haier.cellarette.baselibrary.provider.AndroidFileUtil;
 
@@ -306,7 +306,7 @@ public class UpdateManager {
                 if (Environment.getExternalStorageState().equals(
                         Environment.MEDIA_MOUNTED)) {
                     // 获得存储卡的路径
-                    String sdpath = BaselibApp.get().getExternalFilesDir(null).getAbsolutePath()
+                    String sdpath = BaseApp.get().getExternalFilesDir(null).getAbsolutePath()
                             + "/";
                     mSavePath = sdpath + "updateapk";
                     URL url = new URL(mHashMap.get("url"));

@@ -33,7 +33,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.haier.cellarette.baselibrary.BaselibApp;
+import com.geek.libutils.app.BaseApp;
 
 import static android.graphics.BlurMaskFilter.Blur;
 
@@ -535,7 +535,7 @@ public class SpannableStringUtils {
             }
             if (imageIsBitmap || imageIsDrawable || imageIsUri || imageIsResourceId) {
                 if (imageIsBitmap) {
-                    mBuilder.setSpan(new ImageSpan(BaselibApp.get(), bitmap), start, end, flag);
+                    mBuilder.setSpan(new ImageSpan(BaseApp.get(), bitmap), start, end, flag);
                     bitmap = null;
                     imageIsBitmap = false;
                 } else if (imageIsDrawable) {
@@ -543,11 +543,11 @@ public class SpannableStringUtils {
                     drawable = null;
                     imageIsDrawable = false;
                 } else if (imageIsUri) {
-                    mBuilder.setSpan(new ImageSpan(BaselibApp.get(), uri), start, end, flag);
+                    mBuilder.setSpan(new ImageSpan(BaseApp.get(), uri), start, end, flag);
                     uri = null;
                     imageIsUri = false;
                 } else {
-                    mBuilder.setSpan(new ImageSpan(BaselibApp.get(), resourceId), start, end, flag);
+                    mBuilder.setSpan(new ImageSpan(BaseApp.get(), resourceId), start, end, flag);
                     resourceId = 0;
                     imageIsResourceId = false;
                 }

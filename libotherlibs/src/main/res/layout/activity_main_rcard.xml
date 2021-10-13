@@ -25,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:text="swipe_right" />
 
-    <com.haier.cellarette.baselibrary.recycleviewcard.CardSwipeStack
+    <com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack
         android:id="@+id/swipeStack"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

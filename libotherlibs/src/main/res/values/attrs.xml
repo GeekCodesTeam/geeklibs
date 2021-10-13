@@ -105,17 +105,6 @@
         <attr name="src" />
     </declare-styleable>
 
-    <declare-styleable name="RoundImageViewStyle">
-        <attr name="riv_border_color" format="color" />
-        <attr name="riv_border_width" format="dimension" />
-        <attr name="riv_pressed_border_color" format="color" />
-        <attr name="riv_pressed_border_width" format="dimension" />
-        <attr name="riv_pressed_mask_color" format="color" />
-        <attr name="riv_pressed_mode_enabled" format="boolean" />
-        <attr name="riv_is_circle" format="boolean" />
-        <attr name="riv_corner_radius" format="dimension" />
-    </declare-styleable>
-
     <declare-styleable name="LxLayout">
         <attr name="is_touch" format="boolean" />
     </declare-styleable>
@@ -415,6 +404,13 @@
         <attr name="swipe_opacity" format="float"/>
         <attr name="scale_factor" format="float"/>
         <attr name="disable_hw_acceleration" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="pileHorizontalTransitionLayout">
+        <attr name="interval" format="dimension" />
+        <attr name="sizeRatio" format="float" />
+        <attr name="scaleStep" format="float" />
+        <attr name="displayCount" format="float" />
     </declare-styleable>
 
 </resources>

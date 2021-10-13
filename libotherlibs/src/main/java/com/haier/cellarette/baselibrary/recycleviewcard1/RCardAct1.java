@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard;
+package com.haier.cellarette.baselibrary.recycleviewcard1;
 
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +32,7 @@ import com.haier.cellarette.baselibrary.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RCardAct extends AppCompatActivity implements CardSwipeStack.SwipeStackListener, View.OnClickListener {
+public class RCardAct1 extends AppCompatActivity implements CardSwipeStack.SwipeStackListener, View.OnClickListener {
 
     private Button mButtonLeft, mButtonRight;
     private FloatingActionButton mFab;

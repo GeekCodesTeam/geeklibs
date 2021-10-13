@@ -15,7 +15,7 @@ import androidx.annotation.RequiresApi;
 
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.Utils;
-import com.haier.cellarette.baselibrary.BaselibApp;
+import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.provider.FileProvider7;
 
 import java.io.File;
@@ -45,7 +45,7 @@ public class FitAndroidAssetsToCacheUtil {
 
     public static String get_file_url() {
         String file_apk_url;
-        File file_apks = BaselibApp.get().getExternalCacheDir();
+        File file_apks = BaseApp.get().getExternalCacheDir();
         if (file_apks != null) {
             file_apk_url = file_apks.getAbsolutePath();
         } else {

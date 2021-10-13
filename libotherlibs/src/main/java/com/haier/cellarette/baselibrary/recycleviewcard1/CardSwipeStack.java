@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard;
+package com.haier.cellarette.baselibrary.recycleviewcard1;
 
 import android.content.Context;
 import android.content.res.TypedArray;

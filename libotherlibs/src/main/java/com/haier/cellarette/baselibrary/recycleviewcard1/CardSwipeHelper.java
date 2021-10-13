@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard;
+package com.haier.cellarette.baselibrary.recycleviewcard1;
 
-import static com.haier.cellarette.baselibrary.recycleviewcard.CardSwipeStack.DEFAULT_ANIMATION_DURATION;
-import static com.haier.cellarette.baselibrary.recycleviewcard.CardSwipeStack.DEFAULT_SWIPE_OPACITY;
-import static com.haier.cellarette.baselibrary.recycleviewcard.CardSwipeStack.DEFAULT_SWIPE_ROTATION;
-import static com.haier.cellarette.baselibrary.recycleviewcard.CardSwipeStack.SWIPE_DIRECTION_ONLY_LEFT;
-import static com.haier.cellarette.baselibrary.recycleviewcard.CardSwipeStack.SWIPE_DIRECTION_ONLY_RIGHT;
+import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.DEFAULT_ANIMATION_DURATION;
+import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.DEFAULT_SWIPE_OPACITY;
+import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.DEFAULT_SWIPE_ROTATION;
+import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.SWIPE_DIRECTION_ONLY_LEFT;
+import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.SWIPE_DIRECTION_ONLY_RIGHT;
 
 import android.animation.Animator;
-import android.annotation.SuppressLint;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;

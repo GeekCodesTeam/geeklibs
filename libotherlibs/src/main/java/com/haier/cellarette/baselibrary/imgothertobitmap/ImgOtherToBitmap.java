@@ -13,7 +13,7 @@ import android.net.Uri;
 import androidx.annotation.DrawableRes;
 
 
-import com.haier.cellarette.baselibrary.BaselibApp;
+import com.geek.libutils.app.BaseApp;
 
 import java.io.BufferedInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +28,7 @@ public class ImgOtherToBitmap {
 
     //根据drawable换取路径
     public static String getResourcesUri(@DrawableRes int id) {
-        Resources resources = BaselibApp.get().getResources();
+        Resources resources = BaseApp.get().getResources();
         String uriPath = ContentResolver.SCHEME_ANDROID_RESOURCE + "://" +
                 resources.getResourcePackageName(id) + "/" +
                 resources.getResourceTypeName(id) + "/" +
@@ -75,7 +75,7 @@ public class ImgOtherToBitmap {
      * @return
      */
     public static Bitmap drawableToBitmap(@DrawableRes int re_dra) {
-        Resources res = BaselibApp.get().getResources();
+        Resources res = BaseApp.get().getResources();
         Bitmap bmp = BitmapFactory.decodeResource(res, re_dra);
         return bmp;
     }
@@ -124,7 +124,7 @@ public class ImgOtherToBitmap {
     private Bitmap decodeUriAsBitmap(Uri uri) {
         Bitmap bitmap = null;
         try {
-            bitmap = BitmapFactory.decodeStream(BaselibApp.get().getContentResolver().openInputStream(uri));
+            bitmap = BitmapFactory.decodeStream(BaseApp.get().getContentResolver().openInputStream(uri));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return null;

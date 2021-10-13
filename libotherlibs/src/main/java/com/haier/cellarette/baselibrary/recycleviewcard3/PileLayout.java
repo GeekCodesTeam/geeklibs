@@ -1,4 +1,4 @@
-package com.geek.libbase.widgets;
+package com.haier.cellarette.baselibrary.recycleviewcard3;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -15,7 +15,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
-import com.geek.libbase.R;
+import com.haier.cellarette.baselibrary.R;
 
 import java.util.ArrayList;
 import java.util.List;

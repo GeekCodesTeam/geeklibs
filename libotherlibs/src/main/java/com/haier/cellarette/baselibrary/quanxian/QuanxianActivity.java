@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.haier.cellarette.baselibrary.BaselibApp;
+import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.R;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.Permission;
@@ -30,7 +30,7 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_quanxian);
         //
         // 初始化吐司工具类
-//        ToastUtils.init(BaselibApp.get(), new WhiteToastStyle());
+//        ToastUtils.init(BaseApp.get(), new WhiteToastStyle());
 
         // 设置权限申请拦截器
         XXPermissions.setInterceptor(new PermissionInterceptor());
