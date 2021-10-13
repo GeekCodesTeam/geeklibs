@@ -79,7 +79,7 @@ public class StackAct extends AppCompatActivity {
 
     public void resetDefault() {
         List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 8; i++) {
             datas.add(String.valueOf(i));
         }
 
@@ -89,7 +89,7 @@ public class StackAct extends AppCompatActivity {
         config.maxStackCount = 4;
         config.initialStackCount = 2;
         config.mScrollTime = 2000;
-        config.space = 15;
+        config.space = 8;
         config.align = StackAlign.LEFT;
         layoutManager = new StackLayoutManager(config, this);
         layoutManager.stopScroll();
@@ -101,7 +101,7 @@ public class StackAct extends AppCompatActivity {
 
     public void resetRight() {
         List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 8; i++) {
             datas.add(String.valueOf(i));
         }
 

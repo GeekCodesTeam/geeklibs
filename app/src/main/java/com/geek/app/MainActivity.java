@@ -7,9 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.haier.cellarette.baselibrary.recycleviewcard1.RCardAct;
-import com.just.agentweb.geek.activity.AgentwebAct;
-import com.just.agentweb.geek.fragment.AgentWebFragment;
+import com.haier.cellarette.baselibrary.recycleviewcard2.StackAct;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 
 import xyz.doikki.dkplayer.activity.DKMainActivity;
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RCardAct.class));
+                startActivity(new Intent(MainActivity.this, StackAct.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://v.dtdjzx.gov.cn/voice/");

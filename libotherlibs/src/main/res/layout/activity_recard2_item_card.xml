@@ -17,13 +17,13 @@
         app:cardUseCompatPadding="true"
         tools:targetApi="lollipop">
 
-        <com.haier.cellarette.baselibrary.widget.CustomImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/cover"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@color/colorotherlibs"
-            app:borderRadius="8dp" />
+            app:riv_corner_radius="8dp"
+            android:src="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/index"

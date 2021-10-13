@@ -36,7 +36,7 @@ public class StackActVertical extends AppCompatActivity {
 
     private void vr() {
         List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 8; i++) {
             datas.add(String.valueOf(i));
         }
 
