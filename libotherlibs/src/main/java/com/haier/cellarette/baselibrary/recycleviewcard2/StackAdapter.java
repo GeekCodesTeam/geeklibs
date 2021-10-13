@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.haier.cellarette.baselibrary.R;
+import com.haier.cellarette.baselibrary.widget.CustomImageView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -76,18 +77,18 @@ public class StackAdapter extends RecyclerView.Adapter<StackAdapter.ViewHolder> 
 //    }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView cover;
+        CustomImageView cover;
         TextView index;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            cover = (ImageView) itemView.findViewById(R.id.cover);
+            cover = (CustomImageView) itemView.findViewById(R.id.cover);
             index = (TextView) itemView.findViewById(R.id.index);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 //                    Toast.makeText(context.getApplicationContext(), String.valueOf(getAdapterPosition()), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(context.getApplicationContext(), String.valueOf(getAdapterPosition() % datas.size() + ""), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context.getApplicationContext(), String.valueOf(getLayoutPosition() % datas.size() + ""), Toast.LENGTH_SHORT).show();
                 }
             });
         }
