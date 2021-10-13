@@ -10,14 +10,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.haier.cellarette.baselibrary.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
 public class StackActVertical extends AppCompatActivity {
 
-    TextView tv1;
-    RecyclerView verticalRecyclerview;
-    StackLayoutManager layoutManager;
+    private TextView tv1;
+    private RecyclerView verticalRecyclerview;
+    private StackLayoutManager layoutManager;
+    private List<Integer> imageUrls = Arrays.asList(
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img2,
+            R.drawable.m_img2
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +46,11 @@ public class StackActVertical extends AppCompatActivity {
     }
 
     private void vr() {
-        List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            datas.add(String.valueOf(i));
+        List<StackBean> datas = new ArrayList<>();
+        for (int i = 0; i < imageUrls.size(); i++) {
+            datas.add(new StackBean(imageUrls.get(i), ""));
         }
-
+        //
         StackConfig config = new StackConfig();
         config.secondaryScale = 0.95f;
         config.scaleRatio = 0.4f;
@@ -53,6 +64,14 @@ public class StackActVertical extends AppCompatActivity {
         layoutManager.startScroll();
         verticalRecyclerview.setLayoutManager(layoutManager);
         verticalRecyclerview.setAdapter(new StackAdapter(datas).vertical());
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (layoutManager != null) {
+            layoutManager.stopScroll();
+        }
+        super.onDestroy();
     }
 
     @Override

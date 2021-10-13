@@ -11,9 +11,9 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.geek.libutils.app.BaseApp;
 import com.haier.cellarette.baselibrary.R;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,28 +23,18 @@ import java.util.List;
 public class StackAdapter extends RecyclerView.Adapter<StackAdapter.ViewHolder> {
 
     private LayoutInflater inflater;
-    private List<String> datas;
+    private List<StackBean> datas;
     private Context context;
-    private List<Integer> imageUrls = Arrays.asList(
-            R.drawable.m_img1,
-            R.drawable.m_img2,
-            R.drawable.m_img1,
-            R.drawable.m_img2,
-            R.drawable.m_img1,
-            R.drawable.m_img2,
-            R.drawable.m_img2,
-            R.drawable.m_img2
-    );
     private boolean vertical;
 
-    public StackAdapter(List<String> datas) {
+    public StackAdapter(List<StackBean> datas) {
         this.datas = datas;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (inflater == null) {
-            context = parent.getContext();
+            this.context = parent.getContext();
             inflater = LayoutInflater.from(parent.getContext());
         }
         if (vertical) {
@@ -60,7 +50,7 @@ public class StackAdapter extends RecyclerView.Adapter<StackAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Glide.with(context).load(imageUrls.get(position % datas.size())).into(holder.cover);
+        Glide.with(BaseApp.get().getApplicationContext()).load(datas.get(position % datas.size()).getImg()).into(holder.cover);
 //        holder.index.setText(datas.get(holder.getAdapterPosition()));
         holder.index.setText(position % datas.size() + "");
     }

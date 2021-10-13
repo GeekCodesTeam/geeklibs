@@ -668,7 +668,7 @@ public class StackLayoutManager extends RecyclerView.LayoutManager {
     private static final int MSG_RUN = 1;
     private boolean isScrolling;
     private boolean isTouch;
-    private int mScrollTime = 3000;
+    private int mScrollTime = 6000;
 
     private class H extends Handler {
         private WeakReference<StackLayoutManager> mReference;

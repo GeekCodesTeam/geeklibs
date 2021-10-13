@@ -11,17 +11,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.haier.cellarette.baselibrary.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class StackAct extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    RecyclerView recyclerview;
-    RecyclerView hrRecyclerView;
-    Button button;
-    Button button1;
-    Button button2;
-    Button scroll_to_specific_item;
+    private RecyclerView recyclerview;
+    private RecyclerView hrRecyclerView;
+    private Button button;
+    private Button button1;
+    private Button button2;
+    private Button scroll_to_specific_item;
     private StackLayoutManager layoutManager;
+    private List<Integer> imageUrls = Arrays.asList(
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img2,
+            R.drawable.m_img2
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,28 +72,12 @@ public class StackAct extends AppCompatActivity {
         resetRight();
     }
 
-    @Override
-    protected void onResume() {
-        if (layoutManager != null) {
-            layoutManager.startScroll();
-        }
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        if (layoutManager != null) {
-            layoutManager.stopScroll();
-        }
-        super.onPause();
-    }
-
     public void resetDefault() {
-        List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            datas.add(String.valueOf(i));
+        List<StackBean> datas = new ArrayList<>();
+        for (int i = 0; i < imageUrls.size(); i++) {
+            datas.add(new StackBean(imageUrls.get(i), ""));
         }
-
+        //
         StackConfig config = new StackConfig();
         config.secondaryScale = 0.8f;
         config.scaleRatio = 0.4f;
@@ -100,11 +95,11 @@ public class StackAct extends AppCompatActivity {
     }
 
     public void resetRight() {
-        List<String> datas = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            datas.add(String.valueOf(i));
+        List<StackBean> datas = new ArrayList<>();
+        for (int i = 0; i < imageUrls.size(); i++) {
+            datas.add(new StackBean(imageUrls.get(i), ""));
         }
-
+        //
         StackConfig config = new StackConfig();
         config.secondaryScale = 0.8f;
         config.scaleRatio = 0.4f;
@@ -129,6 +124,25 @@ public class StackAct extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        if (layoutManager != null) {
+            layoutManager.stopScroll();
+        }
         super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        if (layoutManager != null) {
+            layoutManager.startScroll();
+        }
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        if (layoutManager != null) {
+            layoutManager.stopScroll();
+        }
+        super.onPause();
     }
 }
