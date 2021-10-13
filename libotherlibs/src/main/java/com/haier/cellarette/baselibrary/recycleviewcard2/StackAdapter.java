@@ -26,14 +26,14 @@ public class StackAdapter extends RecyclerView.Adapter<StackAdapter.ViewHolder> 
     private List<String> datas;
     private Context context;
     private List<Integer> imageUrls = Arrays.asList(
-            R.drawable.img00,
-            R.drawable.img01,
-            R.drawable.img02,
-            R.drawable.img03,
-            R.drawable.img01,
-            R.drawable.img02,
-            R.drawable.img00,
-            R.drawable.img03
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img1,
+            R.drawable.m_img2,
+            R.drawable.m_img2,
+            R.drawable.m_img2
     );
     private boolean vertical;
 
