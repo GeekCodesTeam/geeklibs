@@ -49,30 +49,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':libbase')
-//    api project(':libutils')
-//    api project(':libmvp')
-//    api project(':libretrofit')
-//    api project(':libswipebacklayout')
-//    api project(':libwebview')
-//    api project(':libagentweb20')
-//    api project(':libglide47')
-//    api project(':librararyforfileprovdider')
-//    api project(':liblanguage')
-    //
-    implementation project(':libexpandablerecyclerview')
-    implementation project(':liblinkagerecyclerview')
-    implementation project(':libncalendar')
-    implementation project(':libotherlibs')
-    implementation project(':libpictureselector')
-    implementation project(':libtablayout')
-    implementation project(':libupdateapp')
-    implementation project(':libxpopup')
-    implementation project(':libxuanzeqi')
-    implementation project(':libyanzheng')
-    implementation project(':libzxing')
-    implementation project(':zdkplayer:dkplayer')
-
+    implementation project(':libgeek')
 
 }
 
