@@ -3,7 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="divider_height">5dp</dimen>
-    <dimen name="default_stack_spacing">12dp</dimen>
 
     <!--add by lxd-->
 

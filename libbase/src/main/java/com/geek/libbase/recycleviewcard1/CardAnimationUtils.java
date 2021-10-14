@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard1;
+package com.geek.libbase.recycleviewcard1;
 
 import android.animation.Animator;
 

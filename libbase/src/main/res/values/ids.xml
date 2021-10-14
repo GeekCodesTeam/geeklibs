@@ -29,4 +29,7 @@
     <item name="baserecycleview_scroll_view1" type="id" />
     <item name="baserecycleview_recycler_view1" type="id" />
 
+    <item name="new_view" type="id"/>
+
+
 </resources>

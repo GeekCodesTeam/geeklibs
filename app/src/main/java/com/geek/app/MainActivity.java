@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.haier.cellarette.baselibrary.recycleviewcard1.RCardAct1;
+import com.geek.libbase.recycleviewcard1.RCardAct1;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 
 import xyz.doikki.dkplayer.activity.DKMainActivity;

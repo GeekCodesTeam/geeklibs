@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard1;
+package com.geek.libbase.recycleviewcard1;
 
-import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.DEFAULT_ANIMATION_DURATION;
-import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.DEFAULT_SWIPE_OPACITY;
-import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.DEFAULT_SWIPE_ROTATION;
-import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.SWIPE_DIRECTION_ONLY_LEFT;
-import static com.haier.cellarette.baselibrary.recycleviewcard1.CardSwipeStack.SWIPE_DIRECTION_ONLY_RIGHT;
+import static com.geek.libbase.recycleviewcard1.CardSwipeStack.DEFAULT_ANIMATION_DURATION;
+import static com.geek.libbase.recycleviewcard1.CardSwipeStack.DEFAULT_SWIPE_OPACITY;
+import static com.geek.libbase.recycleviewcard1.CardSwipeStack.DEFAULT_SWIPE_ROTATION;
+import static com.geek.libbase.recycleviewcard1.CardSwipeStack.SWIPE_DIRECTION_ONLY_LEFT;
+import static com.geek.libbase.recycleviewcard1.CardSwipeStack.SWIPE_DIRECTION_ONLY_RIGHT;
 
 import android.animation.Animator;
 import android.view.MotionEvent;

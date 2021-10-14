@@ -2,7 +2,6 @@
 <resources>
     <item name="list" type="id"/>
     <item name="refresh" type="id" />
-    <item name="new_view" type="id"/>
     <item name="empty_nodata_notice" type="id" />
     <item name="empty_errnet_notice" type="id" />
     <item name="empty_errnet_btn" type="id" />

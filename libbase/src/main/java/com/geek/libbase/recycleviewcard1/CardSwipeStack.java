@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard1;
+package com.geek.libbase.recycleviewcard1;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -30,7 +30,8 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 
-import com.haier.cellarette.baselibrary.R;
+
+import com.geek.libbase.R;
 
 import java.util.Random;
 

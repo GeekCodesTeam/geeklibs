@@ -674,15 +674,6 @@
         <activity android:name=".coordinatorlayout.CoordinatorLayoutAct7" />
 
         <activity
-            android:name=".recycleviewcard1.RCardAct1"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="${applicationId}.hs.act.RCardAct1" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".recycleviewcard3.RCardAct3"
             android:exported="false">
             <intent-filter>

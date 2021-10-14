@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.haier.cellarette.baselibrary.recycleviewcard1;
+package com.geek.libbase.recycleviewcard1;
 
 import android.os.Bundle;
 import android.view.View;
@@ -24,15 +24,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.geek.libbase.R;
+import com.geek.libbase.base.SlbBaseActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.haier.cellarette.baselibrary.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RCardAct1 extends AppCompatActivity implements CardSwipeStack.SwipeStackListener, View.OnClickListener {
+public class RCardAct1 extends SlbBaseActivity implements CardSwipeStack.SwipeStackListener, View.OnClickListener {
 
     private Button mButtonLeft, mButtonRight;
     private FloatingActionButton mFab;
@@ -42,11 +44,15 @@ public class RCardAct1 extends AppCompatActivity implements CardSwipeStack.Swipe
     private CardSwipeStack mSwipeStack;
     private SwipeStackAdapter mAdapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_rcard);
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main_rcard;
+    }
+
+    @Override
+    protected void setup(@Nullable Bundle savedInstanceState) {
+        super.setup(savedInstanceState);
         mSwipeStack = (CardSwipeStack) findViewById(R.id.swipeStack);
         mButtonLeft = (Button) findViewById(R.id.buttonSwipeLeft);
         mButtonRight = (Button) findViewById(R.id.buttonSwipeRight);
@@ -66,6 +72,13 @@ public class RCardAct1 extends AppCompatActivity implements CardSwipeStack.Swipe
 
         fillWithTestData();
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
 
     private void fillWithTestData() {
         for (int x = 0; x < 5; x++) {
