@@ -9,7 +9,6 @@ dependencies {
     implementation project(':libutils')
     implementation librarys.glide47
     implementation librarys.picasso
-    implementation librarys.gsonJson
     api 'us.feras.mdv:markdownview:1.1.0'
     api 'com.lcodecorex:tkrefreshlayout:1.0.7'
     api 'com.github.lzyzsd:jsbridge:1.0.4'

@@ -4,9 +4,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation librarys.gsonJson
+    implementation project(':libutils')
     implementation librarys.glide47
-    implementation librarys.viewpager2
-    implementation 'com.github.li-xiaojun:XPopup:2.4.9'
     api 'com.kunminx.linkage:linkage-recyclerview:2.4.0'
 }

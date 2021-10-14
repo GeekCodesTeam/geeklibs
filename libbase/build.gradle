@@ -21,17 +21,15 @@ android {
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':libutils')
-    api project(':libmvp')
-    api project(':libretrofit')
-    api project(':libswipebacklayout')
-    api project(':libwebview')
-    api project(':libagentweb20')
-    api librarys.glide47
-    api project(':libglide47')
-    api project(':librararyforfileprovdider')
-    api project(':libzxing')
-    api project(':liblanguage')
-    api project(':libtablayout')
+    implementation project(':libutils')
+    implementation project(':libmvp')
+    implementation project(':libretrofit')
+    implementation project(':libswipebacklayout')
+    implementation project(':libwebview')
+    implementation project(':libagentweb20')
+    implementation librarys.glide47
+    implementation project(':libglide47')
+    implementation project(':librararyforfileprovdider')
+    implementation project(':liblanguage')
 
 }

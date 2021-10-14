@@ -4,7 +4,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation librarys.blankj
+    implementation project(':libutils')
     api 'joda-time:joda-time:2.10.2'
 
 }

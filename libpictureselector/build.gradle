@@ -4,7 +4,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation librarys.blankj
+    implementation project(':libutils')
     implementation librarys.glide47
     implementation librarys.picasso
     implementation 'androidx.camera:camera-core:1.0.1'

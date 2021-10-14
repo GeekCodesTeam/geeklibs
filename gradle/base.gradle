@@ -3,6 +3,7 @@ def librarys = config.dependencies //
 android {
     compileSdkVersion config.compileSdkVersion
 
+    ndkVersion "23.0.7599858" // e.g.,  ndkVersion '21.3.6528147'
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
@@ -11,6 +12,9 @@ android {
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        ndk {
+            abiFilters /*'armeabi-v7a',*/'arm64-v8a'
+        }
     }
     lintOptions {
         checkReleaseBuilds false

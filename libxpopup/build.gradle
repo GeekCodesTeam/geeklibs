@@ -4,7 +4,7 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation librarys.blankj
+    implementation project(':libutils')
     implementation librarys.glide47
     api 'com.github.li-xiaojun:StateLayout:1.2.3'
     api 'com.github.li-xiaojun:EasyAdapter:1.2.4'
