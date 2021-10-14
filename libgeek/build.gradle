@@ -1,0 +1,28 @@
+apply from: "${rootDir.path}/gradle/base.gradle"
+apply from: "${rootDir.path}/gradle/publish.gradle"
+def librarys = rootProject.ext.dependencies //
+dependencies {
+    //
+    api project(':libbase')
+//    api project(':libutils')
+//    api project(':libmvp')
+//    api project(':libretrofit')
+//    api project(':libswipebacklayout')
+//    api project(':libwebview')
+//    api project(':libagentweb20')
+//    api project(':libglide47')
+//    api project(':librararyforfileprovdider')
+    //
+    api project(':libexpandablerecyclerview')
+    api project(':liblinkagerecyclerview')
+    api project(':libncalendar')
+    api project(':libotherlibs')
+    api project(':libpictureselector')
+    api project(':libtablayout')
+    api project(':libupdateapp')
+    api project(':libxpopup')
+    api project(':libxuanzeqi')
+    api project(':libyanzheng')
+    api project(':libzxing')
+    api project(':zdkplayer:dkplayer')
+}
