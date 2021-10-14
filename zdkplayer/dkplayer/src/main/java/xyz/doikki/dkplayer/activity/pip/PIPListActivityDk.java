@@ -7,6 +7,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hjq.permissions.OnPermissionCallback;
+import com.hjq.permissions.Permission;
+import com.hjq.permissions.XXPermissions;
+
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
 import xyz.doikki.dkplayer.adapter.VideoRecyclerViewAdapterDk;
@@ -23,7 +27,6 @@ import xyz.doikki.videocontroller.component.GestureView;
 import xyz.doikki.videocontroller.component.TitleView;
 import xyz.doikki.videocontroller.component.VodControlView;
 import xyz.doikki.videoplayer.player.VideoView;
-import com.yanzhenjie.permission.AndPermission;
 
 import java.util.List;
 
@@ -101,16 +104,25 @@ public class PIPListActivityDk extends BaseActivityDk implements OnItemChildClic
     }
 
     private void startFloatWindow() {
-        AndPermission
-                .with(this)
-                .overlay()
-                .onGranted(data -> {
-                    mPIPManager.startFloatWindow();
-                })
-                .onDenied(data -> {
+//        AndPermission
+//                .with(this)
+//                .overlay()
+//                .onGranted(data -> {
+//                    mPIPManager.startFloatWindow();
+//                })
+//                .onDenied(data -> {
+//
+//                })
+//                .start();
+        XXPermissions.with(this)
+                .permission(Permission.SYSTEM_ALERT_WINDOW)
+                .request(new OnPermissionCallback() {
 
-                })
-                .start();
+                    @Override
+                    public void onGranted(List<String> permissions, boolean all) {
+                        mPIPManager.startFloatWindow();
+                    }
+                });
     }
 
     @Override

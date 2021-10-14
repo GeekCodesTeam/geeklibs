@@ -1,5 +1,6 @@
 package xyz.doikki.dkplayer.activity;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,8 +8,15 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.fragment.main.ApiFragmentDk;
@@ -27,15 +35,6 @@ import xyz.doikki.videoplayer.player.AndroidMediaPlayerFactory;
 import xyz.doikki.videoplayer.player.PlayerFactory;
 import xyz.doikki.videoplayer.player.VideoViewConfig;
 import xyz.doikki.videoplayer.player.VideoViewManager;
-
-import com.blankj.utilcode.util.Utils;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.yanzhenjie.permission.AndPermission;
-import com.yanzhenjie.permission.runtime.Permission;
-
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DKMainActivity extends BaseActivityDk implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -80,10 +79,7 @@ public class DKMainActivity extends BaseActivityDk implements BottomNavigationVi
 //                .setProgressManager(new ProgressManagerImpl())
                 .build());
         //
-        AndPermission.with(this)
-                .runtime()
-                .permission(Permission.WRITE_EXTERNAL_STORAGE)
-                .start();
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
 
         //检测当前是用的哪个播放器
         Object factory = UtilsDk.getCurrentPlayerFactory();

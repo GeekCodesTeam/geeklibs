@@ -1,4 +1,3 @@
-apply plugin: 'com.android.library'
 apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //依赖
@@ -13,15 +12,12 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation librarys.blankj
-    implementation librarys.retrofit
-    implementation librarys.retrofitconverters
-    implementation librarys.retrofitgconvertergson
-    implementation librarys.retrofitgconverterscalars
+    api project(':libutils')
+    api project(':libretrofit')
     //
-    implementation librarys.rxJava2
-    implementation librarys.rxandroid2
-    implementation librarys.adapterrxjava2
+    api librarys.rxJava2
+    api librarys.rxandroid2
+    api librarys.adapterrxjava2
 
 //    implementation project(path: ':libsCenterNew:opendroid2')
 //    implementation files('../../../otherlibs/alipaySdk-20180601.jar')

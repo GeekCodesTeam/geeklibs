@@ -1,9 +1,10 @@
+apply plugin: 'com.android.library'
 def config = rootProject.ext //配置
 def librarys = config.dependencies //
 android {
     compileSdkVersion config.compileSdkVersion
 
-    ndkVersion "23.0.7599858" // e.g.,  ndkVersion '21.3.6528147'
+//    ndkVersion "23.0.7599858" // e.g.,  ndkVersion '21.3.6528147'
     defaultConfig {
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
@@ -12,9 +13,9 @@ android {
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
 //        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
-        ndk {
-            abiFilters /*'armeabi-v7a',*/'arm64-v8a'
-        }
+//        ndk {
+//            abiFilters /*'armeabi-v7a',*/'arm64-v8a'
+//        }
     }
     lintOptions {
         checkReleaseBuilds false
@@ -56,7 +57,8 @@ android {
     }
 }
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
     implementation librarys.design
     implementation librarys.appcompatV7
     implementation librarys.supportannotations

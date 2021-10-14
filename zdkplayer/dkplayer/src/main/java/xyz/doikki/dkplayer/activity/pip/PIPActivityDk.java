@@ -10,6 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 
 import com.bumptech.glide.Glide;
+import com.hjq.permissions.OnPermissionCallback;
+import com.hjq.permissions.Permission;
+import com.hjq.permissions.XXPermissions;
+
+import java.util.List;
+
 import xyz.doikki.dkplayer.R;
 import xyz.doikki.dkplayer.activity.BaseActivityDk;
 import xyz.doikki.dkplayer.util.DataUtilDk;
@@ -17,7 +23,6 @@ import xyz.doikki.dkplayer.util.PIPManagerDk;
 import xyz.doikki.dkplayer.util.TagDk;
 import xyz.doikki.videocontroller.StandardVideoController;
 import xyz.doikki.videoplayer.player.VideoView;
-import com.yanzhenjie.permission.AndPermission;
 
 public class PIPActivityDk extends BaseActivityDk {
 
@@ -91,17 +96,28 @@ public class PIPActivityDk extends BaseActivityDk {
 
     public void startFloatWindow(View view) {
 
-        AndPermission
-                .with(this)
-                .overlay()
-                .onGranted(data -> {
-                    mPIPManager.startFloatWindow();
-                    mPIPManager.resume();
-                    finish();
-                })
-                .onDenied(data -> {
+//        AndPermission
+//                .with(this)
+//                .overlay()
+//                .onGranted(data -> {
+//                    mPIPManager.startFloatWindow();
+//                    mPIPManager.resume();
+//                    finish();
+//                })
+//                .onDenied(data -> {
+//
+//                })
+//                .start();
+        XXPermissions.with(this)
+                .permission(Permission.SYSTEM_ALERT_WINDOW)
+                .request(new OnPermissionCallback() {
 
-                })
-                .start();
+                    @Override
+                    public void onGranted(List<String> permissions, boolean all) {
+                        mPIPManager.startFloatWindow();
+                        mPIPManager.resume();
+                        finish();
+                    }
+                });
     }
 }

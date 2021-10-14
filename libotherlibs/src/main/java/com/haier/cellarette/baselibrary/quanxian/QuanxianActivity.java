@@ -64,6 +64,11 @@ public class QuanxianActivity extends AppCompatActivity implements View.OnClickL
                                 toast("获取拍照权限成功");
                             }
                         }
+
+                        @Override
+                        public void onDenied(List<String> permissions, boolean never) {
+
+                        }
                     });
 
         } else if (viewId == R.id.btn_main_request_2) {

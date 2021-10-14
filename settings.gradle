@@ -8,7 +8,7 @@
 //    }
 //}
 rootProject.name = "geeklibs"
-//include ':app'
+include ':app'
 // start aar
 include ':libsCenter', ':biz-libs'
 // end aar
@@ -34,15 +34,10 @@ include ':libglide47'
 include ':libwebview'
 include ':libswipebacklayout'
 include ':librararyforfileprovdider'
-//include ':refresh-footer'
-//include ':refresh-header'
-//include ':refresh-layout'
 include ':libzxing'
 include ':liblanguage'
 include ':libplugin'
 include ':libxuanzeqi'
-include ':libokhttputils'
-include ':libyanzhenjieandpermission'
 include ':zdkplayer:dkplayer-java'
 include ':zdkplayer:dkplayer-players:ijkexo'
 include ':zdkplayer:dkplayer'

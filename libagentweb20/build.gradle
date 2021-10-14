@@ -1,14 +1,10 @@
-apply plugin: 'com.android.library'
 apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def config = rootProject.ext //配置
 def librarys = rootProject.ext.dependencies //
 //repositories { flatDir { dirs 'libs' } }
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':libutils')
-    implementation librarys.glide47
-    implementation librarys.picasso
+    api project(':libutils')
     api 'us.feras.mdv:markdownview:1.1.0'
     api 'com.lcodecorex:tkrefreshlayout:1.0.7'
     api 'com.github.lzyzsd:jsbridge:1.0.4'
