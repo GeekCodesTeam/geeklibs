@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.AppUtils;
 import com.geek.libbase.recycleviewcard1.RCardAct1;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
+import com.zaaach.citypicker.activity.CityPickerAct;
 
 import xyz.doikki.dkplayer.activity.DKMainActivity;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RCardAct1.class));
+                startActivity(new Intent(MainActivity.this, CityPickerAct.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://v.dtdjzx.gov.cn/voice/");

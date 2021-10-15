@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zaaach.citypicker">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_namelibcitypicker"
+        android:supportsRtl="true">
+        <activity
+            android:name=".activity.CityPickerAct"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/DefaultCityPickerTheme">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.CityPickerAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
