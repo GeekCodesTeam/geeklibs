@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Library</string>
-    <string name="cancel">取消</string>
-    <string name="sure">确认</string>
+    <string name="app_name" translatable="false">Library</string>
+    <string name="cancel" translatable="false">取消</string>
+    <string name="sure" translatable="false">确认</string>
 
-    <string name="app_xbbyzbh">新版本已准备好</string>
-    <string name="app_lkaz">去升级</string>
+    <string name="app_xbbyzbh" translatable="false">版本更新</string>
+    <string name="app_lkaz" translatable="false">去升级</string>
 
 </resources>

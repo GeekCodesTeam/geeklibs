@@ -21,7 +21,7 @@ public class ConfirmDialog extends Dialog {
     private TextView cancleBtn;
 
     public ConfirmDialog(Context context, Callback callback) {
-        super(context, R.style.CustomDialog);
+        super(context, R.style.CustomDialoglibupdateapp);
         this.callback = callback;
         setCustomDialog();
     }

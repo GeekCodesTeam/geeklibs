@@ -198,7 +198,7 @@ public class UpdateAppUtils {
                                             }
                                         }
                                     }
-                                }).setContent("目前手机不是WiFi状态\n确认是否继续下载更新？").setTitle("友情提示").show();
+                                }).setisForce(isForce).setContent("目前手机不是WiFi状态\n确认是否继续下载更新？").setTitle("友情提示").show();
                             }
                         } else if (downloadBy == DOWNLOAD_BY_BROWSER) {
                             DownloadAppUtils.downloadForWebView(activity, apkPath);
@@ -219,6 +219,7 @@ public class UpdateAppUtils {
         if (!TextUtils.isEmpty(updateInfo)) {
             title = updateInfoTitle;
         }
+        dialog.setisForce(isForce);
         dialog.setTitle(title);
         dialog.setContent(content);
         dialog.setCancelable(false);

@@ -5,7 +5,9 @@ import android.os.Build;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+
 import androidx.annotation.RequiresApi;
+
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.lxj.xpopup.XPopup;
@@ -14,14 +16,16 @@ import com.lxj.xpopup.core.BasePopupView;
 import com.lxj.xpopup.enums.PopupAnimation;
 import com.lxj.xpopup.enums.PopupPosition;
 import com.lxj.xpopup.impl.LoadingPopupView;
+import com.lxj.xpopup.interfaces.OnCancelListener;
 import com.lxj.xpopup.interfaces.OnConfirmListener;
 import com.lxj.xpopup.interfaces.OnInputConfirmListener;
 import com.lxj.xpopup.interfaces.OnSelectListener;
 import com.lxj.xpopup.interfaces.SimpleCallback;
 import com.lxj.xpopup.util.XPermission;
+import com.lxj.xpopup.util.XPopupUtils;
+import com.lxj.xpopupdemo.R;
 import com.lxj.xpopupdemo.XpopupDemoActivity;
 import com.lxj.xpopupdemo.XpopupMainActivity;
-import com.lxj.xpopupdemo.R;
 import com.lxj.xpopupdemo.custom.CustomAttachPopup;
 import com.lxj.xpopupdemo.custom.CustomAttachPopup2;
 import com.lxj.xpopupdemo.custom.CustomBubbleAttachPopup;
@@ -100,6 +104,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
     CustomDrawerPopupView drawerPopupView;
     AttachPopupView attachPopupView;
     BasePopupView popupView;
+    BasePopupView popupView2;
     LoadingPopupView loadingPopup;
     CustomAttachPopup2 customAttach2;
 
@@ -130,19 +135,27 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                             }, null, false);
             popupView.show();
         } else if (id == R.id.btnBindLayout) {  //复用项目中已有布局，使用XPopup已有的交互能力
-            new XPopup.Builder(getContext())
-                    .autoOpenSoftInput(true)
+            popupView2 = new XPopup.Builder(getContext())
+//                    .autoOpenSoftInput(true)
+                    .maxWidth((int) (XPopupUtils.getWindowWidth(getContext()) * 1.0f))
+                    .dismissOnTouchOutside(false)
                     .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
-                    .asConfirm("复用项目已有布局", "您可以复用项目已有布局，来使用XPopup强大的交互能力和逻辑封装，弹窗的布局完全由你自己控制。\n" +
-                                    "注意：你自己的布局必须提供一些控件Id，否则XPopup找不到View。\n具体需要提供哪些Id，请查看文档[内置弹窗]一章。",
-                            "关闭", "XPopup牛逼",
+                    .asConfirm("帐号过期", "由于长期不等到导致信息过期，由于长期不等到导致信息过期，由于长期不等到导致信息过期。",
+                            "取消", "登录",
                             new OnConfirmListener() {
                                 @Override
                                 public void onConfirm() {
                                     toast("click confirm");
                                 }
-                            }, null, false, R.layout.my_confim_popup) //最后一个参数绑定已有布局
-                    .show();
+                            }, new OnCancelListener() {
+                                @Override
+                                public void onCancel() {
+
+                                }
+                            }, true, R.layout.my_confim_popup2); //最后一个参数绑定已有布局
+
+            popupView2.show();
+
         } else if (id == R.id.btnShowInputConfirm) { //带确认和取消按钮，输入框的弹窗
             new XPopup.Builder(getContext())
                     .hasStatusBarShadow(false)

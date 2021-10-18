@@ -46,30 +46,16 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/ll_dialog_confirm_cancle"
+        <TextView
+            android:id="@+id/tv_cancel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tv_cancel"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:gravity="center"
-                android:text="取消"
-                android:textColor="@color/color666666"
-                android:textSize="16mm" />
-
-            <View
-                android:layout_width="1mm"
-                android:layout_height="match_parent"
-                android:background="#E5E5E5" />
-        </LinearLayout>
+            android:text="取消"
+            android:textColor="@color/color666666"
+            android:textSize="16mm" />
 
         <TextView
             android:id="@+id/tv_confirm"
