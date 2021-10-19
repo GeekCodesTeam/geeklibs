@@ -11,6 +11,7 @@ import com.geek.libbase.base.SlbBaseActivity;
 import com.github.commonlibs.libupdateapputilsold.DemoUpdateAppMainActivity;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lxj.xpopupdemo.XpopupMainActivity;
+import com.zaaach.citypicker.activity.CityPickerAct;
 
 import xyz.doikki.dkplayer.activity.DKMainActivity;
 
@@ -46,7 +47,7 @@ public class MainActivity extends SlbBaseActivity {
         findViewById(R.id.tv2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, XpopupMainActivity.class));
+                startActivity(new Intent(MainActivity.this, CityPickerAct.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "dataability://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.WebActivity{act}?" + AgentWebFragment.URL_KEY + "={s}");
             }
         });

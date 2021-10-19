@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <provider
-            android:name="com.github.commonlibs.libupdateapputilsold.util.UpdateoldFileProvider"
+            android:name=".util.UpdateoldFileProvider"
             android:authorities="${applicationId}.UpdateoldFileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

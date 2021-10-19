@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="center"
-            android:text="暂无数据"
+            android:text="网络出了点问题"
             android:textColor="@color/color999999"
             android:textSize="16sp" />
 
@@ -35,10 +35,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="#000000"
-            android:paddingLeft="20dp"
+            android:background="@drawable/common_btn_bg3"
+            android:paddingLeft="50dp"
             android:paddingTop="10dp"
-            android:paddingRight="20dp"
+            android:paddingRight="50dp"
             android:paddingBottom="10dp"
             android:text="@string/retry_text"
             android:textColor="@color/white"

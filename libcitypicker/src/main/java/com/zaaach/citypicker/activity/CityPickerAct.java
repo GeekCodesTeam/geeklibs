@@ -1,5 +1,6 @@
 package com.zaaach.citypicker.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -81,39 +82,42 @@ public class CityPickerAct extends AppCompatActivity implements CompoundButton.O
         findViewById(R.id.btn_pick).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CityPicker.from(CityPickerAct.this)
-                        .enableAnimation(enable)
-                        .setAnimationStyle(anim)
-                        .setLocatedCity(null)
-                        .setHotCities(hotCities)
-                        .setOnPickListener(new OnPickListener() {
-                            @Override
-                            public void onPick(int position, City data) {
-                                currentTV.setText(String.format("当前城市：%s，%s", data.getName(), data.getCode()));
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        String.format("点击的数据：%s，%s", data.getName(), data.getCode()),
-                                        Toast.LENGTH_SHORT)
-                                        .show();
-                            }
-
-                            @Override
-                            public void onCancel() {
-                                Toast.makeText(getApplicationContext(), "取消选择", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onLocate() {
-                                //开始定位，这里模拟一下定位
-                                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        CityPicker.from(CityPickerAct.this).locateComplete(new LocatedCity("深圳", "广东", "101280601"), LocateState.SUCCESS);
-                                    }
-                                }, 3000);
-                            }
-                        })
-                        .show();
+                //
+                startActivity(new Intent(CityPickerAct.this, DemoAct1.class));
+                //
+//                CityPicker.from(CityPickerAct.this)
+//                        .enableAnimation(enable)
+//                        .setAnimationStyle(anim)
+//                        .setLocatedCity(null)
+//                        .setHotCities(hotCities)
+//                        .setOnPickListener(new OnPickListener() {
+//                            @Override
+//                            public void onPick(int position, City data) {
+//                                currentTV.setText(String.format("当前城市：%s，%s", data.getName(), data.getCode()));
+//                                Toast.makeText(
+//                                        getApplicationContext(),
+//                                        String.format("点击的数据：%s，%s", data.getName(), data.getCode()),
+//                                        Toast.LENGTH_SHORT)
+//                                        .show();
+//                            }
+//
+//                            @Override
+//                            public void onCancel() {
+//                                Toast.makeText(getApplicationContext(), "取消选择", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            @Override
+//                            public void onLocate() {
+//                                //开始定位，这里模拟一下定位
+//                                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+//                                    @Override
+//                                    public void run() {
+//                                        CityPicker.from(CityPickerAct.this).locateComplete(new LocatedCity("深圳", "广东", "101280601"), LocateState.SUCCESS);
+//                                    }
+//                                }, 3000);
+//                            }
+//                        })
+//                        .show();
             }
         });
     }

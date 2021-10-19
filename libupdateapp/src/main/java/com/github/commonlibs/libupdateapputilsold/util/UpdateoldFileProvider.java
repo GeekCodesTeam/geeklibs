@@ -24,8 +24,8 @@ import androidx.core.content.FileProvider;
 
 public class UpdateoldFileProvider extends FileProvider {
 
-    @Override
-    public void attachInfo(@NonNull Context context, @NonNull ProviderInfo info) {
-        super.attachInfo(context, info);
-    }
+//    @Override
+//    public void attachInfo(@NonNull Context context, @NonNull ProviderInfo info) {
+//        super.attachInfo(context, info);
+//    }
 }

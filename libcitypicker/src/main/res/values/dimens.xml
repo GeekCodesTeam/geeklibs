@@ -23,7 +23,7 @@
 
     <dimen name="cp_overlay_width">100dp</dimen>
     <dimen name="cp_overlay_height">100dp</dimen>
-    <dimen name="cp_overlay_text_size">28sp</dimen>
+    <dimen name="cp_overlay_text_size">18sp</dimen>
 
     <dimen name="custom_section_height">36dp</dimen>
 </resources>
