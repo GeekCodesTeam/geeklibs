@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.geek.libbase.R;
 
 import java.text.DecimalFormat;
@@ -263,9 +264,10 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
         for (int i = 0; i < imagesIds.length; i++) {
             LayoutParams layoutParams = new LayoutParams(-1, -1);
             ImageView imageView = new ImageView(mContext);
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setLayoutParams(layoutParams);
-            imageView.setBackgroundResource(imagesIds[imagesIds.length - 1 - i]);
+//            imageView.setBackgroundResource(imagesIds[imagesIds.length - 1 - i]);
+            Glide.with(this).load(imagesIds[imagesIds.length - 1 - i]).into(imageView);
             relativeLayout.addView(imageView);
             myImageViews.add(imageView);
         }

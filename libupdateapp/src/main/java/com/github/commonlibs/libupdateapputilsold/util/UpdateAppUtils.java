@@ -171,8 +171,13 @@ public class UpdateAppUtils {
         realUpdate();
     }
 
+    private ConfirmDialogNew dialog;
+
     private void realUpdate() {
-        ConfirmDialogNew dialog = new ConfirmDialogNew(activity, new Callback() {
+        if (dialog != null) {
+            return;
+        }
+        dialog = new ConfirmDialogNew(activity, new Callback() {
             @Override
             public void callback(int position) {
                 switch (position) {

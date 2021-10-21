@@ -1,7 +1,6 @@
 package com.haier.cellarette.libretrofit.common;
 
 import android.app.Application;
-import android.util.Log;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.DeviceUtils;
@@ -162,6 +161,7 @@ public class RetrofitNetNew {
                         .header("model", DeviceUtils.getManufacturer())
                         .header("version", BanbenUtils.getInstance().getVersion())
                         .header("version_code", AppUtils.getAppVersionCode() + "")
+                        .header("package_name", AppUtils.getAppPackageName() + "")
                         .header("X-CA-KEY", accessKey2)
                         .header("X-CA-SIGNATURE", MD5.toUpperCase() + "")
                         .header("X-CA-TIMESTAMP", timer)

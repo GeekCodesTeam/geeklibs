@@ -37,6 +37,7 @@ public class DemoUpdateAppMainActivity extends AppCompatActivity implements View
 
     @Override
     protected void onResume() {
+        checkAndUpdate(1); //基本更新
         super.onResume();
         updateAppReceiver.setBr(this);
     }
