@@ -18,12 +18,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.geek.libbase.R;
+import com.geek.libutils.app.BaseApp;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeListener {
+public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageChangeListener {
 
     //    布局设置
 //    private Integer[] Layouts = {R.layout.splash_activity_lay1, R.layout.splash_activity_lay2, R.layout.splash_activity_lay3, R.layout.splash_activity_lay4};
@@ -38,7 +39,7 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
     private ArrayList<ImageView> myImageViews;
     private LayoutInflater from;
     private View view;
-    private Integer[] imagesIds = new Integer[]{};
+    private String[] imagesIds = new String[]{};
     private Integer[] Layouts = new Integer[]{};
     private Context mContext;
     private int mVisible = -1;
@@ -48,27 +49,27 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
     //mIndicatorRes[0] 为为选中，mIndicatorRes[1]为选中
     private int[] mIndicatorRes = new int[]{R.drawable.splash_dot_normal_but, R.drawable.splash_dot_press_but};
 
-    public AlphaView(Context context) {
+    public AlphaViewString(Context context) {
         super(context);
         init(context);
         initdata();
     }
 
-    public AlphaView(Context context, @Nullable AttributeSet attrs) {
+    public AlphaViewString(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setAttributeSet(context, attrs);
         init(context);
         initdata();
     }
 
-    public AlphaView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public AlphaViewString(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setAttributeSet(context, attrs);
         init(context);
         initdata();
     }
 
-    public AlphaView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public AlphaViewString(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         setAttributeSet(context, attrs);
         init(context);
@@ -173,7 +174,7 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
         vg.setGravity(gravity);
     }
 
-    public void setData(Integer[] imagesId, Integer[] layouts) {
+    public void setData(String[] imagesId, Integer[] layouts) {
         setImages(imagesId);
         setLayouts(layouts);
     }
@@ -184,7 +185,7 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
      *
      * @param imagesId
      */
-    private void setImages(Integer[] imagesId) {
+    private void setImages(String[] imagesId) {
         imagesIds = imagesId;
         setImageViews();
     }
@@ -266,8 +267,8 @@ public class AlphaView extends RelativeLayout implements ViewPager.OnPageChangeL
             ImageView imageView = new ImageView(mContext);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setLayoutParams(layoutParams);
-            imageView.setBackgroundResource(imagesIds[imagesIds.length - 1 - i]);
-//            Glide.with(this).load(imagesIds[imagesIds.length - 1 - i]).into(imageView);
+//            imageView.setBackgroundResource(imagesIds[imagesIds.length - 1 - i]);
+            Glide.with(BaseApp.get().getApplicationContext()).load(imagesIds[imagesIds.length - 1 - i]).into(imageView);
             relativeLayout.addView(imageView);
             myImageViews.add(imageView);
         }
