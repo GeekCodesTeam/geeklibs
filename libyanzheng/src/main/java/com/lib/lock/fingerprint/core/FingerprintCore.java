@@ -9,17 +9,18 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
-import com.lib.lock.fingerprint.utils.FingerContext;
+import com.geek.libutils.app.BaseApp;
+import com.geek.libutils.app.MyLogUtil;
 
 import java.lang.ref.WeakReference;
-
-
-
 
 
 @TargetApi(Build.VERSION_CODES.M)
 public class FingerprintCore {
 
+    public static final int FingerprintCore_1 = 1111001;
+    public static final int FingerprintCore_2 = 1111002;
+    public static final int FingerprintCore_3 = 1111003;
     private static final int NONE = 0;
     private static final int CANCEL = 1;
     private static final int AUTHENTICATING = 2;
@@ -41,16 +42,24 @@ public class FingerprintCore {
      * 指纹识别回调接口
      */
     public interface IFingerprintResultListener {
-        /** 指纹识别成功 */
+        /**
+         * 指纹识别成功
+         */
         void onAuthenticateSuccess();
 
-        /** 指纹识别失败 */
-        void onAuthenticateFailed(int helpId,String errString);
+        /**
+         * 指纹识别失败
+         */
+        void onAuthenticateFailed(int helpId, String errString);
 
-        /** 指纹识别发生错误-不可短暂恢复 */
+        /**
+         * 指纹识别发生错误-不可短暂恢复
+         */
         void onAuthenticateError(int errMsgId);
 
-        /** 开始指纹识别监听成功 */
+        /**
+         * 开始指纹识别监听成功
+         */
         void onStartAuthenticateResult(boolean isSuccess);
     }
 
@@ -63,7 +72,7 @@ public class FingerprintCore {
 
     private void initCryptoObject() {
         try {
-            mCryptoObjectCreator = new  CryptoObjectCreator(new  CryptoObjectCreator.ICryptoObjectCreateListener() {
+            mCryptoObjectCreator = new CryptoObjectCreator(new CryptoObjectCreator.ICryptoObjectCreateListener() {
                 @Override
                 public void onDataPrepared(FingerprintManager.CryptoObject cryptoObject) {
                     // startAuthenticate(cryptoObject);
@@ -93,12 +102,15 @@ public class FingerprintCore {
         try {
             mFingerprintManager.authenticate(cryptoObject, mCancellationSignal, 0, mAuthCallback, null);
             notifyStartAuthenticateResult(true, "");
+
         } catch (SecurityException e) {
             try {
                 mFingerprintManager.authenticate(null, mCancellationSignal, 0, mAuthCallback, null);
                 notifyStartAuthenticateResult(true, "");
+                MyLogUtil.e("slbyanzheng", e.toString() + "");
             } catch (SecurityException e2) {
-                notifyStartAuthenticateResult(false,Log.getStackTraceString(e2));
+                MyLogUtil.e("slbyanzheng", e2.toString() + "");
+                notifyStartAuthenticateResult(false, Log.getStackTraceString(e2));
 
             } catch (Throwable throwable) {
 
@@ -139,7 +151,7 @@ public class FingerprintCore {
     private void notifyAuthenticationFailed(int msgId, String errString) {
 
         if (null != mFpResultListener && null != mFpResultListener.get()) {
-            mFpResultListener.get().onAuthenticateFailed(msgId,errString);
+            mFpResultListener.get().onAuthenticateFailed(msgId, errString);
         }
     }
 
@@ -161,14 +173,14 @@ public class FingerprintCore {
                 public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
                     mState = NONE;
                     // 建议根据参数helpString返回值，并且仅针对特定的机型做处理，并不能保证所有厂商返回的状态一致
-                    notifyAuthenticationFailed(helpMsgId , helpString.toString());
+                    notifyAuthenticationFailed(helpMsgId, helpString.toString());
                     onFailedRetry(helpMsgId, helpString.toString());
                 }
 
                 @Override
                 public void onAuthenticationFailed() {
                     mState = NONE;
-                    notifyAuthenticationFailed(0 , "onAuthenticationFailed");
+                    notifyAuthenticationFailed(0, "onAuthenticationFailed");
                     onFailedRetry(-1, "onAuthenticationFailed");
                 }
 
@@ -197,24 +209,25 @@ public class FingerprintCore {
 
             return;
         }*/
-        if (msgId == 1001 && "等待手指按下".equals(helpString)) {
+//        MyLogUtil.e("slbyanzheng", msgId + "");
+        if (msgId == FingerprintCore_1 && "等待手指按下".equals(helpString)) {
             return;
         }
-        if (msgId == 1002 && "手指按下".equals(helpString)) {
+        if (msgId == FingerprintCore_2 && "手指按下".equals(helpString)) {
             return;
         }
-        if (msgId == 1003 && "手指抬起".equals(helpString)) {
+        if (msgId == FingerprintCore_3 && "手指抬起".equals(helpString)) {
             return;
         }
         cancelAuthenticate();
         mHandler.removeCallbacks(mFailedRetryRunnable);
         mHandler.postDelayed(mFailedRetryRunnable, 300); // 每次重试间隔一会儿再启动
-        isFirst=false;
+        isFirst = false;
     }
 
 
-    public void startDelay(){
-        if(mHandler!=null){
+    public void startDelay() {
+        if (mHandler != null) {
 
             mHandler.removeCallbacks(mFailedRetryRunnable);
             mHandler.postDelayed(mFailedRetryRunnable, 300); // 每次重试间隔一会儿再启动
@@ -234,18 +247,21 @@ public class FingerprintCore {
 
     /**
      * 时候有指纹识别硬件支持
+     *
      * @return
      */
     public boolean isHardwareDetected() {
         try {
             return mFingerprintManager.isHardwareDetected();
         } catch (SecurityException e) {
-        } catch (Throwable e) {}
+        } catch (Throwable e) {
+        }
         return false;
     }
 
     /**
      * 是否录入指纹，有些设备上即使录入了指纹，但是没有开启锁屏密码的话此方法还是返回false
+     *
      * @return
      */
     public boolean isHasEnrolledFingerprints() {
@@ -287,7 +303,8 @@ public class FingerprintCore {
     }
 
     public static class LazyHolder {
-        public static FingerprintCore INSTANCE=new FingerprintCore(FingerContext.getContext());
+        //        public static FingerprintCore INSTANCE = new FingerprintCore(FingerContext.getContext());
+        public static FingerprintCore INSTANCE = new FingerprintCore(BaseApp.get().getApplicationContext());
     }
 
 

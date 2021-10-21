@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.slbyanzheng.R;
+import com.geek.libutils.app.BaseApp;
 import com.lib.lock.fingerprint.core.FingerprintCore;
 import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.dialog.FingerDialog;
@@ -68,7 +69,8 @@ public class FingerprintUtil {
         // 硬件支持且有指纹密码
         if (supportAndSysOpenedFingerPrint()) {
 
-            final View[] rootContent = {LayoutInflater.from(FingerContext.getContext()).inflate(R.layout.finger_dialog_icon_info, null)};
+//            final View[] rootContent = {LayoutInflater.from(BaseApp.get().getApplicationContext()).inflate(R.layout.finger_dialog_icon_info, null)};
+            final View[] rootContent = {LayoutInflater.from(BaseApp.get().getApplicationContext()).inflate(R.layout.finger_dialog_icon_info, null)};
             dialog.setCustom(rootContent[0]);
             final TextView textRetry = rootContent[0].findViewById(R.id.text_retry);
             final TextView textContent = rootContent[0].findViewById(R.id.text_title);
@@ -96,6 +98,7 @@ public class FingerprintUtil {
                     if (listener != null) {
                         listener.onAuthenticateSuccess();
                     }
+
                     dialog.dismiss();
                     textContent.setVisibility(View.VISIBLE);
                     textContent.setText(R.string.auth_ok);
@@ -106,25 +109,26 @@ public class FingerprintUtil {
 
                     showLog("指纹识别成功");
                     dialog.show();
+
                 }
 
                 @Override
                 public void onAuthenticateFailed(int helpId, String msg) {
 
 
-                    if (helpId == 1001 && "等待手指按下".equals(msg)) {
+                    if (helpId == FingerprintCore.FingerprintCore_1 && "等待手指按下".equals(msg)) {
                         return;
                     }
-                    if (helpId == 1002 && "手指按下".equals(msg)) {
+                    if (helpId == FingerprintCore.FingerprintCore_2 && "手指按下".equals(msg)) {
                         return;
                     }
-                    if (helpId == 1003 && "手指抬起".equals(msg)) {
+                    if (helpId == FingerprintCore.FingerprintCore_3 && "手指抬起".equals(msg)) {
                         return;
                     }
 
                     textRetry.setVisibility(View.VISIBLE);
                     iconFinger.clearAnimation();
-                    Animation anim = AnimationUtils.loadAnimation(FingerContext.getContext(), R.anim.anim_shake);
+                    Animation anim = AnimationUtils.loadAnimation(BaseApp.get().getApplicationContext(), R.anim.anim_shake);
                     iconFinger.startAnimation(anim);
                 }
 
@@ -132,7 +136,7 @@ public class FingerprintUtil {
                 public void onAuthenticateError(int errMsgId) {
 
                     if (errMsgId == 7) {
-                        Toast.makeText(FingerContext.getContext(), R.string.toast_text_retry_to_much, Toast.LENGTH_LONG).show();
+                        Toast.makeText(BaseApp.get().getApplicationContext(), R.string.toast_text_retry_to_much, Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
                 }
@@ -151,11 +155,11 @@ public class FingerprintUtil {
             FingerprintCore.getInstance().isFirst = true;
             FingerprintCore.getInstance().startDelay();
 
-            showLog(FingerContext.getContext().getString(R.string.log_info_start));
+            showLog(BaseApp.get().getApplicationContext().getString(R.string.log_info_start));
 
         } else if (!FingerprintCore.getInstance().isSupport()) {
             // 硬件不支持
-            View rootContent = LayoutInflater.from(FingerContext.getContext()).inflate(R.layout.finger_dialog_error, null);
+            View rootContent = LayoutInflater.from(BaseApp.get().getApplicationContext()).inflate(R.layout.finger_dialog_error, null);
             TextView errInfo = rootContent.findViewById(R.id.text_info);
             rootContent.findViewById(R.id.btn_i_see).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -172,7 +176,7 @@ public class FingerprintUtil {
             dialog.show();
         } else if (!FingerprintCore.getInstance().isHasEnrolledFingerprints()) {
             // 没有指纹
-            View rootContent = LayoutInflater.from(FingerContext.getContext()).inflate(R.layout.finger_dialog_error, null);
+            View rootContent = LayoutInflater.from(BaseApp.get().getApplicationContext()).inflate(R.layout.finger_dialog_error, null);
             TextView errInfo = rootContent.findViewById(R.id.text_info);
             rootContent.findViewById(R.id.btn_i_see).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -194,7 +198,7 @@ public class FingerprintUtil {
     private static void showLog(String msg) {
 
         if (true) {
-            Log.d(FingerContext.getContext().getString(R.string.app_nameslbyanzheng), msg);
+            Log.d(BaseApp.get().getApplicationContext().getString(R.string.app_nameslbyanzheng), msg);
         }
     }
 }

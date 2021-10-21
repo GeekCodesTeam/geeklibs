@@ -12,12 +12,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.slbyanzheng.R;
+import com.geek.libutils.app.MyLogUtil;
 import com.lib.aliocr.view.OcrLaunchFragment;
 import com.lib.lock.fingerprint.core.FingerprintCore;
-import com.lib.lock.fingerprint.utils.FingerContext;
+import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
 import com.lib.lock.gesture.content.SPManager;
-import com.lib.lock.gesture.utils.ContextUtils;
 
 /**
  * 作者：xin on 2018/7/9 0009 15:03
@@ -37,15 +37,48 @@ public class ZhiwenAct2 extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zhiwen2);
         //
-        FingerContext.init(this);
-        ContextUtils.init(this);
+//        FingerContext.init(this);
+//        ContextUtils.init(this);
         //
         findViewById(R.id.gesture_password).setOnClickListener(this);
         findViewById(R.id.ocr_auth).setOnClickListener(this);
         mBtnFingprint = findViewById(R.id.fingerprint_password);
         mBtnFingprint.setOnClickListener(this);
         fragmentManager = getSupportFragmentManager();
+        //
+//        FingerprintUtil.startFingerprintRecognition(this, null);
+        FingerprintUtil.startFingerprintRecognition(ZhiwenAct2.this, new MyListener() {
+            @Override
+            public void onAuthenticateSuccess() {
+                MyLogUtil.e("FingerprintUtil", "onAuthenticateSuccess");
+//                finish();
+//                getWindow().getDecorView().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        onLoginSuccess(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivity2");
+//                    }
+//                }, 3000);
+//                        onLoginSuccess(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivity2");
+            }
 
+            @Override
+            public void onAuthenticateFailed(int helpId, String errString) {
+                String aaaa = "";
+                MyLogUtil.e("FingerprintUtil", errString + "");
+            }
+
+            @Override
+            public void onAuthenticateError(int errMsgId) {
+                String aaaa = "";
+                MyLogUtil.e("FingerprintUtil", errMsgId + "");
+            }
+
+            @Override
+            public void onStartAuthenticateResult(boolean isSuccess) {
+                String aaaa = "";
+                MyLogUtil.e("FingerprintUtil", isSuccess + "");
+            }
+        });
     }
 
     @Override

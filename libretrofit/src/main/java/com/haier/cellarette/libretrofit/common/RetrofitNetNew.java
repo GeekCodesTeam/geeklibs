@@ -150,6 +150,8 @@ public class RetrofitNetNew {
                 String accessSecret = SPUtils.getInstance().getString("accessSecret", "accessSecret");
                 String accessKey2 = SPUtils.getInstance().getString("accessKey", "accessKey");
                 String version2 = SPUtils.getInstance().getString("version", "V1");
+                String latitude = SPUtils.getInstance().getString("version", "weidu");
+                String longitude = SPUtils.getInstance().getString("version", "jingdu");
                 String timer = System.currentTimeMillis() + "";
                 String accessKey = timer + numcode + accessSecret;
                 String MD5 = version2 + EncryptUtils.encryptMD5ToString(accessKey) + "";
@@ -162,6 +164,8 @@ public class RetrofitNetNew {
                         .header("version", BanbenUtils.getInstance().getVersion())
                         .header("version_code", AppUtils.getAppVersionCode() + "")
                         .header("package_name", AppUtils.getAppPackageName() + "")
+                        .header("latitude", latitude + "")
+                        .header("longitude", longitude + "")
                         .header("X-CA-KEY", accessKey2)
                         .header("X-CA-SIGNATURE", MD5.toUpperCase() + "")
                         .header("X-CA-TIMESTAMP", timer)

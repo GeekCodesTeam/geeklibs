@@ -1,7 +1,7 @@
 package com.lib.lock.gesture.content;
 
 
-import com.lib.lock.gesture.utils.ContextUtils;
+import com.geek.libutils.app.BaseApp;
 
 /**
  * Description :SharedPreferences
@@ -15,7 +15,8 @@ public class SPManager implements SharedPreferencesKeys {
     private static SPManager spManager;
 
     private SPManager() {
-        mDk = new DataKeeper(ContextUtils.getContext(), spFileName);
+//        mDk = new DataKeeper(ContextUtils.getContext(), spFileName);
+        mDk = new DataKeeper(BaseApp.get().getApplicationContext(), spFileName);
     }
 
     public static SPManager getInstance() {
@@ -32,19 +33,15 @@ public class SPManager implements SharedPreferencesKeys {
     }
 
 
-
-
-
-
     /**
      * 存手势密码
      *
      * @param encryptPwd
      * @return
      */
-    public void   putPatternPSW(String encryptPwd) {
+    public void putPatternPSW(String encryptPwd) {
 
-         mDk.put(KEY_GESTURE_PWD, encryptPwd).commit();
+        mDk.put(KEY_GESTURE_PWD, encryptPwd).commit();
 
     }
 
@@ -63,7 +60,7 @@ public class SPManager implements SharedPreferencesKeys {
      * @return
      */
     public void setHasFingerPrint(boolean isSet) {
-          mDk.put(KEY_HAS_FINGERPRINT, isSet).apply();
+        mDk.put(KEY_HAS_FINGERPRINT, isSet).apply();
     }
 
     /**
