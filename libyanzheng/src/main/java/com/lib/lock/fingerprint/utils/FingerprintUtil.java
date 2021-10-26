@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.slbyanzheng.R;
 import com.geek.libutils.app.BaseApp;
 import com.lib.lock.fingerprint.core.FingerprintCore;
+import com.lib.lock.fingerprint.core.IFingerprintResultListener;
 import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.dialog.FingerDialog;
 
@@ -91,7 +92,7 @@ public class FingerprintUtil {
                 }
             });
 
-            FingerprintCore.getInstance().setFingerprintManager(new FingerprintCore.IFingerprintResultListener() {
+            FingerprintCore.getInstance().setFingerprintManager(new IFingerprintResultListener() {
                 @Override
                 public void onAuthenticateSuccess() {
 

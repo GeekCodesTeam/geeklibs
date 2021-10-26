@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.slbyanzheng.R;
 import com.lib.lock.fingerprint.core.FingerprintCore;
+import com.lib.lock.fingerprint.core.IFingerprintResultListener;
 
 
 /**
@@ -41,7 +42,7 @@ public class FingerprintPswMainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_fingerprint_psw_main);
 
-        FingerprintCore.getInstance().setFingerprintManager(new FingerprintCore.IFingerprintResultListener() {
+        FingerprintCore.getInstance().setFingerprintManager(new IFingerprintResultListener() {
             @Override
             public void onAuthenticateSuccess() {
                 Toast.makeText(getApplicationContext(),"指纹识别成功",Toast.LENGTH_LONG).show();
