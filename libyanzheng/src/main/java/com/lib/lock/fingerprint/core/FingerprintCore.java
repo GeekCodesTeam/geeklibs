@@ -27,7 +27,8 @@ public class FingerprintCore {
     private int mState = NONE;
 
     private FingerprintManager mFingerprintManager;
-    private WeakReference<IFingerprintResultListener> mFpResultListener;
+//    private WeakReference<IFingerprintResultListener> mFpResultListener;
+    private IFingerprintResultListener mFpResultListener;
     private CancellationSignal mCancellationSignal;
     private CryptoObjectCreator mCryptoObjectCreator;
     private FingerprintManager.AuthenticationCallback mAuthCallback;
@@ -37,31 +38,6 @@ public class FingerprintCore {
     private Handler mHandler = new Handler(Looper.getMainLooper());
     public boolean isFirst = true;
 
-
-    /**
-     * 指纹识别回调接口
-     */
-    public interface IFingerprintResultListener {
-        /**
-         * 指纹识别成功
-         */
-        void onAuthenticateSuccess();
-
-        /**
-         * 指纹识别失败
-         */
-        void onAuthenticateFailed(int helpId, String errString);
-
-        /**
-         * 指纹识别发生错误-不可短暂恢复
-         */
-        void onAuthenticateError(int errMsgId);
-
-        /**
-         * 开始指纹识别监听成功
-         */
-        void onStartAuthenticateResult(boolean isSuccess);
-    }
 
     private FingerprintCore(Context context) {
         mFingerprintManager = getFingerprintManager(context);
@@ -85,7 +61,8 @@ public class FingerprintCore {
     }
 
     public void setFingerprintManager(IFingerprintResultListener fingerprintResultListener) {
-        mFpResultListener = new WeakReference<>(fingerprintResultListener);
+//        mFpResultListener = new WeakReference<>(fingerprintResultListener);
+        this.mFpResultListener = fingerprintResultListener;
     }
 
     public void startAuthenticate() {
@@ -123,35 +100,35 @@ public class FingerprintCore {
     private void notifyStartAuthenticateResult(boolean isSuccess, String exceptionMsg) {
         if (isSuccess) {
 
-            if (mFpResultListener.get() != null) {
-                mFpResultListener.get().onStartAuthenticateResult(true);
+            if (mFpResultListener != null) {
+                mFpResultListener.onStartAuthenticateResult(true);
             }
         } else {
 
-            if (mFpResultListener.get() != null) {
-                mFpResultListener.get().onStartAuthenticateResult(false);
+            if (mFpResultListener != null) {
+                mFpResultListener.onStartAuthenticateResult(false);
             }
         }
     }
 
     private void notifyAuthenticationSucceeded() {
         mFailedTimes = 0;
-        if (null != mFpResultListener && null != mFpResultListener.get()) {
-            mFpResultListener.get().onAuthenticateSuccess();
+        if (null != mFpResultListener && null != mFpResultListener) {
+            mFpResultListener.onAuthenticateSuccess();
         }
     }
 
     private void notifyAuthenticationError(int errMsgId, CharSequence errString) {
 
-        if (null != mFpResultListener && null != mFpResultListener.get()) {
-            mFpResultListener.get().onAuthenticateError(errMsgId);
+        if (null != mFpResultListener && null != mFpResultListener) {
+            mFpResultListener.onAuthenticateError(errMsgId);
         }
     }
 
     private void notifyAuthenticationFailed(int msgId, String errString) {
 
-        if (null != mFpResultListener && null != mFpResultListener.get()) {
-            mFpResultListener.get().onAuthenticateFailed(msgId, errString);
+        if (null != mFpResultListener && null != mFpResultListener) {
+            mFpResultListener.onAuthenticateFailed(msgId, errString);
         }
     }
 
@@ -299,7 +276,8 @@ public class FingerprintCore {
 
 
     public static final FingerprintCore getInstance() {
-        return FingerprintCore.LazyHolder.INSTANCE;
+//        return FingerprintCore.LazyHolder.INSTANCE;
+        return new FingerprintCore(BaseApp.get().getApplicationContext());
     }
 
     public static class LazyHolder {

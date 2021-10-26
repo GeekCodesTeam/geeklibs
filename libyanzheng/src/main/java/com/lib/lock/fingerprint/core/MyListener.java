@@ -8,5 +8,5 @@ package com.lib.lock.fingerprint.core;
  * https://github.com/wzx54321/XinFrameworkLib
  */
 
-public abstract class MyListener implements FingerprintCore.IFingerprintResultListener {
+public abstract class MyListener implements IFingerprintResultListener {
 }
