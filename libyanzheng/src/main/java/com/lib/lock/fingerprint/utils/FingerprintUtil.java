@@ -69,8 +69,6 @@ public class FingerprintUtil {
         retryCount = 4;
         // 硬件支持且有指纹密码
         if (supportAndSysOpenedFingerPrint()) {
-
-//            final View[] rootContent = {LayoutInflater.from(BaseApp.get().getApplicationContext()).inflate(R.layout.finger_dialog_icon_info, null)};
             final View[] rootContent = {LayoutInflater.from(BaseApp.get().getApplicationContext()).inflate(R.layout.finger_dialog_icon_info, null)};
             dialog.setCustom(rootContent[0]);
             final TextView textRetry = rootContent[0].findViewById(R.id.text_retry);

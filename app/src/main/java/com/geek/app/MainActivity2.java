@@ -1,10 +1,12 @@
 package com.geek.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
+import com.example.slbyanzheng.ZhiwenActtivity;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libutils.app.MyLogUtil;
 import com.lib.lock.fingerprint.core.MyListener;
@@ -41,7 +43,7 @@ public class MainActivity2 extends SlbBaseActivity {
 //                        onLoginSuccess(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivity2");
 //                    }
 //                }, 3000);
-                onLoginSuccess(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenAct2");
+                startActivity(new Intent(MainActivity2.this, ZhiwenActtivity.class));
             }
 
             @Override

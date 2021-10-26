@@ -276,8 +276,8 @@ public class FingerprintCore {
 
 
     public static final FingerprintCore getInstance() {
-//        return FingerprintCore.LazyHolder.INSTANCE;
-        return new FingerprintCore(BaseApp.get().getApplicationContext());
+        return FingerprintCore.LazyHolder.INSTANCE;
+//        return new FingerprintCore(BaseApp.get().getApplicationContext());
     }
 
     public static class LazyHolder {
