@@ -3,9 +3,11 @@ package com.geek.app;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libutils.app.MyLogUtil;
+import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
 
 
@@ -27,7 +29,38 @@ public class MainActivity2 extends SlbBaseActivity {
     @Override
     protected void setup(@Nullable Bundle savedInstanceState) {
         super.setup(savedInstanceState);
-        FingerprintUtil.startFingerprintRecognition(this, null);
+//        FingerprintUtil.startFingerprintRecognition(this, null);
+        FingerprintUtil.startFingerprintRecognition(MainActivity2.this, new MyListener() {
+            @Override
+            public void onAuthenticateSuccess() {
+                MyLogUtil.e("FingerprintUtil", "onAuthenticateSuccess");
+//                finish();
+//                getWindow().getDecorView().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        onLoginSuccess(AppUtils.getAppPackageName() + ".hs.act.slbapp.MainActivity2");
+//                    }
+//                }, 3000);
+                onLoginSuccess(AppUtils.getAppPackageName() + ".hs.act.slbapp.ZhiwenAct2");
+            }
 
+            @Override
+            public void onAuthenticateFailed(int helpId, String errString) {
+                String aaaa = "";
+                MyLogUtil.e("FingerprintUtil", errString + "");
+            }
+
+            @Override
+            public void onAuthenticateError(int errMsgId) {
+                String aaaa = "";
+                MyLogUtil.e("FingerprintUtil", errMsgId + "");
+            }
+
+            @Override
+            public void onStartAuthenticateResult(boolean isSuccess) {
+                String aaaa = "";
+                MyLogUtil.e("FingerprintUtil", isSuccess + "");
+            }
+        });
     }
 }

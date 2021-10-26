@@ -107,8 +107,8 @@ public class FingerprintUtil {
                     textOk.setText(R.string.ok);
                     FingerprintCore.getInstance().cancelAuthenticate();
 
-                    showLog("指纹识别成功");
-                    dialog.show();
+//                    showLog("指纹识别成功");
+//                    dialog.show();
 
                 }
 
