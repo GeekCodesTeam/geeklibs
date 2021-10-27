@@ -160,6 +160,7 @@ public class RetrofitNetNew {
                         .header("imei", BanbenUtils.getInstance().getImei())
                         .header("platform", BanbenUtils.getInstance().getPlatform())
                         .header("token", BanbenUtils.getInstance().getToken())
+                        .header("fs-ck", BanbenUtils.getInstance().getToken())
                         .header("model", DeviceUtils.getManufacturer())
                         .header("version", BanbenUtils.getInstance().getVersion())
                         .header("version_code", AppUtils.getAppVersionCode() + "")
