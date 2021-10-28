@@ -49,6 +49,14 @@ public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageC
     //mIndicatorRes[0] 为为选中，mIndicatorRes[1]为选中
     private int[] mIndicatorRes = new int[]{R.drawable.splash_dot_normal_but, R.drawable.splash_dot_press_but};
 
+    public ViewPager getVp() {
+        return vp;
+    }
+
+    public void setVp(ViewPager vp) {
+        this.vp = vp;
+    }
+
     public AlphaViewString(Context context) {
         super(context);
         init(context);
@@ -120,6 +128,9 @@ public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageC
         vp.addOnPageChangeListener(this);
     }
 
+    public OnClickListener onClickListener;
+    public int item_lay;
+    public int[] clicks;
 
     /**
      * 设置点击事件
@@ -130,15 +141,20 @@ public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageC
      * @param clicks
      */
     public void setSplashItemOnClick(OnClickListener onClickListener, int item_lay, int... clicks) {
-        if (viewList.size() != 0 && clicks.length != 0) {
-            for (View view : viewList) {
-                if (view.getId() == item_lay) {
-                    for (int i : clicks) {
-                        view.findViewById(i).setOnClickListener(onClickListener);
-                    }
-                }
-            }
-        }
+//        if (viewList.size() != 0 && clicks.length != 0 && vp.getCurrentItem() == viewList.size() - 1) {
+//            for (View view : viewList) {
+//                if (view.getId() == item_lay) {
+//                    for (int i : clicks) {
+//                        view.findViewById(i).setVisibility(VISIBLE);
+//                        view.findViewById(i).setOnClickListener(onClickListener);
+//                    }
+//                }
+//            }
+//        }
+        this.onClickListener = onClickListener;
+        this.item_lay = item_lay;
+        this.clicks = clicks;
+
     }
 
     @Override
@@ -174,9 +190,15 @@ public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageC
         vg.setGravity(gravity);
     }
 
-    public void setData(String[] imagesId, Integer[] layouts) {
+    public void setData(String[] imagesId) {
         setImages(imagesId);
-        setLayouts(layouts);
+        if (item_lay != 0) {
+            Integer[] layouts = new Integer[imagesId.length];
+            for (int i = 0; i < imagesId.length; i++) {
+                layouts[i] = item_lay;
+            }
+            setLayouts(layouts);
+        }
     }
 
 
@@ -285,6 +307,16 @@ public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageC
 
             Log.e("mz:", "---------" + left + "---------:" + right);
             myImageViews.get(imagesIds.length - 1 - position).setAlpha(right);
+            //
+            if (viewList.size() != 0 && clicks.length != 0 && vp.getCurrentItem() == viewList.size() - 1) {
+                View view = viewList.get(viewList.size() - 1);
+                if (view.getId() == item_lay) {
+                    for (int i : clicks) {
+                        view.findViewById(i).setVisibility(VISIBLE);
+                        view.findViewById(i).setOnClickListener(onClickListener);
+                    }
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -315,6 +347,7 @@ public class AlphaViewString extends RelativeLayout implements ViewPager.OnPageC
 
     @Override
     public void onPageScrollStateChanged(int state) {
+
     }
 
     class GuidePageAdapter extends PagerAdapter {

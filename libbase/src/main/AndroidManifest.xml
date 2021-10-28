@@ -116,5 +116,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".splshact.SplshActDemo"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.SplshActDemo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
