@@ -1,4 +1,4 @@
-# APP开发框架库2
+# APP开发框架库
 
 ### 集成方式   https://github.com/GeekCodesTeam/geeklibs
 
