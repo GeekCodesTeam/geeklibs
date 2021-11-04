@@ -12,8 +12,6 @@ import android.util.Log;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.MyLogUtil;
 
-import java.lang.ref.WeakReference;
-
 
 @TargetApi(Build.VERSION_CODES.M)
 public class FingerprintCore {
@@ -27,7 +25,7 @@ public class FingerprintCore {
     private int mState = NONE;
 
     private FingerprintManager mFingerprintManager;
-//    private WeakReference<IFingerprintResultListener> mFpResultListener;
+    //    private WeakReference<IFingerprintResultListener> mFpResultListener;
     private IFingerprintResultListener mFpResultListener;
     private CancellationSignal mCancellationSignal;
     private CryptoObjectCreator mCryptoObjectCreator;
@@ -53,6 +51,7 @@ public class FingerprintCore {
                 public void onDataPrepared(FingerprintManager.CryptoObject cryptoObject) {
                     // startAuthenticate(cryptoObject);
                     // 如果需要一开始就进行指纹识别，可以在秘钥数据创建之后就启动指纹认证
+//                    MyLogUtil.e("sssssssssssssssssss", cryptoObject.getMac().toString());
                 }
             });
         } catch (Throwable throwable) {

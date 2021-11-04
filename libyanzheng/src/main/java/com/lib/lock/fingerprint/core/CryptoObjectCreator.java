@@ -8,6 +8,8 @@ import android.security.keystore.KeyPermanentlyInvalidatedException;
 import android.security.keystore.KeyProperties;
 import android.util.Log;
 
+import com.geek.libutils.app.MyLogUtil;
+
 import java.io.IOException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -20,9 +22,6 @@ import java.security.cert.CertificateException;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-
-
-
 
 
 @TargetApi(Build.VERSION_CODES.M)
@@ -59,11 +58,11 @@ public class CryptoObjectCreator {
                         // Set up the crypto object for later. The object will be authenticated by use
                         // of the fingerprint.
                         if (!initCipher()) {
-                            Log.i("","Failed to init Cipher.");
+                            Log.i("", "Failed to init Cipher.");
                         }
                     }
                 } catch (Exception e) {
-                    Log.e(""," Failed to init Cipher, e:" );
+                    Log.e("", " Failed to init Cipher, e:");
                 }
                 if (createListener != null) {
                     createListener.onDataPrepared(mCryptoObject);
@@ -96,7 +95,7 @@ public class CryptoObjectCreator {
             mKeyGenerator.generateKey();
         } catch (NoSuchAlgorithmException | InvalidAlgorithmParameterException
                 | CertificateException | IOException e) {
-            Log.e(""," Failed to createKey, e:");
+            Log.e("", " Failed to createKey, e:");
             throw new RuntimeException(e);
         }
     }
@@ -114,13 +113,14 @@ public class CryptoObjectCreator {
             mKeyStore.load(null);
             SecretKey key = (SecretKey) mKeyStore.getKey(KEY_NAME, null);
             mCipher.init(Cipher.ENCRYPT_MODE, key);
+            MyLogUtil.e("zhiwenkey",mCipher.getAlgorithm().toString());
             return true;
         } catch (KeyPermanentlyInvalidatedException e) {
-             Log.e(""," Failed to initCipher, e:"  );
+            Log.e("", " Failed to initCipher, e:");
             return false;
         } catch (KeyStoreException | CertificateException | UnrecoverableKeyException | IOException
                 | NoSuchAlgorithmException | InvalidKeyException e) {
-             Log.e(""," Failed to initCipher, e :"  );
+            Log.e("", " Failed to initCipher, e :");
             throw new RuntimeException("Failed to init Cipher", e);
         }
     }

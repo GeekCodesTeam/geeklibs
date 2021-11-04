@@ -10,6 +10,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 
+import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.geek.libutils.SlbLoginUtil;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
 
@@ -107,6 +109,13 @@ public class HiosHelperNew {
             } catch (ActivityNotFoundException e) {
                 Log.e("Activity", "No Activity found to handle intent " + it);
             }
+        }
+        if (url.startsWith("com")) {
+            if (!AppUtils.isAppInstalled(url)) {
+                ToastUtils.showLong("未安装此应用服务");
+                return;
+            }
+            AppUtils.launchApp(url);
         }
     }
 
