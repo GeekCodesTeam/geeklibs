@@ -193,5 +193,23 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".fenlei.FenleiAct"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.FenleiAct" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fenlei.fenlei1.FenleiAct1"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.FenleiAct1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

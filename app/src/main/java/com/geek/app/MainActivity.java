@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.AppUtils;
 import com.example.slbyanzheng.ZhiwenActtivity;
 import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libbase.fenlei.FenleiAct;
 import com.geek.libbase.splshact.SplshActDemo;
 import com.geek.libutils.app.MyLogUtil;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
@@ -83,7 +84,7 @@ public class MainActivity extends SlbBaseActivity {
         tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SplshActDemo.class));
+                startActivity(new Intent(MainActivity.this, FenleiAct.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "dataability://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.WebActivity{act}?" + AgentWebFragment.URL_KEY + "={s}");
 
 
