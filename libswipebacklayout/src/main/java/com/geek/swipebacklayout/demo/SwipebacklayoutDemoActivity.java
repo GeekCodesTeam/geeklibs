@@ -41,7 +41,7 @@ public class SwipebacklayoutDemoActivity extends SwipeBackActivity implements Vi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.swipeback_layout_demo);
+        setContentView(R.layout.geek_swipeback_layout_demo);
         findViews();
 //        changeActionBarColor();
         mKeyTrackingMode = getString(R.string.key_tracking_mode);
