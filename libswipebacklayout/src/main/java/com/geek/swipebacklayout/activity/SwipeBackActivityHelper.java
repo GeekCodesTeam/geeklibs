@@ -30,7 +30,9 @@ public class SwipeBackActivityHelper {
     }
 
     public void onPostCreate() {
-        mSwipeBackLayout.attachToActivity(mActivity);
+        if (mSwipeBackLayout!=null){
+            mSwipeBackLayout.attachToActivity(mActivity);
+        }
     }
 
     public View findViewById(int id) {
