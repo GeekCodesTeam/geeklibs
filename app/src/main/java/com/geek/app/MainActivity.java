@@ -13,6 +13,8 @@ import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libbase.fenlei.FenleiAct;
 import com.geek.libbase.splshact.SplshActDemo;
 import com.geek.libutils.app.MyLogUtil;
+import com.geek.tablayout.SlidingTabActivity;
+import com.geek.tablayout.TablayoutAct;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
@@ -84,7 +86,7 @@ public class MainActivity extends SlbBaseActivity {
         tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, FenleiAct.class));
+                startActivity(new Intent(MainActivity.this, TablayoutAct.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "dataability://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.WebActivity{act}?" + AgentWebFragment.URL_KEY + "={s}");
 
 

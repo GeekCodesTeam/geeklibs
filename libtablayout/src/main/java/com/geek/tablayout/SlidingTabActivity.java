@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,8 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         vp.setAdapter(mAdapter);
 
         /** 默认 */
+        SlidingTabLayout tabLayout_0 = ViewFindUtils.find(decorView, R.id.tl_0);
+        /** 默认 */
         SlidingTabLayout tabLayout_1 = ViewFindUtils.find(decorView, R.id.tl_1);
         /**自定义部分属性*/
         SlidingTabLayout tabLayout_2 = ViewFindUtils.find(decorView, R.id.tl_2);
@@ -64,6 +67,12 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
         /** indicator圆角色块 */
         SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
 
+        TextView tv1 = ViewFindUtils.find(decorView, R.id.tv1);
+        TextView tv2 = ViewFindUtils.find(decorView, R.id.tv2);
+        tv1.setBackgroundResource(R.drawable.tl_bg_red1);
+        tv2.setBackgroundResource(R.drawable.tl_bg_red1);
+
+        tabLayout_0.setViewPager(vp);
         tabLayout_1.setViewPager(vp);
         tabLayout_2.setViewPager(vp);
         tabLayout_2.setOnTabSelectListener(this);
@@ -78,6 +87,7 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
 
         vp.setCurrentItem(4);
 
+//        tabLayout_0.showDot(4);
         tabLayout_1.showDot(4);
         tabLayout_3.showDot(4);
         tabLayout_2.showDot(4);
@@ -91,6 +101,7 @@ public class SlidingTabActivity extends AppCompatActivity implements OnTabSelect
 
         tabLayout_2.showMsg(5, 5);
         tabLayout_2.setMsgMargin(5, 0, 10);
+
 
 //        tabLayout_7.setOnTabSelectListener(new OnTabSelectListener() {
 //            @Override
