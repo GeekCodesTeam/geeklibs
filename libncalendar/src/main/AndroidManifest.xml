@@ -7,7 +7,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".ncalendar.activity.RiliMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.RiliMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

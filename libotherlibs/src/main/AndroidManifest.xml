@@ -46,7 +46,7 @@
         <provider
             android:name="com.haier.cellarette.baselibrary.provider.BaselibFileProvider"
             android:authorities="${applicationId}.BaselibFileProvider"
-            android:exported="false"
+            android:exported="true"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
@@ -55,23 +55,23 @@
 
         <receiver
             android:name=".networkview.NetworkChangeListener"
-            android:exported="false" />
+            android:exported="true" />
 
         <receiver
             android:name=".networkview.NetworkConnectChangedReceiver"
-            android:exported="false" />
+            android:exported="true" />
 
         <service
             android:name="com.haier.cellarette.baselibrary.handleralluse.handler8.DownloadService"
-            android:exported="false" />
+            android:exported="true" />
         <service
             android:name=".musicutils.musicplayer.DemoMusicPlayerService"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="true" />
 
         <activity
             android:name=".liandong.LiandongDemoAct"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.LiandongDemoAct" />
@@ -80,7 +80,7 @@
         </activity>
         <activity
             android:name=".quanxian.QuanxianActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.QuanxianActivity" />
@@ -89,7 +89,7 @@
         </activity>
         <activity
             android:name=".liandong.demo3.Liandong3Activity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.Liandong3Activity" />
@@ -98,7 +98,7 @@
         </activity>
         <activity
             android:name=".liandong.demo2.Liandong2Activity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.Liandong2Activity" />
@@ -107,7 +107,7 @@
         </activity>
         <activity
             android:name=".liandong.demo1.Liandong1Activity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.Liandong1Activity" />
@@ -116,7 +116,7 @@
         </activity>
         <activity
             android:name=".likebutton.LikeButtonActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="hs.act.phone.likebutton" />
@@ -129,7 +129,7 @@
         </activity>
         <activity
             android:name=".handleralluse.handler"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="hs.act.phone.handler" />
@@ -144,39 +144,39 @@
 
         <activity
             android:name=".handleralluse.handler1"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler2"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler3"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler4"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler5"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler6"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler7.handler7"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".handleralluse.handler8.handler8"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".emptyview.EmptyViewMainActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.EmptyViewMainActivity" />
@@ -185,7 +185,7 @@
         </activity>
         <activity
             android:name=".networkview.NetEmptyViewMainActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.networkview" />
@@ -196,7 +196,7 @@
 
         <activity
             android:name=".recycleviewmultitype.RecycleViewMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.RecycleViewMainActivity.act" />
 
@@ -206,7 +206,7 @@
 
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo1Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo1.act" />
 
@@ -216,7 +216,7 @@
 
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo2Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo2.act" />
 
@@ -227,7 +227,7 @@
 
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo3Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo3.act" />
 
@@ -236,7 +236,7 @@
         </activity>
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo4Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo4.act" />
 
@@ -245,7 +245,7 @@
         </activity>
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo5Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo5.act" />
 
@@ -254,7 +254,7 @@
         </activity>
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo6Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo6.act" />
 
@@ -263,7 +263,7 @@
         </activity>
         <activity
             android:name=".recycleviewmultitype.activitys.RecDemo7Activity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo7.act" />
 
@@ -272,7 +272,7 @@
         </activity>
         <activity
             android:name=".recycleviewmultitype.activitys.MoreApisPlayground"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.demo8.act" />
 
@@ -281,7 +281,7 @@
         </activity>
         <activity
             android:name=".caranimation.CarAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.caranimation.act" />
 
@@ -290,7 +290,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.BaeRecycleViewActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.recycleviewalluses.act" />
 
@@ -299,7 +299,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo1baseadpterhelp.BaseRecActDemo1"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo11.act" />
 
@@ -309,7 +309,7 @@
 
         <activity
             android:name=".recycleviewalluses.demo2baseadpterhelp.BaseRecActDemo2"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo22.act" />
 
@@ -319,7 +319,7 @@
 
         <activity
             android:name=".recycleviewalluses.demo3baseadpterhelp.BaseRecActDemo3"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo33.act" />
 
@@ -328,7 +328,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo4baseadpterhelp.BaseRecActDemo4"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo44.act" />
 
@@ -337,7 +337,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo4baseadpterhelp.hunhe.BaseRecActDemo41"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo41.act" />
 
@@ -346,7 +346,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo4baseadpterhelp.second.BaseRecActDemo42"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo42.act" />
 
@@ -355,7 +355,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo5baseadpterhelp.BaseRecActDemo5"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo55.act" />
 
@@ -364,7 +364,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo6baseadpterhelp.BaseRecActDemo6"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo66.act" />
 
@@ -373,7 +373,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo7baseadpterhelp.BaseRecActDemo7"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo77.act" />
 
@@ -382,7 +382,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo8baseadpterhelp.BaseRecActDemo8"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo88.act" />
 
@@ -391,7 +391,7 @@
         </activity>
         <activity
             android:name=".recycleviewalluses.demo9baseadpterhelp.BaseRecActDemo9"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.BaseRecActDemo99.act" />
 
@@ -400,7 +400,7 @@
         </activity>
         <activity
             android:name=".zuni.DemoZuniScrollViewActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.com.ZuniScrollViewAct.act" />
 
@@ -409,7 +409,7 @@
         </activity>
         <activity
             android:name=".ringutil.RingActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.RingActivity" />
@@ -418,7 +418,7 @@
         </activity>
         <activity
             android:name=".changelanguage.ChangeLanActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.changelanguage" />
 
@@ -428,7 +428,7 @@
 
         <activity
             android:name=".scrollview.ScrollViewAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.ScrollViewAct" />
 
@@ -437,7 +437,7 @@
         </activity>
         <activity
             android:name=".anroomcrash.ANROOMCrashActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.anroomcrash" />
 
@@ -448,7 +448,7 @@
 
         <activity
             android:name=".musicutils.MusicActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.MusicActivity" />
 
@@ -458,7 +458,7 @@
 
         <activity
             android:name=".musicutils.musicplayer.DemoMusicActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.DemoMusicActivity" />
 
@@ -468,7 +468,7 @@
 
         <activity
             android:name=".assetsfitandroid.AssetsMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.AssetsMainActivity" />
 
@@ -477,7 +477,7 @@
         </activity>
         <activity
             android:name=".bannerview.BannerViewDemoActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.BannerViewDemoActivity" />
 
@@ -487,7 +487,7 @@
 
         <activity
             android:name=".bannerviewquan.BannerDemoActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.BannerDemoActivity" />
 
@@ -497,7 +497,7 @@
 
         <activity
             android:name=".assetsfitandroid.fileassets.FileAssetsActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.FileAssetsActivity" />
 
@@ -506,7 +506,7 @@
         </activity>
         <activity
             android:name=".assetsfitandroid.fileandroid.FitAndroidActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.FitAndroidActivity" />
 
@@ -515,7 +515,7 @@
         </activity>
         <activity
             android:name=".shoppingcar.ShoppingCarActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.ShoppingCarActivity" />
 
@@ -525,7 +525,7 @@
 
         <activity
             android:name=".btnonclick.BtnActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.BtnActivity" />
 
@@ -534,7 +534,7 @@
         </activity>
         <activity
             android:name=".toasts3.demo.MnMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.MnMainActivity" />
 
@@ -543,7 +543,7 @@
         </activity>
         <activity
             android:name=".ratingstarview.PingfenMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.PingfenMainActivity" />
 
@@ -552,7 +552,7 @@
         </activity>
         <activity
             android:name=".marqueelibrary.ui.MarqueeViewLibraryAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.MarqueeViewLibraryAct" />
 
@@ -561,7 +561,7 @@
         </activity>
         <activity
             android:name=".scardview.SCardViewAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.SCardViewAct" />
 
@@ -574,7 +574,7 @@
 
         <activity
             android:name=".bigImageviewpager.BigImageViewPagerAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.BigImageViewPagerAct" />
 
@@ -583,7 +583,7 @@
         </activity>
         <activity
             android:name=".expandabletextview.ExpandableTextViewAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.ExpandableTextViewAct" />
 
@@ -592,7 +592,7 @@
         </activity>
         <activity
             android:name=".jianpan.JianpanAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.JianpanAct" />
 
@@ -603,7 +603,7 @@
 
         <activity
             android:name=".switchbutton.MainActivitySwitchButtonK"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.MainActivitySwitchButtonK" />
@@ -613,7 +613,7 @@
         </activity>
         <activity
             android:name=".switchbutton.StyleActivitySwitchButtonK"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_style"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -622,7 +622,7 @@
         </activity>
         <activity
             android:name=".switchbutton.UseActivitySwitchButtonK"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_use"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -631,7 +631,7 @@
         </activity>
         <activity
             android:name=".switchbutton.StyleInCodeActivitySwitchButtonK"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_style_in_code"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -640,7 +640,7 @@
         </activity>
         <activity
             android:name=".switchbutton.RecyclerActivitySwitchButtonK"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_recycler_view"
             android:parentActivityName=".switchbutton.MainActivitySwitchButtonK">
             <meta-data
@@ -649,7 +649,7 @@
         </activity>
         <activity
             android:name=".choutipop.ChoutiActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.ChoutiActivity" />
 
@@ -658,7 +658,7 @@
         </activity>
         <activity
             android:name=".coordinatorlayout.CoordinatorLayoutAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.CoordinatorLayoutAct" />
 
@@ -675,7 +675,7 @@
 
         <activity
             android:name=".recycleviewcard3.RCardAct3"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.RCardAct3" />
 

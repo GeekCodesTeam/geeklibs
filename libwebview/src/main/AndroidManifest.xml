@@ -13,7 +13,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".DemoWebviewMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.webview.DemoWebviewMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -22,7 +22,7 @@
         <!--1.0-->
         <activity
             android:name=".base.WebViewMainActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -36,7 +36,7 @@
         </activity>
         <activity
             android:name=".base.WebViewPartActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Transparent">
 
             <intent-filter>
@@ -46,7 +46,7 @@
         </activity>
         <activity
             android:name=".base.WebViewPartActivity2"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Transparent">
 
             <intent-filter>
@@ -56,7 +56,7 @@
         </activity>
         <activity
             android:name=".base.AdCommPart1Activity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Transparent">
 
             <intent-filter>
@@ -67,7 +67,7 @@
         <!--2.0-->
         <activity
             android:name=".base.WebViewActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -111,7 +111,7 @@
 
         <activity
             android:name=".activity.HiosMainActivity"
-            android:exported="false">
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.TwoMainActivity" />
@@ -120,7 +120,7 @@
         </activity>
         <activity
             android:name=".activity.NoHiosMainActivity"
-            android:exported="false">
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.NoHiosMainActivity" />

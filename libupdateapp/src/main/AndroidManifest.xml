@@ -12,7 +12,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".DemoUpdateAppMainActivity"
-            android:exported="false"
+            android:exported="true"
             android:requestLegacyExternalStorage="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.ac.github.DemoUpdateAppMainActivity" />
@@ -22,7 +22,7 @@
         <provider
             android:name=".util.UpdateoldFileProvider"
             android:authorities="${applicationId}.UpdateoldFileProvider"
-            android:exported="false"
+            android:exported="true"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
@@ -31,7 +31,7 @@
         <!--<receiver-->
         <!--android:name=".util.UpdateAppReceiver"-->
         <!--android:enabled="true"-->
-        <!--android:exported="false">-->
+        <!--android:exported="true">-->
         <!--<intent-filter>-->
         <!--<action android:name="teprinciple.updates" />-->
         <!--</intent-filter>˙-->

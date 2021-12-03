@@ -7,7 +7,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".activity.CityPickerAct"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/DefaultCityPickerTheme">
             <intent-filter>

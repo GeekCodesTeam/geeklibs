@@ -10,7 +10,7 @@
         <provider
             android:name="com.zhy.base.fileprovider.LibFileProvider"
             android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
+            android:exported="true"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"

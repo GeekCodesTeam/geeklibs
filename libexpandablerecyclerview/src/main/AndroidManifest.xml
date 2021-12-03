@@ -7,7 +7,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".demo.ExpandableAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.expandableview" />
 
@@ -16,7 +16,7 @@
         </activity>
         <activity
             android:name=".demo.extextview.TextViewAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.TextViewAct" />
 
@@ -25,7 +25,7 @@
         </activity>
         <activity
             android:name=".demo.eximageview.ImageViewAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.phone.ImageViewAct" />
 

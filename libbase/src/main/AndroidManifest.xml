@@ -20,7 +20,7 @@
 
         <activity
             android:name=".baserecycleview.yewu1.ActViewPageYewuList1"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ActViewPageYewuList1" />
@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name=".baserecycleview.yewu2.ActYewuList1"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ActYewuList1" />
@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".viewpager2.LunboMainActivity"
-            android:exported="false"
+            android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.LunboMainActivity" />
@@ -80,7 +80,7 @@
         <activity android:name=".fragmentsgeek.demo5.MkDemo5Activity" />
         <activity
             android:name=".fragmentsgeek.NkMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.NkMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -90,7 +90,7 @@
         <activity android:name=".plugin.ProxyActivity" />
         <activity
             android:name=".recycleviewcard2.StackAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.StackAct" />
 
@@ -133,7 +133,7 @@
         </activity>
         <activity
             android:name=".recycleviewcard2.StackActVertical"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.StackActVertical" />
 
@@ -143,7 +143,7 @@
 
         <activity
             android:name=".recycleviewcard1.RCardAct1"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.RCardAct1" />
 
@@ -186,7 +186,7 @@
         </activity>
         <activity
             android:name=".splshact.SplshActDemo"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.SplshActDemo" />
 
@@ -195,7 +195,7 @@
         </activity>
         <activity
             android:name=".fenlei.FenleiAct"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.FenleiAct" />
 
@@ -204,7 +204,7 @@
         </activity>
         <activity
             android:name=".fenlei.fenlei1.FenleiAct1"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.FenleiAct1" />
 

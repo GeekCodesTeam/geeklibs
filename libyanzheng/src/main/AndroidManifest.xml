@@ -20,7 +20,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".ZhiwenActtivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ZhiwenActtivity" />
@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name=".zhiwen1.ZhiwenAct1"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ZhiwenAct1" />
@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".zhiwen2.ZhiwenAct2"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.ZhiwenAct2" />

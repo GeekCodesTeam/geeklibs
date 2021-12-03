@@ -12,14 +12,14 @@
         android:supportsRtl="true">
         
         <activity android:name=".GlideMainActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.GlideMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".GlideMainActivityalluse"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.GlideMainActivityalluse" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".GlideMainActivityjiugongge"
-            android:exported="false"
+            android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -37,15 +37,15 @@
         </activity>
         <activity
             android:name=".demo.imageutil.SingleImageActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/AppCompatFullscreenStyle" />
         <activity
             android:name=".demo.imageutil.SingleImagePhotoViewActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/AppCompatFullscreenStyle" />
         <activity
             android:name=".demo.imageutil.ImagesActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/ImagesStyle" />
     </application>
 
