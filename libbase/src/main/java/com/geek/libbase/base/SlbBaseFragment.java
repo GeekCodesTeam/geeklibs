@@ -10,10 +10,13 @@ import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.geek.libbase.netstate.NetState;
 import com.geek.libbase.netstate.NetconListener;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.BaseViewHelper;
+import com.geek.libutils.app.MyLogUtil;
+import com.just.agentweb.geek.fragment.EasyWebFragment;
 
 public abstract class SlbBaseFragment extends Fragment implements NetconListener {
 
@@ -151,6 +154,32 @@ public abstract class SlbBaseFragment extends Fragment implements NetconListener
     }
 
     public void onActResult(int requestCode, int resultCode, Intent data) {
+    }
+
+    /**
+     * 底部点击bufen
+     *
+     * @param cateId
+     * @param isrefresh
+     */
+    public void getCate(String cateId, boolean isrefresh) {
+
+        if (!isrefresh) {
+            // 从缓存中拿出头像bufen
+
+            return;
+        }
+//        ToastUtils.showLong("下拉刷新啦");
+    }
+
+    /**
+     * 当切换底部的时候通知每个fragment切换的id是哪个bufen
+     *
+     * @param cateId
+     */
+    public void give_id(String cateId) {
+//        ToastUtils.showLong("下拉刷新啦");
+        MyLogUtil.e("tablayoutId->", "give_id->" + cateId);
     }
 
     @Override

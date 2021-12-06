@@ -100,6 +100,7 @@ public class FenleiAct1Fragment1 extends SlbBaseLazyFragmentNewCate {
      * @param cateId
      * @param isrefresh
      */
+    @Override
     public void getCate(String cateId, boolean isrefresh) {
 
         if (!isrefresh) {
@@ -115,6 +116,7 @@ public class FenleiAct1Fragment1 extends SlbBaseLazyFragmentNewCate {
      *
      * @param cateId
      */
+    @Override
     public void give_id(String cateId) {
 //        ToastUtils.showLong("下拉刷新啦");
         MyLogUtil.e("tablayoutId->", "give_id->" + cateId);
