@@ -22,7 +22,7 @@
         <provider
             android:name=".util.UpdateoldFileProvider"
             android:authorities="${applicationId}.UpdateoldFileProvider"
-            android:exported="true"
+            android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
