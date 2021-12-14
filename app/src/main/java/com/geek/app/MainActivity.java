@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.example.slbyanzheng.ZhiwenActtivity;
+import com.example.slbyanzheng.slide.SlideAct1;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libbase.fenlei.FenleiAct;
 import com.geek.libbase.splshact.SplshActDemo;
@@ -77,7 +78,7 @@ public class MainActivity extends SlbBaseActivity {
             @Override
             public void onClick(View v) {
 //                startActivity(new Intent(MainActivity.this, DemoUpdateAppMainActivity.class));
-                startActivity(new Intent(MainActivity.this, MainActivity2.class));
+                startActivity(new Intent(MainActivity.this, SlideAct1.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://v.dtdjzx.gov.cn/voice/");

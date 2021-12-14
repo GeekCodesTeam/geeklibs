@@ -46,6 +46,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".slide.SlideAct1"
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.SlideAct1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".zhiwen2.GestureSettingsActivity"
             android:screenOrientation="portrait" />
         <activity

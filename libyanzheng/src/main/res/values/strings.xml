@@ -29,4 +29,7 @@
     <string name="login_btn_text_fingerprint_psw">设置录纹密码</string>
     <string name="login_dialog_title_finger_change">设置开启或录入指纹登录</string>
 
+    <string name="vertify_access">验证通过,耗时%d毫秒</string>
+    <string name="vertify_failed">验证失败,还剩%d次机会</string>
+
 </resources>
