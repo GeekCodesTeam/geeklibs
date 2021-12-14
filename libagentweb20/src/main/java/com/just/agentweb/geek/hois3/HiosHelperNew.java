@@ -110,7 +110,7 @@ public class HiosHelperNew {
                 Log.e("Activity", "No Activity found to handle intent " + it);
             }
         }
-        if (url.startsWith("com")) {
+        if (url.startsWith("com") || url.startsWith("cn")) {
             if (!AppUtils.isAppInstalled(url)) {
                 ToastUtils.showLong("未安装此应用服务");
                 return;
