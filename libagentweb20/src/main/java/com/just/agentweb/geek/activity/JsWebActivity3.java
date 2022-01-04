@@ -1,22 +1,32 @@
 package com.just.agentweb.geek.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.geek.libutils.app.MyLogUtil;
+import com.github.lzyzsd.jsbridge.BridgeHandler;
+import com.github.lzyzsd.jsbridge.CallBackFunction;
+import com.just.agentweb.AgentWeb;
 import com.just.agentweb.geek.R;
 import com.just.agentweb.geek.base.BaseAgentWebActivityJs2;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
@@ -43,9 +53,67 @@ public class JsWebActivity3 extends BaseAgentWebActivityJs2 {
 
     @Override
     protected void javainterface() {
+        if (mAgentWeb != null) {
+            //注入对象
+            mAgentWeb.getJsInterfaceHolder().addJavaObject("android", new AndroidInterface2(mAgentWeb, this));
+        }
+        mBridgeWebView.registerHandler("exitApp", new BridgeHandler() {
 
+            @Override
+            public void handler(String data, CallBackFunction function) {
+//                function.onCallBack("submitFromWeb exe, response data 中文 from Java");
+                onBackPressed();
+                MyLogUtil.e("ssssssssss", "退出了");
+            }
+
+        });
     }
 
+    public class AndroidInterface2 {
+
+        private Handler deliver = new Handler(Looper.getMainLooper());
+        private AgentWeb agent;
+        private Context context;
+
+        public AndroidInterface2(AgentWeb agent, Context context) {
+            this.agent = agent;
+            this.context = context;
+        }
+
+
+        @JavascriptInterface
+        public void callAndroid(final String msg) {
+
+            deliver.post(new Runnable() {
+                @Override
+                public void run() {
+
+                    Log.i("Info", "main Thread:" + Thread.currentThread());
+                    Toast.makeText(context.getApplicationContext(), "" + msg, Toast.LENGTH_LONG).show();
+                }
+            });
+
+
+            Log.i("Info", "Thread:" + Thread.currentThread());
+
+        }
+
+        @JavascriptInterface
+        public void exitApp() {
+
+            deliver.post(new Runnable() {
+                @Override
+                public void run() {
+                    onBackPressed();
+                }
+            });
+
+
+            Log.i("Info", "Thread:" + Thread.currentThread());
+
+        }
+
+    }
 
     @NonNull
     @Override

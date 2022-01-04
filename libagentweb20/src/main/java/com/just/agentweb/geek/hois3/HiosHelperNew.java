@@ -110,12 +110,24 @@ public class HiosHelperNew {
                 Log.e("Activity", "No Activity found to handle intent " + it);
             }
         }
+        // 打开第三方APPbufen
         if (url.startsWith("com") || url.startsWith("cn")) {
             if (!AppUtils.isAppInstalled(url)) {
                 ToastUtils.showLong("未安装此应用服务");
                 return;
             }
             AppUtils.launchApp(url);
+        }
+        // 打开手机bufen
+        if (url.startsWith("tel")) {
+            try {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+//            intent.setData(Uri.parse("tel:" + fguanyuBean.getPhone()));
+                intent.setData(Uri.parse(url));
+                act.startActivity(intent);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
         }
     }
 
