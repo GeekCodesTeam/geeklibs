@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
+import android.webkit.WebView;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -118,11 +119,16 @@ public class HiosHelperNew {
             }
             AppUtils.launchApp(url);
         }
-        // 打开手机bufen
-        if (url.startsWith("tel")) {
+        // 打开其他bufen
+//        if (url.startsWith("tel")) {
+        if (url.startsWith(WebView.SCHEME_TEL)
+                || url.startsWith("sms:")
+                || url.startsWith(WebView.SCHEME_MAILTO)
+                || url.startsWith(WebView.SCHEME_GEO)) {
             try {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
 //            intent.setData(Uri.parse("tel:" + fguanyuBean.getPhone()));
+                Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 act.startActivity(intent);
             } catch (SecurityException e) {
