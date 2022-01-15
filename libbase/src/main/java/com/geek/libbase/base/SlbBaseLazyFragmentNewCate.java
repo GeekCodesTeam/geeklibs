@@ -20,6 +20,32 @@ public abstract class SlbBaseLazyFragmentNewCate<T> extends SlbBaseFragment {
     private ProgressDialog mProgressDialog; // 加载进度对话框
     private MessageReceiverIndex mMessageReceiver;
     public T parentCategory;
+    public int current_pos = 0;
+    public static final String SAVED_CURRENT_ID = "currentId";
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SAVED_CURRENT_ID, current_pos);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            int cachedId = savedInstanceState.getInt(SAVED_CURRENT_ID, 0);
+            current_pos = cachedId;
+        }
+        mContext = getActivity();
+        if (mMessageReceiver == null) {
+            mMessageReceiver = new MessageReceiverIndex();
+            IntentFilter filter = new IntentFilter();
+            filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+            filter.addAction(TAG);
+            LocalBroadcastManagers.getInstance(getActivity()).registerReceiver(mMessageReceiver, filter);
+            MyLogUtil.e("tablayoutId初始化数据",TAG);
+        }
+    }
 
     public class MessageReceiverIndex extends BroadcastReceiver {
 
@@ -57,20 +83,6 @@ public abstract class SlbBaseLazyFragmentNewCate<T> extends SlbBaseFragment {
 
     }
 
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mContext = getActivity();
-        if (mMessageReceiver == null) {
-            mMessageReceiver = new MessageReceiverIndex();
-            IntentFilter filter = new IntentFilter();
-            filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
-            filter.addAction(TAG);
-            LocalBroadcastManagers.getInstance(getActivity()).registerReceiver(mMessageReceiver, filter);
-            MyLogUtil.e("tablayoutId初始化数据",TAG);
-        }
-    }
 
     @Override
     public void onDestroy() {
