@@ -26,10 +26,10 @@ buildscript {
             url "http://maven.rongcloud.cn/repository/maven-releases/"
             allowInsecureProtocol = true
         }
-        maven {
-            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
-            allowInsecureProtocol = true
-        }
+//        maven {
+//            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+//            allowInsecureProtocol = true
+//        }
 //        maven {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
@@ -74,10 +74,10 @@ allprojects {
             url "http://maven.rongcloud.cn/repository/maven-releases/"
             allowInsecureProtocol = true
         }
-        maven {
-            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
-            allowInsecureProtocol = true
-        }
+//        maven {
+//            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+//            allowInsecureProtocol = true
+//        }
 //        maven {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
