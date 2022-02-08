@@ -25,6 +25,7 @@ import com.lib.lock.fingerprint.utils.FingerprintUtil;
 import com.lib.lock.gesture.content.SPManager;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.interfaces.OnInputConfirmListener;
+import com.pgyer.pgyersdk.PgyerSDKManager;
 
 
 public class MainActivity extends SlbBaseActivity {
@@ -77,6 +78,7 @@ public class MainActivity extends SlbBaseActivity {
     protected void setup(@Nullable Bundle savedInstanceState) {
         super.setup(savedInstanceState);
         HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page3.js3");
+        PgyerSDKManager.checkSoftwareUpdate(this);
         tv2 = findViewById(R.id.tv2);
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
