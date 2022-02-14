@@ -202,6 +202,7 @@ public class AndroidApplication extends Application {
                 .getUnitsManager()
                 .setSupportDP(true)
                 .setSupportSubunits(Subunits.MM);
+
     }
 
     protected int mFinalCount;

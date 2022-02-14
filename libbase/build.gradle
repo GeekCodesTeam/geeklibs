@@ -28,5 +28,6 @@ dependencies {
     api project(':libglide47')
     api project(':librararyforfileprovdider')
     api project(':liblanguage')
+    api project(':libtablayout')
 
 }

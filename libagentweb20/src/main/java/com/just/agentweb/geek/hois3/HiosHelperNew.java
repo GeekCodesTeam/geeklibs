@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
+import android.webkit.WebView;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.blankj.utilcode.util.ToastUtils;
@@ -110,12 +111,29 @@ public class HiosHelperNew {
                 Log.e("Activity", "No Activity found to handle intent " + it);
             }
         }
-        if (url.startsWith("com")) {
+        // 打开第三方APPbufen
+        if (url.startsWith("com") || url.startsWith("cn")) {
             if (!AppUtils.isAppInstalled(url)) {
                 ToastUtils.showLong("未安装此应用服务");
                 return;
             }
             AppUtils.launchApp(url);
+        }
+        // 打开其他bufen
+//        if (url.startsWith("tel")) {
+        if (url.startsWith(WebView.SCHEME_TEL)
+                || url.startsWith("sms:")
+                || url.startsWith(WebView.SCHEME_MAILTO)
+                || url.startsWith(WebView.SCHEME_GEO)) {
+            try {
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//            intent.setData(Uri.parse("tel:" + fguanyuBean.getPhone()));
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                act.startActivity(intent);
+            } catch (SecurityException e) {
+                e.printStackTrace();
+            }
         }
     }
 

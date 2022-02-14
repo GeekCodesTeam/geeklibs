@@ -40,7 +40,7 @@
         <activity
             android:name=".activity.DKMainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:taskAffinity=".activity.DKMainActivity"
             android:theme="@style/DKAppTheme">
@@ -56,7 +56,7 @@
         <activity
             android:name=".activity.api.PlayerActivityDk"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
             <intent-filter tools:ignore="AppLinkUrlError">
@@ -68,7 +68,7 @@
         <activity
             android:name=".activity.api.PlayerActivityDkyuan"
             android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
             <intent-filter tools:ignore="AppLinkUrlError">

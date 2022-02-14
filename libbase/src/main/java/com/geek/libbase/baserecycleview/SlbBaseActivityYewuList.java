@@ -191,11 +191,11 @@ public abstract class SlbBaseActivityYewuList extends SlbBaseActivity {
             }
         }
         // test
-        if (mAdapter1.getData().size() > 101) {
-            mAdapter1.loadMoreEnd(isRefresh);
-//            ToastUtils.showLong("已经到底了12");
-            return;
-        }
+//        if (mAdapter1.getData().size() > 101) {
+//            mAdapter1.loadMoreEnd(isRefresh);
+////            ToastUtils.showLong("已经到底了12");
+//            return;
+//        }
         if (size < PAGE_SIZE) {
             //第一页如果不够一页就不显示没有更多数据布局
             mAdapter.loadMoreEnd(isRefresh);

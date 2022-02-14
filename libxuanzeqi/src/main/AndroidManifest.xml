@@ -8,7 +8,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".activity.MainActivitylibxuanzeqi"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.MainActivitylibxuanzeqi" />

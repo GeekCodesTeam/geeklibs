@@ -122,8 +122,9 @@ public abstract class BaseAgentWebActivityJs2 extends AppCompatActivity {
             @Override
             public void handler(String data, CallBackFunction function) {
 //                function.onCallBack("submitFromWeb exe, response data 中文 from Java");
-                onBackPressed();
+//                onBackPressed();
                 MyLogUtil.e("ssssssssss", "退出了");
+                ToastUtils.showLong("退出了");
             }
 
         });

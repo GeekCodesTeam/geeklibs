@@ -18,7 +18,7 @@
         <receiver
             android:name=".shortcut.broadcast.AutoCreateBroadcastReceiver"
             android:enabled="true"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.shortcut.core.auto_create" />
             </intent-filter>
@@ -27,7 +27,7 @@
         <receiver
             android:name=".shortcut.broadcast.NormalCreateBroadcastReceiver"
             android:enabled="true"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.shortcut.core.normal_create" />
             </intent-filter>

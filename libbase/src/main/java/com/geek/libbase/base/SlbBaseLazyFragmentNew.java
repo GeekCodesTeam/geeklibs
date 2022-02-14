@@ -2,11 +2,14 @@ package com.geek.libbase.base;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
 import com.geek.libbase.base.SlbBaseFragment;
+import com.geek.libutils.app.LocalBroadcastManagers;
+import com.geek.libutils.app.MyLogUtil;
 
 public abstract class SlbBaseLazyFragmentNew extends SlbBaseFragment {
 
@@ -14,16 +17,31 @@ public abstract class SlbBaseLazyFragmentNew extends SlbBaseFragment {
     private boolean isFirstLoad = true; // 是否第一次加载
     private ProgressDialog mProgressDialog; // 加载进度对话框
 
-    // fragment通信
-    public void call(Object value) {
+    public int current_pos = 0;
+    public static final String SAVED_CURRENT_ID = "currentId";
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SAVED_CURRENT_ID, current_pos);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            int cachedId = savedInstanceState.getInt(SAVED_CURRENT_ID, 0);
+            current_pos = cachedId;
+        }
         mContext = getActivity();
+
     }
+
+    // fragment通信
+    public void call(Object value) {
+
+    }
+
 
     @Override
     public void onDestroy() {

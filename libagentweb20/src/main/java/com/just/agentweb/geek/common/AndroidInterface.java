@@ -44,4 +44,21 @@ public class AndroidInterface {
 
     }
 
+    @JavascriptInterface
+    public void exitApp(final String msg) {
+
+        deliver.post(new Runnable() {
+            @Override
+            public void run() {
+
+                Log.i("Info", "main Thread:" + Thread.currentThread());
+                Toast.makeText(context.getApplicationContext(), "" + msg, Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+        Log.i("Info", "Thread:" + Thread.currentThread());
+
+    }
+
 }

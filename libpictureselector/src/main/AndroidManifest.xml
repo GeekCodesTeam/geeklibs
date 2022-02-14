@@ -58,7 +58,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PictureSelectorSimpleActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.PictureSelectorSimpleActivity" />

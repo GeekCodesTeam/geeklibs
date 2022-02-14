@@ -1,6 +1,7 @@
 package com.haier.cellarette.libretrofit.common;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -82,6 +83,15 @@ public class LoggingInterceptor implements Interceptor {
             Gson gson = new Gson();
             ResponseSlbBean responseSlbBean = gson.fromJson(rBody, ResponseSlbBean.class);
             if (null != responseSlbBean && responseSlbBean.getCode() == 2000) {
+                set_token_out();
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        try {
+            Gson gson = new Gson();
+            ResponseSlbBean2 responseSlbBean = gson.fromJson(rBody, ResponseSlbBean2.class);
+            if (null != responseSlbBean && TextUtils.equals(responseSlbBean.getCode(), "2000")) {
                 set_token_out();
             }
         } catch (Exception e) {

@@ -21,7 +21,7 @@ public class BanbenUtils {
     }
 
     //    public static final String banben = NetConfig.versionNameConfig;
-    public String net_tips = "网络异常，请检查网络连接！";
+    public String net_tips = "服务器异常，请稍后再试！";// 网络异常，请检查网络连接！
     public String error_tips = "请求失败，请稍后重试！";
     public String version = "";
     public String imei = "";

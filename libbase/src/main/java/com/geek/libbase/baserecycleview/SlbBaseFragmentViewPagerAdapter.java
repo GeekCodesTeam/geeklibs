@@ -38,4 +38,10 @@ public class SlbBaseFragmentViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return titles.get(position);
     }
+
+    @Override
+    public int getItemPosition(Object object) {
+        // 最简单解决 notifyDataSetChanged() 页面不刷新问题的方法
+        return POSITION_NONE;
+    }
 }
