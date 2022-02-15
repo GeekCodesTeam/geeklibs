@@ -341,6 +341,7 @@ public class HiosHelperNew {
 
     private static void activity(final Activity activity, Uri uri, final Intent intent) {
         if (!WebViewUtilsNew.isIntentAvailable(activity, intent)) {
+            ToastUtils.showLong("地址错误，请配置正确地址");
             return;
         }
 
