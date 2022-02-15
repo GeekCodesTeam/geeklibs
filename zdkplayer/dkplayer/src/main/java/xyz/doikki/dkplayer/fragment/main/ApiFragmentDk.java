@@ -28,6 +28,8 @@ public class ApiFragmentDk extends BaseFragmentDk implements View.OnClickListene
 //    private static final String LIVE_URL = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
 //    private static final String LIVE_URL = "http://ivi.bupt.edu.cn/hls/sztv.m3u8";
     private static final String LIVE_URL = "http://220.161.87.62:8800/hls/0/index.m3u8";
+//    private static final String LIVE_URL = "https://v.dyjyzyk.dtdjzx.gov.cn/resource-oss/transcode/20211201/3518283129976529622/hls/900/3518283186196985193.m3u8";
+//    private static final String LIVE_URL = "https://v.dyjyzyk.dtdjzx.gov.cn/resource-oss/transcode/20211201/3518283129976529622/hls/900/3518283186196985193.m3u8";
 //    private static final String LIVE_URL = "http://ivi.bupt.edu.cn/hls/cctv6.m3u8";
 //    private static final String LIVE_URL = "rtmp://media3.sinovision.net:1935/live/livestream";
 //    private static final String LIVE_URL = "http://media3.sinovision.net:1935/live/livestream/playlist.m3u8";

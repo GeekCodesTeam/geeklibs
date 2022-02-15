@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -74,6 +75,10 @@ public abstract class BaseAgentWebFragment extends Fragment {
                 .createAgentWeb()//
                 .ready()//
                 .go(getUrl());
+        // https://github.com/Justson/AgentWeb/issues/272
+        WebSettings ws = mAgentWeb.getWebCreator().getWebView().getSettings();
+        ws.setUseWideViewPort(true);
+        ws.setLoadWithOverviewMode(true);
     }
 
     protected void initView(View view) {

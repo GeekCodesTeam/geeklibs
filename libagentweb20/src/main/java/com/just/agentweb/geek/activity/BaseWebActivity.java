@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -91,8 +92,31 @@ public class BaseWebActivity extends AppCompatActivity {
                 .createAgentWeb()
                 .ready()
                 .go(getUrl());
-
+        // https://github.com/Justson/AgentWeb/issues/272
+        WebSettings ws = mAgentWeb.getWebCreator().getWebView().getSettings();
+        ws.setUseWideViewPort(true);
+        ws.setLoadWithOverviewMode(true);
         //mAgentWeb.getUrlLoader().loadUrl(getUrl());
+//        int screenDensity = getResources().getDisplayMetrics().densityDpi;
+////        Logger.d(TAG, "screenDensity = " + screenDensity);
+//        WebSettings.ZoomDensity zoomDensity = WebSettings.ZoomDensity.MEDIUM;
+//        switch (screenDensity)
+//        {
+//            case DisplayMetrics.DENSITY_LOW:
+//                zoomDensity = WebSettings.ZoomDensity.CLOSE;
+//                break;
+//            case DisplayMetrics.DENSITY_MEDIUM:
+//                zoomDensity = WebSettings.ZoomDensity.MEDIUM;
+//                break;
+//            case DisplayMetrics.DENSITY_HIGH:
+//            case DisplayMetrics.DENSITY_XHIGH:
+//            case DisplayMetrics.DENSITY_XXHIGH:
+//            default:
+//                zoomDensity = WebSettings.ZoomDensity.FAR;
+//                break;
+//
+//        }
+//        mAgentWeb.getAgentWebSettings().getWebSettings().setDefaultZoom(zoomDensity);
         initView();
 
         long n = System.currentTimeMillis();

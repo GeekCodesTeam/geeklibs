@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -228,6 +229,9 @@ public abstract class BaseAgentWebActivity extends AppCompatActivity {
                 .createAgentWeb()
                 .ready()
                 .go(getUrl());
+        WebSettings ws = mAgentWeb.getWebCreator().getWebView().getSettings();
+        ws.setUseWideViewPort(true);
+        ws.setLoadWithOverviewMode(true);
     }
 
 

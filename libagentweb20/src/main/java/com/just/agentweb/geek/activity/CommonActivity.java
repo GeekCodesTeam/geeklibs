@@ -80,6 +80,7 @@ public class CommonActivity extends AppCompatActivity {
 			case FLAG_GUIDE_DICTIONARY_USE_IN_FRAGMENT: //项目中请使用常量代替0 ， 代码可读性更高
 				ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
 				mBundle.putString(AgentWebFragment.URL_KEY, "https://m.vip.com/?source=www&jump_https=1");
+//				mBundle.putString(AgentWebFragment.URL_KEY, "http://t-nv-app.xczx-jn.com/#/dashboard");
 				break;
 			/*下载文件*/
 			case FLAG_GUIDE_DICTIONARY_FILE_DOWNLOAD:

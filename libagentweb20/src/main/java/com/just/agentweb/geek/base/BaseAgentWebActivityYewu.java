@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -233,6 +234,9 @@ public abstract class BaseAgentWebActivityYewu extends AppCompatActivity {
                 .createAgentWeb()
                 .ready()
                 .go(getUrl());
+        WebSettings ws = mAgentWeb.getWebCreator().getWebView().getSettings();
+        ws.setUseWideViewPort(true);
+        ws.setLoadWithOverviewMode(true);
         // 得到 AgentWeb 最底层的控件
         addBGChild((FrameLayout) mAgentWeb.getWebCreator().getWebParentLayout());
 

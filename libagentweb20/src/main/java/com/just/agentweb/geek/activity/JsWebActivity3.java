@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.geek.libutils.app.MyLogUtil;
 import com.github.lzyzsd.jsbridge.BridgeHandler;
 import com.github.lzyzsd.jsbridge.CallBackFunction;
@@ -62,8 +63,20 @@ public class JsWebActivity3 extends BaseAgentWebActivityJs2 {
             @Override
             public void handler(String data, CallBackFunction function) {
 //                function.onCallBack("submitFromWeb exe, response data 中文 from Java");
-                onBackPressed();
+                finish();
                 MyLogUtil.e("ssssssssss", "退出了");
+            }
+
+        });
+        mBridgeWebView.registerHandler("back", new BridgeHandler() {
+
+            @Override
+            public void handler(String data, CallBackFunction function) {
+//                function.onCallBack("submitFromWeb exe, response data 中文 from Java");
+//                onBackPressed();
+                finish();
+                MyLogUtil.e("ssssssssss", "退出了");
+//                ToastUtils.showLong("退出了");
             }
 
         });

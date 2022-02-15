@@ -40,7 +40,8 @@ public class WebActivity extends BaseWebActivity {
             } else {
                 //
                 if (TextUtils.isEmpty(appLinkIntent.getStringExtra(AgentWebFragment.URL_KEY))) {
-                    target = "http://www.jd.com/";
+//                    target = "http://www.jd.com/";
+                    target = "http://t-nv-app.xczx-jn.com/#/dashboard";
                 } else {
                     target = appLinkIntent.getStringExtra(AgentWebFragment.URL_KEY);
                 }
