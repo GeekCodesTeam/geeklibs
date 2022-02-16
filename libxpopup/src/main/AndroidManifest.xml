@@ -15,8 +15,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name_xpopup"
         android:supportsRtl="true">
+<!--        android:label="@string/app_name_xpopup"-->
+
         <activity
             android:name="com.lxj.xpopupdemo.XpopupMainActivity"
             android:exported="true"

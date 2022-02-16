@@ -4,8 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_namelibtablayout"
         android:supportsRtl="true">
+<!--        android:label="@string/app_namelibtablayout"-->
+
         <activity
             android:name=".TablayoutAct"
             android:exported="true">

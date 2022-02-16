@@ -15,8 +15,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_namelibagentweb20"
         android:supportsRtl="true">
+<!--        android:label="@string/app_namelibagentweb20"-->
+
         <activity
             android:name="com.just.agentweb.geek.activity.AgentwebAct"
             android:exported="true">

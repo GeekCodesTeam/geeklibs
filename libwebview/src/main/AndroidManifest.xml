@@ -9,8 +9,9 @@
     <!--android:theme="@style/AppThemewebview"-->
     <application
         android:allowBackup="true"
-        android:label="@string/app_namelibwebview"
         android:supportsRtl="true">
+<!--        android:label="@string/app_namelibwebview"-->
+
         <activity
             android:name=".DemoWebviewMainActivity"
             android:exported="true">

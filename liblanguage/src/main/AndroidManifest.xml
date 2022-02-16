@@ -4,8 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name_liblanguage"
         android:supportsRtl="true">
+<!--        android:label="@string/app_name_liblanguage"-->
+
         <activity
             android:name=".demo.LanguageAct"
             android:exported="true"

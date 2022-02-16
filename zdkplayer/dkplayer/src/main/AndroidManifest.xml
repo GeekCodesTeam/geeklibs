@@ -22,8 +22,9 @@
     <!--        tools:ignore="LockedOrientationActivity">-->
     <application
         android:allowBackup="true"
-        android:label="@string/dkapp_name"
         android:supportsRtl="true">
+<!--        android:label="@string/dkapp_name"-->
+
         <!--        &lt;!&ndash;允许绘制到oppo、vivo刘海屏机型的刘海区域 &ndash;&gt;-->
         <!--        <meta-data-->
         <!--            android:name="android.max_aspect"-->

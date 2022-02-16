@@ -3,8 +3,9 @@
     package="drawthink.expandablerecyclerview">
     <application
         android:allowBackup="true"
-        android:label="@string/appnamelibexpandablerecyclerview"
         android:supportsRtl="true">
+<!--        android:label="@string/appnamelibexpandablerecyclerview"-->
+
         <activity
             android:name=".demo.ExpandableAct"
             android:exported="true">

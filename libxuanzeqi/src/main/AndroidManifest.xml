@@ -4,8 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_namelibxuanzeqi"
         android:supportsRtl="true">
+<!--        android:label="@string/app_namelibxuanzeqi"-->
+
         <activity
             android:name=".activity.MainActivitylibxuanzeqi"
             android:exported="true"

@@ -3,8 +3,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_nameslbncalendar"
         android:supportsRtl="true">
+<!--        android:label="@string/app_nameslbncalendar"-->
+
         <activity
             android:name=".ncalendar.activity.RiliMainActivity"
             android:exported="true">

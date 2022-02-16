@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Library</string>
+    <string name="app_namelibupdateapp" translatable="false">app_namelibupdateapp</string>
     <string name="cancel" translatable="false">取消</string>
     <string name="sure" translatable="false">确认</string>
 

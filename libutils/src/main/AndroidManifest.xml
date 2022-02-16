@@ -13,8 +13,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_namelibutils"
         android:supportsRtl="true">
+<!--        android:label="@string/app_namelibutils"-->
+
         <receiver
             android:name=".shortcut.broadcast.AutoCreateBroadcastReceiver"
             android:enabled="true"

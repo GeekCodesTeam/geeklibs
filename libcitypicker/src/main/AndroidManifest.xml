@@ -3,8 +3,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_namelibcitypicker"
         android:supportsRtl="true">
+<!--        android:label="@string/app_namelibcitypicker"-->
+
         <activity
             android:name=".activity.CityPickerAct"
             android:exported="true"

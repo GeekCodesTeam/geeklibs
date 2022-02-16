@@ -42,8 +42,9 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_nameslbpictureselector"
         android:supportsRtl="true">
+<!--        android:label="@string/app_nameslbpictureselector"-->
+
         <!-- 全面屏-->
         <!--        <meta-data-->
         <!--            android:name="android.max_aspect"-->
