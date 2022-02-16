@@ -23,7 +23,6 @@ include ':libsCenterNew',
 // end aar
 
 // commonlibs
-//include ':libagentweb'
 include ':libagentweb20'
 include ':libmvp'
 include ':libotherlibs'
@@ -36,7 +35,6 @@ include ':libswipebacklayout'
 include ':librararyforfileprovdider'
 include ':libzxing'
 include ':liblanguage'
-include ':libplugin'
 include ':libxuanzeqi'
 include ':zdkplayer:dkplayer-java'
 include ':zdkplayer:dkplayer-players:ijkexo'
@@ -53,3 +51,4 @@ include ':libexpandablerecyclerview'
 include ':libtablayout'
 include ':libgeek'
 include ':libcitypicker'
+include ':liblocations'

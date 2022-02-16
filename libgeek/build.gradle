@@ -26,4 +26,5 @@ dependencies {
     api project(':libzxing')
     api project(':zdkplayer:dkplayer')
     api project(':libcitypicker')
+    api project(':liblocations')
 }
