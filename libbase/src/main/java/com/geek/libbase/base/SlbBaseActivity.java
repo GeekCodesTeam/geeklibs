@@ -4,6 +4,7 @@
 package com.geek.libbase.base;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -37,12 +38,14 @@ import com.blankj.utilcode.util.BarUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
+import com.geek.libbase.AndroidApplication;
 import com.geek.libbase.R;
 import com.geek.libbase.netstate.NetState;
 import com.geek.libbase.netstate.NetconListener;
 import com.geek.libbase.widgets.IBaseAction;
 import com.geek.liblanguage.MultiLanguages;
 import com.geek.libutils.SlbLoginUtil;
+import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.BaseViewHelper;
 import com.geek.swipebacklayout.SwipeBack;
@@ -458,15 +461,25 @@ public abstract class SlbBaseActivity extends AppCompatActivity implements Swipe
 //            iterator.next().finish();
 //        }
 
-        BaseAppManager.getInstance().clear();
-        Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity");
-        startActivity(intent);
+        Intent homeIntent = new Intent(Intent.ACTION_MAIN, null);
+        homeIntent.addCategory(Intent.CATEGORY_HOME);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+        startActivity(homeIntent);
         finish();
+        //
+        while(!BaseAppManager.getInstance().getAll().isEmpty()) {
+            BaseAppManager.getInstance().top().finish();
+        }
+        BaseAppManager.getInstance().clear();
+//        Intent intent = new Intent(AppUtils.getAppPackageName() + ".hs.act.slbapp.ShouyeActivity");
+//        startActivity(intent);
+//        finish();
 
-//        Application app = BaseApp.get();
-//        if (app instanceof AndroidApplication) {
-//            ((AndroidApplication) app).onHomePressed();
-//        }
+        Application app = BaseApp.get();
+        if (app instanceof AndroidApplication) {
+            ((AndroidApplication) app).onHomePressed();
+        }
     }
 
     /**

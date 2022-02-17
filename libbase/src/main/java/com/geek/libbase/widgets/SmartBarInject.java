@@ -5,6 +5,7 @@ import android.widget.FrameLayout;
 
 import com.geek.libbase.R;
 
+//    SmartBarInject.inject(this).show(SmartBar.HOME | SmartBar.BACK);
 public class SmartBarInject {
 
     protected SmartBar mSmartBar;

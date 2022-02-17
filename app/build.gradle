@@ -49,8 +49,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':libgeek')
-//    implementation 'com.github.GeekCodesTeam.geeklibs:libgeek:3.4.1'
+//    implementation project(':libgeek')
+    implementation 'com.github.GeekCodesTeam.geeklibs:libgeek:3.4.2'
 
 }
 
