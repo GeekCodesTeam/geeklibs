@@ -20,6 +20,7 @@ import com.geek.tablayout.SlidingTabActivity;
 import com.geek.tablayout.TablayoutAct;
 import com.just.agentweb.geek.activity.AgentwebAct;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
+import com.just.agentweb.geek.hois3.HIOSAct1;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
@@ -89,7 +90,7 @@ public class MainActivity extends SlbBaseActivity {
             public void onClick(View v) {
 //                startActivity(new Intent(MainActivity.this, DemoUpdateAppMainActivity.class));
 //                startActivity(new Intent(MainActivity.this, SlideAct1.class));
-                startActivity(new Intent(MainActivity.this, AgentwebAct.class));
+                startActivity(new Intent(MainActivity.this, HIOSAct1.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://t-nv-app.xczx-jn.com/#/dashboard");//
@@ -104,7 +105,7 @@ public class MainActivity extends SlbBaseActivity {
 //                intent.putExtra(AgentWebFragment.URL_KEY, "http://t-nv-app.xczx-jn.com/#/dashboard");
                 intent.putExtra(AgentWebFragment.URL_KEY, "http://v.dtdjzx.gov.cn/voice/");
                 startActivity(intent);
-//                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "dataability://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.WebActivity{act}?" + AgentWebFragment.URL_KEY + "={s}");
+//                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "dataability://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.SlideAct1{act}?" + AgentWebFragment.URL_KEY + "={s}");
 
 
             }

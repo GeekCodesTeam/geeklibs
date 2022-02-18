@@ -30,7 +30,55 @@
         <!--            android:name="com.just.agentweb.geek.activity.WebActivity"-->
         <!--            android:exported="true"-->
         <!--            android:launchMode="singleTop" />-->
+        <activity
+            android:name=".hois3.HIOSAct1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HIOSAct1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".hois3.HIOSLoginDemoAct1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.just.agentweb.geek.activity.RemoteWebViewlActivity"
             android:exported="true"
@@ -110,7 +158,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.WebActivity"
                     android:scheme="dataability" />
             </intent-filter>
@@ -121,7 +169,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.WebActivity"
                     android:scheme="http" />
             </intent-filter>
@@ -132,7 +180,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.WebActivity"
                     android:scheme="https" />
             </intent-filter>
@@ -154,7 +202,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.JsWebActivity2"
                     android:scheme="dataability" />
             </intent-filter>
@@ -165,7 +213,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.JsWebActivity2"
                     android:scheme="http" />
             </intent-filter>
@@ -176,7 +224,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.JsWebActivity2"
                     android:scheme="https" />
             </intent-filter>
@@ -198,7 +246,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.JsWebActivity3"
                     android:scheme="dataability" />
             </intent-filter>
@@ -209,7 +257,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.JsWebActivity3"
                     android:scheme="http" />
             </intent-filter>
@@ -220,7 +268,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cs.znclass.com"
+                    android:host="aic.sairobo.cn"
                     android:path="/${applicationId}.hs.act.slbapp.JsWebActivity3"
                     android:scheme="https" />
             </intent-filter>

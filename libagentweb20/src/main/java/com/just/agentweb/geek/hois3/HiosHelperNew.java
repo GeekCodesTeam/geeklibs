@@ -48,33 +48,6 @@ public class HiosHelperNew {
     }
 
     /**
-     * hios事件， 可能跳转网页，可能跳转activity，可能执行activity上的一个方法， 但这个方法的参数必须是一个Map
-     *
-     * @param activity
-     * @param aid
-     * @param url
-     */
-    public static void click(final Activity activity, final String aid, final String url) {
-        click(activity, activity, aid, url);
-    }
-
-    /**
-     * hios事件， 可能跳转网页，可能跳转activity，可能执行receiver上的一个方法， 但这个方法的参数必须是一个Map
-     *
-     * @param activity
-     * @param receiver
-     * @param aid
-     * @param url
-     */
-    public static void click(final Activity activity, final Object receiver,
-                             final String aid, final String url) {
-        if (testingShowWebView(activity, aid, url)) {
-            return;
-        }
-        shouldOverrideUrl(activity, receiver, url);
-    }
-
-    /**
      * 适用广告系统2.0版本的广告点击处理
      *
      * @param act      目标activity
@@ -83,6 +56,33 @@ public class HiosHelperNew {
      */
     public static void resolveAd(Activity act, Object receiver, String url) {
         if (!HiosHelperNew.shouldOverrideUrl(act, receiver, url)) {
+            // 打开第三方APPbufen
+            if (url.startsWith("com") || url.startsWith("cn")) {
+                if (!AppUtils.isAppInstalled(url)) {
+                    ToastUtils.showLong("未安装此应用服务");
+                    return;
+                }
+                AppUtils.launchApp(url);
+                return;
+            }
+            // 打开其他bufen
+//        if (url.startsWith("tel")) {
+            if (url.startsWith(WebView.SCHEME_TEL)
+                    || url.startsWith("sms:")
+                    || url.startsWith(WebView.SCHEME_MAILTO)
+                    || url.startsWith(WebView.SCHEME_GEO)) {
+                try {
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//            intent.setData(Uri.parse("tel:" + fguanyuBean.getPhone()));
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    act.startActivity(intent);
+                } catch (SecurityException e) {
+                    e.printStackTrace();
+                }
+                return;
+            }
+            // 跳转到是否登录验证的H5bufen
             Intent it = new Intent(webAction);
             it.putExtra(AgentWebFragment.URL_KEY, url);
             // TODO old
@@ -111,41 +111,6 @@ public class HiosHelperNew {
                 Log.e("Activity", "No Activity found to handle intent " + it);
             }
         }
-        // 打开第三方APPbufen
-        if (url.startsWith("com") || url.startsWith("cn")) {
-            if (!AppUtils.isAppInstalled(url)) {
-                ToastUtils.showLong("未安装此应用服务");
-                return;
-            }
-            AppUtils.launchApp(url);
-        }
-        // 打开其他bufen
-//        if (url.startsWith("tel")) {
-        if (url.startsWith(WebView.SCHEME_TEL)
-                || url.startsWith("sms:")
-                || url.startsWith(WebView.SCHEME_MAILTO)
-                || url.startsWith(WebView.SCHEME_GEO)) {
-            try {
-//                Intent intent = new Intent(Intent.ACTION_DIAL);
-//            intent.setData(Uri.parse("tel:" + fguanyuBean.getPhone()));
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                act.startActivity(intent);
-            } catch (SecurityException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    /**
-     * 是否拦截网页，如果拦截了， 这里会默认处理，调用者无需处理
-     *
-     * @param activity
-     * @param url
-     * @return true 拦截， false 不拦截
-     */
-    public static boolean shouldOverrideUrl(final Activity activity, final String url) {
-        return shouldOverrideUrl(activity, activity, url);
     }
 
     /**
@@ -159,14 +124,14 @@ public class HiosHelperNew {
                                             final Object receiver, final String url) {
         Uri uri = Uri.parse(url);
         if (!checkUriHost(uri)) {
-            // 处理http(s)验证登录跳转bufen
-            String host = uri.getHost();
-            if (!TextUtils.isEmpty(host)) {
-                Intent intent = new Intent(host);
-                Intent it = new Intent(webAction);
-                it.putExtra(AgentWebFragment.URL_KEY, url);
-                activity(activity, uri, intent);
-            }
+//            // 处理http(s)验证登录跳转bufen
+//            String host = uri.getHost();
+//            if (!TextUtils.isEmpty(host)) {
+//                Intent intent = new Intent(host);
+//                Intent it = new Intent(webAction);
+//                it.putExtra(AgentWebFragment.URL_KEY, url);
+//                activity(activity, uri, intent);
+//            }
             return false;
         }
 
@@ -197,6 +162,7 @@ public class HiosHelperNew {
             // when host is class name
             if (host.startsWith(".")) {
                 host = getApp().getPackageName() + host;
+                host = host.replace(FLAG_ACTION, "");
             }
 
             activity(activity, uri, host);
@@ -205,29 +171,6 @@ public class HiosHelperNew {
         return true;
     }
 
-    private static Application sInstance;
-
-    private static Application getApp() {
-        if (sInstance == null) {
-            Application app = null;
-            try {
-                app = (Application) Class.forName("android.app.AppGlobals").getMethod("getInitialApplication").invoke(null);
-                if (app == null) {
-                    throw new IllegalStateException("Static initialization of Applications must be on main thread.");
-                }
-            } catch (final Exception e) {
-                try {
-                    app = (Application) Class.forName("android.app.ActivityThread").getMethod("currentApplication").invoke(null);
-                } catch (final Exception ex) {
-                    e.printStackTrace();
-                }
-            } finally {
-                sInstance = app;
-            }
-        }
-
-        return sInstance;
-    }
 
     /**
      * 测试数据是否可以跳转webview， 如果可以直接跳转webview
@@ -284,21 +227,20 @@ public class HiosHelperNew {
 
         if (!conditions.isEmpty()) {
             if (conditions.contains(UriHelperNew.CONDITION_LOGIN)) {
-//                SlbLoginUtil2.get().loginTowhere(activity, new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        methodInvoker(receiver, host, map);
-//                    }
-//                });
-
+                SlbLoginUtil.get().loginTowhere(activity, new Runnable() {
+                    @Override
+                    public void run() {
+                        methodInvoker(receiver, host, map);
+                    }
+                });
                 return;
             }
 
             if (conditions.contains(UriHelperNew.CONDITION_OR_LOGIN)) {
-//                if (!SlbLoginUtil2.get().isUserLogin()) {
-//                    SlbLoginUtil2.get().login(activity);
-//                    return;
-//                }
+                if (!SlbLoginUtil.get().isUserLogin()) {
+                    SlbLoginUtil.get().login(activity);
+                    return;
+                }
             }
         }
 
@@ -368,4 +310,30 @@ public class HiosHelperNew {
 
         activity.startActivity(intent);
     }
+
+
+    private static Application sInstance;
+
+    private static Application getApp() {
+        if (sInstance == null) {
+            Application app = null;
+            try {
+                app = (Application) Class.forName("android.app.AppGlobals").getMethod("getInitialApplication").invoke(null);
+                if (app == null) {
+                    throw new IllegalStateException("Static initialization of Applications must be on main thread.");
+                }
+            } catch (final Exception e) {
+                try {
+                    app = (Application) Class.forName("android.app.ActivityThread").getMethod("currentApplication").invoke(null);
+                } catch (final Exception ex) {
+                    e.printStackTrace();
+                }
+            } finally {
+                sInstance = app;
+            }
+        }
+
+        return sInstance;
+    }
+
 }
