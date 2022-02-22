@@ -39,6 +39,8 @@
 //}
 
 // 8.0
+apply plugin: 'maven-publish'
+
 subprojects {
     apply plugin: 'maven-publish'
 
