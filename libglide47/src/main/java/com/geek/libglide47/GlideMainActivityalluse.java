@@ -118,6 +118,8 @@ public class GlideMainActivityalluse extends AppCompatActivity {
             requestOptions.diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true);
         }
 
+
+
         // 第一种方式加载
         image41.load(image41SmallUrl, requestOptions).listener(new OnGlideImageViewListener() {
             @Override

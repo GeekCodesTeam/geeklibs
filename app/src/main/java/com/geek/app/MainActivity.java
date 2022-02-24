@@ -1,40 +1,32 @@
 package com.geek.app;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 import android.content.Intent;
-import android.content.res.Resources;
+import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.blankj.utilcode.util.SPUtils;
-import com.example.slbyanzheng.ZhiwenActtivity;
-import com.example.slbyanzheng.slide.SlideAct1;
+import com.bumptech.glide.Glide;
 import com.geek.libbase.base.SlbBaseActivity;
-import com.geek.libbase.fenlei.FenleiAct;
-import com.geek.libbase.splshact.SplshActDemo;
-import com.geek.libutils.app.MyLogUtil;
-import com.geek.tablayout.SlidingTabActivity;
-import com.geek.tablayout.TablayoutAct;
-import com.just.agentweb.geek.activity.AgentwebAct;
+import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
 import com.just.agentweb.geek.hois3.HIOSAct1;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
-import com.lib.lock.fingerprint.core.MyListener;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
 import com.lib.lock.gesture.content.SPManager;
-import com.lxj.xpopup.XPopup;
-import com.lxj.xpopup.interfaces.OnInputConfirmListener;
 import com.pgyer.pgyersdk.PgyerSDKManager;
-
-import xyz.doikki.dkplayer.activity.DKMainActivity;
 
 
 public class MainActivity extends SlbBaseActivity {
 
     private TextView tv2;
+    private ImageView iv1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +77,12 @@ public class MainActivity extends SlbBaseActivity {
         HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page3");
         PgyerSDKManager.checkSoftwareUpdate(this);
         tv2 = findViewById(R.id.tv2);
+        iv1 = findViewById(R.id.iv1);
+        Glide.with(this).as(PictureDrawable.class)
+                .transition(withCrossFade())
+                .listener(new SvgSoftwareLayerSetter())
+                .load("http://www.clker.com/cliparts/u/Z/2/b/a/6/android-toy-h.svg").into(iv1);
+//                .load("https://s2.51cto.com//wyfs02/M01/89/BA/wKioL1ga-u7QnnVnAAAfrCiGnBQ946_middle.jpg").into(iv1);
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

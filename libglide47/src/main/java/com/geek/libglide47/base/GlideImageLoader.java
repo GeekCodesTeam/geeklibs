@@ -1,7 +1,10 @@
 package com.geek.libglide47.base;
 
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.PictureDrawable;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
@@ -19,9 +22,11 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.geek.libglide47.R;
 import com.geek.libglide47.base.progress.OnGlideImageViewListener;
 import com.geek.libglide47.base.progress.OnProgressListener;
 import com.geek.libglide47.base.progress.ProgressManager;
+import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
 import com.geek.libglide47.base.transformation.GlideCircleTransformation;
 
 
@@ -105,6 +110,24 @@ public class GlideImageLoader {
         }
         requestBuilder(url, options).into(getImageView());
     }
+
+//    public RequestBuilder<PictureDrawable> requestBuilder = Glide.with(getContext())
+//            .as(PictureDrawable.class)
+////            .placeholder(R.drawable.image_loading)
+////            .error(R.drawable.image_error)
+//            .transition(withCrossFade())
+//            .listener(new SvgSoftwareLayerSetter());
+
+    // 加载本地图片
+//Glide.with(context).load(R.drawable.gif).into(view);
+//Glide.with(context).load("file:///android_asset/Spinner.svg").into(view);
+//Glide.with(context).load(R.drawable.webp).into(view);
+//// 加载网络图片
+//Glide.with(context).asGif().load("http://xxx.xxx.xxx.gif").into(view);
+//Glide.with(context).as(PictureDrawable.class)
+//                    .listener(new SvgSoftwareLayerSetter())
+//            .load("http://www.clker.com/cliparts/u/Z/2/b/a/6/android-toy-h.svg").into(view);
+//Glide.with(context).load("http://xxx.xxx.xxx.webp").into(view);
 
     public RequestBuilder<Drawable> requestBuilder(Object obj, RequestOptions options) {
         this.mImageUrlObj = obj;
