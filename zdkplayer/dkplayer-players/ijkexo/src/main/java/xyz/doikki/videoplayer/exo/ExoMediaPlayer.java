@@ -75,7 +75,7 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
         }
 
         mInternalPlayer.addListener(this);
-        mInternalPlayer.addVideoListener(this);
+//        mInternalPlayer.addVideoListener(this);
     }
 
     public void setTrackSelector(TrackSelector trackSelector) {
@@ -181,7 +181,7 @@ public class ExoMediaPlayer extends AbstractPlayer implements Player.Listener, M
     public void release() {
         if (mInternalPlayer != null) {
             mInternalPlayer.removeListener(this);
-            mInternalPlayer.removeVideoListener(this);
+//            mInternalPlayer.removeVideoListener(this);
             mInternalPlayer.release();
             mInternalPlayer = null;
         }
