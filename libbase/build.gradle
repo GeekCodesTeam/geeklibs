@@ -29,5 +29,6 @@ dependencies {
     api project(':librararyforfileprovdider')
     api project(':liblanguage')
     api project(':libtablayout')
+    api project(':libopendroid')
 
 }

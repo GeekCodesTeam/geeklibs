@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.geek.app">
+    package="com.geek.app"
+    >
+<!--    android:sharedUserId="android.uid.system"-->
 
     <queries>
         <package android:name="com.tencent.mm" />
@@ -13,6 +15,18 @@
         tools:ignore="ProtectedPermissions" />
     <!-- 用户手机设置中允许未知来源安装包安装状态为关；-->
     <!-- Android8.0 以后，如果要安装 apk 需要额外添加权限：-->
+    <uses-permission
+        android:name="android.permission.REBOOT"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.SHUTDOWN"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.DEVICE_POWER"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECOVERY"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <!-- Required  一些系统要求的权限，如访问网络等-->
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
@@ -75,6 +89,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity3"/>
 
         <meta-data
             android:name="design_width_in_dp"

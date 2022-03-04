@@ -2,9 +2,11 @@ package com.geek.app;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,9 +16,9 @@ import androidx.annotation.Nullable;
 import com.blankj.utilcode.util.AppUtils;
 import com.bumptech.glide.Glide;
 import com.geek.libbase.base.SlbBaseActivity;
+import com.geek.libglide47.base.progress.GlideApp;
 import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
-import com.just.agentweb.geek.hois3.HIOSAct1;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
 import com.lib.lock.gesture.content.SPManager;
@@ -78,7 +80,7 @@ public class MainActivity extends SlbBaseActivity {
         PgyerSDKManager.checkSoftwareUpdate(this);
         tv2 = findViewById(R.id.tv2);
         iv1 = findViewById(R.id.iv1);
-        Glide.with(this).as(PictureDrawable.class)
+        GlideApp.with(this).as(PictureDrawable.class)
                 .transition(withCrossFade())
                 .listener(new SvgSoftwareLayerSetter())
                 .load("http://www.clker.com/cliparts/u/Z/2/b/a/6/android-toy-h.svg").into(iv1);
@@ -88,11 +90,25 @@ public class MainActivity extends SlbBaseActivity {
             public void onClick(View v) {
 //                startActivity(new Intent(MainActivity.this, DemoUpdateAppMainActivity.class));
 //                startActivity(new Intent(MainActivity.this, SlideAct1.class));
-                startActivity(new Intent(MainActivity.this, HIOSAct1.class));
+//                startActivity(new Intent(MainActivity.this, HIOSAct1.class));
+                startActivity(new Intent(MainActivity.this, MainActivity3.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://t-nv-app.xczx-jn.com/#/dashboard");//
-
+                try {
+//                    Log.v(TAG, "root Runtime->reboot");
+                    Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot "});  //关机
+                    proc.waitFor();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+//                Intent intent2 = new Intent(Intent.ACTION_REBOOT);
+//                intent2.putExtra("nowait", 1);
+//                intent2.putExtra("interval", 1);
+//                intent2.putExtra("window", 0);
+//                sendBroadcast(intent2);
+//                PowerManager pManager=(PowerManager) getSystemService(Context.POWER_SERVICE);
+//                pManager.reboot(null);//重启
             }
         });
         tv2.setOnClickListener(new View.OnClickListener() {

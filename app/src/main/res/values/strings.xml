@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">app</string>
+    <string name="scaleType">Click to cycle scale type (current: %1$s)</string>
 </resources>
