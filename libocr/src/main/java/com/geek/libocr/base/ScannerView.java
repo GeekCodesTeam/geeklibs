@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 
 import com.geek.libocr.bankcard.BankCardUtils;
 import com.geek.libocr.idcard.IdCardUtils;
+import com.geek.libocr.licenseplate.LicensePlateUtils;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
@@ -249,28 +250,28 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
                 }
             }
             if (enableLicensePlate && result == null) {
-//                try {
-//                    String s = LicensePlateUtils.recognize(tempData, width, height, getLicensePlateId());
-//                    if (!TextUtils.isEmpty(s)) {
-//                        result = new Result();
-//                        result.type = Result.TYPE_LICENSE_PLATE;
-//                        result.data = s;
-//                    }
-//                } catch (Exception e) {
-//                    Log.e(TAG, e.getMessage());
-//                }
-//                if (result == null && isRotateDegree90Recognition) {
-//                    try {
-//                        String s = LicensePlateUtils.recognize(tempData2, width2, height2, getLicensePlateId());
-//                        if (!TextUtils.isEmpty(s)) {
-//                            result = new Result();
-//                            result.type = Result.TYPE_LICENSE_PLATE;
-//                            result.data = s;
-//                        }
-//                    } catch (Exception e) {
-//                        Log.e(TAG, e.getMessage());
-//                    }
-//                }
+                try {
+                    String s = LicensePlateUtils.recognize(tempData, width, height, getLicensePlateId());
+                    if (!TextUtils.isEmpty(s)) {
+                        result = new Result();
+                        result.type = Result.TYPE_LICENSE_PLATE;
+                        result.data = s;
+                    }
+                } catch (Exception e) {
+                    Log.e(TAG, e.getMessage());
+                }
+                if (result == null && isRotateDegree90Recognition) {
+                    try {
+                        String s = LicensePlateUtils.recognize(tempData2, width2, height2, getLicensePlateId());
+                        if (!TextUtils.isEmpty(s)) {
+                            result = new Result();
+                            result.type = Result.TYPE_LICENSE_PLATE;
+                            result.data = s;
+                        }
+                    } catch (Exception e) {
+                        Log.e(TAG, e.getMessage());
+                    }
+                }
             }
 //            if (enableIdCard2 && result == null) {
 //                try {
@@ -738,8 +739,9 @@ public class ScannerView extends FrameLayout implements Camera.PreviewCallback, 
      * 初始化车牌识别
      */
     private synchronized long getLicensePlateId() {
-//        if (licensePlateId == 0) licensePlateId = LicensePlateUtils.initRecognizer(getContext());
-//        return licensePlateId;
+        if (licensePlateId == 0) {
+            licensePlateId = LicensePlateUtils.initRecognizer(getContext());
+        }
         return licensePlateId;
     }
 

@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import com.geek.libocr.bankcard.BankCardInfoBean;
 import com.geek.libocr.bankcard.BankCardUtils;
 import com.geek.libocr.idcard.IdCardUtils;
+import com.geek.libocr.licenseplate.LicensePlateUtils;
 import com.geek.libocr.nsfw.NsfwUtils;
 import com.geek.libocr.text.TextRecognition;
 import com.google.zxing.BarcodeFormat;
@@ -263,13 +264,16 @@ public class ScannerUtils {
      * @throws Exception
      */
     public static String decodeLicensePlate(Context context, Bitmap bmp) throws Exception {
-//        if (bmp == null) return null;
-//        long id = LicensePlateUtils.initRecognizer(context);
-//        String s = LicensePlateUtils.recognizeBmp(bmp, id);
-//        LicensePlateUtils.releaseRecognizer(id);
-//        if (TextUtils.isEmpty(s)) return null;
-//        return s;
-        return "s";
+        if (bmp == null) {
+            return null;
+        }
+        long id = LicensePlateUtils.initRecognizer(context);
+        String s = LicensePlateUtils.recognizeBmp(bmp, id);
+        LicensePlateUtils.releaseRecognizer(id);
+        if (TextUtils.isEmpty(s)) {
+            return null;
+        }
+        return s;
     }
 
     /**
