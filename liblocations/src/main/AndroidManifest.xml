@@ -37,7 +37,7 @@
         <!--            android:value="5a17ab9cc5aa0d74e090c37f3ecd5a15" />-->
         <activity
             android:name=".LocActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.LocActivity" />
                 <category android:name="android.intent.category.DEFAULT" />

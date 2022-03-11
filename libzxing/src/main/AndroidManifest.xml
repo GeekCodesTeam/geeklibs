@@ -39,6 +39,24 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Saoma3CommonScanActivity4"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.Saoma3CommonScanActivity4" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".idcard.ScannerActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.ScannerActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Saoma3CommonScanActivity2"
             android:exported="true"
             android:screenOrientation="portrait">

@@ -2,11 +2,9 @@ package com.geek.app;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.bumptech.glide.Glide;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libglide47.base.progress.GlideApp;
 import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
+import com.geek.libocr.ScanAct1;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
@@ -91,7 +89,7 @@ public class MainActivity extends SlbBaseActivity {
 //                startActivity(new Intent(MainActivity.this, DemoUpdateAppMainActivity.class));
 //                startActivity(new Intent(MainActivity.this, SlideAct1.class));
 //                startActivity(new Intent(MainActivity.this, HIOSAct1.class));
-                startActivity(new Intent(MainActivity.this, MainActivity3.class));
+                startActivity(new Intent(MainActivity.this, ScanAct1.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://t-nv-app.xczx-jn.com/#/dashboard");//

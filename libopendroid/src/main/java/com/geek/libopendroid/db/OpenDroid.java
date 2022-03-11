@@ -64,7 +64,7 @@ public class OpenDroid {
 	/**
 	 * 为数据库升级转储数据提供的
 	 * @param db 从SqliteOpenHelper.onCreate()传过来的db
-	 * @see {@link CreateDB.onCreate}
+	 * @see {@link CreateDB.1onCreate}
 	 * @return
 	 */
 	protected long save(SQLiteDatabase db) {
@@ -91,7 +91,7 @@ public class OpenDroid {
 			generateData(klass, cv);
 
 			if(ids.length == 0) {
-				return update(klass, cv, null, null);
+				return update(klass, cv, null, (String) null);
 			}
 
 			StringBuilder builder = new StringBuilder("_id in (");
@@ -155,7 +155,7 @@ public class OpenDroid {
 	 */
 	public static <T extends OpenDroid> int delete(Class<T> klass, int... ids) {
 		if(ids.length == 0) {
-			return delete(klass, null, null);
+			return delete(klass, null, (String) null);
 		}
 
 		StringBuilder builder = new StringBuilder("_id in (");
@@ -180,7 +180,7 @@ public class OpenDroid {
 
 	/**
 	 * 生成数据
-	 * @param tableName 要获取的表名
+	 * @paramtableName 要获取的表名
 	 * @param values 要获取的数据
 	 * @throws NoSuchMethodException
 	 * @throws IllegalAccessException
