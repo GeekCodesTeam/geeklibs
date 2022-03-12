@@ -27,6 +27,7 @@ import com.geek.libocr.base.Callback;
 import com.geek.libocr.base.IViewFinder;
 import com.geek.libocr.base.Result;
 import com.geek.libocr.base.ScannerView;
+import com.google.gson.Gson;
 
 import cc.shinichi.library.tool.image.DownloadPictureUtil;
 
@@ -58,9 +59,20 @@ public class ScannerAct2 extends AppCompatActivity {
         scannerView.setCallback(new Callback() {
             @Override
             public void result(Result result) {
-                tvResult.setText("识别结果：\n" + result.toString());
+                tvResult.setText("识别结果：\n" + result.data);
+                Gson gson = new Gson();
+                cardIDBean = gson.fromJson(result.data, CardIDBean.class);
+                cardIDBean.setData(result.data);
+                cardIDBean.setUrl(result.path);
+                Log.e("aaaaaa", "result: " + cardIDBean.getCardNumber());
+                Log.e("aaaaaa", "result: " + cardIDBean.getName());
+                Log.e("aaaaaa", "result: " + cardIDBean.getNation());
+                Log.e("aaaaaa", "result: " + cardIDBean.getSex());
+                Log.e("aaaaaa", "result: " + cardIDBean.getBirth());
+                Log.e("aaaaaa", "result: " + cardIDBean.getAddress());
+                Log.e("aaaaaa", "result: " + cardIDBean.getData());
+                Log.e("aaaaaa", "result: " + cardIDBean.getUrl());
                 startVibrator();
-                Log.e("aaaaaa", "result: " + result.path);
                 cardIDBean.setData(result.data);
                 cardIDBean.setUrl(result.path);
                 DownloadPictureUtil.downloadPicture(getApplicationContext(), result.path);
