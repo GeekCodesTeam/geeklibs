@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ScannerAct2" />
+        <activity
+            android:name=".ScannerAct2"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

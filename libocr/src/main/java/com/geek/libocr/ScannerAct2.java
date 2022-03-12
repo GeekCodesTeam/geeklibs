@@ -9,8 +9,10 @@ import android.graphics.Rect;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,11 +20,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.bumptech.glide.Glide;
+import com.geek.libocr.CardIDBean;
+import com.geek.libocr.R;
 import com.geek.libocr.base.Callback;
 import com.geek.libocr.base.IViewFinder;
 import com.geek.libocr.base.Result;
 import com.geek.libocr.base.ScannerView;
 
+import cc.shinichi.library.tool.image.DownloadPictureUtil;
 
 public class ScannerAct2 extends AppCompatActivity {
 
@@ -30,9 +36,10 @@ public class ScannerAct2 extends AppCompatActivity {
     private TextView tvResult;
     private LinearLayout llQrcode;
     private LinearLayout llBarcode;
-
+    private ImageView imageview;
     private Vibrator vibrator;
     private int flag;
+    private CardIDBean cardIDBean;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,17 +47,25 @@ public class ScannerAct2 extends AppCompatActivity {
         setContentView(R.layout.activity_scanner1);
         scannerView = findViewById(R.id.sv);
         tvResult = findViewById(R.id.tv_result);
+        imageview = findViewById(R.id.imageview);
         llQrcode = findViewById(R.id.ll_qrcode);
         llBarcode = findViewById(R.id.ll_barcode);
         scannerView.setShouldAdjustFocusArea(true);
         scannerView.setViewFinder(new ViewFinder(this));
-        scannerView.setSaveBmp(false);
+        scannerView.setSaveBmp(true);
         scannerView.setRotateDegree90Recognition(true);
+        cardIDBean = new CardIDBean();
         scannerView.setCallback(new Callback() {
             @Override
             public void result(Result result) {
                 tvResult.setText("识别结果：\n" + result.toString());
                 startVibrator();
+                Log.e("aaaaaa", "result: " + result.path);
+                cardIDBean.setData(result.data);
+                cardIDBean.setUrl(result.path);
+                DownloadPictureUtil.downloadPicture(getApplicationContext(), result.path);
+                Glide.with(ScannerAct2.this).load(result.path).into(imageview);
+//                imageview.loadImage(result.path, com.luck.pictureselector.R.drawable.ic_add_image);
                 scannerView.restartPreviewAfterDelay(2000);
             }
         });

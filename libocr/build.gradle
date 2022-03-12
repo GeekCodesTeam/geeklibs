@@ -6,4 +6,6 @@ dependencies {
     api project(':libutils')
     api librarys.zxing
     api 'org.tensorflow:tensorflow-lite:1.14.0'
+    // https://github.com/SherlockGougou/BigImageViewPager
+    api 'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6'
 }
