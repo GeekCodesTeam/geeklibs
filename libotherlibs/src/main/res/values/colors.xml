@@ -210,4 +210,7 @@
     <color name="holo_orange_light">#ffffbb33</color>
     <color name="holo_red_light">#ffff4444</color>
 
+    <color name="line">#e6e6e6</color>
+
+
 </resources>
