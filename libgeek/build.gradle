@@ -27,7 +27,5 @@ dependencies {
     api project(':zdkplayer:dkplayer')
     api project(':libcitypicker')
     api project(':liblocations')
-    // 保护版权使用aar引入，源码不公开
     api project(':libocr')
-
 }
