@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ import com.geek.libglide47.base.progress.GlideApp;
 import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
 import com.geek.libocr.ScanAct1;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo10baseadpterhelp.VRSwipeActivity;
+import com.just.agentweb.geek.activity.AgentwebAct;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
@@ -87,21 +90,30 @@ public class MainActivity extends SlbBaseActivity {
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //
+//                Animation animation = new RotateAnimation(0,180f,
+//                        Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+//                animation.setDuration(1000);
+////                animation.setRepeatCount(8);//动画的反复次数
+//                animation.setFillAfter(true);//设置为true，动画转化结束后被应用
+//                iv1.startAnimation(animation);//開始动画
+                //
+
 //                startActivity(new Intent(MainActivity.this, DemoUpdateAppMainActivity.class));
 //                startActivity(new Intent(MainActivity.this, SlideAct1.class));
 //                startActivity(new Intent(MainActivity.this, HIOSAct1.class));
 //                startActivity(new Intent(MainActivity.this, ScanAct1.class));
-                startActivity(new Intent(MainActivity.this, VRSwipeActivity.class));
+                startActivity(new Intent(MainActivity.this, AgentwebAct.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://t-nv-app.xczx-jn.com/#/dashboard");//
-                try {
-//                    Log.v(TAG, "root Runtime->reboot");
-                    Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot "});  //关机
-                    proc.waitFor();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+//                try {
+////                    Log.v(TAG, "root Runtime->reboot");
+//                    Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot "});  //关机
+//                    proc.waitFor();
+//                } catch (Exception ex) {
+//                    ex.printStackTrace();
+//                }
 //                Intent intent2 = new Intent(Intent.ACTION_REBOOT);
 //                intent2.putExtra("nowait", 1);
 //                intent2.putExtra("interval", 1);
@@ -115,12 +127,17 @@ public class MainActivity extends SlbBaseActivity {
             @Override
             public void onClick(View v) {
 //                startActivity(new Intent(MainActivity.this, TablayoutAct.class));
-                Intent intent = new Intent(AppUtils.getAppPackageName() + ".web.page3.js3");
-//                intent.putExtra(AgentWebFragment.URL_KEY, "http://t-nv-app.xczx-jn.com/#/dashboard");
-                intent.putExtra(AgentWebFragment.URL_KEY, "http://v.dtdjzx.gov.cn/voice/");
-                startActivity(intent);
+//                Intent intent = new Intent(AppUtils.getAppPackageName() + ".web.page3.js3");
+////                intent.putExtra(AgentWebFragment.URL_KEY, "http://t-nv-app.xczx-jn.com/#/dashboard");
+//                intent.putExtra(AgentWebFragment.URL_KEY, "http://v.dtdjzx.gov.cn/voice/");
+//                startActivity(intent);
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "dataability://" + AppUtils.getAppPackageName() + ".hs.act.slbapp.SlideAct1{act}?" + AgentWebFragment.URL_KEY + "={s}");
-
+                Animation animation = new RotateAnimation(180f,0f,
+                        Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+                animation.setDuration(1000);
+//                animation.setRepeatCount(8);//动画的反复次数
+                animation.setFillAfter(true);//设置为true，动画转化结束后被应用
+                iv1.startAnimation(animation);//開始动画
 
             }
         });
