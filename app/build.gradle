@@ -1,7 +1,12 @@
 apply plugin: 'com.android.application'
 def librarys = rootProject.ext.dependencies //
 android {
-
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
     packagingOptions {
         pickFirst 'lib/armeabi/libRSSupport.so'
         pickFirst 'lib/armeabi/librsjni_androidx.so'
@@ -31,7 +36,7 @@ android {
         versionName "1.0"
         renderscriptTargetApi 19
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a'
+            abiFilters /*'armeabi-v7a', */ 'arm64-v8a'
         }
     }
 
