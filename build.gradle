@@ -49,6 +49,10 @@ buildscript {
         //jitpack
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // Add this line
     }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
 }
 
 allprojects {
@@ -84,15 +88,15 @@ allprojects {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
 //        }
-        configurations.all {
-            resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-        }
-
 //        flatDir {
 //            dirs project(':libsCenter').file('./')
 //            dirs project(':biz-libs').file('./')
 //        }
     }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
 }
 
 task clean(type: Delete) {
