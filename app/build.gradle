@@ -51,7 +51,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':libgeek')
 //    implementation 'com.geek:libmvp:0.0.7'
-//    implementation 'com.github.GeekCodesTeam.geeklibs:libgeek:3.5.7'
+//    implementation 'com.github.GeekCodesTeam.geeklibs:libgeek:3.6.5'
 
 }
 

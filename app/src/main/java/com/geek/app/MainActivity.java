@@ -15,12 +15,9 @@ import com.blankj.utilcode.util.AppUtils;
 import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libglide47.base.progress.GlideApp;
 import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
-import com.geek.libocr.ScanAct1;
 import com.haier.cellarette.baselibrary.recycleviewalluses.demo10baseadpterhelp.VRSwipeActivity;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
-import com.lib.lock.fingerprint.utils.FingerprintUtil;
-import com.lib.lock.gesture.content.SPManager;
 import com.pgyer.pgyersdk.PgyerSDKManager;
 
 
@@ -125,12 +122,12 @@ public class MainActivity extends SlbBaseActivity {
             }
         });
         //
-        if (FingerprintUtil.supportAndSysOpenedFingerPrint() &&
-                SPManager.getInstance().getHasFingerPrint()) {
-            tv2.setText("验证指纹密码");
-        } else {
-            tv2.setText("开启指纹密码");
-        }
+//        if (FingerprintUtil.supportAndSysOpenedFingerPrint() &&
+//                SPManager.getInstance().getHasFingerPrint()) {
+//            tv2.setText("验证指纹密码");
+//        } else {
+//            tv2.setText("开启指纹密码");
+//        }
 //        getWindow().getDecorView().postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
