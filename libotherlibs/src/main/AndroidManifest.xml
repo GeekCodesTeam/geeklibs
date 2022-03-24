@@ -400,6 +400,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".recycleviewalluses.demo10baseadpterhelp.VRSwipeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.com.BaseRecActDemo1010.act" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".zuni.DemoZuniScrollViewActivity"
             android:exported="true">
             <intent-filter>

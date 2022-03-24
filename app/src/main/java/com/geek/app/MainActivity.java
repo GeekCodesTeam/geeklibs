@@ -16,6 +16,7 @@ import com.geek.libbase.base.SlbBaseActivity;
 import com.geek.libglide47.base.progress.GlideApp;
 import com.geek.libglide47.base.svg.SvgSoftwareLayerSetter;
 import com.geek.libocr.ScanAct1;
+import com.haier.cellarette.baselibrary.recycleviewalluses.demo10baseadpterhelp.VRSwipeActivity;
 import com.just.agentweb.geek.fragment.AgentWebFragment;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
@@ -89,7 +90,8 @@ public class MainActivity extends SlbBaseActivity {
 //                startActivity(new Intent(MainActivity.this, DemoUpdateAppMainActivity.class));
 //                startActivity(new Intent(MainActivity.this, SlideAct1.class));
 //                startActivity(new Intent(MainActivity.this, HIOSAct1.class));
-                startActivity(new Intent(MainActivity.this, ScanAct1.class));
+//                startActivity(new Intent(MainActivity.this, ScanAct1.class));
+                startActivity(new Intent(MainActivity.this, VRSwipeActivity.class));
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/?condition=login");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://www.baidu.com/");
 //                HiosHelperNew.resolveAd(MainActivity.this, MainActivity.this, "http://t-nv-app.xczx-jn.com/#/dashboard");//
