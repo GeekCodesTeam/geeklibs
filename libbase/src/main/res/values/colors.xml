@@ -179,7 +179,7 @@
     <color name="gray4A4A4A">#4A4A4A</color>
     <color name="color4DA3FE">#4DA3FE</color>
     <color name="blue519AF4">#519AF4</color>
-    <color name="blue357CD4" >#357CD4</color>
+    <color name="blue357CD4">#357CD4</color>
     <color name="blue4591F0">#4591F0</color>
 
     <color name="androidColorA">#33B5E5</color>
@@ -218,9 +218,12 @@
     <color name="blue">#455ede</color>   <!-- 蓝色 -->
 
 
-
-
-
+    <color name="text_blue">#0076FF</color>
+    <color name="text_dark_grey">#666666</color>
+    <color name="text_dark_grey2">#333333</color>
+    <color name="blue00AAEE">#00AAEE</color>
+    <color name="colorwhiteFFFFFF">#FFFFFF</color>
+    <color name="colorFF8865">#FF8865</color>
 
 
 </resources>

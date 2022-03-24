@@ -30,11 +30,11 @@ dependencies {
     annotationProcessor librarys.annotationProcessorglide47compiler
     api 'com.caverock:androidsvg:1.2.1'
     api project(':libutils')
+    api project(':libagentweb20')
 //    api project(':libmvp')
 //    api project(':libretrofit')
 //    api project(':libswipebacklayout')
 //    api project(':libwebview')
-    api project(':libagentweb20')
 //    api project(':libglide47')
 //    api project(':librararyforfileprovdider')
 //    api project(':liblanguage')

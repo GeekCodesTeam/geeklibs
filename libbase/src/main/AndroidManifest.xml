@@ -421,5 +421,26 @@
             android:theme="@style/ImagesStyle" />
 
 
+
+        <activity
+            android:name="com.geek.libupdateapp.DemoUpdateAppMainActivity"
+            android:exported="true"
+            android:requestLegacyExternalStorage="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.ac.github.DemoUpdateAppMainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name="com.geek.libupdateapp.util.UpdateoldFileProvider"
+            android:authorities="${applicationId}.UpdateoldFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/updateold_files_public" />
+        </provider>
+
+
     </application>
 </manifest>
