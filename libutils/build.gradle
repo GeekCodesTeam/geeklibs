@@ -68,7 +68,8 @@ dependencies {
     api 'pub.devrel:easypermissions:3.0.0'
     // https://github.com/SalomonBrys/ANR-WatchDog
     api 'com.github.anrwatchdog:anrwatchdog:1.4.0'
-
+    // https://github.com/SherlockGougou/BigImageViewPager
+    api 'com.github.SherlockGougou:BigImageViewPager:androidx-6.2.1'
 //    implementation "androidx.legacy:legacy-support-v4:1.0.0"
 //    implementation "androidx.appcompat:appcompat:1.3.1"
 //    implementation "androidx.annotation:annotation:1.2.0"
