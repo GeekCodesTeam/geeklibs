@@ -10,6 +10,12 @@
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
@@ -382,15 +388,16 @@
         </activity>
 
 
-
-        <activity android:name="com.geek.libglide47.GlideMainActivity"
+        <activity
+            android:name="com.geek.libglide47.GlideMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.GlideMainActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.geek.libglide47.GlideMainActivityalluse"
+        <activity
+            android:name="com.geek.libglide47.GlideMainActivityalluse"
             android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.GlideMainActivityalluse" />
@@ -399,8 +406,8 @@
         </activity>
         <activity
             android:name="com.geek.libglide47.GlideMainActivityjiugongge"
-            android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.GlideMainActivityjiugongge" />
@@ -421,7 +428,6 @@
             android:theme="@style/ImagesStyle" />
 
 
-
         <activity
             android:name="com.geek.libupdateapp.DemoUpdateAppMainActivity"
             android:exported="true"
@@ -431,6 +437,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="com.geek.libupdateapp.util.UpdateoldFileProvider"
             android:authorities="${applicationId}.UpdateoldFileProvider"
@@ -440,6 +447,268 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/updateold_files_public" />
         </provider>
+
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.AgentwebAct"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.AgentwebAct" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--        <activity-->
+        <!--            android:name="com.just.agentweb.geek.activity.WebActivity"-->
+        <!--            android:exported="true"-->
+        <!--            android:launchMode="singleTop" />-->
+        <activity
+            android:name="com.just.agentweb.geek.hois3.HIOSAct1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HIOSAct1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.just.agentweb.geek.hois3.HIOSLoginDemoAct1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.HIOSLoginDemoAct1"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.just.agentweb.geek.activity.RemoteWebViewlActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:process=":web" />
+
+        <service
+            android:name="com.just.agentweb.geek.service.WebService"
+            android:exported="true"
+            android:process=":web" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.CommonActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.just.agentweb.geek.activity.EasyWebActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.ContainerActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name="com.just.agentweb.geek.activity.AutoHidenToolbarActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.NativeDownloadActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="fullSensor" />
+
+        <provider
+            android:name="com.just.agentweb.geek.provider.ServiceProvider"
+            android:authorities="${applicationId}.ServiceProvider"
+            android:exported="true" />
+
+        <provider
+            android:name="com.just.agentweb.geek.provider.WebServiceProvider"
+            android:authorities="${applicationId}.WebServiceProvider"
+            android:exported="true"
+            android:process=":web" />
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.ExternalActivity"
+            android:exported="true">
+            <intent-filter>
+                <!--                <action android:name="android.intent.action.VIEW" />-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--BROWSABLE指定该Activity能被浏览器安全调用-->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="sample.just.com"
+                    android:scheme="agentweb" />
+            </intent-filter>
+        </activity>
+        <!--HIOS 3.0-->
+        <activity
+            android:name="com.just.agentweb.geek.activity.WebActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+
+            <intent-filter>
+                <action android:name="${applicationId}.web.page3" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.WebActivity"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.WebActivity"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.WebActivity"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.JsWebActivity2"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="${applicationId}.web.page3.js2" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.JsWebActivity2"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.JsWebActivity2"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.JsWebActivity2"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.just.agentweb.geek.activity.JsWebActivity3"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="${applicationId}.web.page3.js3" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.JsWebActivity3"
+                    android:scheme="dataability" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.JsWebActivity3"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="aic.sairobo.cn"
+                    android:path="/${applicationId}.hs.act.slbapp.JsWebActivity3"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+
+
+
+
 
 
     </application>

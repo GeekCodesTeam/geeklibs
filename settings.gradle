@@ -24,7 +24,7 @@ include ':libsCenterNew',
 
 // commonlibs
 include ':libgeek'
-include ':libagentweb20'
+//include ':libagentweb20'
 //include ':libmvp'
 include ':libotherlibs'
 include ':libbase'
