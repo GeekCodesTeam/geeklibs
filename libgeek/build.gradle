@@ -3,9 +3,9 @@ apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
     //
-//    api project(':libbase')
-//    api project(':libotherlibs')
-//    api project(':libutils')
+    api project(':libbase')
+    api project(':libotherlibs')
+    api project(':libutils')
 //    api project(':libmvp')
 //    api project(':libretrofit')
 //    api project(':libswipebacklayout')
