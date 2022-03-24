@@ -12,4 +12,7 @@
     <item name="home" type="id" />
     <item name="back" type="id" />
 
+    <item name="N_monthCalendar" type="id" />
+    <item name="N_weekCalendar" type="id" />
+
 </resources>
