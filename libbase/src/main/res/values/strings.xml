@@ -8,4 +8,20 @@
     <string name="view_swiped_left" translatable="false">%1$s swiped to left!</string>
     <string name="view_swiped_right" translatable="false">%1$s swiped to right!</string>
 
+    <string name="action_github" translatable="false">Github</string>
+    <string name="start_activity" translatable="false">Start new activity!</string>
+    <string name="finish_activity" translatable="false">Finish Activity</string>
+
+    <string name="key_tracking_mode" translatable="false">key_tracking_mode</string>
+    <string name="tracking_mode_left" translatable="false">Left</string>
+    <string name="tracking_mode_right" translatable="false">Right</string>
+    <string name="tracking_mode_bottom" translatable="false">Bottom</string>
+    <string name="tracking_mode_all" translatable="false">All</string>
+
+    <string name="current_language" translatable="false">跟随系统</string>
+
+    <string name="transitional_image" translatable="false">the image of transition</string>
+    <string name="image_index" translatable="false">%1$d/%2$d</string>
+
+
 </resources>

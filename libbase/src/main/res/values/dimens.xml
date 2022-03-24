@@ -3,5 +3,15 @@
     <dimen name="text_size_20">16sp</dimen>
     <dimen name="item_space">15dp</dimen>
     <dimen name="default_stack_spacing">12dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="common_margin">16dip</dimen>
+    <!-- 字体 -->
+    <dimen name="f6">16sp</dimen>
 
+    <!-- 间距 -->
+    <dimen name="d4">12dp</dimen>
+    <dimen name="d5">16dp</dimen>
+
+    <!-- 宽高 -->
 </resources>

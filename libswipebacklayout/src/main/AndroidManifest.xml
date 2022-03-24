@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.geek.swipebacklayout">
+    package="com.geek.libswipebacklayout">
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -10,7 +10,7 @@
 
         <!--        android:theme="@style/AppThemeSwipeBackLayout"-->
         <activity
-            android:name=".demo.SwipebacklayoutDemoActivity"
+            android:name="com.geek.libswipebacklayout.demo.SwipebacklayoutDemoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.SwipebacklayoutDemoActivity" />

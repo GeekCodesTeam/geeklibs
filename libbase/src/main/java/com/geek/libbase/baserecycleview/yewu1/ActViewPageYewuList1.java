@@ -9,15 +9,14 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 
-import com.blankj.utilcode.util.AppUtils;
 import com.geek.libbase.R;
 import com.geek.libbase.baserecycleview.SlbBaseActivityViewPage;
 import com.geek.libbase.baserecycleview.SlbBaseActivityViewPageTabBean1;
 import com.geek.libbase.utils.CommonUtils;
-import com.geek.swipebacklayout.SwipeBack;
+import com.geek.libswipebacklayout.SwipeBack;
 import com.geek.libutils.app.FragmentHelper;
 import com.geek.libutils.app.LocalBroadcastManagers;
-import com.haier.cellarette.libwebview.hois2.HiosHelper;
+import com.geek.libwebview.hois2.HiosHelper;
 
 import java.util.ArrayList;
 import java.util.List;

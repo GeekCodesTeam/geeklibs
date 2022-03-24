@@ -7,13 +7,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -48,13 +46,11 @@ import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.BaseApp;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.BaseViewHelper;
-import com.geek.swipebacklayout.SwipeBack;
-import com.geek.swipebacklayout.SwipeBackLayout;
-import com.geek.swipebacklayout.SwipeBackUtil;
-import com.geek.swipebacklayout.activity.SwipeBackActivityBase;
-import com.geek.swipebacklayout.activity.SwipeBackActivityHelper;
-
-import me.jessyan.autosize.AutoSizeCompat;
+import com.geek.libswipebacklayout.SwipeBack;
+import com.geek.libswipebacklayout.SwipeBackLayout;
+import com.geek.libswipebacklayout.SwipeBackUtil;
+import com.geek.libswipebacklayout.activity.SwipeBackActivityBase;
+import com.geek.libswipebacklayout.activity.SwipeBackActivityHelper;
 
 public abstract class SlbBaseActivity extends AppCompatActivity implements SwipeBackActivityBase,
         IBaseAction, NetconListener {

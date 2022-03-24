@@ -19,16 +19,26 @@ android {
 //    }
 }
 dependencies {
+    api librarys.retrofit
+    api librarys.retrofitconverters
+    api librarys.retrofitgconvertergson
+    api librarys.retrofitgconverterscalars
+    api librarys.okhttpVersion
+    api librarys.okioVersion
+    api librarys.okhttploggerinter
+    // glide47
+    annotationProcessor librarys.annotationProcessorglide47compiler
+    api 'com.caverock:androidsvg:1.2.1'
     api project(':libutils')
-    api project(':libmvp')
-    api project(':libretrofit')
-    api project(':libswipebacklayout')
-    api project(':libwebview')
+//    api project(':libmvp')
+//    api project(':libretrofit')
+//    api project(':libswipebacklayout')
+//    api project(':libwebview')
     api project(':libagentweb20')
-    api project(':libglide47')
-    api project(':librararyforfileprovdider')
-    api project(':liblanguage')
-    api project(':libtablayout')
-    api project(':libopendroid')
+//    api project(':libglide47')
+//    api project(':librararyforfileprovdider')
+//    api project(':liblanguage')
+//    api project(':libtablayout')
+//    api project(':libopendroid')
 
 }

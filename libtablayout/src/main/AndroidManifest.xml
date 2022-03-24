@@ -8,7 +8,7 @@
 <!--        android:label="@string/app_namelibtablayout"-->
 
         <activity
-            android:name=".TablayoutAct"
+            android:name="com.geek.tablayout.TablayoutAct"
             android:exported="true">
             <intent-filter>
                 <action android:name="${applicationId}.hs.act.slbapp.TablayoutAct" />
@@ -17,15 +17,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CommonTabActivity"
+            android:name="com.geek.tablayout.CommonTabActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SlidingTabActivity"
+            android:name="com.geek.tablayout.SlidingTabActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SegmentTabActivity"
+            android:name="com.geek.tablayout.SegmentTabActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>
