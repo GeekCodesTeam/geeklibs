@@ -31,10 +31,5 @@
 
     <item name="new_view" type="id"/>
 
-    <item type="id" name="web_statusbarutil_fake_status_bar_view" />
-    <item type="id" name="web_statusbarutil_translucent_view" />
-
-
-
 
 </resources>

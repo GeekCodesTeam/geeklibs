@@ -34,16 +34,17 @@ import com.geek.libbase.R;
 import com.geek.libbase.netstate.NetState;
 import com.geek.libbase.netstate.NetconListener;
 import com.geek.libbase.plugin.PluginActivity;
+import com.geek.libbase.plugins.plugins.PluginBaseActivity;
 import com.geek.libbase.widgets.IBaseAction;
 import com.geek.liblanguage.MultiLanguages;
 import com.geek.libutils.SlbLoginUtil;
 import com.geek.libutils.app.BaseAppManager;
 import com.geek.libutils.app.BaseViewHelper;
-import com.geek.libswipebacklayout.SwipeBack;
-import com.geek.libswipebacklayout.SwipeBackLayout;
-import com.geek.libswipebacklayout.SwipeBackUtil;
-import com.geek.libswipebacklayout.activity.SwipeBackActivityBase;
-import com.geek.libswipebacklayout.activity.SwipeBackActivityHelper;
+import com.geek.swipebacklayout.SwipeBack;
+import com.geek.swipebacklayout.SwipeBackLayout;
+import com.geek.swipebacklayout.SwipeBackUtil;
+import com.geek.swipebacklayout.activity.SwipeBackActivityBase;
+import com.geek.swipebacklayout.activity.SwipeBackActivityHelper;
 
 import me.jessyan.autosize.AutoSizeCompat;
 

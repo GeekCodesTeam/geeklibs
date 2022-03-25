@@ -15,11 +15,11 @@ import com.geek.libbase.baserecycleview.SlbBaseActivityViewPageTabBean1;
 import com.geek.libbase.baserecycleview.SlbBaseActivityYewuList;
 import com.geek.libbase.utils.CommonUtils;
 import com.geek.libbase.widgets.GridSpacingItemDecoration;
-import com.geek.libswipebacklayout.SwipeBack;
+import com.geek.swipebacklayout.SwipeBack;
 import com.geek.libglide47.base.util.DisplayUtil;
 import com.geek.libutils.app.LocalBroadcastManagers;
 import com.geek.libutils.app.MyLogUtil;
-import com.geek.libwebview.hois2.HiosHelper;
+import com.haier.cellarette.libwebview.hois2.HiosHelper;
 
 import java.util.ArrayList;
 import java.util.List;

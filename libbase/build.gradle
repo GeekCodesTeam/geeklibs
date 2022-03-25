@@ -19,38 +19,16 @@ android {
 //    }
 }
 dependencies {
-    api librarys.retrofit
-    api librarys.retrofitconverters
-    api librarys.retrofitgconvertergson
-    api librarys.retrofitgconverterscalars
-    api librarys.okhttpVersion
-    api librarys.okioVersion
-    api librarys.okhttploggerinter
-    // glide47
-    annotationProcessor librarys.annotationProcessorglide47compiler
-    api 'com.caverock:androidsvg:1.2.1'
-    // agentlib
-    api 'us.feras.mdv:markdownview:1.1.0'
-    api 'com.lcodecorex:tkrefreshlayout:1.0.7'
-    api 'com.github.lzyzsd:jsbridge:1.0.4'
-    api 'com.tencent.sonic:sdk:2.0.0'
-    api 'com.coolindicator.sdk:coolindicator:1.0.0-beta'
-    api 'com.github.Justson:flying-pigeon:v1.0.7'
-    api 'com.github.Justson:dispatch-queue:v1.0.5'
-    api 'com.github.Justson:Downloader:v4.1.9-androidx'
-    api 'com.github.Justson.AgentWeb:agentweb-core:v4.1.9-androidx'
-    api 'com.github.Justson.AgentWeb:agentweb-filechooser:v4.1.9-androidx'
-    //
     api project(':libutils')
-//    api project(':libagentweb20')
-//    api project(':libmvp')
-//    api project(':libretrofit')
-//    api project(':libswipebacklayout')
-//    api project(':libwebview')
-//    api project(':libglide47')
-//    api project(':librararyforfileprovdider')
-//    api project(':liblanguage')
-//    api project(':libtablayout')
-//    api project(':libopendroid')
+    api project(':libmvp')
+    api project(':libretrofit')
+    api project(':libswipebacklayout')
+    api project(':libwebview')
+    api project(':libagentweb20')
+    api project(':libglide47')
+    api project(':librararyforfileprovdider')
+    api project(':liblanguage')
+    api project(':libtablayout')
+    api project(':libopendroid')
 
 }
