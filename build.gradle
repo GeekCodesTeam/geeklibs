@@ -34,9 +34,7 @@ buildscript {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
 //        }
-        configurations.all {
-            resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.2'
@@ -84,9 +82,6 @@ allprojects {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
 //        }
-        configurations.all {
-            resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-        }
 
 //        flatDir {
 //            dirs project(':libsCenter').file('./')

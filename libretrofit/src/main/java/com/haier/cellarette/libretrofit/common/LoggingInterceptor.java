@@ -82,7 +82,7 @@ public class LoggingInterceptor implements Interceptor {
         try {
             Gson gson = new Gson();
             ResponseSlbBean responseSlbBean = gson.fromJson(rBody, ResponseSlbBean.class);
-            if (null != responseSlbBean && responseSlbBean.getCode() == 401) {
+            if (null != responseSlbBean && responseSlbBean.getCode() == 2000) {
                 set_token_out();
             }
         } catch (Exception e) {
@@ -91,7 +91,7 @@ public class LoggingInterceptor implements Interceptor {
         try {
             Gson gson = new Gson();
             ResponseSlbBean2 responseSlbBean = gson.fromJson(rBody, ResponseSlbBean2.class);
-            if (null != responseSlbBean && TextUtils.equals(responseSlbBean.getCode(), "401")) {
+            if (null != responseSlbBean && TextUtils.equals(responseSlbBean.getCode(), "2000")) {
                 set_token_out();
             }
         } catch (Exception e) {
