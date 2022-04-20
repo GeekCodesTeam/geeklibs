@@ -1,7 +1,6 @@
 package com.just.agentweb.geek.hois3;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.AppUtils;
 import com.just.agentweb.geek.R;
-import com.pgyer.pgyersdk.PgyerSDKManager;
 
 
 public class HIOSAct1 extends AppCompatActivity {
@@ -20,7 +18,7 @@ public class HIOSAct1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agenthiosact);
         HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page3");
-        PgyerSDKManager.checkSoftwareUpdate(this);
+//        PgyerSDKManager.checkSoftwareUpdate(this);
         findViewById(R.id.tv1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
