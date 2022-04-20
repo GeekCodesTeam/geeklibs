@@ -30,7 +30,7 @@ dependencies {
 //    api 'com.zzhoujay.richtext:richtext:3.0.7'
     // https://github.com/maning0303/MNProgressHUD
 //    api 'com.github.maning0303:MNProgressHUD:V1.1.8X'
-    api project(':libutils')
+    implementation project(':libutils')
     // https://github.com/drakeet/MultiType
     api 'me.drakeet.multitype:multitype:3.4.4'
     // https://github.com/jaredrummler/MaterialSpinner

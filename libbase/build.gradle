@@ -19,16 +19,16 @@ android {
 //    }
 }
 dependencies {
-    api project(':libutils')
-    api project(':libmvp')
-    api project(':libretrofit')
-    api project(':libswipebacklayout')
-    api project(':libwebview')
-    api project(':libagentweb20')
-    api project(':libglide47')
-    api project(':librararyforfileprovdider')
-    api project(':liblanguage')
-    api project(':libtablayout')
-    api project(':libopendroid')
+    implementation project(':libutils')
+    implementation project(':libmvp')
+    implementation project(':libretrofit')
+    implementation project(':libswipebacklayout')
+    implementation project(':libwebview')
+    implementation project(':libagentweb20')
+    implementation project(':libglide47')
+    implementation project(':librararyforfileprovdider')
+    implementation project(':liblanguage')
+    implementation project(':libtablayout')
+    implementation project(':libopendroid')
 
 }

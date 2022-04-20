@@ -2,7 +2,7 @@ apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
-    api project(':libutils')
+    implementation project(':libutils')
     api 'androidx.camera:camera-core:1.0.2'
     api 'androidx.camera:camera-camera2:1.0.2'
     api 'io.github.lucksiege:pictureselector:v2.7.3-rc08'
