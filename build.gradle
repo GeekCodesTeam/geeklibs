@@ -26,10 +26,10 @@ buildscript {
             url "http://maven.rongcloud.cn/repository/maven-releases/"
             allowInsecureProtocol = true
         }
-        maven {
-            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
-            allowInsecureProtocol = true
-        }
+//        maven {
+//            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+//            allowInsecureProtocol = true
+//        }
 //        maven {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true
@@ -45,7 +45,7 @@ buildscript {
         // hms
 //        classpath 'com.huawei.agconnect:agcp:1.4.1.300'
         //jitpack
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // Add this line
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1' // Add this line
     }
 }
 
@@ -74,10 +74,10 @@ allprojects {
             url "http://maven.rongcloud.cn/repository/maven-releases/"
             allowInsecureProtocol = true
         }
-        maven {
-            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
-            allowInsecureProtocol = true
-        }
+//        maven {
+//            url "https://raw.githubusercontent.com/Pgyer/analytics/master"
+//            allowInsecureProtocol = true
+//        }
 //        maven {
 //            url 'http://developer.huawei.com/repo/'
 //            allowInsecureProtocol = true

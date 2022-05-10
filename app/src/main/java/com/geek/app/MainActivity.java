@@ -21,7 +21,6 @@ import com.just.agentweb.geek.fragment.AgentWebFragment;
 import com.just.agentweb.geek.hois3.HiosHelperNew;
 import com.lib.lock.fingerprint.utils.FingerprintUtil;
 import com.lib.lock.gesture.content.SPManager;
-import com.pgyer.pgyersdk.PgyerSDKManager;
 
 
 public class MainActivity extends SlbBaseActivity {
@@ -76,7 +75,7 @@ public class MainActivity extends SlbBaseActivity {
         super.setup(savedInstanceState);
 //        HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page3.js3");
         HiosHelperNew.config(AppUtils.getAppPackageName() + ".web.page3");
-        PgyerSDKManager.checkSoftwareUpdate(this);
+//        PgyerSDKManager.checkSoftwareUpdate(this);
         tv2 = findViewById(R.id.tv2);
         iv1 = findViewById(R.id.iv1);
         GlideApp.with(this).as(PictureDrawable.class)

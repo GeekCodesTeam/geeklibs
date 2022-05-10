@@ -2,7 +2,7 @@ apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
-    api project(':libutils')
+    implementation project(':libutils')
     api librarys.retrofit
     api librarys.retrofitconverters
     api librarys.retrofitgconvertergson

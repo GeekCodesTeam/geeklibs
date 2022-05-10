@@ -166,13 +166,13 @@ public class ImageViewerDemo extends BaseFragment {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new XPopup.Builder(holder.itemView.getContext()).asImageViewer(imageView, position, list,
+                    new XPopup.Builder(holder.getConvertView().getContext()).asImageViewer(imageView, position, list,
                             true, true, -1, -1, -1, true,
                             Color.rgb(32, 36, 46),
                             new OnSrcViewUpdateListener() {
                                 @Override
                                 public void onSrcViewUpdate(ImageViewerPopupView popupView, int position) {
-                                    RecyclerView rv = (RecyclerView) holder.itemView.getParent();
+                                    RecyclerView rv = (RecyclerView) holder.getConvertView().getParent();
                                     popupView.updateSrcView((ImageView) rv.getChildAt(position));
                                 }
                             }, new SmartGlideImageLoader(), null)
@@ -198,7 +198,7 @@ public class ImageViewerDemo extends BaseFragment {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new XPopup.Builder(holder.itemView.getContext()).asImageViewer(imageView, position, list,
+                    new XPopup.Builder(holder.getConvertView().getContext()).asImageViewer(imageView, position, list,
                             new OnSrcViewUpdateListener() {
                                 @Override
                                 public void onSrcViewUpdate(final ImageViewerPopupView popupView, final int position) {

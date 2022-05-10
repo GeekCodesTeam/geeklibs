@@ -2,6 +2,6 @@ apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //依赖
 dependencies {
-    api project(':libutils')
+    implementation project(':libutils')
     api 'com.kunminx.linkage:linkage-recyclerview:2.4.0'
 }

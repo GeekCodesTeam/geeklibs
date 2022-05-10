@@ -2,7 +2,7 @@ apply from: "${rootDir.path}/gradle/base.gradle"
 apply from: "${rootDir.path}/gradle/publish.gradle"
 def librarys = rootProject.ext.dependencies //
 dependencies {
-    api project(':libutils')
+    implementation project(':libutils')
     // glide47
     annotationProcessor librarys.annotationProcessorglide47compiler
     api 'com.caverock:androidsvg:1.2.1'
